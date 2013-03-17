@@ -1,0 +1,109 @@
+\chapter{Faktoriseringsalgoritmer}
+Vi vil i dette kapitel introducere nogle forskellige algoritmer
+der kan benyttes til faktorisering. Først introduceres Pollards
+$p-1$ algoritme, hvilket er den algoritme som var inspirationen
+for Lenstras algoritme, der benytter elliptiske kurver.
+
+Motivationen for disse hurtigere metoder er, at en naiv tilgang
+er meget langsom. Antag at $n$ er et sammensat tal, som vi 
+ønsker at faktorisere. Hvis $n$ faktoriseres som $n=n_1 n_2$ er 
+det klart, at $\min \{n_1, n_2 \} \leq \sqrt{n}$. Vi kan da finde
+en faktor ved at undersøge om først $2 \mid n$, dernæst om 
+$3 \mid n$ osv. Vi vil da finde en faktor senest når vi kommer
+til $\sqrt{n}$.
+
+\section{Pollards $p-1$ metode}
+Før vi beskriver algoritmen skal vi først bruge følgende 
+definition.
+
+\begin{definition}[$B$-potensglat]
+Lad $B \in \mathbb{Z}^{+}$. Hvis $n \in \mathbb{Z}^{+}$ har 
+primtalsfaktoriseringen $n = \prod {p_i}^{e_i}$, da siges $n$ 
+at være $B$-potensglat hvis ${p_i}^{e_i} \leq B$ for alle $i$.
+\end{definition}
+
+\begin{example}
+Da $50 = 2 \cdot 5^2$ følger det, at $50$ er $25$-potensglat. 
+Bemærk, at den netop ikke er $5$-potensglat.
+\end{example}
+
+Med disse detaljer på plads er vi nu klar til, at beskrive Pollards
+$p-1$ algoritme. Antag at det sammensatte tal $n$, som vi ønsker at
+faktorisere, har en primfaktor $p$ sådan, at $p-1$ har mange små
+primtalsfaktorer. Fra Fermats lille sætning ved vi, at 
+\begin{align*}
+	a^{p-1} \equiv 1 \modu{p},
+\end{align*}
+hvilket betyder at $p \mid \gcd(a^{p-1} - 1, n)$. Men da vi ikke kender
+$p$ (det er jo den faktor vi leder efter)
+
+\begin{algorithm}[Pollards $p-1$ algoritme]
+Lad $n \geq 2$ være et sammensat tal, som er tallet vi ønsker at 
+finde en faktor for.
+\begin{enumerate}
+	\item Vælg et tal $k \in \mathbb{Z}^+$ sådan, at $k$ er et produkt
+	af mange små primtal opløftet i små potenser. F.eks. kan $k$ vælges
+	som
+	\begin{align*}
+		k = \lcm [1, 2, \ldots, K],
+	\end{align*}
+	for $K \in \mathbb{Z}^+$.
+	\item Vælg et heltal $a$ sådan, at $1 < a <n$.
+	\item Udregn $\gcd(a, n)$. Hvis $\gcd(a, n) > 1$ har vi fundet en
+	ikke-triviel faktor for $n$ og vi er færdige. Ellers fortsæt til næste
+	trin.
+	\item Udregn $D = \gcd(a^k - 1, n)$. Hvis $1 < D < n$ er $D$ en ikke-triviel
+	faktor for $n$ og vi er færdige. Hvis $D = 1$ gå da tilbage til trin 1
+	og vælg et større $k$. Hvis $D = n$ gå da til trin 2 og vælg et nyt $a$. 
+\end{enumerate}
+
+
+\end{algorithm}
+
+
+
+Følgende er et eksempel på anvendelsen af Pollards algoritme,
+hvor det går godt, altså hvor $p-1$ har små primfaktorer.
+
+\begin{example}
+Vi vil forsøge at faktorisere 
+\begin{align*}
+	N = 30042491.
+\end{align*}
+Vi ser at $2^{N-1} = 2^{30042490} \equiv 25171326 \ (\textrm{mod}\ 30042491)$,
+så $N$ er ikke et primtal. Vi vælger som beskrevet i algoritmen
+\begin{align*}
+	a = 2 \quad \text{og} \quad k = \mathrm{LCM}(1,2,3,4,5,6,7) = 420.
+\end{align*}
+Da $420 = 2^2 + 2^5 + 2^7 + 2^8$ skal vi udregne $2^{2^i}$ for 
+$0 \leq i \leq 8$. Vi springer de første par udregninger over.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+$i$ & $2^{2^i} \ (\mathrm{mod} \ N)$ \\ 
+\hline 
+5 & 28933574 \\ 
+6 & 27713768 \\ 
+7 & 10802810 \\ 
+8 & 16714289 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+Denne tabel gør det forholdsvist let for os, at bestemme
+\begin{align*}
+	2^{420} &= 2^{2^2 + 2^5 + 2^7 + 2^8} \\
+	&\equiv 16 \cdot 28933574 \cdot 10802810 \cdot 16714289 \ 
+	(\mathrm{mod} \ 30042491) \\
+	&\equiv 27976515 \ (\mathrm{mod} \ 30042491)
+\end{align*}
+
+Ved anvendelse af den euklidiske algoritme finder vi dernæst, at
+\begin{align*}
+	\mathrm{gcd}(2^{420} - 1, N) = \mathrm{gcd}(27976514, 30042491) = 1.
+\end{align*}
+Her fejler testen altså og vi er nået frem til, at $N$ ikke har nogle 
+primtalsfaktorer $p$ sådan, at $p-1$ deler $420$.
+
+\end{example}

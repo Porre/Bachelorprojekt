@@ -1,0 +1,9 @@
+\select@language {danish}
+\contentsline {chapter}{Indhold}{1}
+\contentsline {section}{\numberline {0.1}Etablering af gruppestrukturen}{2}
+\contentsline {subsection}{\numberline {0.1.1}Elliptiske kurver}{2}
+\contentsline {subsection}{\numberline {0.1.2}Det projektive plan}{2}
+\contentsline {subsection}{\numberline {0.1.3}Gruppeloven}{3}
+\contentsline {chapter}{\chapternumberline {1}Faktoriseringsalgoritmer}{7}
+\contentsline {section}{\numberline {1.1}Pollards $p-1$ metode}{7}
+\contentsline {section}{\numberline {1.2}Lenstras elliptiske kurve metode}{10}

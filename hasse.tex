@@ -1,0 +1,61 @@
+Vi vil her give et bevis for Hasse's sætning. Til dette
+formål skal vi først opbygge nogle resultater vedrørende
+endomorfier på endelige legemer.
+
+\begin{definition}[Algebraisk aflukning]
+En algebraisk aflukning af et legeme $K$, er et legeme
+$K \subseteq \overline{K}$, hvor $\overline{K}$ er en 
+algebraisk udvidelse af $K$ samt, at ethvert ikke-konstant
+polynomium fra $\overline{K}[X]$ har en rod i $\overline{K}$. 
+\end{definition}
+
+Det kan vises, at ethvert legeme har en algebraisk aflukning og
+at to algebraiske aflukninger for det samme legeme vil være isomorfe.
+Derfor giver det mening for os, at snakke om \emph{den} algebraiske
+aflukning for et givent legeme. Lad nu $\mathbb{F}_q$ være et endeligt
+legeme med algebraisk aflukning $\overline{\mathbb{F}}_q$. Vi ser på
+Frobenius afbildningen 
+\begin{align*}
+	\phi_q : \overline{\mathbb{F}}_q \to \overline{\mathbb{F}}_q,
+\end{align*}
+som er givet ved, at $x \mapsto x^q$. For en elliptisk kurve $E$ over
+$\mathbb{F}_q$ virker $\phi_q$ på koordinaterne $E(\overline{\mathbb{F}}_q)$ 
+ved, at 
+\begin{align*}
+	\phi_q(x, y) = (x^q, y^q), \quad \phi_q (\infty) = \infty.
+\end{align*}
+
+I det følgende udnytter vi, at $q$ er et primtal (men bogen arbejder
+måske blot med at $q = p^r$, hvor $p$ er et primtal. Da skal der tilføjes
+lidt resultater.
+
+\begin{lemma}
+Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$, og lad 
+$(x, y) \in E(\overline{\mathbb{F}}_q)$. Da gælder der, at 
+\begin{enumerate}
+	\item $\phi_q(x, y) \in E(\overline{\mathbb{F}}_q)$,
+	\item $(x, y) \in E(\mathbb{F}_q) \Leftrightarrow \phi_q(x, y)=(x, y)$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Vi har, at $y^2 = x^3 + ax + b$, hvor $a, b \in \mathbb{F}_q$. Vi opløfter 
+denne ligning til den $q$'ende potens og får, at 
+\begin{align*}
+	(y^q)^2 = (x^q)^3 + (a^q x^q) + b^q,
+\end{align*}
+hvor vi har brugt Freshman's dream. Men dette betyder netop, at 
+$(x^q, y^q) \in E(\overline{\mathbb{F}}_q)$, hvilket viser (1).
+For at vise (2) husker vi, at $\phi_q(x) = x \Leftrightarrow x \in \mathbb{F}_q$.
+Det følger da, at 
+\begin{align*}
+	(x, y) \in E(\mathbb{F}_q) &\Leftrightarrow x, y \in \mathbb{F}_q \\
+	&\Leftrightarrow \phi_q(x) = x \ \text{og} \ \phi_q(y) = y \\
+	&\Leftrightarrow \phi_q(x, y) = (x, y).
+\end{align*}
+\end{proof}
+
+
+\begin{lemma}
+Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$. Da er $\phi_q$ en 
+endomorfi for $E$ af grad $q$, desuden er $\phi_q$ ikke seperabel.
+\end{lemma}

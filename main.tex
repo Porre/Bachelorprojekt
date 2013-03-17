@@ -1,0 +1,68 @@
+% Vi benytter os af MEMOIR (pr. daleif's anbefaling)
+\documentclass[a4paper, 12pt]{memoir}
+
+% Dette er hovedfilen, hvor jeg definerer min pre-amble.
+% Idéen er at sprede de enkelte kapitler ud i hvert deres
+% dokument for at gøre det hele lidt mere overskueligt.
+% Eventuelle makroer vil også fremgå heri.
+% Inden 6 måneder skulle det gerne ligne et bachelorprojekt. 
+% 24.01.2013
+
+% Matematikpakker
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Dansk babel og tillad øæå osv.
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+
+% Styling for sætninger osv., er valgt efter normal anbefaling
+\theoremstyle{plain}
+\newtheorem{theorem}{Sætning}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Korollar}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Bemærkning}
+\newtheorem{example}{Eksempel}
+\newtheorem{algorithm}{Algoritme}
+
+% Sørg for at niveauet til og med subsection nummereres
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{1}
+
+% TikZ bruges til tegninger
+\usepackage{tikz}
+
+% -- Makroer der gør mit liv lettere
+% Angiver punktet i uendelighed
+\newcommand{\infp}{\mathcal{O}}
+
+% Skriver LCM med tekst
+\newcommand{\lcm}{\mathrm{LCM}}		
+
+% Hurtig måde at lave modulo
+\newcommand{\modu}[1]{\ (\mathrm{mod} \ #1)}
+
+
+\begin{document}
+
+\tableofcontents
+
+
+\include{gruppeloven}
+\include{pollard}
+\include{lenstra}
+
+\include{hasse}
+
+
+
+
+
+
+\end{document}
