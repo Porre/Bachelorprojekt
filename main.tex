@@ -1,5 +1,5 @@
 % Vi benytter os af MEMOIR (pr. daleif's anbefaling)
-\documentclass[a4paper, 12pt]{memoir}
+\documentclass[a4paper,12pt,oneside]{memoir}
 
 % Dette er hovedfilen, hvor jeg definerer min pre-amble.
 % Idéen er at sprede de enkelte kapitler ud i hvert deres
@@ -31,6 +31,9 @@
 \newtheorem{example}{Eksempel}
 \newtheorem{algorithm}{Algoritme}
 
+% section som chapterstyle er mindre voldsomt til et "lille" projekt
+\chapterstyle{section}
+
 % Sørg for at niveauet til og med subsection nummereres
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{1}
@@ -38,7 +41,7 @@
 % TikZ bruges til tegninger
 \usepackage{tikz}
 
-% -- Makroer der gør mit liv lettere
+% -- START PÅ MAKROER -- 
 % Angiver punktet i uendelighed
 \newcommand{\infp}{\mathcal{O}}
 
@@ -48,13 +51,24 @@
 % Hurtig måde at lave modulo
 \newcommand{\modu}[1]{\ (\mathrm{mod} \ #1)}
 
+% Lukninger af mængder
+\newcommand{\clfq}{\overline{\mathbb{F}}_q}
+\newcommand{\clk}{\overline{K}}
+
+% -- SLUT PÅ MAKROER --
+
+
+% Bruges kun under skrivningen af projektet
+\includeonly{hasse}
+
 
 \begin{document}
 
-\tableofcontents
+% \tableofcontents
 
 
 \include{gruppeloven}
+\include{endelige_legemer}
 \include{pollard}
 \include{lenstra}
 

@@ -50,12 +50,30 @@ Det følger da, at
 \begin{align*}
 	(x, y) \in E(\mathbb{F}_q) &\Leftrightarrow x, y \in \mathbb{F}_q \\
 	&\Leftrightarrow \phi_q(x) = x \ \text{og} \ \phi_q(y) = y \\
-	&\Leftrightarrow \phi_q(x, y) = (x, y).
+	&\Leftrightarrow \phi_q(x, y) = (x, y),
 \end{align*}
+hvilket fuldfører beviset for (2).
 \end{proof}
-
 
 \begin{lemma}
 Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$. Da er $\phi_q$ en 
 endomorfi for $E$ af grad $q$, desuden er $\phi_q$ ikke seperabel.
 \end{lemma}
+\begin{proof}
+Beviset går på at vise, at $\phi_q : E(\clfq) \to E(\clfq)$ er en homomorfi. 
+Dette gøres vha. additionsformlerne. Se f.eks. [1].
+\end{proof}
+
+Det næste resultat bliver afgørende for beviset for Hasses sætning. 
+Det fortæller os om graden af en endomorfi for en elliptisk kurve $E$,
+som eksempelvis $\phi_q$ er det.
+
+\begin{proposition}
+Lad $E$ være en elliptisk kurve. Lad $\alpha \neq 0$ være en seperabel 
+endomorfi for $E$. Da er 
+\begin{align*}
+	\deg \alpha = |\ker (\alpha)|,
+\end{align*}
+hvor $\ker (\alpha) = $ angiver kernen for homomorfien 
+$\alpha : E(\clk) \to E(\clk)$.
+\end{proposition}
