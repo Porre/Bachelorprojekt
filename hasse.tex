@@ -1,6 +1,85 @@
-Vi vil her give et bevis for Hasse's sætning. Til dette
+Vi vil her give et bevis for Hasse's sætning, der giver os en 
+(optimal) vurdering af antallet af punkter på en elliptisk kurve.
+Til dette
 formål skal vi først opbygge nogle resultater vedrørende
-endomorfier på endelige legemer.
+endomorfier på endelige legemer, som benyttes i beviset for
+dette.
+
+\begin{definition}
+En endomorfi på $E$ er en homomorfi $\alpha : E(\clk) \to E(\clk)$ givet
+ved rationale funktioner.
+\end{definition}
+
+Med en rational funktion forståes en kvotient af polynomier. Det vil altså sige, 
+at $\alpha$ skal opfylde at $\alpha(P_1 + P_2)=\alpha(P_1)+\alpha(P_2)$ 
+og der skal findes rationale 
+funktioner $R_1(x, y)$ og $R_2(x, y)$, begge med koefficienter i $\clk$, så
+\begin{align*}
+	\alpha(x, y) = (R_1(x, y), R_2(x, y)),
+\end{align*}
+for alle $(x, y) \in E(\clk)$. Dette giver os også, da $\alpha$ er en homomorfi,
+at $\alpha(\infty)=\infty$. Vi vil fremover antage, at $\alpha$ ikke er den 
+trivielle endomorfi, altså at der findes $(x, y)$ sådan at $\alpha(x, y) \neq \infty$.
+
+Vi ønsker da, at finde en standard repræsentation for de rationale funktioner, som
+beskriver en endomorfi. For en elliptisk kurve $E$ på Weierstrass normalform gælder
+der, at $y^2 = x^3 + Ax + B$ for alle $(x, y) \in E(\clk)$, hvilket betyder at
+\begin{align*}
+	y^{2k} = (x^3 + Ax + B)^k,
+\end{align*}
+hvor $k \in \mathbb{N}$. På lignende vis har vi også, at 
+\begin{align*}
+	y^{2k} y = (x^3 + Ax + B)^k y.
+\end{align*}
+For en rational funktion $R(x, y)$ kan vi nu beskrive en anden rational funktion,
+som stemmer overens med denne på punkter fra $E(\clk)$. Vi kan med andre ord antage,
+at 
+\begin{align}
+	\label{rational}
+	R(x, y) = \frac{p_1(x) + p_2(x)y}{p_3(x)+p_4(x)y}.
+\end{align}
+Det er endda muligt, at gøre dette endnu simplere ved at gange udtrykket i \eqref{rational}
+med $p_3(x)-p_4(x)y$, da 
+\begin{align*}
+	(p_3(x) - p_4(x)y)(p_3(x)+p_4(x)y) = p_3(x)^2 - p_4(x)^2 y^2,
+\end{align*}
+hvorefter vi kan erstatte $y^2$ med $x^3+Ax+B$. Vi får da, at 
+\begin{align}
+	\label{rational_final}
+	R(x, y) = \frac{q_1(x) + q_2(x)y}{q_3(x)}.
+\end{align}
+Lader vi nu $\alpha$ være en endomorfi givet ved
+\begin{align*}
+	\alpha(x, y) = (R_1(x, y), R_2(x, y)),
+\end{align*}
+får vi, da $\alpha$ er en homomorfi, at 
+\begin{align*}
+	\alpha(x, -y) = \alpha(-(x, y)) - \alpha(x, y).
+\end{align*}
+Dette medfører, at 
+\begin{align*}
+	R_1(x, -y) = R_1(x, y) \quad \text{og} \quad R_2(x, -y) = -R_2(x, y).
+\end{align*}
+Skrives $R_1$ og $R_2$ på samme form som i \eqref{rational_final} følger det da, at 
+$q_2(x)=0$ for $R_1$ og $q_1(x)=0$ for $R_2$. Vi kan altså antage, at 
+\begin{align*}
+	\alpha(x, y) = (r_1(x), r_2(x)y),
+\end{align*}
+hvor $r_1(x)$ og $r_2(x)$ er rationale funktioner. Skriv da $r_1(x)=p(x)/q(x)$ (opgave om
+den rent faktisk er defineret).
+
+\begin{definition}
+Graden af en endomorfi $\alpha$ er givet ved
+\begin{align*}
+	\deg(\alpha) = \max \{ \deg p(x), \deg q(x) \},
+\end{align*}
+hvis $\alpha$ er ikke-triviel. Hvis $\alpha$ er den trivielle endomorfi lader vi 
+$\deg (\alpha) = 0$.
+\end{definition}
+
+Vi siger, at $\alpha$ er en separabel endomorfi, hvis den afledede $r_1'(x)$ ikke
+er lig nul.
+
 
 \begin{definition}[Algebraisk aflukning]
 En algebraisk aflukning af et legeme $K$, er et legeme
@@ -64,6 +143,11 @@ Beviset går på at vise, at $\phi_q : E(\clfq) \to E(\clfq)$ er en homomorfi.
 Dette gøres vha. additionsformlerne. Se f.eks. [1].
 \end{proof}
 
+Dette betyder, at ${\phi_q}^2 = \phi_q \circ \phi_q$ også er en endomorfi,
+hvilket vi kan udvide til ${\phi_q}^n$ for $n \geq 1$ er en endomorfi. 
+Da multiplikation samtidigt er en endomorfi følger det, at ${\phi_q}^n -1$ 
+også er det. 
+
 Det næste resultat bliver afgørende for beviset for Hasses sætning. 
 Det fortæller os om graden af en endomorfi for en elliptisk kurve $E$,
 som eksempelvis $\phi_q$ er det.
@@ -77,3 +161,6 @@ endomorfi for $E$. Da er
 hvor $\ker (\alpha) = $ angiver kernen for homomorfien 
 $\alpha : E(\clk) \to E(\clk)$.
 \end{proposition}
+\begin{proof}
+Vi gemmer beviset til et senere tidspunkt.
+\end{proof}
