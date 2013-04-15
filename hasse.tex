@@ -88,10 +88,16 @@ algebraisk udvidelse af $K$ samt, at ethvert ikke-konstant
 polynomium fra $\overline{K}[X]$ har en rod i $\overline{K}$. 
 \end{definition}
 
-Det kan vises, at ethvert legeme har en algebraisk aflukning og
-at to algebraiske aflukninger for det samme legeme vil være isomorfe.
-Derfor giver det mening for os, at snakke om \emph{den} algebraiske
-aflukning for et givent legeme. Lad nu $\mathbb{F}_q$ være et endeligt
+
+
+
+% Det kan vises, at ethvert legeme har en algebraisk aflukning og
+% at to algebraiske aflukninger for det samme legeme vil være isomorfe.
+% Derfor giver det mening for os, at snakke om \emph{den} algebraiske
+% aflukning for et givent legeme. 
+
+
+Lad nu $\mathbb{F}_q$ være et endeligt
 legeme med algebraisk aflukning $\overline{\mathbb{F}}_q$. Vi ser på
 Frobenius afbildningen 
 \begin{align*}
@@ -153,14 +159,94 @@ Det fortæller os om graden af en endomorfi for en elliptisk kurve $E$,
 som eksempelvis $\phi_q$ er det.
 
 \begin{proposition}
-Lad $E$ være en elliptisk kurve. Lad $\alpha \neq 0$ være en seperabel 
+Lad $E$ være en elliptisk kurve. Lad $\alpha \neq 0$ være en separabel 
 endomorfi for $E$. Da er 
 \begin{align*}
-	\deg \alpha = |\ker (\alpha)|,
+	\deg \alpha = \# \ker (\alpha),
 \end{align*}
 hvor $\ker (\alpha) = $ angiver kernen for homomorfien 
-$\alpha : E(\clk) \to E(\clk)$.
+$\alpha : E(\clk) \to E(\clk)$. I tilfældet hvor $\alpha \neq 0$ ikke
+er separabel gælder der, at 
+\begin{align*}
+	\deg \alpha > \# \ker (\alpha).
+\end{align*}
 \end{proposition}
 \begin{proof}
-Vi gemmer beviset til et senere tidspunkt.
+Vi skriver $\alpha$ på standardformen, som vi introducerede tidligere, altså
+sættes
+\begin{align*}
+	\alpha(x, y) = (r_1(x), r_2(x) y)),
+\end{align*}
+hvor $r_1(x) = p(x)/q(x)$. Da $\alpha$ er antaget til at være separabel er 
+$r_1' \neq 0$ og dermed er $pq'-p'q$ ikke nulpolynomiet. Lad nu
+\begin{align*}
+	S = \{ x \in \clk \mid (pq' - p'q)(x)q(x) = 0 \}.
+\end{align*}
+Lad da $(a, b) \in E(\clk)$ være valgt sådan, at det opfylder følgende
+\begin{enumerate}
+	\item $a \neq 0$, $b \neq 0$ og $(a, b) \neq \infty$,
+	\item $\deg (p(x) - aq(x)) = \max \{ \deg p(x), \deg q(x) \} = \deg \alpha$,
+	\item $a \notin r_1(S)$,
+	\item $(a, b) \in \alpha(E(\clk))$.
+\end{enumerate}
+Da $pq'-p'q$ ikke er 
+nulpolynomiet er $S$ en endelig mængde, hvilket dermed også betyder, at 
+$\alpha(S)$ er en endelig mængde. Funktionen $r_1(x)$ antager uendeligt 
+mange forskellige værdier når $x$ gennemløber $\clk$. 
+%da en algebraisk aflukning indeholder uendeligt mange elementer.
+Da der for hvert $x$ er et punkt $(x, y) \in E(\clk)$ følger det, at 
+$\alpha(E(\clk))$ er en uendelig mængde. Det er altså muligt, at vælge et
+punkt $(a, b) \in E(\clk)$ med egenskaberne ovenfor.
+
+Vi ønsker at vise, at der netop er $\deg \alpha$ punkter $(x_1, y_1) \in E(\clk)$ sådan,
+at $\alpha(x_1, y_1) = (a, b)$. For et sådan punkt gælder der, at 
+\begin{align*}
+	\frac{p(x_1)}{q(x_1)} = a, \quad r_2(x_1) y_1 = b.
+\end{align*}
+Da $(a, b) \neq \infty$ er $q(x_1) \neq 0$. % Øvelse giver, at r_2(x_1) er defineret
+Da $b \neq 0$ har vi også, at $y_1 = b / r_2(x_1)$. Dette betyder, at $y_1$ er bestemt
+ved $x_1$, så vi behøver kun at tælle værdier for $x_1$. Fra antagelse (2) har vi, at 
+$p(x) - aq(x) = 0$ har $\deg \alpha$ rødder talt med multiplicitet. Vi skal altså vise,
+at $p-aq$ ikke har nogen multiple rødder. Antag for modstrid, at $x_0$ er en multipel
+rod. Da har vi, at
+\begin{align*}
+	p(x_0) - aq(x_0) = 0 \quad \text{og} \quad p'(x_0) - aq'(x_0) = 0.
+\end{align*}
+En hurtig omskrivning giver os ligningerne $p(x_0)=aq(x_0)$ og $aq'(x_0)=p'(x_0)$, 
+som vi ganger med hinanden og får, at 
+\begin{align*}
+	a p(x_0)q'(x_0) = ap'(x_0)q(x_0).
+\end{align*} 
+Da $a \neq 0$ pr. (1) giver det os, at $x_0$ er en rod i $pq'-p'q$ så $x_0 \in S$.
+Altså er $a=r_1(x_0) \in r_1(S)$, hvilket er i modstrid med (3). Dermed har 
+$p-aq$ netop $\deg \alpha$ forskellige rødder. Da der er præcist $\deg \alpha$ 
+punkter $(x_1, y_1)$ så $\alpha(x_1, y_1) = (a, b)$ har kernen for $\alpha$ netop
+$\deg \alpha$ elementer.
+
+
+
+
+
+
+
+
+
+
 \end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
