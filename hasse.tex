@@ -114,7 +114,7 @@ I det følgende udnytter vi, at $q$ er et primtal (men bogen arbejder
 måske blot med at $q = p^r$, hvor $p$ er et primtal. Da skal der tilføjes
 lidt resultater.
 
-\begin{lemma}
+\begin{lemma}\label{lemma03}
 Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$, og lad 
 $(x, y) \in E(\overline{\mathbb{F}}_q)$. Da gælder der, at 
 \begin{enumerate}
@@ -222,17 +222,81 @@ Altså er $a=r_1(x_0) \in r_1(S)$, hvilket er i modstrid med (3). Dermed har
 $p-aq$ netop $\deg \alpha$ forskellige rødder. Da der er præcist $\deg \alpha$ 
 punkter $(x_1, y_1)$ så $\alpha(x_1, y_1) = (a, b)$ har kernen for $\alpha$ netop
 $\deg \alpha$ elementer.
-
-
-
-
-
-
-
-
-
-
 \end{proof}
+
+\begin{proposition}
+Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$ og lad $n \geq 1$. Da gælder der,
+at 
+\begin{enumerate}
+	\item $\ker (\phi_{q}^n - 1) = E(\mathbb{F}_{q^n})$. \label{test}
+	\item $\phi_{q}^{n}-1$ er separabel, så $\#E(\mathbb{F}_{q^n})=\deg (\phi_{q}^{n}-1)$. 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Da $(\phi_{q}^{n} - 1)((x,y)) = 0 \Leftrightarrow (x^q, y^q) = (x, y)$ følger det fra
+lemma \ref{lemma03}, at $\ker(\phi_{q}^{n}-1)=E(\mathbb{F}_q)$.
+
+Da $\phi_{q}^{n}$ er Frobenius afbildningen for $\mathbb{F}_q$ følger \eqref{test} fra et 
+tidligere lemma. At $\phi_{q}^{n} -1$ er separabel vil vi ikke vise, men et bevis kan findes
+i [LW]. Da følger det fra en tidligere proposition, at $\#E(E_{q^n})=\deg(\phi_{q}^{n} -1)$.
+\end{proof}
+
+Vi mangler nu blot ét resultat mere før, at vi er i stand til at vise Hasses sætning. Lad først
+\begin{align}
+	\label{hasse_assist}
+	a = q + 1 - \#E(\mathbb{F}_q) = q + 1 - \deg (\phi_q - 1).
+\end{align}
+
+\begin{lemma}\label{degree_lemma}
+Lad $r, s \in \mathbb{Z}$ være sådan, at $\gcd(s, q) = 1$. Da gælder der, at
+\begin{align*}
+	\deg(r \phi_q - s) = r^2 q + s^2 - rsa.
+\end{align*}
+\end{lemma}
+\begin{proof}
+Vi vil ikke føre beviset her, men et bevis kan findes i [LW].
+\end{proof}
+
+
+\begin{theorem}[Hasse]
+Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$. Da gælder der for
+$E(\mathbb{F}_q)$, at 
+\begin{align*}
+	|q+1-\#E(\mathbb{F}_q)| \leq 2 \sqrt{q}.
+\end{align*}
+\end{theorem}
+\begin{proof}
+Med notationen fra \eqref{hasse_assist} skal vi vise, at $|a|\leq 2\sqrt{q}$. Da graden
+af en endomorfi altid er $\geq 0$ følger det fra lemma \ref{degree_lemma}, at 
+\begin{align*}
+	r^2q+s^2 -rsa = q \left( \frac{r^2}{s^2} \right) - \frac{rsa}{s^2} + 1 
+	\geq 0,
+\end{align*}
+for alle $r, s \in \mathbb{Z}$ med $\gcd(s, q)=1$. Da mængden
+\begin{align*}
+	\left\{ \frac{r}{s} \mid \gcd(s, q)=1 \right\} \subseteq \mathbb{Q},
+\end{align*}
+er tæt i $\mathbb{R}$ følger det, at 
+\begin{align*}
+	qx^2 - ax + 1 \geq 0,
+\end{align*}
+for alle $x \in \mathbb{R}$. Dette medfører at diskrimanten må være negativ eller lig $0$.
+Altså har vi, at 
+\begin{align*}
+	a^2 - 4q \leq 0 \Rightarrow |a| \leq 2 \sqrt{q},
+\end{align*}
+hvilket viser Hasses sætning.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
 
 
 
