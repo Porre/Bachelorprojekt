@@ -7,6 +7,119 @@ formen
 	y^2 = x^3 + Ax + B,
 \end{align*}
 som er defineret over $\mathbb{F}$. Da er gruppen $E(\mathbb{F})$ endelig, da 
-der kun findes endeligt mange talpar $(x, y)$ hvor $x, y \in \mathbb{F}$. Disse 
-elliptiske kurver viser sig, at have flere praktiske anvendelser og vi vil i kapitel
-3 vise, hvordan de kan anvendes til faktorisering.
+der kun findes endeligt mange talpar $(x, y)$ så $x, y \in \mathbb{F}$. Lad 
+$E$ være den elliptiske kurve $y^2 = x^3 - x$ over $\mathbb{F}_5$. For at bestemme
+ordenen af $E(\mathbb{F})$ laver vi en tabel over mulige værdier for $x$, $x^3 - x \modu{5}$
+og for $y$ som er kvadratrødderne af $x^3 - x$. Dette giver os samtlige punkter på kurven:
+
+\begin{center}
+\begin{tabular}{c c c c }
+$x$ & $x^3 - x$ & $y$ & Punkter \\ 
+\hline
+$0$ & $0$ & $0$ & $(0, 0)$ \\ 
+$1$ & $0$ & $0$ & $(1, 0)$ \\ 
+$2$ & $1$ & $\pm 1$ & $(2, 1), (2, 4)$ \\ 
+$3$ & $4$ & $\pm 2$ & $(3, 2), (3, 3)$ \\ 
+$4$ & $2$ & $-$ & $-$ \\ 
+$\infty$ & & $\infty$ & $\infty$ \\
+\end{tabular} 
+\end{center}
+
+Bemærk, at $\sqrt{2} \notin \mathbb{Z}$ og derfor har $2$ ikke en kvadratrod i $\mathbb{F}_5$.
+Dette giver os, at $E(\mathbb{F}_5)$ har orden $6$ og vi skriver $\#E(\mathbb{F}_5)=6$. Vi skal
+i dette kapitel vise Hasses sætning, som giver en vurdering for antallet af punkter på en elliptisk
+kurve over et endeligt legeme:
+
+\begin{theorem}[Hasse]
+Lad $E$ være en elliptisk kurve over et endeligt legeme $\mathbb{F}_q$. Da gælder der, at 
+\begin{align*}
+	|q + 1 - \#E(\mathbb{F}_q)| \leq 2 \sqrt{q}.
+\end{align*}
+\end{theorem}
+
+Vi vil i kapitel 3 se på en af anvendelserne, som disse elliptiske kurver over endelige legemer har, 
+nemlig indenfor faktorisering af heltal.
+
+
+\section{Endomorfier}
+Vi skal først have etableret nogle resultater vedrørende endomorfier på endelige legemer, som
+er nødvendige for beviset af Hasses sætning. Vi begynder med følgende definition:
+
+\begin{definition}
+En endomorfi på $E$ er en homomorfi $\alpha : E(\clk) \to E(\clk)$ givet
+ved rationale funktioner.
+\end{definition}
+
+Med en rational funktion forståes en kvotient af polynomier. Det vil altså sige, at 
+en endomorfi $\alpha$ skal opfylde, at $\alpha(P_1 + P_2) = \alpha(P_1) + \alpha(P_2)$ 
+og der skal findes rationale 
+funktioner $R_1(x, y)$ og $R_2(x, y)$, begge med koefficienter i $\clk$, så
+\begin{align*}
+	\alpha(x, y) = (R_1(x, y), R_2(x, y)),
+\end{align*}
+for alle $(x, y) \in E(\clk)$. Det følger desuden, at $\alpha(\infty) = \infty$ da 
+$\alpha$ specielt er en homomorfi. Vi vil fremover antage, at $\alpha$ ikke er den 
+trivielle endomorfi, altså at der findes $(x, y)$ sådan at $\alpha(x, y) \neq \infty$.
+
+Vi ønsker da, at finde en standard repræsentation for de rationale funktioner, som
+beskriver en endomorfi. For en elliptisk kurve $E$ på Weierstrass normalform gælder
+der, at $y^2 = x^3 + Ax + B$ for alle $(x, y) \in E(\clk)$, hvilket betyder at
+\begin{align*}
+	y^{2k} = (x^3 + Ax + B)^k,
+\end{align*}
+hvor $k \in \mathbb{N}$. På lignende vis har vi også, at 
+\begin{align*}
+	y^{2k} y = (x^3 + Ax + B)^k y.
+\end{align*}
+For en rational funktion $R(x, y)$ kan vi nu beskrive en anden rational funktion,
+som stemmer overens med denne på punkter fra $E(\clk)$. Vi kan med andre ord antage,
+at 
+\begin{align}
+	\label{rational}
+	R(x, y) = \frac{p_1(x) + p_2(x)y}{p_3(x)+p_4(x)y}.
+\end{align}
+Det er endda muligt, at gøre dette endnu simplere ved at gange udtrykket i \eqref{rational}
+med $p_3(x)-p_4(x)y$, da 
+\begin{align*}
+	(p_3(x) - p_4(x)y)(p_3(x)+p_4(x)y) = p_3(x)^2 - p_4(x)^2 y^2,
+\end{align*}
+hvorefter vi kan erstatte $y^2$ med $x^3+Ax+B$. Vi får da, at 
+\begin{align}
+	\label{rational_final}
+	R(x, y) = \frac{q_1(x) + q_2(x)y}{q_3(x)}.
+\end{align}
+Lader vi nu $\alpha$ være en endomorfi givet ved
+\begin{align*}
+	\alpha(x, y) = (R_1(x, y), R_2(x, y)),
+\end{align*}
+får vi, da $\alpha$ er en homomorfi, at 
+\begin{align*}
+	\alpha(x, -y) = \alpha(-(x, y)) - \alpha(x, y).
+\end{align*}
+Dette medfører, at 
+\begin{align*}
+	R_1(x, -y) = R_1(x, y) \quad \text{og} \quad R_2(x, -y) = -R_2(x, y).
+\end{align*}
+Skrives $R_1$ og $R_2$ på samme form som i \eqref{rational_final} følger det da, at 
+$q_2(x)=0$ for $R_1$ og $q_1(x)=0$ for $R_2$. Vi kan altså antage, at 
+\begin{align*}
+	\alpha(x, y) = (r_1(x), r_2(x)y),
+\end{align*}
+hvor $r_1(x)$ og $r_2(x)$ er rationale funktioner. Skriv da $r_1(x)=p(x)/q(x)$ (opgave om
+den rent faktisk er defineret).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
