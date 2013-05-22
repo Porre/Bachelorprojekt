@@ -51,7 +51,8 @@ En endomorfi på $E$ er en homomorfi $\alpha : E(\clk) \to E(\clk)$ givet
 ved rationale funktioner.
 \end{definition}
 
-Med en rational funktion forståes en kvotient af polynomier. Det vil altså sige, at 
+Med en rational funktion forståes en kvotient af polynomier og med $\clk$ menes den algebraiske
+aflukning af $K$. Det vil altså sige, at 
 en endomorfi $\alpha$ skal opfylde, at $\alpha(P_1 + P_2) = \alpha(P_1) + \alpha(P_2)$ 
 og der skal findes rationale 
 funktioner $R_1(x, y)$ og $R_2(x, y)$, begge med koefficienter i $\clk$, så
@@ -104,7 +105,7 @@ Dette medfører, at
 Skrives $R_1$ og $R_2$ på samme form som i \eqref{rational_final} følger det da, at 
 $q_2(x)=0$ for $R_1$ og $q_1(x)=0$ for $R_2$. Vi kan altså antage, at 
 \begin{align*}
-	\alpha(x, y) = (r_1(x), r_2(x)y),
+		\alpha(x, y) = (r_1(x), r_2(x)y),
 \end{align*}
 hvor $r_1(x)$ og $r_2(x)$ begge er rationale funktioner. Skriv da $r_1(x)=p(x)/q(x)$. (For $q(x) \neq 0$ giver opg. 2.19, at $r_2(x)$ er defineret, så funktionerne der giver $\alpha$ er defineret. Vis det.).
 
@@ -196,11 +197,12 @@ $\deg \alpha$ elementer.
 
 \section{Frobenius endomorfien}
 
-En endomorfi med en absolut kritisk rolle for teorien om elliptiske kurver over endelige legemer $\mathbb{F}_q$ er Frobenius endomorfien $\phi_q$. For en elliptisk kurve $E$ over et endeligt legeme $\mathbb{F}_q$ er denne givet ved
+En endomorfi med en absolut kritisk rolle for teorien om elliptiske kurver over endelige legemer er Frobenius endomorfien $\phi_q$. For en elliptisk kurve $E$ over et endeligt legeme $\mathbb{F}_q$ er denne givet ved
 \begin{align}
-	\phi_q (x, y) = (x^q, y^q).
+	\phi_q (x, y) = (x^q, y^q),
 \end{align}
-Denne endomorfi spiller en vigtig rolle i beviset for Hasses sætning, men vi skal først vise, at den har nogle specielle egenskaber:
+og $\phi_q(\infty) = \infty$.
+Denne endomorfi spiller en vigtig rolle i beviset for Hasses sætning, men vi skal først vise nogle af dens egenskaber.
 
 \begin{lemma}
 \label{lemma_end_degree_not_sep}
@@ -208,10 +210,44 @@ Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$. Da er $\phi_q$ en
 endomorfi for $E$ af grad $q$, desuden er $\phi_q$ ikke seperabel.
 \end{lemma}
 \begin{proof}
-Vi bemærker først, at $\phi_q(x, y) = (x^q, y^q)$ er en funktion givet ved polynomier, som specielt er rationale. Så hvis $\phi_q$ er en endomorfi er graden af den $q$.
+Vi skal vise, at $\phi_q : E(\clfq) \to E(\clfq)$ er en homomorfi. Lad da $(x_1, y_1), (x_2, y_2) \in E(\clfq)$, hvor $x_1 \neq x_2$. Da følger det fra gruppeloven, at summen af de to punkter $(x_3, y_3) = (x_1, y_1) + (x_2, y_2)$ er givet ved
+\begin{align*}
+	x_3 = m^2 - x_1 - x_2, \quad y_3 = m(x_1 - x_3) - y_1, \ \ \text{hvor} \ m=\frac{y_2-y_1}{x_2-x_1}.
+\end{align*}
+Opløftes dette i $q$'ende potens får vi, at 
+\begin{align*}
+	{x_3}^q = {m'}^2 - {x_1}^q - {x_2}^q, \quad {y_3}^q = m'({x_1}^q - {x_3}^q) - {y_1}^q, \ \
+	\text{hvor} \ m' = \frac{{y_2}^q - {y_1}^q}{{x_2}^q - {x_1}^q}.
+\end{align*}
+Dette giver os, at $\phi_q(x_3, y_3) = \phi_q(x_1, y_1) + \phi_q(x_2, y_2)$, hvilket netop er hvad $\phi_q$ skal opfylde for at være en homomorfi. I tilfældet hvor $x_1=x_2$ har vi fra gruppeloven, at 
+$(x_3, y_3) =(x_1, y_1) + (x_2, y_2) = \infty$. Men hvis $x_1 = x_2$ må ${x_1}^q = {x_2}^q$ hvilket betyder, at $\phi_q(x_1, y_1)+\phi_q(x_2, y_2) = \infty$. Så da $\infty^q = \infty$ (lægges $\infty$ sammen $q$ gange er det stadigvæk $\infty$) får vi, at 
+\begin{align*}
+	\phi_q(x_3, y_3) = \phi_q(x_1, y_1) + \phi_q(x_2,  y_2).
+\end{align*}
+Hvis ét af punkterne er $\infty$, eksempelvis $(x_1, y_1)=\infty$, har vi fra gruppeloven, at 
+$(x_3, y_3) = (x_1, y_1)+(x_2, y_2) = (x_2, y_2)$. Bruger vi igen, at $\infty^q = \infty$ følger det direkte, at 
+$\phi_q(x_3, y_3) = \phi_q(x_1, y_1) + \phi_q(x_2, y_2)$.
 
-For at vise, at $\phi_q$ er en endomorfi skal vi vise, at $\phi_q : E(\clfq) \to E(\clfq)$ er en homomorfi.
+Når $(x_1, y_1)=(x_2, y_2)$ hvor $y_1 = 0$ er $(x_3, y_3) = (x_1, y_1)+(x_2, y_2) = \infty$. Når $y_1=0$ er ${y_1}^q=0$ så $\phi_q(x_1, y_1) + \phi_q(x_2, y_2) = \infty$ og dermed er $\phi_q(x_3, y_3) = \phi_q(x_1, y_1) + \phi_q(x_2, y_2)$. 
+
+Det resterende tilfælde er når $(x_1, y_1)=(x_2, y_2)$ og $y_1 \neq 0$. Fra gruppeloven har vi, at 
+$(x_3, y_3)= 2(x_1, y_1)$, hvor
+\begin{align*}
+	x_3 = m^2 - 2x_1, \quad y_3 = m(x_1-x_3)-y_1, \ \ \text{hvor} \ m=\frac{3{x_1}^2+A}{2y_1}.
+\end{align*}
+Som tidligere opløftes dette til den $q$'ende potens
+\begin{align*}
+	{x_3}^q = {m'}^2 - 2{x_1}^q, \quad {y_3}^q=m'({x_1}^q-{x_3}^q) - {y_1}^q, \ \ \text{hvor}
+	\ m' = \frac{3^q ({x_1}^q)^2 + A^q}{2^q {y_1}^q}.
+\end{align*}
+Idet, at $2, 3, A \in \mathbb{F}_q$ følger det, at $2^q = 2, 3^q = 3$ og $A^q = A$. Vi står altså tilbage
+med formlen for fordoblingen af punktet $({x_1}^q, {y_1}^q)$ på den elliptiske kurve $E$. 
+
+Dermed har vi vist, at $\phi_q$ er en homomorfi for $E$. Da $\phi_q(x, y) = (x^q, y^q)$ er givet ved polynomier, som specielt er rationale funktioner, er $\phi_q$ en endomorfi. Den har tydeligvis grad $q$. Da $q=0$ i $\mathbb{F}_q$ er den afledte af $x^q$ lig nul, hvilket betyder at $\phi_q$ ikke er separabel.
 \end{proof}
+
+Bemærk, at da $\phi_q$ er en endomorfi for $E$ er ${\phi_q}^2 = \phi_q \circ \phi_q$ det også og dermed også 
+${\phi_q}^n = \phi_q \circ \phi_q \circ \ldots \circ \phi_q$ for $n \geq 1$. Da multiplikation med $-1$ også er en endomorfi er ${\phi_q}^n - 1$ også en endomorfi for $E$.
 
 \begin{lemma}
 \label{lemma03}
@@ -228,7 +264,9 @@ denne ligning til den $q$'ende potens og får, at
 \begin{align*}
 	(y^q)^2 = (x^q)^3 + (a^q x^q) + b^q,
 \end{align*}
-hvor vi har brugt Freshman's dream. Men dette betyder netop, at 
+hvor vi har brugt, at $(a+b)^q = a^q + b^q$ når $q$ er en potens af legemets karakteristik 
+(detaljer placeres i appendiks?).
+Men dette betyder netop, at 
 $(x^q, y^q) \in E(\overline{\mathbb{F}}_q)$, hvilket viser (1).
 For at vise (2) husker vi, at $\phi_q(x) = x \Leftrightarrow x \in \mathbb{F}_q$.
 Det følger da, at 
@@ -241,6 +279,7 @@ hvilket fuldfører beviset for (2).
 \end{proof}
 
 \begin{proposition}
+\label{prop_imp}
 Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$ og lad $n \geq 1$. Da gælder der,
 at 
 \begin{enumerate}
@@ -249,7 +288,7 @@ at
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-Da $(\phi_{q}^{n} - 1)((x,y)) = 0 \Leftrightarrow (x^q, y^q) = (x, y)$ følger det fra
+Da $(\phi_{q}^{n} - 1)(x,y) = 0 \Leftrightarrow (x^q, y^q) = (x, y)$ følger det fra
 lemma \ref{lemma03}, at $\ker(\phi_{q}^{n}-1)=E(\mathbb{F}_q)$.
 Da $\phi_{q}^{n}$ er Frobenius afbildningen for $\mathbb{F}_{q^n}$ følger \eqref{test} fra lemma \ref{lemma03}. At $\phi_{q}^{n} -1$ er separabel vil vi ikke vise, men et bevis kan findes
 i [LW]. Da følger det fra proposition \ref{deg_to_ker}, at $\#E(E_{q^n})=\deg(\phi_{q}^{n} -1)$.
@@ -258,6 +297,7 @@ i [LW]. Da følger det fra proposition \ref{deg_to_ker}, at $\#E(E_{q^n})=\deg(\
 \section{Hasses sætning}
 Med de foregående resultater er vi nu næsten klar til at vise Hasses sætning (sætning \ref{hasse}). Lad i det følgende afsnit
 \begin{align}
+	\label{hasse_as}
 	a = q + 1 - \#E(\mathbb{F}_q) = q + 1 - \deg(\phi_q - 1).
 \end{align}
 Da skal vi vise, at $|a| \leq 2 \sqrt{q}$ for at vise Hasses sætning. Først har vi dog følgende lemma
@@ -273,7 +313,7 @@ Lad $r, s \in \mathbb{Z}$ så $\gcd(s, q) = 1$. Da er
 Vi vil ikke give beviset her, da det bygger på en række af tekniske resultater. Et bevis kan findes i [LW].
 \end{proof}
 
-Nu er vi altså i stand til, at gives beviset for Hasses sætning:
+Nu er vi da i stand til, at gives beviset for Hasses sætning:
 
 \begin{proof}[Bevis for Hasses sætning]
 Da graden af en endomorfi altid er $\geq 0$ følger det fra lemma \ref{degree_lemma}, at 
@@ -285,7 +325,7 @@ for alle $r, s \in \mathbb{Z}$ med $\gcd(s, q)=1$. Da mængden
 \begin{align*}
 	\left\{ \frac{r}{s} \mid \gcd(s, q)=1 \right\} \subseteq \mathbb{Q},
 \end{align*}
-er tæt i $\mathbb{R}$ følger det, at $qx^2 - ax + 1 \geq 0$,
+er tæt i $\mathbb{R}$ (se appendiks?) følger det, at $qx^2 - ax + 1 \geq 0$,
 for alle $x \in \mathbb{R}$. Dette medfører at diskrimanten må være negativ eller lig $0$.
 Altså har vi, at 
 \begin{align*}
@@ -293,5 +333,91 @@ Altså har vi, at
 \end{align*}
 hvilket viser Hasses sætning.
 \end{proof}
+
+Eventuelt afsnit for torsionspunkter?
+
+Følgende sætning følger også fra proposition \ref{prop_imp}, som vil vise sig at være nyttigt til at udvide resultatet fra Hasses sætning.
+
+\begin{theorem}
+\label{trace_theorem}
+Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$. Lad $a$ være som i \eqref{hasse_as}. Da er $a$ det
+entydige heltal så
+\begin{align*}
+	{\phi_q}^2 - a \phi_q + q = 0,
+\end{align*}
+set som endomorfier. Med andre ord er $a$ det entydige heltal sådan, at 
+\begin{align*}
+	({x^q}^2, {y^q}^2) - a(x^q, y^q) + q(x, y) = \infty,
+\end{align*}
+for alle $(x, y) \in E(\clfq)$. Desuden er $a$ det entydige heltal der opfylder, at
+\begin{align*}
+	a \equiv \text{Trace}((\phi_q)_m) \modu{m},
+\end{align*}
+for alle $m$, hvor $\gcd(m, q)=1$.
+\end{theorem}
+
+Før vi starter på beviset for sætning \ref{trace_theorem} skal vi først se på torsions punkterne for en elliptisk kurve. For en elliptisk kurve $E$ givet over et legeme $K$ lader vi
+\begin{align*}
+	E[n] = \{ P \in E(\clk) \mid nP= \infty \}.
+\end{align*}
+Det er altså de punkter, hvis orden er endelig (alle punkter over et endeligt legeme er torsions punkter). 
+
+Opskriv eventuelt sætning 3.2?
+
+Lad da $\{\beta_1, \beta_2\}$ være en basis for $E[n] \simeq \mathbb{Z}_n \oplus \mathbb{Z}_n$. Ethvert element fra $E[n]$ kan altså skrives som $\beta_1 m_1 + \beta_2 m_2$, hvor $m_1, m_2 \in \mathbb{Z}$ er entydige mod $n$. For en homomorfi $\alpha : E(\clk) \to E(\clk)$ afbilleder $\alpha$ torsionspunkterne $E[n]$ til $E[n]$, derfor findes $a, b, c, d \in \mathbb{Z}$ sådan, at 
+\begin{align*}
+	\alpha(\beta_1) = a \beta_1 + b \beta_2, \quad \alpha(\beta_2) = c\beta_1 + d \beta_2.
+\end{align*}
+Vi kan altså repræsentere en sådan homomorfi med matricen
+\begin{align*}
+	\alpha_n = \left( 
+	\begin{matrix}
+		a & b \\ 
+		c & d 
+	\end{matrix} \right).
+\end{align*}
+
+\begin{proof}[Bevis for sætning \ref{trace_theorem}]
+Det følger direkte fra lemma \ref{deg_to_ker}, at hvis ${\phi_q}^2 -a \phi_q + q \neq 0$, altså hvis den ikke er nul-endomorfien, da er dens kerne endelig. Så hvis vi kan vise, at kernen er uendelig, da må endomorfien være lig $0$.
+
+Lad nu $m \geq 1$ være valgt sådan, at $\gcd(m, q) = 1$. Lad da $(\phi_q)_m$ være den matricen, som beskriver virkningen af $\phi_q$ på $E[m]$, som vi beskrev ovenfor. Lad da
+\begin{align*}
+	(\phi_q)_m = \left( 
+	\begin{matrix}
+		s & t \\
+		u & v
+	\end{matrix} \right).
+\end{align*}
+Da $\phi_q - 1$ er separabel følger det fra proposition \ref{deg_to_ker} og 3.15 (nævn resultat og henvis?, at
+\begin{align*}
+	\# \ker (\phi_q - 1) &= \deg(\phi_q - 1) \equiv \det((\phi_q)_m - I) \\ 
+	&= 
+	\left| \begin{matrix}
+		s-1 & t \\
+		u & v - 1 
+	\end{matrix} \right| \\
+	&= sv - tu - (s + v) + 1 \modu{m}.
+\end{align*}
+Fra 3.15 (henvis, opskriv?) har vi, at $sv-tu = \det((\phi_q)_m) \equiv q \modu{m}$. Fra \eqref{hasse_as} har vi, at 
+$\# \ker(\phi_q - 1) = q + 1 - a$ så det følger, at 
+\begin{align*}
+	\text{Trace}((\phi_q)_m) = s + v \equiv a \modu{m}.
+\end{align*}
+Idet vi husker, at $X^2 - aX + q$ er det karakteristiske polynomium for $(\phi_q)_m$ følger det fra
+Cayley-Hamiltons sætning fra lineær algebra, at
+\begin{align*}
+	{(\phi_q)_m}^2 - a(\phi_q)_m + qI \equiv I \modu{m},
+\end{align*}
+hvor $I$ er $2 \times 2$ identitetsmatricen. Vi har da, at endomorfien ${\phi_q}^2 -a\phi_q + q$ er nul på $E[m]$. Da der er uendeligt mange muligheder for valget af $m$ er kernen for ${\phi}^2 - a\phi_q + q$ uendelig. Dermed er endomorfien lig $0$.
+
+Mangler beviset for entydigheden af $a$.
+\end{proof}
+
+Endeligt vil vi vise en sætning, som gør det muligt at bestemme ordenen af en gruppe af punkter for en elliptisk kurve. Hvis vi kender ordenen af $E(\mathbb{F}_q)$ for et lille endeligt legeme gør følgende sætning det muligt, at bestemme ordenen af $E(\mathbb{F}_{q^n})$.
+
+Sætning 4.12 og bevis, som afslutning på kapitlet.
+
+
+
 
 
