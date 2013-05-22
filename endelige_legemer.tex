@@ -31,6 +31,7 @@ i dette kapitel vise Hasses sætning, som giver en vurdering for antallet af pun
 kurve over et endeligt legeme:
 
 \begin{theorem}[Hasse]
+\label{hasse}
 Lad $E$ være en elliptisk kurve over et endeligt legeme $\mathbb{F}_q$. Da gælder der, at 
 \begin{align*}
 	|q + 1 - \#E(\mathbb{F}_q)| \leq 2 \sqrt{q}.
@@ -58,8 +59,7 @@ funktioner $R_1(x, y)$ og $R_2(x, y)$, begge med koefficienter i $\clk$, så
 	\alpha(x, y) = (R_1(x, y), R_2(x, y)),
 \end{align*}
 for alle $(x, y) \in E(\clk)$. Det følger desuden, at $\alpha(\infty) = \infty$ da 
-$\alpha$ specielt er en homomorfi. Vi vil fremover antage, at $\alpha$ ikke er den 
-trivielle endomorfi, altså at der findes $(x, y)$ sådan at $\alpha(x, y) \neq \infty$.
+$\alpha$ specielt er en homomorfi. Den trivielle endomorfi angives med $0$ og er den endomorfi, som sender ethvert punkt til $\infty$. Vi vil fremover antage, at $\alpha$ ikke er den trivielle endomorfi, hvilket betyder at der findes $(x, y)$ sådan at $\alpha(x, y) \neq \infty$.
 
 Vi ønsker da, at finde en standard repræsentation for de rationale funktioner, som
 beskriver en endomorfi. For en elliptisk kurve $E$ på Weierstrass normalform gælder
@@ -71,6 +71,7 @@ hvor $k \in \mathbb{N}$. På lignende vis har vi også, at
 \begin{align*}
 	y^{2k} y = (x^3 + Ax + B)^k y.
 \end{align*}
+Vi kan altså erstatte en lige potens af $y$ med et polynomium der kun afhænger af $x$, og en ulige potens kan erstattes af $y$ ganget med et polynomium der kun afhænger af $x$.
 For en rational funktion $R(x, y)$ kan vi nu beskrive en anden rational funktion,
 som stemmer overens med denne på punkter fra $E(\clk)$. Vi kan med andre ord antage,
 at 
@@ -94,7 +95,7 @@ Lader vi nu $\alpha$ være en endomorfi givet ved
 \end{align*}
 får vi, da $\alpha$ er en homomorfi, at 
 \begin{align*}
-	\alpha(x, -y) = \alpha(-(x, y)) - \alpha(x, y).
+	\alpha(x, -y) = \alpha(-(x, y)) =  -\alpha(x, y).
 \end{align*}
 Dette medfører, at 
 \begin{align*}
@@ -105,21 +106,192 @@ $q_2(x)=0$ for $R_1$ og $q_1(x)=0$ for $R_2$. Vi kan altså antage, at
 \begin{align*}
 	\alpha(x, y) = (r_1(x), r_2(x)y),
 \end{align*}
-hvor $r_1(x)$ og $r_2(x)$ er rationale funktioner. Skriv da $r_1(x)=p(x)/q(x)$ (opgave om
-den rent faktisk er defineret).
+hvor $r_1(x)$ og $r_2(x)$ begge er rationale funktioner. Skriv da $r_1(x)=p(x)/q(x)$. (For $q(x) \neq 0$ giver opg. 2.19, at $r_2(x)$ er defineret, så funktionerne der giver $\alpha$ er defineret. Vis det.).
+
+Vi er nu i stand til at komme en definition for graden af en endomorfi:
+
+\begin{definition}
+Graden af en endomorfi $\alpha$ er givet ved
+\begin{align*}
+	\deg(\alpha) = \max \{ \deg p(x), \deg q(x) \},
+\end{align*}
+når $\alpha$ ikke er den trivielle endomorfi, altså for $\alpha \neq 0$. For $\alpha = 0$ lader vi $\deg (\alpha) = 0$.
+\end{definition}
+
+En endomorfi siges at være separabel hvis den afledede $r_1'(x) \neq 0$.
+
+\begin{example}
+Eksempel på en separabel endomorfi. Bogen ser på $2P$ som også er oplagt, men måske skulle man vælge en mere interessant.
+\end{example}
+
+Den følgende proposition er essentiel idet, at det tilknytter graden af en endomorfi til antallet af elementer i kernen for selvsamme endomorfi, hvilket vi skal benytte direkte i beviset for Hasses sætning.
+
+\begin{proposition}
+\label{deg_to_ker}
+Lad $E$ være en elliptisk kurve. Lad $\alpha \neq 0$ være en separabel 
+endomorfi for $E$. Da er 
+\begin{align*}
+	\deg \alpha = \# \ker (\alpha),
+\end{align*}
+hvor $\ker (\alpha) = $ angiver kernen for homomorfien 
+$\alpha : E(\clk) \to E(\clk)$. I tilfældet hvor $\alpha \neq 0$ ikke
+er separabel gælder der, at 
+\begin{align*}
+	\deg \alpha > \# \ker (\alpha).
+\end{align*}
+\end{proposition}
+\begin{proof}
+Vi skriver $\alpha$ på standardformen, som vi introducerede tidligere, altså
+sættes
+\begin{align*}
+	\alpha(x, y) = (r_1(x), r_2(x) y)),
+\end{align*}
+hvor $r_1(x) = p(x)/q(x)$. Da $\alpha$ er antaget til at være separabel er 
+$r_1' \neq 0$ og dermed er $pq'-p'q$ ikke nulpolynomiet. Lad nu
+\begin{align*}
+	S = \{ x \in \clk \mid (pq' - p'q)(x)q(x) = 0 \}.
+\end{align*}
+Lad da $(a, b) \in E(\clk)$ være valgt sådan, at følgende er opfyldt
+\begin{enumerate}
+	\item $a \neq 0$, $b \neq 0$ og $(a, b) \neq \infty$,
+	\item $\deg (p(x) - aq(x)) = \max \{ \deg p(x), \deg q(x) \} = \deg \alpha$,
+	\item $a \notin r_1(S)$,
+	\item $(a, b) \in \alpha(E(\clk))$.
+\end{enumerate}
+Da $pq'-p'q$ ikke er 
+nulpolynomiet er $S$ en endelig mængde, hvilket dermed også betyder, at 
+$\alpha(S)$ er en endelig mængde. Funktionen $r_1(x)$ antager uendeligt 
+mange forskellige værdier når $x$ gennemløber $\clk$, da en algebraisk aflukning indeholder uendeligt mange elementer.
+%da en algebraisk aflukning indeholder uendeligt mange elementer.
+Da der for hvert $x$ er et punkt $(x, y) \in E(\clk)$ følger det, at 
+$\alpha(E(\clk))$ er en uendelig mængde. Det er altså muligt, at vælge et
+punkt $(a, b) \in E(\clk)$ med egenskaberne ovenfor.
+
+Vi ønsker at vise, at der netop er $\deg \alpha$ punkter $(x_1, y_1) \in E(\clk)$ sådan,
+at $\alpha(x_1, y_1) = (a, b)$. For et sådan punkt gælder der, at 
+\begin{align*}
+	\frac{p(x_1)}{q(x_1)} = a, \quad r_2(x_1) y_1 = b.
+\end{align*}
+Da $(a, b) \neq \infty$ er $q(x_1) \neq 0$. % Øvelse giver, at r_2(x_1) er defineret
+Da $b \neq 0$ har vi også, at $y_1 = b / r_2(x_1)$. Dette betyder, at $y_1$ er bestemt
+ved $x_1$, så vi behøver kun at tælle værdier for $x_1$. Fra antagelse (2) har vi, at 
+$p(x) - aq(x) = 0$ har $\deg \alpha$ rødder talt med multiplicitet. Vi skal altså vise,
+at $p-aq$ ikke har nogen multiple rødder. Antag for modstrid, at $x_0$ er en multipel
+rod. Da har vi, at
+\begin{align*}
+	p(x_0) - aq(x_0) = 0 \quad \text{og} \quad p'(x_0) - aq'(x_0) = 0.
+\end{align*}
+Dette kan omskrives til ligningerne $p(x_0)=aq(x_0)$ og $aq'(x_0)=p'(x_0)$, 
+som vi ganger med hinanden og får, at 
+\begin{align*}
+	a p(x_0)q'(x_0) = ap'(x_0)q(x_0).
+\end{align*} 
+Da $a \neq 0$ pr. (1) giver det os, at $x_0$ er en rod i $pq'-p'q$ så $x_0 \in S$.
+Altså er $a=r_1(x_0) \in r_1(S)$, hvilket er i modstrid med (3). Dermed har 
+$p-aq$ netop $\deg \alpha$ forskellige rødder. Da der er præcist $\deg \alpha$ 
+punkter $(x_1, y_1)$ så $\alpha(x_1, y_1) = (a, b)$ har kernen for $\alpha$ netop
+$\deg \alpha$ elementer.
+\end{proof}
 
 
+\section{Frobenius endomorfien}
 
+En endomorfi med en absolut kritisk rolle for teorien om elliptiske kurver over endelige legemer $\mathbb{F}_q$ er Frobenius endomorfien $\phi_q$. For en elliptisk kurve $E$ over et endeligt legeme $\mathbb{F}_q$ er denne givet ved
+\begin{align}
+	\phi_q (x, y) = (x^q, y^q).
+\end{align}
+Denne endomorfi spiller en vigtig rolle i beviset for Hasses sætning, men vi skal først vise, at den har nogle specielle egenskaber:
 
+\begin{lemma}
+\label{lemma_end_degree_not_sep}
+Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$. Da er $\phi_q$ en 
+endomorfi for $E$ af grad $q$, desuden er $\phi_q$ ikke seperabel.
+\end{lemma}
+\begin{proof}
+Vi bemærker først, at $\phi_q(x, y) = (x^q, y^q)$ er en funktion givet ved polynomier, som specielt er rationale. Så hvis $\phi_q$ er en endomorfi er graden af den $q$.
 
+For at vise, at $\phi_q$ er en endomorfi skal vi vise, at $\phi_q : E(\clfq) \to E(\clfq)$ er en homomorfi.
+\end{proof}
 
+\begin{lemma}
+\label{lemma03}
+Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$, og lad 
+$(x, y) \in E(\overline{\mathbb{F}}_q)$. Da gælder der, at 
+\begin{enumerate}
+	\item $\phi_q(x, y) \in E(\overline{\mathbb{F}}_q)$,
+	\item $(x, y) \in E(\mathbb{F}_q) \Leftrightarrow \phi_q(x, y)=(x, y)$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Vi har, at $y^2 = x^3 + ax + b$, hvor $a, b \in \mathbb{F}_q$. Vi opløfter 
+denne ligning til den $q$'ende potens og får, at 
+\begin{align*}
+	(y^q)^2 = (x^q)^3 + (a^q x^q) + b^q,
+\end{align*}
+hvor vi har brugt Freshman's dream. Men dette betyder netop, at 
+$(x^q, y^q) \in E(\overline{\mathbb{F}}_q)$, hvilket viser (1).
+For at vise (2) husker vi, at $\phi_q(x) = x \Leftrightarrow x \in \mathbb{F}_q$.
+Det følger da, at 
+\begin{align*}
+	(x, y) \in E(\mathbb{F}_q) &\Leftrightarrow x, y \in \mathbb{F}_q \\
+	&\Leftrightarrow \phi_q(x) = x \ \text{og} \ \phi_q(y) = y \\
+	&\Leftrightarrow \phi_q(x, y) = (x, y),
+\end{align*}
+hvilket fuldfører beviset for (2).
+\end{proof}
 
+\begin{proposition}
+Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$ og lad $n \geq 1$. Da gælder der,
+at 
+\begin{enumerate}
+	\item $\ker (\phi_{q}^n - 1) = E(\mathbb{F}_{q^n})$. \label{test}
+	\item $\phi_{q}^{n}-1$ er separabel, så $\#E(\mathbb{F}_{q^n})=\deg (\phi_{q}^{n}-1)$. 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Da $(\phi_{q}^{n} - 1)((x,y)) = 0 \Leftrightarrow (x^q, y^q) = (x, y)$ følger det fra
+lemma \ref{lemma03}, at $\ker(\phi_{q}^{n}-1)=E(\mathbb{F}_q)$.
+Da $\phi_{q}^{n}$ er Frobenius afbildningen for $\mathbb{F}_{q^n}$ følger \eqref{test} fra lemma \ref{lemma03}. At $\phi_{q}^{n} -1$ er separabel vil vi ikke vise, men et bevis kan findes
+i [LW]. Da følger det fra proposition \ref{deg_to_ker}, at $\#E(E_{q^n})=\deg(\phi_{q}^{n} -1)$.
+\end{proof}
 
+\section{Hasses sætning}
+Med de foregående resultater er vi nu næsten klar til at vise Hasses sætning (sætning \ref{hasse}). Lad i det følgende afsnit
+\begin{align}
+	a = q + 1 - \#E(\mathbb{F}_q) = q + 1 - \deg(\phi_q - 1).
+\end{align}
+Da skal vi vise, at $|a| \leq 2 \sqrt{q}$ for at vise Hasses sætning. Først har vi dog følgende lemma
 
+\begin{lemma}
+\label{degree_lemma}
+Lad $r, s \in \mathbb{Z}$ så $\gcd(s, q) = 1$. Da er 
+\begin{align*}
+	\deg(r \phi_q - s) = r^2 q + s^2 - rsa.
+\end{align*}
+\end{lemma}
+\begin{proof}
+Vi vil ikke give beviset her, da det bygger på en række af tekniske resultater. Et bevis kan findes i [LW].
+\end{proof}
 
+Nu er vi altså i stand til, at gives beviset for Hasses sætning:
 
-
-
-
+\begin{proof}[Bevis for Hasses sætning]
+Da graden af en endomorfi altid er $\geq 0$ følger det fra lemma \ref{degree_lemma}, at 
+\begin{align*}
+	r^2q+s^2 -rsa = q \left( \frac{r^2}{s^2} \right) - \frac{rsa}{s^2} + 1 
+	\geq 0,
+\end{align*}
+for alle $r, s \in \mathbb{Z}$ med $\gcd(s, q)=1$. Da mængden
+\begin{align*}
+	\left\{ \frac{r}{s} \mid \gcd(s, q)=1 \right\} \subseteq \mathbb{Q},
+\end{align*}
+er tæt i $\mathbb{R}$ følger det, at $qx^2 - ax + 1 \geq 0$,
+for alle $x \in \mathbb{R}$. Dette medfører at diskrimanten må være negativ eller lig $0$.
+Altså har vi, at 
+\begin{align*}
+	a^2 - 4q \leq 0 \Rightarrow |a| \leq 2 \sqrt{q},
+\end{align*}
+hvilket viser Hasses sætning.
+\end{proof}
 
 
