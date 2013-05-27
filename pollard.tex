@@ -8,48 +8,41 @@ en faktor ved at undersøge om først $2 \mid n$, dernæst om
 $3 \mid n$ osv. Vi vil da finde en faktor senest når vi kommer
 til $\sqrt{n}$. Dette bliver hurtigt uoverkommeligt når $n$ er stort.
 
-\section{Pollards $p-1$ metode}
-Vi skal i dette afsnit beskrive Pollards $p-1$ algoritme.
-
-
-
-
-
-Før vi beskriver algoritmen skal vi først bruge følgende 
-definition.
-
-\begin{definition}[$B$-potensglat]
-Lad $B \in \mathbb{Z}^{+}$. Hvis $n \in \mathbb{Z}^{+}$ har 
-primtalsfaktoriseringen $n = \prod {p_i}^{e_i}$, da siges $n$ 
-at være $B$-potensglat hvis ${p_i}^{e_i} \leq B$ for alle $i$.
-\end{definition}
-
-\begin{example}
-Da $50 = 2 \cdot 5^2$ følger det, at $50$ er $25$-potensglat. 
-Bemærk, at den netop ikke er $5$-potensglat.
-\end{example}
-
-Med disse detaljer på plads er vi nu klar til, at beskrive Pollards
-$p-1$ algoritme. Antag at det sammensatte tal $n$, som vi ønsker at
-faktorisere, har en primfaktor $p$ sådan, at $p-1$ har mange små
-primtalsfaktorer. Fra Fermats lille sætning ved vi, at 
+\section{Pollards $p-1$ algoritme}
+ 
+Lad $n$ være et sammensat tal og lad $p$ være en primfaktor for $n$. Vi ved fra Fermats lille sætning, at $a^{p-1} \equiv 1 \modu{p}$ når $\gcd(a, p) = 1$. Hvis vi da kendte $p-1$ kunne vi bestemme $p$ (udover den åbenlyse måde) ved
 \begin{align*}
-	a^{p-1} \equiv 1 \modu{p},
+	\gcd(a^{p-1} - 1, n) = p. 
 \end{align*}
-hvilket betyder at $p \mid \gcd(a^{p-1} - 1, n)$. Men da vi ikke kender
-$p$ (det er jo den faktor vi leder efter)
+(måske et multiplum af $p$?), da hvis $x \equiv 1 \modu{l}$, hvor $l$ er en faktor i $n$, er $\gcd(x-1, n)$ divisibel med denne faktor $l$.
+
+Vi kender dog ikke $p-1$ og vi kan derfor ikke foretage denne udregning. Det viser sig dog, at vi kan nøjes med et multiplum af $p-1$, da
+\begin{align*}
+	a^{t(p-1)} - 1 = (a^{p-1})^k - 1 \equiv 1^k - 1 \equiv 0 \modu{p}.
+\end{align*}
+Idéen er da, at vi vælger et heltal
+\begin{align*}
+	k = 2^{e_2} \cdot 3^{e_3} \cdot 5^{e_5} \cdots r^{e_r},
+\end{align*}
+hvor $2, 3, \ldots, r$ er primtal og $e_1, e_2, \ldots, e_r$ er små positive heltal. Vi udregner da $\gcd(a^k - 1, n)$. Hvis vi er i det heldige tilfælde, hvor $n$ har en faktor sådan, at $p-1 \mid k$, da vil $p \mid a^k - 1$ og
+vi har så, at
+\begin{align*}
+	\gcd(a^k - 1, n) \geq p > 1.
+\end{align*}
+Hvis $\gcd(a^k - 1, n) \neq n$ har vi altså fundet en ikke-triviel faktor for $n$ og vi kan dele $n$ i to faktorer og gentage de ovenstående trin. Hvis vi derimod har, at $\gcd(a^k -1, n) = n$ vælger vi et andet $a$ og forsøger igen, og hvis $\gcd(a^k-1,n)=1$ vælger vi et større $k$.
+
+Dette er tankegangen i Pollards $p-1$ algoritme og vi opsummerer det i algoritmen:
 
 \begin{algorithm}[Pollards $p-1$ algoritme]
 Lad $n \geq 2$ være et sammensat tal, som er tallet vi ønsker at 
 finde en faktor for.
 \begin{enumerate}
-	\item Vælg et tal $k \in \mathbb{Z}^+$ sådan, at $k$ er et produkt
-	af mange små primtal opløftet i små potenser. F.eks. kan $k$ vælges
-	som
+	\item Vælg $k \in \mathbb{Z}^+$ sådan, at $k$ er et produkt
+	af mange små primtal opløftet i små potenser. Eksempelvis kan $k$ vælges til at være
 	\begin{align*}
 		k = \lcm [1, 2, \ldots, K],
 	\end{align*}
-	for $K \in \mathbb{Z}^+$.
+	for et $K \in \mathbb{Z}^+$ og hvor $\lcm$ er det mindste fælles multiplum.
 	\item Vælg et heltal $a$ sådan, at $1 < a <n$.
 	\item Udregn $\gcd(a, n)$. Hvis $\gcd(a, n) > 1$ har vi fundet en
 	ikke-triviel faktor for $n$ og vi er færdige. Ellers fortsæt til næste
@@ -58,54 +51,78 @@ finde en faktor for.
 	faktor for $n$ og vi er færdige. Hvis $D = 1$ gå da tilbage til trin 1
 	og vælg et større $k$. Hvis $D = n$ gå da til trin 2 og vælg et nyt $a$. 
 \end{enumerate}
-
-
 \end{algorithm}
 
-
-
 Følgende er et eksempel på anvendelsen af Pollards algoritme,
-hvor det går godt, altså hvor $p-1$ har små primfaktorer.
+hvor det går godt, altså hvor $p-1$ har små primfaktorer:
 
 \begin{example}
 Vi vil forsøge at faktorisere 
 \begin{align*}
-	N = 30042491.
+	n = 30042491.
 \end{align*}
-Vi ser at $2^{N-1} = 2^{30042490} \equiv 25171326 \ (\textrm{mod}\ 30042491)$,
+Vi ser at $2^{n-1} = 2^{30042490} \equiv 25171326 \ (\textrm{mod}\ 30042491)$,
 så $N$ er ikke et primtal. Vi vælger som beskrevet i algoritmen
 \begin{align*}
-	a = 2 \quad \text{og} \quad k = \mathrm{LCM}(1,2,3,4,5,6,7) = 420.
+	a = 2 \quad \text{og} \quad k = \mathrm{LCM}[1,2, \ldots, 7] = 420.
 \end{align*}
 Da $420 = 2^2 + 2^5 + 2^7 + 2^8$ skal vi udregne $2^{2^i}$ for 
-$0 \leq i \leq 8$. Vi springer de første par udregninger over.
+$0 \leq i \leq 8$. Dette resulterer i følgende tabel:
 
 \begin{center}
-\begin{tabular}{|c|c|}
+\begin{tabular}{c c c c}
+$i$ & $2^{2^i} \modu{n}$ & & \\ 
 \hline 
-$i$ & $2^{2^i} \ (\mathrm{mod} \ N)$ \\ 
-\hline 
-5 & 28933574 \\ 
-6 & 27713768 \\ 
-7 & 10802810 \\ 
-8 & 16714289 \\ 
-\hline 
+1 & 4 & 5 & 28933574 \\ 
+2 & 16 & 6 & 27713768 \\ 
+3 & 256 & 7 & 10802810 \\ 
+4 & 65536 & 8 & 16714289 \\ 
+5 & 28933574 & & 
 \end{tabular} 
 \end{center}
 
 Denne tabel gør det forholdsvist let for os, at bestemme
 \begin{align*}
 	2^{420} &= 2^{2^2 + 2^5 + 2^7 + 2^8} \\
-	&\equiv 16 \cdot 28933574 \cdot 10802810 \cdot 16714289 \ 
-	(\mathrm{mod} \ 30042491) \\
-	&\equiv 27976515 \ (\mathrm{mod} \ 30042491)
+	&\equiv 16 \cdot 28933574 \cdot 10802810 \cdot 16714289
+	\modu{30042491} \\
+	&\equiv 27976515 \modu{30042491}.
 \end{align*}
 
 Ved anvendelse af den euklidiske algoritme finder vi dernæst, at
 \begin{align*}
-	\mathrm{gcd}(2^{420} - 1, N) = \mathrm{gcd}(27976514, 30042491) = 1.
+	\mathrm{gcd}(2^{420} - 1 \modu{n}, n) = \mathrm{gcd}(27976514, 30042491) = 1.
 \end{align*}
 Her fejler testen altså og vi er nået frem til, at $N$ ikke har nogle 
-primtalsfaktorer $p$ sådan, at $p-1$ deler $420$.
+primtalsfaktorer $p$ sådan, at $p-1$ deler $420$. Algoritmen foreskriver da, at vi skal vælge et nyt $k$. Vi lader
+\begin{align*}
+	k = \mathrm{LCM}[1,2, \ldots, 11] = 27720.
+\end{align*}
+Da $27720 = 2^{14} + 2^{13} + 2^{11} + 2^{10} + 2^{6} + 2^3$ skal vi udvide tabellen til at indeholde værdierne for $2^{2^i}$ for $0 \leq i \leq 14$:
+
+\begin{center}
+\begin{tabular}{c c c c}
+$i$ & $2^{2^i} \modu{n}$ & &  \\ 
+\hline 
+9 & 19694714 & 12 & 26818902 \\ 
+10 & 3779241 & 13 & 8658967 \\ 
+11 & 11677316 & 14 & 3783587 \\ 
+\end{tabular} 
+\end{center}
+
+Vi fortsætter på samme måde, som vi gjorde før og bestemmer
+\begin{align*}
+	2^{27720} &= 2^{2^3 + 2^{2^6} + 2^{2^{10}} + 2^{2^{11}} + 2^{2^{13}} + 2^{2^{14}}} \\
+	&= 256 \cdot 27713768 \cdot 3779241 \cdot 11677316 \cdot 8658967 \cdot 3783587 \\
+	&= 16458222 \modu{30042491}.
+\end{align*}
+Vi finder dernæst, at
+\begin{align*}
+	\gcd(2^{27720} - 1 \modu{n}, n) = \gcd(16458221, 30042491) = 9241,
+\end{align*}
+hvilket betyder at vi har fundet en ikke-triviel faktor for $n$. Mere præcist har vi fundet faktoriseringen
+\begin{align*}
+	30042491 = 3251 \cdot 9241.
+\end{align*}
 
 \end{example}
