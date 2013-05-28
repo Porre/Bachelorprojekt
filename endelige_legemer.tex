@@ -12,6 +12,7 @@ $E$ være den elliptiske kurve $y^2 = x^3 - x$ over $\mathbb{F}_5$. For at beste
 ordenen af $E(\mathbb{F})$ laver vi en tabel over mulige værdier for $x$, $x^3 - x \modu{5}$
 og for $y$ som er kvadratrødderne af $x^3 - x$. Dette giver os samtlige punkter på kurven:
 
+
 \begin{center}
 \begin{tabular}{c c c c }
 $x$ & $x^3 - x$ & $y$ & Punkter \\ 
@@ -26,7 +27,7 @@ $\infty$ & & $\infty$ & $\infty$ \\
 \end{center}
 
 Bemærk, at $\sqrt{2} \notin \mathbb{Z}$ og derfor har $2$ ikke en kvadratrod i $\mathbb{F}_5$.
-Dette giver os, at $E(\mathbb{F}_5)$ har orden $6$ og vi skriver $\#E(\mathbb{F}_5)=6$. Vi skal
+Dette giver os, at $E(\mathbb{F}_5)$ har orden $7$ og vi skriver $\#E(\mathbb{F}_5)=7$. Vi skal
 i dette kapitel vise Hasses sætning, som giver en vurdering for antallet af punkter på en elliptisk
 kurve over et endeligt legeme:
 
@@ -37,64 +38,67 @@ Lad $E$ være en elliptisk kurve over et endeligt legeme $\mathbb{F}_q$. Da gæl
 	|q + 1 - \#E(\mathbb{F}_q)| \leq 2 \sqrt{q}.
 \end{align*}
 \end{theorem}
-
 Vi vil i kapitel 3 se på en af anvendelserne, som disse elliptiske kurver over endelige legemer har, 
 nemlig indenfor faktorisering af heltal.
 
-
 \section{Endomorfier}
 Vi skal først have etableret nogle resultater vedrørende endomorfier på endelige legemer, som
-er nødvendige for beviset af Hasses sætning. Vi begynder med følgende definition:
+er nødvendige for beviset af Hasses sætning. Lad $K$ være et legeme og $\clk$ dens tilhørende algebraiske aflukning. Når vi skriver om en elliptisk kurve $E$ menes den at være på formen $y^2 = x^3 + Ax + B$. 
+
+Vi begynder da med følgende definition:
 
 \begin{definition}
 En endomorfi på $E$ er en homomorfi $\alpha : E(\clk) \to E(\clk)$ givet
 ved rationale funktioner.
 \end{definition}
 
-Med en rational funktion forståes en kvotient af polynomier og med $\clk$ menes den algebraiske
-aflukning af $K$. Det vil altså sige, at 
+Med en rational funktion forstår vi en kvotient af polynomier. Det vil altså sige, at 
 en endomorfi $\alpha$ skal opfylde, at $\alpha(P_1 + P_2) = \alpha(P_1) + \alpha(P_2)$ 
 og der skal findes rationale 
 funktioner $R_1(x, y)$ og $R_2(x, y)$, begge med koefficienter i $\clk$, så
 \begin{align*}
 	\alpha(x, y) = (R_1(x, y), R_2(x, y)),
 \end{align*}
-for alle $(x, y) \in E(\clk)$. Det følger desuden, at $\alpha(\infty) = \infty$ da 
-$\alpha$ specielt er en homomorfi. Den trivielle endomorfi angives med $0$ og er den endomorfi, som sender ethvert punkt til $\infty$. Vi vil fremover antage, at $\alpha$ ikke er den trivielle endomorfi, hvilket betyder at der findes $(x, y)$ sådan at $\alpha(x, y) \neq \infty$.
+for alle $(x, y) \in E(\clk)$. da $\alpha$ er en homomorfi gælder der, at $\alpha(\infty)=\infty$. Den trivielle endomorfi angives med $0$ og er den endomorfi, som sender ethvert punkt til $\infty$. Vi vil fremover antage, at $\alpha$ ikke er den trivielle endomorfi, hvilket betyder at der findes $(x, y)$ sådan at $\alpha(x, y) \neq \infty$.
 
-Vi ønsker da, at finde en standard repræsentation for de rationale funktioner, som
-beskriver en endomorfi. For en elliptisk kurve $E$ på Weierstrass normalform gælder
-der, at $y^2 = x^3 + Ax + B$ for alle $(x, y) \in E(\clk)$, hvilket betyder at
+\begin{example}
+Skal vi have en endomorfi her?
+\end{example}
+
+Vi ønsker nu, at finde en standard repræsentation for de rationale funktioner, som en endomorfi er givet ved. Følgende sætning gør dette muligt for os:
+
+\begin{theorem}
+\label{end_rep_theorem}
+Lad $E$ være en elliptisk kurve over et legeme $K$. En endomorfi $\alpha$ kan da skrives som
 \begin{align*}
-	y^{2k} = (x^3 + Ax + B)^k,
+	\alpha(x, y) = (r_1(x), r_2(x)y) = \left( \frac{p(x)}{q(x)}, \frac{s(x)}{t(x)}y \right),
 \end{align*}
-hvor $k \in \mathbb{N}$. På lignende vis har vi også, at 
+hvor $p, q$ henholdsvis $s, t$ ikke har nogen fælles faktor.
+\end{theorem}
+\begin{proof}
+For et punkt $(x, y) \in E(\clk)$ gælder der, at $y^2 = x^3 + Ax + B$ så vi har også, at 
 \begin{align*}
-	y^{2k} y = (x^3 + Ax + B)^k y.
+	y^{2k} = (x^3 + Ax + B)^k \quad \text{og} \quad y^{2k+1}= y^{2k}y = (x^3 + Ax + B)^k y, \quad k \in \mathbb{N}.
 \end{align*}
-Vi kan altså erstatte en lige potens af $y$ med et polynomium der kun afhænger af $x$, og en ulige potens kan erstattes af $y$ ganget med et polynomium der kun afhænger af $x$.
-For en rational funktion $R(x, y)$ kan vi nu beskrive en anden rational funktion,
-som stemmer overens med denne på punkter fra $E(\clk)$. Vi kan med andre ord antage,
-at 
+Vi kan altså erstatte en lige potens af $y$ med et polynomium der kun afhænger af $x$, og en ulige potens med $y$ ganget med et polynomium der kun afhænger af $x$. For en rational funktion $R(x, y)$ kan vi da beskrive en anden rational funktion, som stemmer overens med denne på punkter fra $E(\clk)$. Vi kan altså antage, at
 \begin{align}
-	\label{rational}
+	\label{rational_1}
 	R(x, y) = \frac{p_1(x) + p_2(x)y}{p_3(x)+p_4(x)y}.
 \end{align}
-Det er endda muligt, at gøre dette endnu simplere ved at gange udtrykket i \eqref{rational}
-med $p_3(x)-p_4(x)y$, da 
+Vi kan endda gøre det endnu simplere ved at gange udtrykket i \eqref{rational_1} med $p_3(x)-p_4(x)$, hvilket giver 
 \begin{align*}
 	(p_3(x) - p_4(x)y)(p_3(x)+p_4(x)y) = p_3(x)^2 - p_4(x)^2 y^2,
 \end{align*}
-hvorefter vi kan erstatte $y^2$ med $x^3+Ax+B$. Vi får da, at 
+hvorefter vi kan erstatte $y^2$ med $x^3 + Ax + B$. Dette giver os altså, at 
 \begin{align}
 	\label{rational_final}
 	R(x, y) = \frac{q_1(x) + q_2(x)y}{q_3(x)}.
 \end{align}
-Lader vi nu $\alpha$ være en endomorfi givet ved
+Da $\alpha$ er en endomorfi er den givet ved
 \begin{align*}
 	\alpha(x, y) = (R_1(x, y), R_2(x, y)),
 \end{align*}
-får vi, da $\alpha$ er en homomorfi, at 
+hvor $R_1$ og $R_2$ er rationale funktioner. Da $\alpha$ specielt er en homomorfi bevarer den strukturen for en elliptisk kurve så vi har, at
 \begin{align*}
 	\alpha(x, -y) = \alpha(-(x, y)) =  -\alpha(x, y).
 \end{align*}
@@ -102,14 +106,51 @@ Dette medfører, at
 \begin{align*}
 	R_1(x, -y) = R_1(x, y) \quad \text{og} \quad R_2(x, -y) = -R_2(x, y).
 \end{align*}
-Skrives $R_1$ og $R_2$ på samme form som i \eqref{rational_final} følger det da, at 
-$q_2(x)=0$ for $R_1$ og $q_1(x)=0$ for $R_2$. Vi kan altså antage, at 
+Skriver vi $R_1$ på samme form som i \eqref{rational_final} må $q_2(x) = 0$, og ligeledes må vi for $R_2$ have at $q_1(x) = 0$. Vi kan altså antage, at
 \begin{align*}
 		\alpha(x, y) = (r_1(x), r_2(x)y),
 \end{align*}
-hvor $r_1(x)$ og $r_2(x)$ begge er rationale funktioner. Skriv da $r_1(x)=p(x)/q(x)$. (For $q(x) \neq 0$ giver opg. 2.19, at $r_2(x)$ er defineret, så funktionerne der giver $\alpha$ er defineret. Vis det.).
+hvor $r_1(x)$ og $r_2(x)$ er rationale funktioner. Skriv da
+\begin{align*}
+	r_1(x) = \frac{p(x)}{q(x)} \quad \text{og} \quad \frac{s(x)}{t(x)}y,
+\end{align*}
+hvor $p, q$ henholdsvis $s, t$ ikke har nogen fælles faktorer. Hvis $q(x)=0$ for et punkt $(x, y)$ lader vi 
+$\alpha(x, y) = \infty$. Hvis $q(x) \neq 0$ giver (ii) i lemma \ref{rational_lemma}, at $r_2(x)$ da også vil være defineret.
+\end{proof}
 
-Vi er nu i stand til at komme en definition for graden af en endomorfi:
+\begin{lemma}
+\label{rational_lemma}
+Lad $\alpha$ være en endomorfi givet ved
+\begin{align*}
+	\alpha(x, y) = \left( \frac{p(x)}{q(x)}, \frac{s(x)}{t(x)}y \right),
+\end{align*}
+for en elliptisk kurve $E$. Lad $p, q$ henholdsvis $s, t$ være sådan, at de ikke har nogen fælles rødder. Da har vi, at
+\begin{enumerate}[(i)]
+	\item For et polynomium $u(x)$, som ikke har en fælles rod med $q(x)$ har vi, at 
+	\begin{align*}
+		\frac{(x^3+Ax+B)s(x)^2}{t(x)^2} = \frac{u(x)}{q(x)^3}.
+	\end{align*}
+	\item Hvis $t(x_0)=0$ er $q(x_0)=0$, hvilket betyder at hvis $q(x_0) \neq 0$ er $\alpha(x_0, y_0)$ defineret.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(i) For et punkt $(x, y) \in E(K)$ har vi også, at $\alpha(x, y) \in E(K)$, da $\alpha$ er en endomorfi. Derfor har vi, at
+\begin{align*}
+	\frac{(x^3 + Ax + B)s(x)^2}{t(x)^2} &= \frac{y^2 s(x)^2}{t(x)^2} = \left( \frac{s(x)}{t(x)}y \right)^2 \\
+	&= \left( \frac{p(x)}{q(x)} \right)^3 + A \left( \frac{p(x)}{q(x)} \right) + B \\
+	&= \frac{p(x)^3 + A p(x) q(x)^2 + B q(x)^3}{q(x)^3} = \frac{u(x)}{q(x)^3},
+\end{align*}
+hvor $u(x) = p(x)^3 + A p(x) q(x)^2 + B q(x)^3$. Vi skal dog stadigvæk vise, at $u(x)$ og $q(x)$ ikke har en fælles rod. Antag, at $q(x_0) = 0$. Hvis $u(x_0)=0$ har vi, at
+\begin{align*}
+	u(x_0)=p(x_0)^3 + A p(x_0) q(x_0)^2 + B q(x_0)^3 = 0 &\Rightarrow p(x_0)^3 = 0 \\ &\Rightarrow p(x_0)=0,
+\end{align*}
+men $p$ og $q$ havde pr. antagelse ingen fælles rødder. Så hvis $q(x_0) = 0$ må $u(x_0) \neq 0$ og de har dermed ingen fælles rødder.
+
+(ii) 
+
+\end{proof}
+
+Med denne standard repræsentation for endomorfier er vi nu i stand til at give en definition for graden af en endomorfi:
 
 \begin{definition}
 Graden af en endomorfi $\alpha$ er givet ved
