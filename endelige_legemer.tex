@@ -112,7 +112,7 @@ Skriver vi $R_1$ på samme form som i \eqref{rational_final} må $q_2(x) = 0$, o
 \end{align*}
 hvor $r_1(x)$ og $r_2(x)$ er rationale funktioner. Skriv da
 \begin{align*}
-	r_1(x) = \frac{p(x)}{q(x)} \quad \text{og} \quad \frac{s(x)}{t(x)}y,
+	r_1(x) = \frac{p(x)}{q(x)} \quad \text{og} \quad r_2(x)=\frac{s(x)}{t(x)}y,
 \end{align*}
 hvor $p, q$ henholdsvis $s, t$ ikke har nogen fælles faktorer. Hvis $q(x)=0$ for et punkt $(x, y)$ lader vi 
 $\alpha(x, y) = \infty$. Hvis $q(x) \neq 0$ giver (ii) i lemma \ref{rational_lemma}, at $r_2(x)$ da også vil være defineret.
@@ -126,11 +126,11 @@ Lad $\alpha$ være en endomorfi givet ved
 \end{align*}
 for en elliptisk kurve $E$. Lad $p, q$ henholdsvis $s, t$ være sådan, at de ikke har nogen fælles rødder. Da har vi, at
 \begin{enumerate}[(i)]
-	\item For et polynomium $u(x)$, som ikke har en fælles rod med $q(x)$ har vi, at 
+	\item For et polynomium $u(x)$, som ikke har en fælles rod med $q(x)$ har vi, at
 	\begin{align*}
 		\frac{(x^3+Ax+B)s(x)^2}{t(x)^2} = \frac{u(x)}{q(x)^3}.
 	\end{align*}
-	\item Hvis $t(x_0)=0$ er $q(x_0)=0$, hvilket betyder at hvis $q(x_0) \neq 0$ er $\alpha(x_0, y_0)$ defineret.
+	\item $t(x_0)=0$ hvis og kun hvis $q(x_0)=0$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -140,17 +140,55 @@ for en elliptisk kurve $E$. Lad $p, q$ henholdsvis $s, t$ være sådan, at de ik
 	&= \left( \frac{p(x)}{q(x)} \right)^3 + A \left( \frac{p(x)}{q(x)} \right) + B \\
 	&= \frac{p(x)^3 + A p(x) q(x)^2 + B q(x)^3}{q(x)^3} = \frac{u(x)}{q(x)^3},
 \end{align*}
-hvor $u(x) = p(x)^3 + A p(x) q(x)^2 + B q(x)^3$. Vi skal dog stadigvæk vise, at $u(x)$ og $q(x)$ ikke har en fælles rod. Antag, at $q(x_0) = 0$. Hvis $u(x_0)=0$ har vi, at
+hvor $u(x) = p(x)^3 + A p(x) q(x)^2 + B q(x)^3$. Antag nu, at $q(x_0)=0$. Hvis nu også $u(x_0)=0$ følger det, at
 \begin{align*}
 	u(x_0)=p(x_0)^3 + A p(x_0) q(x_0)^2 + B q(x_0)^3 = 0 &\Rightarrow p(x_0)^3 = 0 \\ &\Rightarrow p(x_0)=0,
 \end{align*}
 men $p$ og $q$ havde pr. antagelse ingen fælles rødder. Så hvis $q(x_0) = 0$ må $u(x_0) \neq 0$ og de har dermed ingen fælles rødder.
 
-(ii) 
-
+(ii) Vi ved fra (i), at 
+\begin{align}
+	\label{lemma_rational_sup}
+	(x^3 + Ax + B)s(x)^2 q(x)^3 = u(x) t(x)^2.
+\end{align}
+Hvis $q(x_0) = 0$ følger det direkte fra \eqref{lemma_rational_sup}, at 
+\begin{align*}
+	u(x_0)t(x_0)^2 = 0.
+\end{align*}
+Da $q$ og $u$ ikke har nogen fælles rødder følger det, at $t(x_0) = 0$. Antag nu, at $t(x_0)=0$, da har vi fra
+\eqref{lemma_rational_sup}, at
+\begin{align*}
+	({x_0}^3 + Ax_0 + B)s(x_0)^2 q(x_0)^3 = 0.
+\end{align*}
+Da $s$ og $t$ pr. antagelse ikke har nogen fælles rødder giver det yderligere, at 
+\begin{align*}
+	({x_0}^3 + Ax_0 + B)q(x_0)^3 = 0.
+\end{align*}
+Hvis ${x_0}^3 + Ax_0 + B \neq 0$ er $q(x_0)^3 = 0$ og dermed må $q(x_0) = 0$. Hvis vi derimod har, at 
+${x_0}^3 + Ax_0 + B = 0$ er det klart, at $(x-x_0) \mid (x^3 + Ax + B)$. Med andre ord findes et polynomium $Q(x)$ sådan, at
+\begin{align*}
+	(x^3 + Ax + B) = (x-x_0)Q(x),
+\end{align*}
+hvor $Q(x_0) \neq 0$, da $x^3 + Ax + B$ ikke har nogen dobbeltrødder. Da $t(x_0)=0$ findes der også et polynomium $T(x)$ sådan, at
+\begin{align*}
+	t(x) = (x-x_0)T(x).
+\end{align*}
+Udtrykket fra \eqref{lemma_rational_sup} kan da skrives, som
+\begin{align*}
+	(x-x_0)Q(x)s(x)^2q(x)^3 = u(x) ((x-x_0)T(x))^2,
+\end{align*}
+hvilket med division med $(x-x_0)$ giver os, at
+\begin{align*}
+	Q(x)s(x)^2 q(x)^3 =  u(x) (x-x_0) T(x)^2.
+\end{align*}
+I tilfældet, hvor $x=x_0$ har vi så, at
+\begin{align*}
+	Q(x_0)s(x_0)^2q(x_0)^3 = 0,
+\end{align*}
+men da $Q(x_0) \neq 0$ og $s(x_0) \neq 0$ må $q(x_0)^3 = 0$ så $q(x_0)=0$.
 \end{proof}
 
-Med denne standard repræsentation for endomorfier er vi nu i stand til at give en definition for graden af en endomorfi:
+Med den nu etablerede standard repræsentation for endomorfier, er vi i stand til at give en definition for graden af en endomorfi:
 
 \begin{definition}
 Graden af en endomorfi $\alpha$ er givet ved
