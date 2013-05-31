@@ -1,0 +1,142 @@
+\section{Lenstras elliptiske kurve metode}
+
+Vi vil nu se på Lenstras metode til at avende
+elliptiske kurver til at faktorisere heltal. 
+Idéerne til denne algoritme bygger videre på
+Pollards $p-1$ metode, men den har den fordel, at 
+hvor vi før kun havde en gruppe, $\mathbb{Z} / n \mathbb{Z}$,
+at arbejde over, kan vi nu skifte imellem en masse.
+
+
+\begin{example}
+Vi vil nu give et eksempel for anvendelsen af Lenstras algoritme.
+\end{example}
+
+
+Vi har nu demonstreret, hvordan Lenstras faktoriseringsalgoritme 
+anvendes i praksis og vil nu se på, hvorfor den er en effektiv algoritme
+til dette problem. Vi vil vise Hasses sætning, som giver en grænse 
+for antallet af punkter på en elliptisk kurve over et endeligt
+legeme.
+
+
+\begin{theorem}[Hasses sætning]
+Lad $q = p^m$, hvor et primtal så $p \neq 2, 3$ og lad 
+$A, B \in \mathbb{F}_q$ med $\Delta = 4a^3 + 27b^2 \neq 0$.
+Hvis vi lader $\#E(\mathbb{F}_q)$ være antallet af løsninger
+til 
+\begin{align}
+	y^2 = x^3 + Ax + B,
+\end{align}
+over $\mathbb{F}_q$, da vil
+\begin{align}
+	| \#E(\mathbb{F}_q) - q | \leq 2 \sqrt{q}.
+\end{align}
+\end{theorem}
+Lad $E$ være en elliptisk kurve, som i (2.1). Til denne elliptiske
+kurve tilknytter vi endnu en elliptisk kurve $E_\lambda$. For polynomiet 
+\begin{align*}
+	\lambda(t) = t^3 + At + B,
+\end{align*}	
+i $\mathbb{F}_q[t]$ lader vi $E_{\lambda}$ være en elliptisk kurve
+over $\mathbb{F}_q(t)$ givet ved
+\begin{align}
+	\lambda y^2 = x^3 + Ax + B.
+\end{align}
+Da dette er ikke den sædvanlige form skal vi justere additionsformlerne
+for, at vi stadigvæk opnår en gruppestruktur. Det kan ses, at 
+$(t, 1)$ og $-(t, 1)=(t, -1) \in E_{\lambda}(K)$ ved indsættelse i (2.3).
+
+
+Vi får altså en veldefineret funktion 
+\begin{align*}
+	d : \mathbb{Z} \to \{0, 1, 2, \ldots \},
+\end{align*}
+som er givet ved
+\begin{align*}
+	d(n) = d_n = \left\{ \begin{array}{rl}
+		0 &\mbox{ hvis $P_n = \infp$} \\
+		\deg f_n &\mbox{ ellers.}
+	\end{array} \right.
+\end{align*}
+
+
+Forbindelsen mellem denne funktion $d(n)$ og Hasses sætning er følgende forhold
+mellem $d_n$ og $N_q$, som vi vil bevise:
+
+\begin{lemma}
+Der gælder for funktionen $d_n$ og antallet af punkter $N_q$ på $E$
+følgende lighed
+\begin{align}
+d_{-1} - d_0 - 1 = N_q - q.
+\end{align}
+\end{lemma}
+\begin{proof}
+Bemærk først at $d_0 = q$ da $\deg t^q = q$. Vi mangler da at vise, at 
+$d_{-1} = N_q + 1$. For at vise ligheden vil vi reducere $X_{-1}$, fra
+de modificerede additionsformler finder vi, at 
+\begin{align*}
+	X_{-1} &= (t^3 + at +b) \left( \frac{(t^3+at+b)^{(q-1)/2}+1}{t^q - t} \right)^2
+	- (t^q + t) \\
+	&= (t^3 + at + b) \frac{\big((t^3+at+b)^{(q-1)/2}+1 \big)^2}{(t^q - t)^2} 
+	- (t^q + t) \\
+	&= \frac{t^{2q+1} + R(t)}{(t^q - t)^2},
+\end{align*}
+hvor $R(t)$ er et polynomium hvor $\deg R(t) \leq 2q$. Vi bemærker, at over 
+$\mathbb{F}_q$ kan vi skrive
+\begin{align*}
+	t^q - t = \prod_{\alpha \in \mathbb{F}_q} (t-\alpha) = t(t-1)\ldots (t-q+1).
+\end{align*}
+Der er kun to forskellige faktorer over $\mathbb{F}_q$, som kan udgå. Da en faktor
+af den første type er relativt primisk til en faktor af den anden type har vi nu,
+at 
+\begin{align*}
+	d_{-1} = \deg f_{-1} = 2q + 1 - 2m - n,
+\end{align*}
+hvor vi husker at for den første type er det en dobbeltrod. Idet vi husker, at 
+$d_0 = q$ følger det, at 
+\begin{align*}
+	d_{-1} - d_0 = q + 1 - 2m - n.
+\end{align*}
+\end{proof}
+
+Vi ønsker nu, at se nærmere på funktionen $d(n)$ og vi vil vise følgende lemma:
+
+\begin{lemma}
+For funktionen $d(n)$ gælder der, at 
+\begin{align}
+	d_n = n^2 - (d_{-1} - d_0 - 1)n + d_0.
+\end{align}
+\end{lemma}
+\begin{proof}
+Vi vil vise lemmaet vha. induktion. For $n=0$ og $n=-1$ ser vi først, at
+\begin{align*}
+	d_{-1} &= (-1)^2 + (d_{-1} - d_0 - 1) + d_0 = 1 + d_{-1} - d_0 -1 + d_0 = d_{-1}, \\
+	d_0 &= d_0 = 0^2 - 0 \cdot (d_{-1} - d_0 - 1) + d_0 = d_0.
+\end{align*}
+Antag da, at $(2.5)$ er sandt for $n-1$ og $n$, hvor $n \geq 0$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
