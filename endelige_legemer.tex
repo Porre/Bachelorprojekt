@@ -41,238 +41,6 @@ Lad $E$ være en elliptisk kurve over et endeligt legeme $\mathbb{F}_q$. Da gæl
 Vi vil i kapitel 3 se på en af anvendelserne, som disse elliptiske kurver over endelige legemer har, 
 nemlig indenfor faktorisering af heltal.
 
-\section{Endomorfier}
-Vi skal først have etableret nogle resultater vedrørende endomorfier på endelige legemer, som
-er nødvendige for beviset af Hasses sætning. Lad $K$ være et legeme og $\clk$ dens tilhørende algebraiske aflukning. Når vi skriver om en elliptisk kurve $E$ menes den at være på formen $y^2 = x^3 + Ax + B$. 
-
-Vi begynder da med følgende definition:
-
-\begin{definition}
-En endomorfi på $E$ er en homomorfi $\alpha : E(\clk) \to E(\clk)$ givet
-ved rationale funktioner.
-\end{definition}
-
-Med en rational funktion forstår vi en kvotient af polynomier. Det vil altså sige, at 
-en endomorfi $\alpha$ skal opfylde, at $\alpha(P_1 + P_2) = \alpha(P_1) + \alpha(P_2)$ 
-og der skal findes rationale 
-funktioner $R_1(x, y)$ og $R_2(x, y)$, begge med koefficienter i $\clk$, så
-\begin{align*}
-	\alpha(x, y) = (R_1(x, y), R_2(x, y)),
-\end{align*}
-for alle $(x, y) \in E(\clk)$. da $\alpha$ er en homomorfi gælder der, at $\alpha(\infty)=\infty$. Den trivielle endomorfi angives med $0$ og er den endomorfi, som sender ethvert punkt til $\infty$. Vi vil fremover antage, at $\alpha$ ikke er den trivielle endomorfi, hvilket betyder at der findes $(x, y)$ sådan at $\alpha(x, y) \neq \infty$.
-
-\begin{example}
-Skal vi have en endomorfi her?
-\end{example}
-
-Vi ønsker nu, at finde en standard repræsentation for de rationale funktioner, som en endomorfi er givet ved. Følgende sætning gør dette muligt for os:
-
-\begin{theorem}
-\label{end_rep_theorem}
-Lad $E$ være en elliptisk kurve over et legeme $K$. En endomorfi $\alpha$ kan da skrives som
-\begin{align*}
-	\alpha(x, y) = (r_1(x), r_2(x)y) = \left( \frac{p(x)}{q(x)}, \frac{s(x)}{t(x)}y \right),
-\end{align*}
-hvor $p, q$ henholdsvis $s, t$ ikke har nogen fælles faktor.
-\end{theorem}
-\begin{proof}
-For et punkt $(x, y) \in E(\clk)$ gælder der, at $y^2 = x^3 + Ax + B$ så vi har også, at 
-\begin{align*}
-	y^{2k} = (x^3 + Ax + B)^k \quad \text{og} \quad y^{2k+1}= y^{2k}y = (x^3 + Ax + B)^k y, \quad k \in \mathbb{N}.
-\end{align*}
-Vi kan altså erstatte en lige potens af $y$ med et polynomium der kun afhænger af $x$, og en ulige potens med $y$ ganget med et polynomium der kun afhænger af $x$. For en rational funktion $R(x, y)$ kan vi da beskrive en anden rational funktion, som stemmer overens med denne på punkter fra $E(\clk)$. Vi kan altså antage, at
-\begin{align}
-	\label{rational_1}
-	R(x, y) = \frac{p_1(x) + p_2(x)y}{p_3(x)+p_4(x)y}.
-\end{align}
-Vi kan endda gøre det endnu simplere ved at gange udtrykket i \eqref{rational_1} med $p_3(x)-p_4(x)$, hvilket giver 
-\begin{align*}
-	(p_3(x) - p_4(x)y)(p_3(x)+p_4(x)y) = p_3(x)^2 - p_4(x)^2 y^2,
-\end{align*}
-hvorefter vi kan erstatte $y^2$ med $x^3 + Ax + B$. Dette giver os altså, at 
-\begin{align}
-	\label{rational_final}
-	R(x, y) = \frac{q_1(x) + q_2(x)y}{q_3(x)}.
-\end{align}
-Da $\alpha$ er en endomorfi er den givet ved
-\begin{align*}
-	\alpha(x, y) = (R_1(x, y), R_2(x, y)),
-\end{align*}
-hvor $R_1$ og $R_2$ er rationale funktioner. Da $\alpha$ specielt er en homomorfi bevarer den strukturen for en elliptisk kurve så vi har, at
-\begin{align*}
-	\alpha(x, -y) = \alpha(-(x, y)) =  -\alpha(x, y).
-\end{align*}
-Dette medfører, at 
-\begin{align*}
-	R_1(x, -y) = R_1(x, y) \quad \text{og} \quad R_2(x, -y) = -R_2(x, y).
-\end{align*}
-Skriver vi $R_1$ på samme form som i \eqref{rational_final} må $q_2(x) = 0$, og ligeledes må vi for $R_2$ have at $q_1(x) = 0$. Vi kan altså antage, at
-\begin{align*}
-		\alpha(x, y) = (r_1(x), r_2(x)y),
-\end{align*}
-hvor $r_1(x)$ og $r_2(x)$ er rationale funktioner. Skriv da
-\begin{align*}
-	r_1(x) = \frac{p(x)}{q(x)} \quad \text{og} \quad r_2(x)=\frac{s(x)}{t(x)}y,
-\end{align*}
-hvor $p, q$ henholdsvis $s, t$ ikke har nogen fælles faktorer. Hvis $q(x)=0$ for et punkt $(x, y)$ lader vi 
-$\alpha(x, y) = \infty$. Hvis $q(x) \neq 0$ giver (ii) i lemma \ref{rational_lemma}, at $r_2(x)$ da også vil være defineret.
-\end{proof}
-
-\begin{lemma}
-\label{rational_lemma}
-Lad $\alpha$ være en endomorfi givet ved
-\begin{align*}
-	\alpha(x, y) = \left( \frac{p(x)}{q(x)}, \frac{s(x)}{t(x)}y \right),
-\end{align*}
-for en elliptisk kurve $E$. Lad $p, q$ henholdsvis $s, t$ være sådan, at de ikke har nogen fælles rødder. Da har vi, at
-\begin{enumerate}[(i)]
-	\item For et polynomium $u(x)$, som ikke har en fælles rod med $q(x)$ har vi, at
-	\begin{align*}
-		\frac{(x^3+Ax+B)s(x)^2}{t(x)^2} = \frac{u(x)}{q(x)^3}.
-	\end{align*}
-	\item $t(x_0)=0$ hvis og kun hvis $q(x_0)=0$.
-\end{enumerate}
-\end{lemma}
-\begin{proof}
-(i) For et punkt $(x, y) \in E(K)$ har vi også, at $\alpha(x, y) \in E(K)$, da $\alpha$ er en endomorfi. Derfor har vi, at
-\begin{align*}
-	\frac{(x^3 + Ax + B)s(x)^2}{t(x)^2} &= \frac{y^2 s(x)^2}{t(x)^2} = \left( \frac{s(x)}{t(x)}y \right)^2 \\
-	&= \left( \frac{p(x)}{q(x)} \right)^3 + A \left( \frac{p(x)}{q(x)} \right) + B \\
-	&= \frac{p(x)^3 + A p(x) q(x)^2 + B q(x)^3}{q(x)^3} = \frac{u(x)}{q(x)^3},
-\end{align*}
-hvor $u(x) = p(x)^3 + A p(x) q(x)^2 + B q(x)^3$. Antag nu, at $q(x_0)=0$. Hvis nu også $u(x_0)=0$ følger det, at
-\begin{align*}
-	u(x_0)=p(x_0)^3 + A p(x_0) q(x_0)^2 + B q(x_0)^3 = 0 &\Rightarrow p(x_0)^3 = 0 \\ &\Rightarrow p(x_0)=0,
-\end{align*}
-men $p$ og $q$ havde pr. antagelse ingen fælles rødder. Så hvis $q(x_0) = 0$ må $u(x_0) \neq 0$ og de har dermed ingen fælles rødder.
-
-(ii) Vi ved fra (i), at 
-\begin{align}
-	\label{lemma_rational_sup}
-	(x^3 + Ax + B)s(x)^2 q(x)^3 = u(x) t(x)^2.
-\end{align}
-Hvis $q(x_0) = 0$ følger det direkte fra \eqref{lemma_rational_sup}, at 
-\begin{align*}
-	u(x_0)t(x_0)^2 = 0.
-\end{align*}
-Da $q$ og $u$ ikke har nogen fælles rødder følger det, at $t(x_0) = 0$. Antag nu, at $t(x_0)=0$, da har vi fra
-\eqref{lemma_rational_sup}, at
-\begin{align*}
-	({x_0}^3 + Ax_0 + B)s(x_0)^2 q(x_0)^3 = 0.
-\end{align*}
-Da $s$ og $t$ pr. antagelse ikke har nogen fælles rødder giver det yderligere, at 
-\begin{align*}
-	({x_0}^3 + Ax_0 + B)q(x_0)^3 = 0.
-\end{align*}
-Hvis ${x_0}^3 + Ax_0 + B \neq 0$ er $q(x_0)^3 = 0$ og dermed må $q(x_0) = 0$. Hvis vi derimod har, at 
-${x_0}^3 + Ax_0 + B = 0$ er det klart, at $(x-x_0) \mid (x^3 + Ax + B)$. Med andre ord findes et polynomium $Q(x)$ sådan, at
-\begin{align*}
-	(x^3 + Ax + B) = (x-x_0)Q(x),
-\end{align*}
-hvor $Q(x_0) \neq 0$, da $x^3 + Ax + B$ ikke har nogen dobbeltrødder. Da $t(x_0)=0$ findes der også et polynomium $T(x)$ sådan, at
-\begin{align*}
-	t(x) = (x-x_0)T(x).
-\end{align*}
-Udtrykket fra \eqref{lemma_rational_sup} kan da skrives, som
-\begin{align*}
-	(x-x_0)Q(x)s(x)^2q(x)^3 = u(x) ((x-x_0)T(x))^2,
-\end{align*}
-hvilket med division med $(x-x_0)$ giver os, at
-\begin{align*}
-	Q(x)s(x)^2 q(x)^3 =  u(x) (x-x_0) T(x)^2.
-\end{align*}
-I tilfældet, hvor $x=x_0$ har vi så, at
-\begin{align*}
-	Q(x_0)s(x_0)^2q(x_0)^3 = 0,
-\end{align*}
-men da $Q(x_0) \neq 0$ og $s(x_0) \neq 0$ må $q(x_0)^3 = 0$ så $q(x_0)=0$.
-\end{proof}
-
-Med den nu etablerede standard repræsentation for endomorfier, er vi i stand til at give en definition for graden af en endomorfi:
-
-\begin{definition}
-Graden af en endomorfi $\alpha$ er givet ved
-\begin{align*}
-	\deg(\alpha) = \max \{ \deg p(x), \deg q(x) \},
-\end{align*}
-når $\alpha$ ikke er den trivielle endomorfi, altså for $\alpha \neq 0$. For $\alpha = 0$ lader vi $\deg (\alpha) = 0$.
-\end{definition}
-
-En endomorfi siges at være separabel hvis den afledede $r_1'(x) \neq 0$.
-
-\begin{example}
-Eksempel på en separabel endomorfi. Bogen ser på $2P$ som også er oplagt, men måske skulle man vælge en mere interessant.
-\end{example}
-
-Den følgende proposition er essentiel idet, at det tilknytter graden af en endomorfi til antallet af elementer i kernen for selvsamme endomorfi, hvilket vi skal benytte direkte i beviset for Hasses sætning.
-
-\begin{proposition}
-\label{deg_to_ker}
-Lad $E$ være en elliptisk kurve. Lad $\alpha \neq 0$ være en separabel 
-endomorfi for $E$. Da er 
-\begin{align*}
-	\deg \alpha = \# \ker (\alpha),
-\end{align*}
-hvor $\ker (\alpha) = $ angiver kernen for homomorfien 
-$\alpha : E(\clk) \to E(\clk)$. I tilfældet hvor $\alpha \neq 0$ ikke
-er separabel gælder der, at 
-\begin{align*}
-	\deg \alpha > \# \ker (\alpha).
-\end{align*}
-\end{proposition}
-\begin{proof}
-Vi skriver $\alpha$ på standardformen, som vi introducerede tidligere, altså
-sættes
-\begin{align*}
-	\alpha(x, y) = (r_1(x), r_2(x) y)),
-\end{align*}
-hvor $r_1(x) = p(x)/q(x)$. Da $\alpha$ er antaget til at være separabel er 
-$r_1' \neq 0$ og dermed er $pq'-p'q$ ikke nulpolynomiet. Lad nu
-\begin{align*}
-	S = \{ x \in \clk \mid (pq' - p'q)(x)q(x) = 0 \}.
-\end{align*}
-Lad da $(a, b) \in E(\clk)$ være valgt sådan, at følgende er opfyldt
-\begin{enumerate}
-	\item $a \neq 0$, $b \neq 0$ og $(a, b) \neq \infty$,
-	\item $\deg (p(x) - aq(x)) = \max \{ \deg p(x), \deg q(x) \} = \deg \alpha$,
-	\item $a \notin r_1(S)$,
-	\item $(a, b) \in \alpha(E(\clk))$.
-\end{enumerate}
-Da $pq'-p'q$ ikke er 
-nulpolynomiet er $S$ en endelig mængde, hvilket dermed også betyder, at 
-$\alpha(S)$ er en endelig mængde. Funktionen $r_1(x)$ antager uendeligt 
-mange forskellige værdier når $x$ gennemløber $\clk$, da en algebraisk aflukning indeholder uendeligt mange elementer.
-%da en algebraisk aflukning indeholder uendeligt mange elementer.
-Da der for hvert $x$ er et punkt $(x, y) \in E(\clk)$ følger det, at 
-$\alpha(E(\clk))$ er en uendelig mængde. Det er altså muligt, at vælge et
-punkt $(a, b) \in E(\clk)$ med egenskaberne ovenfor.
-
-Vi ønsker at vise, at der netop er $\deg \alpha$ punkter $(x_1, y_1) \in E(\clk)$ sådan,
-at $\alpha(x_1, y_1) = (a, b)$. For et sådan punkt gælder der, at 
-\begin{align*}
-	\frac{p(x_1)}{q(x_1)} = a, \quad r_2(x_1) y_1 = b.
-\end{align*}
-Da $(a, b) \neq \infty$ er $q(x_1) \neq 0$. % Øvelse giver, at r_2(x_1) er defineret
-Da $b \neq 0$ har vi også, at $y_1 = b / r_2(x_1)$. Dette betyder, at $y_1$ er bestemt
-ved $x_1$, så vi behøver kun at tælle værdier for $x_1$. Fra antagelse (2) har vi, at 
-$p(x) - aq(x) = 0$ har $\deg \alpha$ rødder talt med multiplicitet. Vi skal altså vise,
-at $p-aq$ ikke har nogen multiple rødder. Antag for modstrid, at $x_0$ er en multipel
-rod. Da har vi, at
-\begin{align*}
-	p(x_0) - aq(x_0) = 0 \quad \text{og} \quad p'(x_0) - aq'(x_0) = 0.
-\end{align*}
-Dette kan omskrives til ligningerne $p(x_0)=aq(x_0)$ og $aq'(x_0)=p'(x_0)$, 
-som vi ganger med hinanden og får, at 
-\begin{align*}
-	a p(x_0)q'(x_0) = ap'(x_0)q(x_0).
-\end{align*} 
-Da $a \neq 0$ pr. (1) giver det os, at $x_0$ er en rod i $pq'-p'q$ så $x_0 \in S$.
-Altså er $a=r_1(x_0) \in r_1(S)$, hvilket er i modstrid med (3). Dermed har 
-$p-aq$ netop $\deg \alpha$ forskellige rødder. Da der er præcist $\deg \alpha$ 
-punkter $(x_1, y_1)$ så $\alpha(x_1, y_1) = (a, b)$ har kernen for $\alpha$ netop
-$\deg \alpha$ elementer.
-\end{proof}
-
 
 \section{Frobenius endomorfien}
 
@@ -494,8 +262,56 @@ Mangler beviset for entydigheden af $a$.
 
 Endeligt vil vi vise en sætning, som gør det muligt at bestemme ordenen af en gruppe af punkter for en elliptisk kurve. Hvis vi kender ordenen af $E(\mathbb{F}_q)$ for et lille endeligt legeme gør følgende sætning det muligt, at bestemme ordenen af $E(\mathbb{F}_{q^n})$.
 
-Sætning 4.12 og bevis, som afslutning på kapitlet.
+\begin{theorem}
+\label{count}
+Lad $\#E(\mathbb{F}_q) = q + 1 - a$. Skriv $X^2 - aX + q= (X-\alpha)(X-\beta)$. Da er
+\begin{align*}
+	\#E(\mathbb{F}_{q^n}) = q^n + 1 - (\alpha^n + \beta^n),
+\end{align*}
+for alle $n \geq 1$.
+\end{theorem}
 
+Vi har brug for, at $\alpha^n + \beta^n$ er et heltal, hvilket følgende lemma giver os:
+
+\begin{lemma}
+Lad $s_n = \alpha^n + \beta^n$. Da er $s_0=2$, $s_1=a$ og $s_{n+1}=as_n - qs_{n-1}$ for alle $n \geq 1$.
+\end{lemma}
+\begin{proof}
+Bemærk først, at $s_0 = \alpha^0 + \beta^0 = 2$ og $s_1 = a$.
+Vi ser, at 
+\begin{align*}
+	(\alpha^2 - a\alpha + q) \alpha^{n-1} = \alpha^{n+1} - a \alpha^n + q\alpha^{n-1} = 0,
+\end{align*}
+da $\alpha$ er en rod i $X^2 - aX + q$. Altså har vi, at $\alpha^{n+1}=a \alpha^n - q\alpha^{n-1}$. På samme måde har vi, at $\beta^{n+1}=a \beta^n - q \beta^{n-1}$, da $\beta$ også er en rod. Lægges disse udtryk sammen får vi, at
+\begin{align*}
+	s_{n+1} = \alpha^{n+1} + \beta^{n+1} &= a \alpha^n - q \alpha^{n-1} + a \beta^n - q \beta^{n-1} \\
+	&= a (\beta^n + \beta^n) - q (\alpha^{n-1} + \beta^{n-1}) \\
+	&= a s_n - q s_{n-1}.
+\end{align*}
+Dermed er $s_n$ et heltal for alle $n \geq 0$.
+\end{proof}
+
+\begin{proof}[Bevis for sætning \ref{count}]
+Lad nu 
+\begin{align*}
+	f(X) = (X^n - \alpha^n)(X^n - \beta^n) = X^{2n} - (\alpha^n + \beta^n)X^n + q^n.
+\end{align*}
+Da deler $X^2 - aX + q = (X- \alpha)(X-\beta)$ polynomiet $f(X)$. Kvotienten er et polynomium $Q(X)$ med heltallige koefficienter, da $X^2 - aX + q$ er monisk og $f(X)$ har heltallige koefficienter (se appendiks). Derfor er
+\begin{align}
+	\label{alpha_beta}
+	f(\phi_q) = (\phi_{q}^{n})^2 - (\alpha^n + \beta^n) \phi_{q}^{n} + q^n
+	= Q(\phi_q)(\phi_{q}^{2} - a \phi_q + q) = 0,
+\end{align}
+som endomorfier for $E$ pr. sætning \ref{trace_theorem}. Idet vi husker, at $\phi_{q}^{n} = \phi_{q^n}$ giver sætning \ref{trace_theorem} også, at der findes entydigt $k \in \mathbb{Z}$ sådan at $\phi_{q^n}^{2} - k \phi_{q}^{n} + q^n = 0$. Sådan et $k$ er givet ved $k=q^n + 1 - \#E(\mathbb{F}_{q^n})$, og dette sammen med \eqref{alpha_beta} giver os netop, at
+\begin{align*}
+	\alpha^n + \beta^n = q^n + 1 - \#E(\mathbb{F}_{q^n}),
+\end{align*}
+hvilket netop var hvad  vi ønskede at vise.
+\end{proof}
+
+\begin{example}
+Eksempel på 4.12 i aktion.
+\end{example}
 
 
 
