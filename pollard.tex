@@ -9,7 +9,17 @@ $3 \mid n$ osv. Vi vil da finde en faktor senest når vi kommer
 til $\sqrt{n}$. Dette bliver hurtigt uoverkommeligt når $n$ er stort.
 
 \section{Pollards $p-1$ algoritme}
- 
+
+Lenstras algoritme som anvender elliptiske kurver til at faktorisere heltal var inspireret af Pollards $p-1$ algoritme, hvilket gør det naturligt at betragte denne algoritme først. Pollards $p-1$ algoritme blev først fremført i \cite{Akaike1973}  i 1970'erne af J. M. Pollard.
+
+Algoritmen benytter sig specielt af Fermats lille sætning:
+
+\begin{theorem}[Fermats lille sætning]
+
+\end{theorem}
+
+Et bevis kan findes i appendikset.
+\\[10pt]
 Lad $n$ være et sammensat tal og lad $p$ være en primfaktor for $n$. Vi ved fra Fermats lille sætning, at $a^{p-1} \equiv 1 \modu{p}$ når $\gcd(a, p) = 1$. Hvis vi da kendte $p-1$ kunne vi bestemme $p$ (udover den åbenlyse måde) ved
 \begin{align*}
 	\gcd(a^{p-1} - 1, n) = p. 

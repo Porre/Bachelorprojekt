@@ -1,5 +1,5 @@
 % Vi benytter os af MEMOIR (pr. daleif's anbefaling)
-\documentclass[a4paper,12pt,oneside]{memoir}
+\documentclass[a4paper,11pt,oneside]{memoir}
 
 % Dette er hovedfilen, hvor jeg definerer min pre-amble.
 % Idéen er at sprede de enkelte kapitler ud i hvert deres
@@ -17,6 +17,14 @@
 % Dansk babel og tillad øæå osv.
 \usepackage[danish]{babel}
 \usepackage[utf8]{inputenc}
+
+% Til referencer, Biber giver os UTF-8 understøttelse
+\usepackage[backend=biber]{biblatex}
+\usepackage{csquotes} 
+
+% Filen med vores referencer
+\addbibresource{referencer.bib}
+
 
 % Styling for sætninger osv., er valgt efter normal anbefaling
 \theoremstyle{plain}
@@ -57,19 +65,17 @@
 
 % -- SLUT PÅ MAKROER --
 
-
 % Bruges kun under skrivningen af projektet
-% \includeonly{endomorfier_torsion}
-
+\includeonly{lenstra, pollard, appendiks}
 
 \begin{document}
-
-\tableofcontents
-
+% \tableofcontents
 \include{gruppeloven}
 \include{endomorfier_torsion}
 \include{endelige_legemer}
 \include{pollard}
 \include{lenstra}
+\include{appendiks}
 
+\printbibliography
 \end{document}

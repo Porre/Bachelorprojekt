@@ -1,0 +1,15 @@
+\appendix
+\chapter{Appendiks}
+Her samler vi nogle af de (hovedsagligt) mindre resultater, som benyttes igennem kapitlerne. De præsenteres her kort og henvises til  i opgaven, når de er blevet anvendt.
+
+\begin{proposition}
+\label{inverse_exists_not}
+Et element $a \in \mathbb{Z}_n = \mathbb{Z}/n\mathbb{Z}$ har ikke en invers i $\mathbb{Z}_n$ hvis $\gcd(a, n) > 1$. 
+\end{proposition}
+\begin{proof}
+Antag for modstrid, at $d = \gcd(a, n) > 1$, men at der samtidigt eksisterer en invers $c$ til $a$ modulo $n$. Da $d = \gcd(a, n)$ findes et heltal $e$, som ikke er nul, sådan at $de = n$. Da $d >1$ har vi også, at $|e| < |n|$ så $e$ er ikke nul modulo $n$. Da $d$ deler $a$ har vi, at $n = de$ deler $ae$ så $ae = 0 \modu{n}$. Vi har altså, at
+\begin{align*}
+	e = e \cdot 1 = eac = 0 \cdot c = 0 \modu{n},
+\end{align*}
+hvilket er i modstrid med at $e$ ikke kunne være $0$ modulo $n$. Altså har $a$ ikke en invers når $\gcd(a, n) > 1$.
+\end{proof}

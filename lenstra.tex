@@ -1,13 +1,93 @@
-\section{Lenstras elliptiske kurve metode}
+\section{Lenstras elliptiske kurve algoritme}
 
-Vi vil nu se på Lenstras metode til at avende
-elliptiske kurver til at faktorisere heltal. 
-Idéerne til denne algoritme bygger videre på
-Pollards $p-1$ metode, men den har den fordel, at 
-hvor vi før kun havde en gruppe, $\mathbb{Z} / n \mathbb{Z}$,
-at arbejde over, kan vi nu skifte imellem en masse.
+Lenstra præsenterede i [LENSTRA] en algoritme, som er stærkt inspireret af Pollards $p-1$ algoritme. Fordelen ved Lenstras algoritme er, at den ikke er låst fast til én enkelt gruppe af orden $p-1$. Hvis algoritmen ikke finder en faktor er vi i stand til at skifte gruppen vi arbejder med i håbet om, at det så vil lykkedes med denne.
 
+Problemet med Pollards $p-1$ algoritme opstår, hvis tallet vi ønsker at faktorisere har primfaktorer som ikke er $B$-glat for store $B$. Vi ser på tallet 
+\begin{align*}
+	n =  1688955439703788849,
+\end{align*}
+som er konstrueret ved at gange to tilfældige (og meget hurtigt glemte) primtal $p$ sammen, som begge har den egenskab at $p-1$ ikke er $B$-glat for $B=10^8$. Pollards $p-1$ algoritme ville være ineffektiv for et sådan tal, men Lenstras algoritme viser sig at have en løsning på sådan et tal.
 
+% 6751308671 * 250167119
+
+\begin{algorithm}[Lenstras algoritme]
+Lad $n \geq 2$ være et sammensat tal, som vi ønsker at finde en faktor for.
+\begin{enumerate}
+	\item Vælg $x, y, A \in [1, n]$. Lad da $B = y^2 - x^3 - Ax \modu{n}$ for da har vi den elliptiske kurve
+	\begin{align*}
+		E : y^2 = x^3 + Ax + B, 
+	\end{align*}
+	hvorpå punktet $P=(x, y)$ er placeret.
+	\item Tjek at $D = \gcd(4A^3 + 27B^2, n) = 1$. Hvis $D=n$ går vi tilbage
+	til (1) og vælger et nyt $b$. Hvis $1 < D < n$ har vi fundet en faktor af $n$ og vi er færdige.
+	\item Vælg et positivt heltal $k$ som et produkt af mange små primtal, lad eksempelvis
+	\begin{align*}
+		k = \lcm[1, 2, 3, ..., K],
+	\end{align*}
+	hvor $K \in \mathbb{Z}^+$.
+	\item Forsøg at bestemme $kP = P + P + \ldots + P$. Hvis udregningen kan lade sig gøre går vi tilbage til (1) og 
+	vælger en ny kurve, eller går til (3) og vælger et større $k$.
+\end{enumerate}
+\end{algorithm}
+
+Det der kan gå galt er, at ikke alle elementer i $\mathbb{Z}/n\mathbb{Z}$ har en invers, da $n$ ikke er et primtal.
+
+Med algoritmen på plads er vi nu i stand til at beregne et eksempel, hvor variablerne bliver valgt sådan at det går godt i første omgang:
+
+% n = 19259 * 39107
 \begin{example}
-Vi vil nu give et eksempel for anvendelsen af Lenstras algoritme.
+Lad nu 
+\begin{align*}
+	n = 753161713
+\end{align*}
+være det tal, som vi ønsker at faktorisere. Da $2^{n-1} = 437782651 \modu{n}$ er $n$ ikke et primtal. Vi vælger da
+$x = 0$, $y = 1$ og $A=164$. Vi har dermed, at $B = 1^2 - 0^3 - 164 \cdot 0 = 1$ og den elliptiske kurve vi vil arbejde over bliver
+\begin{align*}
+	E : y^2 = x^3 + 164x + 1,
+\end{align*}
+hvorpå punktet $P=(0, 1)$ er placeret. Vi ser, at 
+\begin{align*}
+	D = \gcd(4 \cdot 164^3 + 27, 753161713) = \gcd(17643803, 753161713) = 1,
+\end{align*}
+så vi fortsætter derfor med algoritmen. Vi lader
+\begin{align*}
+	k = \lcm[1, 2, \ldots, 10] = 2520.
+\end{align*}
+Da $2520 = 2^{11} + 2^8 + 2^7 + 2^6 + 2^4 + 2^3$ skal vi beregne $2^i P \modu{753161713}$ for $0 \leq i \leq 11$. Dette gøres med additionsformlen og vi opsummerer vores resultater i tabellen nedenfor:
+
+\begin{center}
+\begin{tabular}{c c c c}
+$i$ & $2^i P \modu{753161713}$ & $i$ & $2^i P \modu{753161713}$ \\ 
+\hline 
+0 & $(0, 1)$ & 6 & $(743238772, 703386057)$  \\ 
+1 & $(6724, 752610344)$ & 7 & $(309161840, 219780637)$  \\ 
+2 & $(293427237, 450490340)$ & 8 & $(116974611, 722899047)$ \\ 
+3 & $(468952095, 385687511)$ & 9 & $(329743899, 182819134)$ \\ 
+4 & $(288125200, 446796094)$ & 10 & $(163952469, 456288424)$ \\ 
+5 & $(106753239, 115973502)$ & 11 & $(15710788, 301760412)$
+\end{tabular} 
+\end{center}
+Vi kan nu addere disse punkter igen vha. additionsformlerne, hvor vi stadigvæk regner modulo $n$:
+\begin{align*}
+	(2^3 + 2^4)P &= (606730980, 447512524). 
+\end{align*}
+Algoritmen vil give os en faktor, når additionen bryder sammen, da vi ikke arbejder over et legeme. Dette problem viser sig allerede ved den næste addition, da når vi forsøger at udregne
+\begin{align*}
+	(2^3 + 2^4 + 2^6) P = (743238772, 703386057) \\ + (606730980, 447512524) \modu{n}.
+\end{align*}
+For at kunne lave denne addition skal differensen af deres $x$-koordinater have en invers modulo $n$. Dette er kun tilfældet, hvis den største fælles divisor mellem tallet og $n$ er lig $1$ (sætning i appendiks). Men vi ser, at  
+\begin{align*}
+	\gcd(606730980 - 743238772, 753161713) = 19259,
+\end{align*}
+hvilket tilgengæld har givet os en faktor. Dermed har vi faktoriseringen 
+\begin{align*}
+	753161713 = 19259 \cdot 39107.
+\end{align*}
+
+
 \end{example}
+
+
+
+%	n =  1688955439703788849,
+

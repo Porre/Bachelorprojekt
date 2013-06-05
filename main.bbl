@@ -1,0 +1,48 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{entry}{nty}
+    \entry{Akaike1973}{inproceedings}{}
+      \name{labelname}{1}{}{%
+        {{hash=926ba39bebf207bb661b158164603311}{Akaike}{A\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=926ba39bebf207bb661b158164603311}{Akaike}{A\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=311ff0f74864aa899f102a8b26cde199}{Petrov}{P\bibinitperiod}{B.\bibnamedelimi N.}{B\bibinitperiod\bibinitdelim N\bibinitperiod}{}{}{}{}}%
+        {{hash=029d3ea3e3efb90ea3f2ab7fb054981b}{Csaki}{C\bibinitperiod}{F.}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Budapest: Akademiai Kiado}%
+      }
+      \strng{namehash}{926ba39bebf207bb661b158164603311}
+      \strng{fullhash}{926ba39bebf207bb661b158164603311}
+      \field{sortinit}{A}
+      \field{labeltitle}{Information theory and an extension of the maximum likelihood principle}
+      \field{booktitle}{2nd International Symposium on Information Theory}
+      \field{title}{Information theory and an extension of the maximum likelihood principle}
+      \field{year}{1973}
+      \field{pages}{267\bibrangedash 281}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
