@@ -1,5 +1,6 @@
 \section{Lenstras elliptiske kurve algoritme}
 
+I \cite{Lenstra}
 Lenstra præsenterede i [LENSTRA] en algoritme, som er stærkt inspireret af Pollards $p-1$ algoritme. Fordelen ved Lenstras algoritme er, at den ikke er låst fast til én enkelt gruppe af orden $p-1$. Hvis algoritmen ikke finder en faktor er vi i stand til at skifte gruppen vi arbejder med i håbet om, at det så vil lykkedes med denne.
 
 Problemet med Pollards $p-1$ algoritme opstår, hvis tallet vi ønsker at faktorisere har primfaktorer som ikke er $B$-glat for store $B$. Vi ser på tallet 
@@ -34,7 +35,7 @@ Det der kan gå galt er, at ikke alle elementer i $\mathbb{Z}/n\mathbb{Z}$ har e
 
 Med algoritmen på plads er vi nu i stand til at beregne et eksempel, hvor variablerne bliver valgt sådan at det går godt i første omgang:
 
-% n = 19259 * 39107
+
 \begin{example}
 Lad nu 
 \begin{align*}
@@ -47,7 +48,7 @@ $x = 0$, $y = 1$ og $A=164$. Vi har dermed, at $B = 1^2 - 0^3 - 164 \cdot 0 = 1$
 \end{align*}
 hvorpå punktet $P=(0, 1)$ er placeret. Vi ser, at 
 \begin{align*}
-	D = \gcd(4 \cdot 164^3 + 27, 753161713) = \gcd(17643803, 753161713) = 1,
+	D &= \gcd(4 \cdot 164^3 + 27 \modu{753161713}, 753161713) \\ &= \gcd(17643803, 753161713) = 1,
 \end{align*}
 så vi fortsætter derfor med algoritmen. Vi lader
 \begin{align*}
@@ -55,6 +56,8 @@ så vi fortsætter derfor med algoritmen. Vi lader
 \end{align*}
 Da $2520 = 2^{11} + 2^8 + 2^7 + 2^6 + 2^4 + 2^3$ skal vi beregne $2^i P \modu{753161713}$ for $0 \leq i \leq 11$. Dette gøres med additionsformlen og vi opsummerer vores resultater i tabellen nedenfor:
 
+%	Større eksempel, men som ikke er praktisk udskrevet her:
+%	n =  1688955439703788849,
 \begin{center}
 \begin{tabular}{c c c c}
 $i$ & $2^i P \modu{753161713}$ & $i$ & $2^i P \modu{753161713}$ \\ 
@@ -71,23 +74,20 @@ Vi kan nu addere disse punkter igen vha. additionsformlerne, hvor vi stadigvæk 
 \begin{align*}
 	(2^3 + 2^4)P &= (606730980, 447512524). 
 \end{align*}
-Algoritmen vil give os en faktor, når additionen bryder sammen, da vi ikke arbejder over et legeme. Dette problem viser sig allerede ved den næste addition, da når vi forsøger at udregne
+Algoritmen giver os en faktor netop når additionen bryder sammen, hvilket kan ske da $\mathbb{Z}/n \mathbb{Z}$ ikke er et legeme. Dette problem viser sig i dette eksempel allerede ved den næste addition, hvor vi forsøger at udregne
 \begin{align*}
 	(2^3 + 2^4 + 2^6) P = (743238772, 703386057) \\ + (606730980, 447512524) \modu{n}.
 \end{align*}
-For at kunne lave denne addition skal differensen af deres $x$-koordinater have en invers modulo $n$. Dette er kun tilfældet, hvis den største fælles divisor mellem tallet og $n$ er lig $1$ (sætning i appendiks). Men vi ser, at  
+For at denne addition skal kunne lade sig gøre, skal differensen af deres $x$-koordinater have en invers modulo $n$. Dette er kun tilfældet, hvis $\gcd(x_2 - x_1, n) = 1$ (se appendiks, sætning k). Men vi ser, at
 \begin{align*}
 	\gcd(606730980 - 743238772, 753161713) = 19259,
 \end{align*}
-hvilket tilgengæld har givet os en faktor. Dermed har vi faktoriseringen 
+så der findes altså ikke en invers, men vi har i stedet fundet en faktor i $n$. Dermed har vi faktoriseringen
 \begin{align*}
 	753161713 = 19259 \cdot 39107.
 \end{align*}
-
-
+Nu kan det virke til, at det var spild da vi lavede hele tabellen, men i beregningerne af $2^i P \modu{753161713}$ ville vi også kunne have løbet ind i et element, som ikke havde en invers og som dermed kunne give os en faktor.
 \end{example}
 
 
-
-%	n =  1688955439703788849,
 

@@ -19,28 +19,56 @@
 
 \refsection{0}
   \sortlist{entry}{nty}
-    \entry{Akaike1973}{inproceedings}{}
+    \entry{Hansen}{book}{}
       \name{labelname}{1}{}{%
-        {{hash=926ba39bebf207bb661b158164603311}{Akaike}{A\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+        {{hash=fc80ef1c58e7c2f0c430e2feb16ee85d}{Hansen}{H\bibinitperiod}{Johan\bibnamedelima P.}{J\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
       }
       \name{author}{1}{}{%
-        {{hash=926ba39bebf207bb661b158164603311}{Akaike}{A\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+        {{hash=fc80ef1c58e7c2f0c430e2feb16ee85d}{Hansen}{H\bibinitperiod}{Johan\bibnamedelima P.}{J\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
       }
-      \name{editor}{2}{}{%
-        {{hash=311ff0f74864aa899f102a8b26cde199}{Petrov}{P\bibinitperiod}{B.\bibnamedelimi N.}{B\bibinitperiod\bibinitdelim N\bibinitperiod}{}{}{}{}}%
-        {{hash=029d3ea3e3efb90ea3f2ab7fb054981b}{Csaki}{C\bibinitperiod}{F.}{F\bibinitperiod}{}{}{}{}}%
+      \strng{namehash}{fc80ef1c58e7c2f0c430e2feb16ee85d}
+      \strng{fullhash}{fc80ef1c58e7c2f0c430e2feb16ee85d}
+      \field{sortinit}{H}
+      \field{labeltitle}{Algebra og talteori}
+      \field{title}{Algebra og talteori}
+    \endentry
+    \entry{Lenstra}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=5ae4d9e8eeb8c15a3f47f43f4f91737b}{Lenstra\bibnamedelima Jr.}{L\bibinitperiod\bibinitdelim J\bibinitperiod}{H.\bibnamedelimi W.}{H\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
       }
-      \list{location}{1}{%
-        {Budapest: Akademiai Kiado}%
+      \name{author}{1}{}{%
+        {{hash=5ae4d9e8eeb8c15a3f47f43f4f91737b}{Lenstra\bibnamedelima Jr.}{L\bibinitperiod\bibinitdelim J\bibinitperiod}{H.\bibnamedelimi W.}{H\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{926ba39bebf207bb661b158164603311}
-      \strng{fullhash}{926ba39bebf207bb661b158164603311}
-      \field{sortinit}{A}
-      \field{labeltitle}{Information theory and an extension of the maximum likelihood principle}
-      \field{booktitle}{2nd International Symposium on Information Theory}
-      \field{title}{Information theory and an extension of the maximum likelihood principle}
-      \field{year}{1973}
-      \field{pages}{267\bibrangedash 281}
+      \strng{namehash}{5ae4d9e8eeb8c15a3f47f43f4f91737b}
+      \strng{fullhash}{5ae4d9e8eeb8c15a3f47f43f4f91737b}
+      \field{sortinit}{L}
+      \field{labeltitle}{Factoring Integers with Elliptic Curves}
+      \field{issue}{03}
+      \field{journaltitle}{The Annals of Mathematics, Second Series,}
+      \field{month}{11}
+      \field{title}{Factoring Integers with Elliptic Curves}
+      \field{volume}{126}
+      \field{year}{1987}
+      \field{pages}{649\bibrangedash 673}
+    \endentry
+    \entry{Pollard}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=99ef10a5b1dbf89a964eeae6ad270879}{Pollard}{P\bibinitperiod}{J.\bibnamedelimi M.}{J\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=99ef10a5b1dbf89a964eeae6ad270879}{Pollard}{P\bibinitperiod}{J.\bibnamedelimi M.}{J\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{99ef10a5b1dbf89a964eeae6ad270879}
+      \strng{fullhash}{99ef10a5b1dbf89a964eeae6ad270879}
+      \field{sortinit}{P}
+      \field{labeltitle}{Theorems on factorization and primality testing}
+      \field{issue}{03}
+      \field{journaltitle}{Mathematical Proceedings of the Cambridge Philosophical Society}
+      \field{month}{10}
+      \field{title}{Theorems on factorization and primality testing}
+      \field{volume}{76}
+      \field{year}{1974}
+      \field{pages}{521\bibrangedash 528}
     \endentry
   \endsortlist
 \endrefsection

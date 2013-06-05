@@ -13,3 +13,22 @@ Antag for modstrid, at $d = \gcd(a, n) > 1$, men at der samtidigt eksisterer en 
 \end{align*}
 hvilket er i modstrid med at $e$ ikke kunne være $0$ modulo $n$. Altså har $a$ ikke en invers når $\gcd(a, n) > 1$.
 \end{proof}
+
+Vi giver nu beviset for sætning \ref{fermats_small_theorem}:
+\begin{proof}[Bevis for Fermats lille sætning]
+Vi ser først på de $p-1$ positive multipla af $a$
+\begin{align}
+	\label{multiples}
+	a, 2a, \ldots, (p-1)a.
+\end{align}
+Hvis $ra = sa \modu{p}$ har vi, at $r = s \modu{p}$, så elementerne listet i \eqref{multiples} er forskellige og ikke-nul. De må altså være kongruente til $1, 2, \ldots, p-1$ men ikke nødvendigvis i den opskrevne rækkefølge. Ganger vi elementerne sammen må de to kongruenser være de samme, altså er
+\begin{align*}
+	a \cdot 2a \cdots (p-1)a = 1 \cdot 2 \cdots (p-1) \modu{p},
+\end{align*}
+hvilket giver os, at 
+\begin{align*}
+	a^{p-1} (p-1)! = (p-1)! \modu{p} \Rightarrow a^{p-1} = 1 \modu{p}.
+\end{align*}
+
+
+\end{proof}

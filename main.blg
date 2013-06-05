@@ -1,14 +1,14 @@
 [0] Config.pm:387> INFO - This is Biber 1.6
 [0] Config.pm:390> INFO - Logfile is 'main.blg'
-[72] biber-MSWIN:215> INFO - === %a %b %e, %Y, %H:%M:%S
+[73] biber-MSWIN:215> INFO - === %a %b %e, %Y, %H:%M:%S
 [73] Biber.pm:325> INFO - Reading 'main.bcf'
-[143] Biber.pm:623> INFO - Found 1 citekeys in bib section 0
-[157] Biber.pm:2995> INFO - Processing section 0
+[144] Biber.pm:623> INFO - Found 3 citekeys in bib section 0
+[158] Biber.pm:2995> INFO - Processing section 0
 [178] Biber.pm:3129> INFO - Looking for bibtex format file 'referencer.bib' for section 0
 [180] bibtex.pm:898> INFO - Decoding LaTeX character macros into UTF-8
 [181] bibtex.pm:775> INFO - Found BibTeX data source 'referencer.bib'
-[218] Biber.pm:2881> INFO - Overriding locale 'English_United States.1252' default tailoring 'variable = shifted' with 'variable = non-ignorable'
-[218] Biber.pm:2887> INFO - Sorting 'entry' list 'nty' keys
-[218] Biber.pm:2891> INFO - No sort tailoring available for locale 'English_United States.1252'
-[231] bbl.pm:472> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[232] bbl.pm:545> INFO - Output to main.bbl
+[227] Biber.pm:2881> INFO - Overriding locale 'English_United States.1252' default tailoring 'variable = shifted' with 'variable = non-ignorable'
+[227] Biber.pm:2887> INFO - Sorting 'entry' list 'nty' keys
+[227] Biber.pm:2891> INFO - No sort tailoring available for locale 'English_United States.1252'
+[253] bbl.pm:472> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[254] bbl.pm:545> INFO - Output to main.bbl

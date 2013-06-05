@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.6.4)  4 JUN 2013 22:24
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.6.4)  5 JUN 2013 18:15
 entering extended mode
 **main.tex
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\main.tex
@@ -1253,12 +1253,12 @@ ABD: EveryShipout initializing macros
 \makeMPintoPDFobject=\count353
 \everyMPtoPDFconversion=\toks47
 ) (C:\Users\Orhoj\Desktop\Bachelorprojekt\pollard.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1274,12 +1274,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\lenstra.tex [22
 
 
-]) [23]
-(C:\Users\Orhoj\Desktop\Bachelorprojekt\appendiks.tex) [24
+] [23]) [24]
+(C:\Users\Orhoj\Desktop\Bachelorprojekt\appendiks.tex) [25
 
 
 
-] [25
+] [26
 
 
 ]
@@ -1293,13 +1293,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 20121 strings out of 493944
- 345383 string characters out of 3148234
- 759685 words of memory out of 3000000
- 23049 multiletter control sequences out of 15000+200000
+ 20125 strings out of 493944
+ 345446 string characters out of 3148234
+ 759783 words of memory out of 3000000
+ 23053 multiletter control sequences out of 15000+200000
  13106 words of font info for 50 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 61i,12n,55p,873b,1371s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 61i,12n,55p,873b,1393s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
@@ -1314,9 +1314,9 @@ es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (8 pages, 179179 bytes).
+Output written on main.pdf (9 pages, 187563 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
+ 95 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

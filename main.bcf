@@ -1954,7 +1954,9 @@
     <bcf:datasource type="file" datatype="bibtex">referencer.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Akaike1973</bcf:citekey>
+    <bcf:citekey order="1">Hansen</bcf:citekey>
+    <bcf:citekey order="2">Pollard</bcf:citekey>
+    <bcf:citekey order="3">Lenstra</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" type="entry" label="nty">
   <bcf:sorting>
