@@ -14,6 +14,9 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 
+% Image stuff
+\usepackage{graphicx}
+
 % Dansk babel og tillad øæå osv.
 \usepackage[danish]{babel}
 \usepackage[utf8]{inputenc}
@@ -40,7 +43,7 @@
 \newtheorem{algorithm}{Algoritme}
 
 % section som chapterstyle er mindre voldsomt til et "lille" projekt
-\chapterstyle{section}
+% \chapterstyle{section}
 
 % Sørg for at niveauet til og med subsection nummereres
 \setcounter{secnumdepth}{2}
@@ -54,7 +57,7 @@
 \newcommand{\infp}{\mathcal{O}}
 
 % Skriver LCM med tekst
-\newcommand{\lcm}{\mathrm{LCM}}		
+\newcommand{\lcm}{\mathrm{LCM}}
 
 % Hurtig måde at lave modulo
 \newcommand{\modu}[1]{\ (\mathrm{mod} \ #1)}
@@ -63,18 +66,21 @@
 \newcommand{\clfq}{\overline{\mathbb{F}}_q}
 \newcommand{\clk}{\overline{K}}
 
+% Karakteristik
+\newcommand{\cha}{\text{char}}
+
 % -- SLUT PÅ MAKROER --
 
 % Bruges kun under skrivningen af projektet
-\includeonly{pollard}
+% \includeonly{gruppeloven}
 
 \begin{document}
-% \tableofcontents
+\tableofcontents
 \include{gruppeloven}
 \include{endomorfier_torsion}
 \include{endelige_legemer}
 \include{pollard}
 \include{lenstra}
 \include{appendiks}
-% \printbibliography
+\printbibliography
 \end{document}

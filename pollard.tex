@@ -75,7 +75,7 @@ $0 \leq i \leq 8$. Dette resulterer i følgende tabel:
 
 \begin{center}
 \begin{tabular}{c c c c}
-$i$ & $2^{2^i} \modu{n}$ & & \\ 
+$i$ & $2^{2^i} \modu{n}$ & $i$ & $2^{2^i} \modu{n}$ \\ 
 \hline 
 1 & 4 & 5 & 28933574 \\ 
 2 & 16 & 6 & 27713768 \\ 
@@ -95,7 +95,7 @@ Ved anvendelse af den euklidiske algoritme finder vi dernæst, at
 \begin{align*}
 	\mathrm{gcd}(2^{420} - 1 \modu{n}, n) = \mathrm{gcd}(27976514, 30042491) = 1.
 \end{align*}
-Her fejler testen altså og vi er nået frem til, at $N$ ikke har nogle 
+Her fejler testen altså og vi er nået frem til, at $n$ ikke har nogle 
 primtalsfaktorer $p$ sådan, at $p-1$ deler $420$. Algoritmen foreskriver da, at vi skal vælge et nyt $k$. Vi lader
 \begin{align*}
 	k = \mathrm{LCM}[1,2, \ldots, 11] = 27720.
@@ -104,7 +104,7 @@ Da $27720 = 2^{14} + 2^{13} + 2^{11} + 2^{10} + 2^{6} + 2^3$ skal vi udvide tabe
 
 \begin{center}
 \begin{tabular}{c c c c}
-$i$ & $2^{2^i} \modu{n}$ & &  \\ 
+$i$ & $2^{2^i} \modu{n}$ & $i$ & $2^{2^i} \modu{n}$ \\ 
 \hline 
 9 & 19694714 & 12 & 26818902 \\ 
 10 & 3779241 & 13 & 8658967 \\ 

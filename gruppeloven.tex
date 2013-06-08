@@ -1,9 +1,9 @@
-\chapter{Etablering af gruppestrukturen}
+\chapter{Elliptiske kurver}
 I dette kapitel vil vi introducere elliptiske kurver.
 Det viser sig, at være muligt at påføre de elliptiske kurver en gruppestruktur ved en geometrisk addition af punkter fra en sådan kurve. Vi vil indføre denne additionslov og vise, at det resulterer i en abelsk gruppe. For at kunne gøre dette skal vi desuden anvende projektiv geometri, som også vil blive introduceret.
 
 \section{Elliptiske kurver}
-For at kunne snakke om elliptiske kurver skal vi først og fremmest have defineret, hvad en elliptisk kurve er. Vi vil i denne tekst benytte følgende definition:
+Det er muligt at definere elliptiske kurver på flere måder. Lad $K$ være et legeme, da er følgende defintion tilstrækkelig til vores formål:
 
 \begin{definition}
 En elliptisk kurve $E$ er grafen for en ligning
@@ -11,14 +11,26 @@ En elliptisk kurve $E$ er grafen for en ligning
 	\label{elliptic_curve}
 	y^2 = x^3 + Ax + B,
 \end{align}
-hvor $A, B \in K$ er konstanter og $4A^3 + 27B^2 \neq 0$. Denne type elliptisk kurve siges at være på Weierstrass normalform.
+hvor $A, B \in K$ er konstanter og $4A^3 + 27B^2 \neq 0$. 
 \end{definition}
 
-Da $\Delta = -16(4A^3 + 27B^2)$ er diskriminanten for \eqref{elliptic_curve} betyder det, at vi ikke tillader multiple rødder for en elliptisk kurve. Altså har kurvens rødder alle multiplicitet $1$. Der findes mere generelle definitioner af elliptiske kurver, men når vi arbejder over legemer som ikke har karakteristik $2$ eller $3$, kan vi altid skrive en elliptisk kurve på Weierstrass normalform.
-
-
-
-
+Vi siger, at den elliptiske kurve $E$ er på Weierstrass normalform, når den kan beskrives som i \eqref{elliptic_curve}. Hvis $\cha (K) \neq 2, 3$ er det faktisk altid muligt, at omskrive en elliptisk kurve til Weierstrass normalform (se eksempelvis kapitel 2 i \cite{Washington}). Det kan vises, at diskriminanten for \eqref{elliptic_curve} er \begin{align*}
+	\Delta = 4A^3 + 27B^2,
+\end{align*}
+så en elliptisk kurve kan ikke have multiple rødder pr. kravet i definitionen. I figur \ref{figure_elliptic_curves} ses to eksempler på elliptiske kurver over de reelle tal.
+\begin{figure}
+\label{figure_elliptic_curves}
+\centering
+\includegraphics[scale=0.2]{elliptic_1}
+\includegraphics[scale=0.2]{elliptic_2}
+\caption{Eksempler på elliptiske kurver over $\mathbb{R}$. Venstre: $y^2 = x^3 - x$, Højre: $y^2 = x^3 -x + 1$}
+\end{figure}
+Definitionen siger, at $A, B$ skal tilhøre et legeme $K$. Det kunne være $\mathbb{R}, \mathbb{C}$ eller $\mathbb{Q}$. I denne opgave vil vi dog fokusere på de endelige legemer $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$ hvor $p$ er et primtal, eller de endelige legemer $\mathbb{F}_q$ hvor $q = p^r$ for $r \geq 1$. Hvis $A, B \in K$ for en elliptisk kurve $E$ siger vi, at $E$ er givet over $K$. Vi vil fra nu af med $E$ mene en elliptisk kurve på Weierstrass normalform og med $K$ mene et legeme medmindre andet er nævnt. Punkterne på en elliptisk kurve med koordinater i et legeme $L \supseteq K$ skriver vi som $E(L)$, hvor 
+\begin{align}
+\label{elliptic_curve_points}
+	E(L) = \{ \infty \} \cup \{ (x, y) \in L \times L \mid y^2 = x^3 + Ax + B \}.
+\end{align}
+Punktet $\infty$ kaldes punktet i uendelig og viser sig nødvendigt for at $E(L)$ bliver en gruppe under additionen vi vi introducere i næste afsnit. Intuitivt kan vi se $\infty$ som værende punktet $(\infty, \infty)$ som er placeret i toppen af $y$-aksen. En linje siges at gå igennem $\infty$ præcist, når den er lodret. To lodrette linjer skærer derfor hinanden i $\infty$. $\infty$ kan også tænkes som værende i bunden af $y$-aksen, men så vil to lodrette linjer skære hinanden to steder, hvilket er hvorfor vi kræver at $\infty$ i toppen og i bunden er et og samme punkt.
 
 
 \section{Det projektive plan}
@@ -54,20 +66,78 @@ har $\infty$ i enten $x$- eller $y$-koordinaten. Vi kalder dermed punkterne
 $(x, y, 0)$ for punkterne i "uendelig".
 
 
-
-
-
-
-
-
 \section{Gruppeloven}
-Lad nu $E$ være en elliptisk kurve over $K$ som i \ref{elliptic_curve}. Mængden
-af punkter på $E$ med koordinater i $K$ er givet ved
+Lad $E$ være en elliptisk kurve over $K$. Det viser sig, at vi kan tage to punkter (eller blot ét) på $E$ og producere et tredje punkt som også er på $E$. Vi vil i dette afsnit vise, hvordan dette gøres og til slut konkludere, at defineres dette som en addition operator bliver $E(K)$ en additiv abelsk gruppe. Vælg to punkter
 \begin{align*}
-	E(K) = \{ \infp \} \cup \{ (x, y) \in K \times K \mid y^2 = x^3 + Ax + B \},
+	P_1 = (x_1, y_1) \quad \text{og} \quad P_2 = (x_2, y_2)
 \end{align*}
-hvor $\infp$ er punktet i uendelighed, som vi vil definere senere. Vi definerer
-da en binær operator/funktion $+$ på $E(K)$ ved følgende algoritme:
+på $E$. 
+\begin{figure}
+\label{figure_addition_law}
+\centering
+\includegraphics[scale=0.25]{elliptic_3}
+\caption{Addition af to punkter på en elliptisk kurve}
+\end{figure}
+Vi kan da trække en ret linje $L$ igennem punkterne $P_1$ og $P_2$, som så vil skære kurven for $E$ i et tredje punkt ${P_3}'$ (se appendiks for bevis om skæring i 3 punkter). Vi definerer $P_1 + P_2 = P_3$ til at være reflektionen i $x$-aksen af dette punkt. 
+
+Vi vil nu udlede formlerne for denne addition af punkter på $E$. Antag først, at $P_1 \neq P_2$ og lad $P_1$ og $P_2$ være forskellige fra $\infty$. Vi har da, at hældningen for linjen der går igennem $P_1$ og $P_2$ er
+\begin{align*}
+	m = \frac{y_2 - y_1}{x_2 - x_1}.
+\end{align*}
+Hvis $x_1 = x_2$ er linjen lodret, hvilket er et tilfælde som vi behandler senere. Antag altså at $x_1 \neq x_2$, da har vi at
+\begin{align*}
+	y_2 = m(x_2 - x_1) + y_1.
+\end{align*}
+Vi indsætter dette i ligningen for $E$ og får, at 
+\begin{align*}
+	(m(x-x_1) + y_1)^2 = x^3 + Ax + B.
+\end{align*}
+Skrives dette ud får vi, at
+\begin{align*}
+	0 &= x^3 + Ax + B - 2y_1 m(x-x_1) - m^2 (x - x_1)^2 - y_{1}^{2} \\
+	&= x^3 + Ax + B - 2y_1 m x - 2y_1 m x_1 - m^2 (x^2 -2x x_1 + x_{1}^{2}) - y_{1}^{2} \\
+	&= x^3 - m^2 x^2 + (A-2my_1 +2m^2x_1)x -2m y_1 x_1 -m^2 x_{1}^{2} - y_{1}^{2} + B. 
+\end{align*}
+Denne har tre rødder, som netop er de tre punkter, hvor $L$ skærer $E$.
+Pr. vores konstruktion kender vi allerede de to rødder $x_1$ og $x_2$,
+og vi ønsker at finde den tredje. Generelt for et kubisk polynomium 
+$x^3 + ax^2 + bx + c$, med rødder $r, s, t$, har vi at 
+\begin{align*}
+	x^3 + ax^2 + bx + c = (x - r)(x - s)(x - t) = x^3 - (r + s + t)x^2 + \ldots,
+\end{align*}
+hvilket giver os, at $-a = r + s + t$. Hvis de to rødder vi kender er $r$ og $s$
+kan vi finde den sidste som
+\begin{align*}
+	t = -a - r - s.
+\end{align*}
+I vores tilfælde er $a=-m^2$ så vi har, at 
+\begin{align*}
+	x = m^2 - x_1 - x_2.
+\end{align*}
+Vi mangler da blot at reflektere dette punkt for at have fundet punktet 
+punktet $P_1 + P_2=(x, y)$. Vi reflekterer over $x$-aksen og finder, at 
+\begin{align*}
+	x = m^2 - x_1 - x_2, \quad y = m(x_1 - x) - y_1.
+\end{align*}
+Vi vender nu tilbage til tilfældet, hvor $x_1 = x_2$. Da vil linjen igennem 
+$P_1$ og $P_2$ være lodret, så den skærer $E$ i $\infty$. Vi husker, at når $\infty$ 
+reflekteres over $x$-aksen får vi igen $\infty$. Vi får altså, at $P_1 + P_2=\infty$.
+
+Tilfældet hvor $P=Q=(x, y)$ kræver lidt flere overvejelser, da ikke ligeså
+let kan udvælge en linje. For to punkter der ligger tæt på hinanden vil linjen
+igennem punkterne nærme sig tangenten til et af punkterne. Derfor vælger vi i
+dette tilfælde, at lade linjen der går igennem punkterne være deres tangentlinje.
+
+Blah blah blah.
+
+Hvis $P=\infp$ er linjen igennem $P$ og $Q$ en lodret linje der skærer $E$ i
+refleksionen af $Q$. Derfor får vi, at 
+\begin{align*}
+	\infp + Q = Q.
+\end{align*}
+Der gælder derfor også, at $\infp + \infp = \infp$.
+
+Vi har nu dækket de mulige tilfælde og kan opstille gruppeloven som følger.
 
 \begin{definition}[Gruppeloven for elliptiske kurver]
 Givet to punkter $P_1, P_2 \in E(K)$, $P_i = (x_i, y_i)$. Et tredje punkt
@@ -92,76 +162,5 @@ Vi definerer desuden, at
 \end{align*}
 for alle $P \in E(K)$.
 \end{definition}
-Vælg to punkter 
-\begin{align*}
-	P = (x_p, y_p), \quad Q = (x_q, y_q)
-\end{align*}
-på en elliptisk kurve $E$. Vi kan da trække en ret linje, $L$, igennem
-punkterne $P$ og $Q$, som vil skære kurven for $E$ i et tredje 
-punkt $P*Q$. Reflektér dette punkt og vi definerer $P+Q$ til at være
-dette punkt. Lad desuden $\infp$ betegne punktet i uendelighed. 
-
-Vi skal nu udlede formlerne for additionen af disse punkter. Lad først
-$P \neq Q$ og lad $P$ og $Q$ være forskellige fra $\infp$. Da har vi,
-at hældningen for linjen igennem $P$ og $Q$ er 
-\begin{align*}
-	m = \frac{y_q - y_p}{x_q - x_p}.
-\end{align*}
-Hvis $x_p = x_q$ er linjen lodret, hvilket er et tilfælde vi behandler
-senere. Så lad $x_p \neq x_q$, da får vi videre at 
-\begin{align*}
-	y_q = m(x_q - x_p) + y_p.
-\end{align*}
-Vi indsætter dette i ligningen for $E$ og får, at 
-\begin{align*}
-	(m(x - x_p) + y_p)^2 = x^3 + Ax + B.
-\end{align*}
-Skriver vi dette ud får vi, at
-\begin{align*}
-	0 &= x^3 + Ax + B - 2y_p m(x-x_p) - m^2 (x - x_p)^2 - y_{p}^{2} \\
-	&= x^3 + Ax + B - 2y_p m x - 2y_ p m x_p - m^2 (x^2 -2xx_p + x_{p}^{2}) - y_{p}^{2} \\
-	&= x^3 - m^2 x^2 + (A-2my_p +2m^2x_p)x -2m y_p x_p -m^2 x_{p}^{2} - y_{p}^{2} + B. 
-\end{align*}
-Denne har tre rødder, som netop er de tre punkter, hvor $L$ skærer $E$.
-Pr. vores konstruktion kender vi allerede de to rødder $x_p$ og $x_q$,
-og vi ønsker at finde den tredje. Generelt for et kubisk polynomium 
-$x^3 + ax^2 + bx + c$, med rødder $r, s, t$, har vi at 
-\begin{align*}
-	x^3 + ax^2 + bx + c = (x - r)(x - s)(x - t) = x^3 - (r + s + t)x^2 + \ldots,
-\end{align*}
-hvilket giver os, at $-a = r + s + t$. Hvis de to rødder vi kender er $r$ og $s$
-kan vi finde den sidste som
-\begin{align*}
-	t = -a - r - s.
-\end{align*}
-I vores tilfælde er $a=-m^2$ så vi har, at 
-\begin{align*}
-	x = m^2 - x_p - x_q.
-\end{align*}
-Vi mangler da blot at reflektere dette punkt for at have fundet punktet 
-punktet $P+Q=(x, y)$. Vi reflekterer over $x$-aksen og finder, at 
-\begin{align*}
-	x = m^2 - x_p - x_q, \quad y = m(x_p - x) - y_p.
-\end{align*}
-Vi vender nu tilbage til tilfældet, hvor $x_p = x_q$. Da vil linjen igennem 
-$P$ og $Q$ være lodret, så den skærer $E$ i $\infp$. Vi husker, at når $\infp$ 
-reflekteres over $x$-aksen får vi igen $\infp$. Vi får altså, at $P+Q=\infp$.
-
-Tilfældet hvor $P=Q=(x, y)$ kræver lidt flere overvejelser, da ikke ligeså
-let kan udvælge en linje. For to punkter der ligger tæt på hinanden vil linjen
-igennem punkterne nærme sig tangenten til et af punkterne. Derfor vælger vi i
-dette tilfælde, at lade linjen der går igennem punkterne være deres tangentlinje.
-
-Blah blah blah.
-
-Hvis $P=\infp$ er linjen igennem $P$ og $Q$ en lodret linje der skærer $E$ i
-refleksionen af $Q$. Derfor får vi, at 
-\begin{align*}
-	\infp + Q = Q.
-\end{align*}
-Der gælder derfor også, at $\infp + \infp = \infp$.
-
-Vi har nu dækket de mulige tilfælde og kan opstille gruppeloven som følger.
-
 
 

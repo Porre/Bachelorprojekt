@@ -32,6 +32,25 @@
       \field{labeltitle}{Algebra og talteori}
       \field{title}{Algebra og talteori}
     \endentry
+    \entry{Lenstra}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=5ae4d9e8eeb8c15a3f47f43f4f91737b}{Lenstra\bibnamedelima Jr.}{L\bibinitperiod\bibinitdelim J\bibinitperiod}{H.\bibnamedelimi W.}{H\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=5ae4d9e8eeb8c15a3f47f43f4f91737b}{Lenstra\bibnamedelima Jr.}{L\bibinitperiod\bibinitdelim J\bibinitperiod}{H.\bibnamedelimi W.}{H\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{5ae4d9e8eeb8c15a3f47f43f4f91737b}
+      \strng{fullhash}{5ae4d9e8eeb8c15a3f47f43f4f91737b}
+      \field{sortinit}{L}
+      \field{labeltitle}{Factoring Integers with Elliptic Curves}
+      \field{issue}{03}
+      \field{journaltitle}{The Annals of Mathematics, Second Series,}
+      \field{month}{11}
+      \field{title}{Factoring Integers with Elliptic Curves}
+      \field{volume}{126}
+      \field{year}{1987}
+      \field{pages}{649\bibrangedash 673}
+    \endentry
     \entry{Pollard}{article}{}
       \name{labelname}{1}{}{%
         {{hash=99ef10a5b1dbf89a964eeae6ad270879}{Pollard}{P\bibinitperiod}{J.\bibnamedelimi M.}{J\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
@@ -63,6 +82,19 @@
       \field{sortinit}{S}
       \field{labeltitle}{Rational Points on Elliptic Curves}
       \field{title}{Rational Points on Elliptic Curves}
+    \endentry
+    \entry{Washington}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=b2b8c6073d8ef8a3f9022d359d51de81}{Washington}{W\bibinitperiod}{Lawrence\bibnamedelima C.}{L\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=b2b8c6073d8ef8a3f9022d359d51de81}{Washington}{W\bibinitperiod}{Lawrence\bibnamedelima C.}{L\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{b2b8c6073d8ef8a3f9022d359d51de81}
+      \strng{fullhash}{b2b8c6073d8ef8a3f9022d359d51de81}
+      \field{sortinit}{W}
+      \field{labeltitle}{Elliptic Curves: Number Theory and Cryptography}
+      \field{title}{Elliptic Curves: Number Theory and Cryptography}
     \endentry
   \endsortlist
 \endrefsection

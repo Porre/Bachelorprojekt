@@ -1,0 +1,33 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {danish}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Indhold}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {1}Elliptiske kurver}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Elliptiske kurver}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Det projektive plan}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Gruppeloven}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {2}Endomorfier og torsionpunkter}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Endomorfier}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {3}Elliptiske kurver over endelige legemer}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Frobenius endomorfien}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Hasses s\IeC {\ae }tning}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {4}Faktoriseringsalgoritmer}{20}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Pollards $p-1$ algoritme}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Lenstras elliptiske kurve algoritme}{24}
+\defcounter {refsection}{0}\relax 
+\contentsline {appendix}{\chapternumberline {A}Appendiks}{28}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliografi}{29}
