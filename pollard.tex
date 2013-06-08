@@ -12,44 +12,28 @@ hvor $p_i$ og $q_j$ er primtal for $1 \leq i \leq k$ og $1 \leq j \leq l$ er $k 
 
 For et bevis af sætningen se f.eks. \cite{Hansen}. Det vigtige at bemærke er, at beviset ikke er konstruktivt og dermed ikke giver os en måde, hvorpå vi kan finde disse faktorer. Men hvordan kan vi så finde disse faktorer, som vi nu ved findes? Hvis vi har et sammensat tal $n$, som vi ønsker at faktorisere kunne vi angribe problemet med en naiv tilgang. Vi antager for nemhedens skyld at $n = pq$, hvilket gør det klart at $\min \{p, q \} \leq \sqrt{n}$. Vi kan altså finde en faktor ved at undersøge om først $2 \mid n$, dernæst om $3 \mid n$ osv. indtil at vi finder en faktor, hvilket vil ske senest når vi når til $\sqrt{n}$. Denne løsning er fin for tilstrækkeligt små tal, men det bliver hurtigt uoverkommeligt for store tal (eksempler på hvor lang tid det tager?). 
 
-Sikkerheden i moderne kryptosystemer hviler på dette faktum, at det tager lang tid at faktorisere et heltal. Derfor er det interessant at undersøge om man gøre det hurtigere end den med den naive tilgang. Vi skal se på to af sådanne algoritmer, nemlig Pollards $p-1$ algoritme og Lenstras algoritme, som benytter elliptiske kurver til at finde en faktor.
+Sikkerheden i moderne kryptosystemer hviler på det faktum, at det tager lang tid at faktorisere et heltal. Derfor er det interessant at undersøge om man gøre det hurtigere end den med den naive tilgang. Vi skal se på to af sådanne algoritmer, nemlig Pollards $p-1$ algoritme og Lenstras algoritme, som benytter elliptiske kurver til at finde en faktor. Idéen med begge algoritmer er at finde et $x \in \mathbb{Z}$ sådan, at $x \not \equiv 0 \modu{n}$ og 
+$x \equiv 0 \modu{p}$ for en eller anden primfaktor $p$ i $n$. Da har vi nemlig, at $\gcd(x, n)$ er en ikke-triviel divisor i $n$.
 
 \section{Pollards $p-1$ algoritme}
 
-Vi starter med at se på Pollards $p-1$ algoritme, da Lenstras algoritme er stærkt inspireret af denne og delvist kan ses som en analog til den, hvilket gør det naturligt at betragte den først. Pollards $p-1$ algoritme blev først præsenteret i \cite{Pollard} i 1970'erne af J. M. Pollard. Algoritmen hviler på Fermats lille sætning:
-
-\begin{theorem}[Fermats lille sætning]
-\label{fermats_small_theorem}
-Lad $p$ være et primtal som ikke går op i $a$. Da gælder der, at
+Da Lenstras algoritme er stærkt inspireret af Pollards $p-1$ algoritme og devlist kan ses som værende en analog til denne, vælger vi at behandle den først. Pollards $p-1$ algoritme blev først præsenteret i \cite{Pollard} i 1970'erne af J. M. Pollard. Algoritmen er en måde hvorpå vi kan finde primfaktorer $p$ for et heltal $n$ når $p-1$ kun har \textit{små} primfaktorer. 
+\\[10pt]
+Vi ser nu på, hvordan Pollards $p-1$ algoritme prøver at finde en faktor. Lad $n$ være et sammensat tal og lad $p$ være en primfaktor i $n$. For $a \in \mathbb{Z}$ sådan at $\gcd(a, n)=1$ har vi fra Fermats lille sætning, at 
 \begin{align*}
-	a^{p-1} = 1 \modu{p}.
+	a^{p-1} \equiv 1 \modu{p}.
 \end{align*}
-\end{theorem}
-
-\noindent Et bevis findes i appendikset.
-
-Vi kan da se på, hvordan Pollards $p-1$ algoritme virker. Lad $n$ være et sammensat tal og lad $p$ være en primfaktor for $n$. Vi ved fra Fermats lille sætning, at $a^{p-1} \equiv 1 \modu{p}$ når $\gcd(a, p) = 1$. Hvis vi da kendte $p-1$ kunne vi bestemme $p$ (udover den åbenlyse måde) ved
+Antag nu, at $p-1 \mid \lcm[1, 2, \ldots, K] = k$ for et alle andet $K \in \mathbb{Z}^+$, hvor $\lcm$ er mindste fælles multiplum. Da har vi, at
 \begin{align*}
-	\gcd(a^{p-1} - 1, n) = p. 
+	a^{k} = a^{m(p-1)} = (a^{p-1})^m \equiv 1 \modu{p}.
 \end{align*}
-(måske et multiplum af $p$?), da hvis $x \equiv 1 \modu{l}$, hvor $l$ er en faktor i $n$, er $\gcd(x-1, n)$ divisibel med denne faktor $l$.
+Lader vi $x = a^{k} - 1$ har vi nu, at $p \mid d = \gcd(x, n)$. Hvis nu $x \not \equiv 0 \modu{n}$ er $d$ en ikke-triviel divisor i $n$. Bemærk, at vi i de udregninger ikke har haft brug for at kende $p$. I praksis vil vi dog udregne $\gcd(x \modu{n}, n)$ da vi ellers kan risikere at $x$ bliver meget stort og besværligt at regne med, men det ændrer ikke på resultatet. Med den nu fundne faktor har vi en faktorisering $n=d \cdot \frac{n}{d}$ og vi kan gentage processen på disse to faktorer, hvis de ikke allerede er primtal. 
 
-Vi kender dog ikke $p-1$ og vi kan derfor ikke foretage denne udregning. Det viser sig dog, at vi kan nøjes med et multiplum af $p-1$, da
+Det hele hviler altså på, at $n$ skal have en primfaktor $p$ sådan, at 
 \begin{align*}
-	a^{t(p-1)} - 1 = (a^{p-1})^k - 1 \equiv 1^k - 1 \equiv 0 \modu{p}.
-\end{align*}
-Idéen er da, at vi vælger et heltal
-\begin{align*}
-	k = 2^{e_2} \cdot 3^{e_3} \cdot 5^{e_5} \cdots r^{e_r},
-\end{align*}
-hvor $2, 3, \ldots, r$ er primtal og $e_1, e_2, \ldots, e_r$ er små positive heltal. Vi udregner da $\gcd(a^k - 1, n)$. Hvis vi er i det heldige tilfælde, hvor $n$ har en faktor sådan, at $p-1 \mid k$, da vil $p \mid a^k - 1$ og
-vi har så, at
-\begin{align*}
-	\gcd(a^k - 1, n) \geq p > 1.
-\end{align*}
-Hvis $\gcd(a^k - 1, n) \neq n$ har vi altså fundet en ikke-triviel faktor for $n$ og vi kan dele $n$ i to faktorer og gentage de ovenstående trin. Hvis vi derimod har, at $\gcd(a^k -1, n) = n$ vælger vi et andet $a$ og forsøger igen, og hvis $\gcd(a^k-1,n)=1$ vælger vi et større $k$.
-
-Dette er tankegangen i Pollards $p-1$ algoritme og vi opsummerer det i algoritmen:
+	p-1 \mid \lcm[1, 2, \ldots, K].
+\end{align*} 
+Dette vil der være stor sandsynlighed for, hvis $p-1$ har mange små primfaktorer. Vi er da klar til, at præsentere algoritmen, som er inspireret af gennemgangen af algoritmen i \cite{Silverman}:
 
 \begin{algorithm}[Pollards $p-1$ algoritme]
 Lad $n \geq 2$ være et sammensat tal, som er tallet vi ønsker at 
@@ -65,11 +49,13 @@ finde en faktor for.
 	\item Udregn $\gcd(a, n)$. Hvis $\gcd(a, n) > 1$ har vi fundet en
 	ikke-triviel faktor for $n$ og vi er færdige. Ellers fortsæt til næste
 	trin.
-	\item Udregn $D = \gcd(a^k - 1, n)$. Hvis $1 < D < n$ er $D$ en ikke-triviel
+	\item Udregn $D = \gcd(a^k - 1 \modu{n}, n)$. Hvis $1 < D < n$ er $D$ en ikke-triviel
 	faktor for $n$ og vi er færdige. Hvis $D = 1$ gå da tilbage til trin 1
 	og vælg et større $k$. Hvis $D = n$ gå da til trin 2 og vælg et nyt $a$. 
 \end{enumerate}
 \end{algorithm}
+
+Denne version af algoritmen vil på et tidspunkt stoppe, da vi på et tidspunkt vil have at $K=\frac{1}{2}(p-1)$ i trin 1 for et eller andet $p \mid n$, hvilket betyder at $p-1 \mid k$. Hvis der ikke bliver fundet en faktor før dette sker er algoritmen dog yderst ineffektiv og man vil i praksis kun teste til en fastsat grænse for $K$.
 
 Følgende er et eksempel på anvendelsen af Pollards algoritme,
 hvor det går godt, altså hvor $p-1$ har små primfaktorer:
@@ -98,7 +84,6 @@ $i$ & $2^{2^i} \modu{n}$ & & \\
 5 & 28933574 & & 
 \end{tabular} 
 \end{center}
-
 Denne tabel gør det forholdsvist let for os, at bestemme
 \begin{align*}
 	2^{420} &= 2^{2^2 + 2^5 + 2^7 + 2^8} \\
@@ -106,7 +91,6 @@ Denne tabel gør det forholdsvist let for os, at bestemme
 	\modu{30042491} \\
 	&\equiv 27976515 \modu{30042491}.
 \end{align*}
-
 Ved anvendelse af den euklidiske algoritme finder vi dernæst, at
 \begin{align*}
 	\mathrm{gcd}(2^{420} - 1 \modu{n}, n) = \mathrm{gcd}(27976514, 30042491) = 1.
