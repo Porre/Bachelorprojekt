@@ -1,12 +1,12 @@
 \chapter{Endomorfier og torsionpunkter}
 
-Ordenen af et element $P$ fra en gruppe over en elliptisk kurve er det mindste heltal $n$ sådan at $nP = \infty$. Hvis der ikke findes et sådan $n$ siges ordenen af $P$ at være uendelig. Torsionspunkterne er netop de punkter, som har endelig orden og de viser sig at have relevans for elliptiske kurver over endelig legemer, som vi vil undersøge i næste kapitel 3.
+Ordenen af et element $P$ fra en gruppe over en elliptisk kurve er det mindste heltal $n$ sådan at 
+$nP = P + P + \ldots P = \infty$. Hvis der ikke findes et sådan $n$ siges ordenen af $P$ at være uendelig. Torsionspunkterne er netop de punkter, som har endelig orden og de viser sig at have relevans for elliptiske kurver over endelig legemer, som vi vil undersøge i kapitel 3.
 
-Vi skal desuden etablere nogle vigtige resultater vedrørende endomorfier på elliptiske kurver, som viser sig nødvendige i beviset for Hasses sætning.
+Vi vil først etablere nogle vigtige resultater vedrørende endomorfier på elliptiske kurver, som viser sig nødvendige i beviset for Hasses sætning.
 
 \section{Endomorfier}
-Lad $K$ være et legeme og $\clk$ dens tilhørende algebraiske aflukning. I det følgende vil vi med en elliptisk kurve $E$ mene en kurve på formen Når vi skriver om en elliptisk kurve $E$ menes den at være på Weierstrass normalform, altså $y^2 = x^3 + Ax + B$. 
-
+Lad $K$ være et legeme og $\clk$ dens tilhørende algebraiske aflukning. I det følgende vil vi med en elliptisk kurve $E$ mene en kurve på formen $y^2 = x^3 + Ax + B$. 
 Vi begynder da med følgende definition:
 
 \begin{definition}
@@ -170,12 +170,7 @@ Graden af en endomorfi $\alpha$ er givet ved
 når $\alpha$ ikke er den trivielle endomorfi, altså for $\alpha \neq 0$. For $\alpha = 0$ lader vi $\deg (\alpha) = 0$.
 \end{definition}
 
-En endomorfi siges at være separabel hvis den afledede $r_1'(x) \neq 0$.
-
-\begin{example}
-Eksempel på en separabel endomorfi. Bogen ser på $2P$ som også er oplagt, men måske skulle man vælge en mere interessant.
-\end{example}
-
+En endomorfi siges at være \textit{separabel} hvis den afledede $r_1'(x) \neq 0$.
 
 Den følgende proposition er essentiel idet, at det tilknytter graden af en endomorfi til antallet af elementer i kernen for selvsamme endomorfi. Dette faktum benyttes direkte i beviset for Hasses sætning.
 
@@ -245,6 +240,9 @@ $p-aq$ netop $\deg \alpha$ forskellige rødder. Da der er præcist $\deg \alpha$
 punkter $(x_1, y_1)$ så $\alpha(x_1, y_1) = (a, b)$ har kernen for $\alpha$ netop
 $\deg \alpha$ elementer.
 \end{proof}
+
+Dette bevis konkluderer undersøgelse af endomorfier på generelle legemer $K$. I kapitel 4
+vil vi fortsat behandle endomorfier, men der vil det være for endelige legemer.
 
 
 

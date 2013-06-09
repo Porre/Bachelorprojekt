@@ -12,22 +12,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.3}Gruppeloven}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {2}Endomorfier og torsionpunkter}{7}
+\contentsline {chapter}{\chapternumberline {2}Endomorfier og torsionpunkter}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Endomorfier}{7}
+\contentsline {section}{\numberline {2.1}Endomorfier}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}Elliptiske kurver over endelige legemer}{13}
+\contentsline {chapter}{\chapternumberline {3}Elliptiske kurver over endelige legemer}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Frobenius endomorfien}{14}
+\contentsline {section}{\numberline {3.1}Frobenius endomorfien}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Hasses s\IeC {\ae }tning}{16}
+\contentsline {section}{\numberline {3.2}Hasses s\IeC {\ae }tning}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Faktoriseringsalgoritmer}{20}
+\contentsline {chapter}{\chapternumberline {4}Faktoriseringsalgoritmer}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Pollards $p-1$ algoritme}{21}
+\contentsline {section}{\numberline {4.1}Pollards $p-1$ algoritme}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Lenstras elliptiske kurve algoritme}{24}
+\contentsline {section}{\numberline {4.2}Lenstras elliptiske kurve algoritme}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {A}Appendiks}{28}
+\contentsline {appendix}{\chapternumberline {A}Appendiks}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografi}{29}
+\contentsline {chapter}{Bibliografi}{30}
