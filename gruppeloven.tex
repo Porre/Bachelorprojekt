@@ -128,7 +128,7 @@ I vores tilfælde er $a=-m^2$ så vi har, at
 	x = m^2 - x_1 - x_2.
 \end{align*}
 Vi mangler da blot at reflektere dette punkt for at have fundet punktet 
-punktet $P_1 + P_2=(x, y)$. Vi reflekterer over $x$-aksen og finder, at 
+punktet $P_1 + P_2 = P_3 = (x, y)$. Vi reflekterer over $x$-aksen og finder, at 
 \begin{align*}
 	x = m^2 - x_1 - x_2, \quad y = m(x_1 - x) - y_1.
 \end{align*}
@@ -136,44 +136,63 @@ Vi vender nu tilbage til tilfældet, hvor $x_1 = x_2$. Da vil linjen igennem
 $P_1$ og $P_2$ være lodret, så den skærer $E$ i $\infty$. Vi husker, at når $\infty$ 
 reflekteres over $x$-aksen får vi igen $\infty$. Vi får altså, at $P_1 + P_2=\infty$.
 
-Tilfældet hvor $P=Q=(x, y)$ kræver lidt flere overvejelser, da ikke ligeså
-let kan udvælge en linje. For to punkter der ligger tæt på hinanden vil linjen
-igennem punkterne nærme sig tangenten til et af punkterne. Derfor vælger vi i
-dette tilfælde, at lade linjen der går igennem punkterne være deres tangentlinje.
-
-Blah blah blah.
-
-Hvis $P=\infp$ er linjen igennem $P$ og $Q$ en lodret linje der skærer $E$ i
-refleksionen af $Q$. Derfor får vi, at 
+Tilfældet hvor $P_1 = P_2 = (x_1, y_1)$ kræver lidt flere overvejelser. For to punkter som ligger
+tæt på hinanden vil linjen igennem punkterne nærme sig tangenten til et af punkterne. Når vi har to ens punkter lader vi da linjen igennem dem være tangenten til punktet. Ved implicit differentiation finder vi, at 
 \begin{align*}
-	\infp + Q = Q.
+	2y \frac{dy}{dx} = 3x^2 + A, \quad \text{så} \quad m = \frac{dy}{dx} = \frac{3x_{1}^{2} + A}{2y_1}.
 \end{align*}
-Der gælder derfor også, at $\infp + \infp = \infp$.
+Hvis $y_1 = 0$ er linjen og i det tilfælde lader vi $P_1 + P_2 = \infty$. Antag altså, at $y_1 \neq 0$. Ligningen for $L$ er 
+\begin{align*}
+	y = m(x-x_1) + y_1,
+\end{align*}
+som før. Vi får den kubiske ligning
+\begin{align*}
+	0 = x^3 - m^2 x^2 + \ldots
+\end{align*}
+Vi kender dog kun én rod denne gang $x_1$, men den er en dobbelt rod idet at $L$ er tangent til $E$ i $P_1$. Så på samme måde som før får vi, at 
+\begin{align*}
+	x_3 = m^2 - 2x_1, \quad y_3 = m(x_1 - x_3) - y_1.
+\end{align*}
+Antag nu, at $P_2 = \infty$. Linjen som går igennem $P_1$ og $\infty$ er en lodret linje, som skærer $E$ i reflektionen af $P_1$ over $x$-aksen. Når vi reflekterer dette punkt igen over $x$-aksen får vi igen $P_1$. Altså har vi, at
+\begin{align*}
+	P_1 + \infty = P_1.
+\end{align*}
+Vi udvider dette sådan, at vi også har at $\infty + \infty = \infty$. 
+\\
+Det er nu mere klart, hvorfor elliptiske kurver og denne definition for en addition passer sammen. Højresiden i en ligning på Weierstrass normalform er kubisk så en linje igennem to punkter skærer den i et tredje punkt. At venstresiden er $y^2$ sikrer os, at kurven er symmetrisk om $x$-aksen, som benyttes når vi vi reflekterer et punkt. Vi opsummerer denne diskussion og kan opstille gruppeloven:
 
-Vi har nu dækket de mulige tilfælde og kan opstille gruppeloven som følger.
-
-\begin{definition}[Gruppeloven for elliptiske kurver]
+\begin{definition}[Gruppeloven]
+Lad $E$ være en elliptisk kurve. Givet to punkter, $P_1, P_2 \in E(K)$, $P_i = (x_i, y_i)$
 Givet to punkter $P_1, P_2 \in E(K)$, $P_i = (x_i, y_i)$. Et tredje punkt
-$R = P_1 + P_2 = (x_3, y_3)$ findes da som følger
+$P_3 = P_1 + P_2 = (x_3, y_3)$ findes da som følger
 \begin{enumerate}
-	\item Hvis $x_1 \neq x_2$ da er 
+	\item Hvis $x_1 \neq x_2$ er 
 	\begin{align*}
 		x_3 = m^2 - x_1 - x_2, \quad y_3 = m(x_1 - x_3) - y_1,
 	\end{align*}		
 	hvor $m = (y_2 - y_1)/(x_2 - x_1)$.
-	\item Hvis $x_1 = x_2$, men $y_1 \neq y_2$ da er $R = P_1 + P_2 = \infp$.
-	\item Hvis $P_1 = P_2$ og $y_1 \neq 0$ da er 
+	\item Hvis $x_1 = x_2$, men $y_1 \neq y_2$ da er $P_1 + P_2 = \infty$.
+	\item Hvis $P_1 = P_2$ og $y_1 \neq 0$ er 
 	\begin{align*}
 		x_3 = m^2 - 2x_1, \quad y_3=m(x_1 - x_3) - y_1,
 	\end{align*}
 	hvor $m=(3{x_1}^2 + A)/2y_1$.
-	\item Hvis $P_1 = P_2$ og $y_1 = 0$ da er $R = P_1 + P_2 = \infp$.
+	\item Hvis $P_1 = P_2$ og $y_1 = 0$ da er $P_1 + P_2 = \infty$.
 \end{enumerate}
 Vi definerer desuden, at 
 \begin{align*}
-	P + \infp = \infp,
+	P + \infty = \infty,
 \end{align*}
 for alle $P \in E(K)$.
 \end{definition}
 
+Det måske overraskende hovedresultatet i dette kapitel er, at denne addition resulterer i en abelsk gruppe:
 
+\begin{theorem}
+Punkterne på $E$, altså $E(K)$, udgør en additiv abelsk gruppe hvor $\infty$ er identiteten og additionen er som defineret i gruppeloven. 
+\end{theorem}
+\begin{proof}
+For at være en gruppe skal additionen af punkter være kommutativ, der skal eksistere en identitet, der skal eksistere en invers til hvert element og additionen af punkter skal være associativ.
+
+Kommutativiteten kan enten ses direkte fra formlerne eller fra det faktum, at linjen igennem $P_1$ og $P_2$ er den samme som linjen igennem $P_2$ og $P_1$. At $\infty$ er identiteten følger pr. definitionen af denne. For de inverse elementer lader vi $P'$ være reflektionen af $P$, da er $P+P' = \infty$. Associativiteten kan vises direkte ud fra formlerne, men der er mange tilfælde der skal behandles, hvilket gør det besværligt. Der forefindes et bevis for dette i \cite{Washington}.
+\end{proof}
