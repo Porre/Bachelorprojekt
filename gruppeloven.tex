@@ -59,11 +59,24 @@ Vi er nemlig i stand til at associere et punkt fra $\mathbb{A}^2(K)$ med et såd
 punkt. Vi har en afbildning (en inklusion for at være mere præcis) 
 $\mathbb{A}^2(K) \to \mathbb{P}^2(K)$ givet ved
 \begin{align*}
-	(x, y) \mapsto (x, y, 1).
+	(x, y) \mapsto (x : y : 1).
 \end{align*}
 Dette kan vi selvfølgelig ikke gøre, når $z=0$ og vi ser det som at vi
 har $\infty$ i enten $x$- eller $y$-koordinaten. Vi kalder dermed punkterne
 $(x, y, 0)$ for punkterne i "uendelig".
+Hvis vi nu homogenisere ligningen for en elliptisk kurve $E$ med variablen $z$ får vi, at
+\begin{align}
+\label{homogeniseret_weierstrass}
+	y^2 z = x^3 + Ax z^2 + B z^3.
+\end{align} 
+Indsætter vi $z=0$ i \eqref{homogeniseret_weierstrass} får vi, at $0 = x^3$ hvilket har en tredobbelt rod i $x=0$. Linjen i uendelig skærer altså $E$ tre gange i det samme punkt. Punktet der opfylder dette er punktet $(0 : 1 : 0)$. Vi får en ny afbildning
+\begin{align*}
+	(x, y) \mapsto (x : 1 : z),
+\end{align*}
+hvor $(0, 0) \mapsto (0 : 1 : 0)$, som er punktet vi kalder $\infty$.
+
+
+
 
 
 \section{Gruppeloven}
