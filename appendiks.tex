@@ -1,5 +1,16 @@
 \appendix
-\chapter{Appendiks}
+\chapter{Legemer}
+Lad $p$ være et primtal. Heltallene modulo $p$ giver os et legeme $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$ der indeholder $p$ elementer. Antallet af elementer i ethvert endeligt legeme er på formen $p^n$. For at se dette lader vi $K$ være et endeligt legeme. Dets karakteristik må være $p$ for et eller andet primtal, da et legeme med karakteristik $0$ er uendeligt. Derfor må $K$ være endeligt frembragt som et vektorrum over $\mathbb{Z}/p\mathbb{Z}$. Så lad $x_1, \ldots, x_n$ være en basis for $K$. Elementerne i $K$ kan da skrives entydigt som
+\begin{align*}
+	x= \alpha_1 x_1 + \alpha_2 x_2 + \ldots + \alpha_n x_n, \quad \text{hvor} \quad \alpha_i \in \mathbb{Z}/p\mathbb{Z}.
+\end{align*}
+Da hvert $\alpha_i \in K$ har vi altså $p$ forskellige valg for hver af $\alpha_1, \alpha_2, \ldots, \alpha_n$. Dette betyder, at vi har $p^n$ valg for $x$, som også giver os hele legemet $K$. Antallet af elementer i $K$ er altså $p^n$. 
+
+Vi benytter notationen $\mathbb{F}_q = \mathbb{F}_{p^n}$ for det endelige legeme med $q=p^n$ elementer. Bemærk, at $\mathbb{Z}/p^n \mathbb{Z}$ ikke er et legeme for $n \geq 2$, da $p$ ikke har nogen multiplikativ invers.
+
+
+
+\chapter{Talteoretiske resultater}
 Her samler vi nogle af de (hovedsagligt) mindre resultater, som benyttes igennem kapitlerne. De præsenteres her kort og henvises til  i opgaven, når de er blevet anvendt.
 
 \begin{proposition}
@@ -14,7 +25,7 @@ Antag for modstrid, at $d = \gcd(a, n) > 1$, men at der samtidigt eksisterer en 
 hvilket er i modstrid med at $e$ ikke kunne være $0$ modulo $n$. Altså har $a$ ikke en invers når $\gcd(a, n) > 1$.
 \end{proof}
 
-Vi giver nu beviset for sætning \ref{fermats_small_theorem}:
+Vi giver nu beviset for sætning 
 \begin{proof}[Bevis for Fermats lille sætning]
 Vi ser først på de $p-1$ positive multipla af $a$
 \begin{align}

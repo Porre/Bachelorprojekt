@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.6.4)  9 JUN 2013 22:04
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.6.4)  11 JUN 2013 16:29
 entering extended mode
 **main.tex
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\main.tex
@@ -1254,125 +1254,74 @@ Package biblatex Info: Reference section=0 on input line 77.
 Package biblatex Info: Reference segment=0 on input line 77.
 
 ABD: EveryShipout initializing macros
-(C:\Users\Orhoj\Desktop\Bachelorprojekt\main.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+(C:\Users\Orhoj\Desktop\Bachelorprojekt\gruppeloven.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 5.
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) [1
-
-{C:/Users/Orhoj/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(C:\Users\Orhoj\Desktop\Bachelorprojekt\gruppeloven.tex
-<elliptic_1.png, id=13, 855.195pt x 666.99188pt>
+)
+<elliptic_1.png, id=4, 855.195pt x 666.99188pt>
 File: elliptic_1.png Graphic file (type png)
  <use elliptic_1.png>
 Package pdftex.def Info: elliptic_1.png used on input line 24.
 (pdftex.def)             Requested size: 171.03596pt x 133.39601pt.
 
-<elliptic_2.png, id=14, 855.195pt x 666.99188pt>
+<elliptic_2.png, id=5, 855.195pt x 666.99188pt>
 File: elliptic_2.png Graphic file (type png)
  <use elliptic_2.png>
 Package pdftex.def Info: elliptic_2.png used on input line 25.
 (pdftex.def)             Requested size: 171.03596pt x 133.39601pt.
- [2
+ [1
 
 
-]
-[3 <C:/Users/Orhoj/Desktop/Bachelorprojekt/elliptic_1.png> <C:/Users/Orhoj/Desk
-top/Bachelorprojekt/elliptic_2.png>]
-<elliptic_3.png, id=25, 1102.1175pt x 1027.58907pt>
+
+{C:/Users/Orhoj/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2 <C:/User
+s/Orhoj/Desktop/Bachelorprojekt/elliptic_1.png> <C:/Users/Orhoj/Desktop/Bachelo
+rprojekt/elliptic_2.png>] [3] [4] <elliptic_3.png, id=31, 1102.1175pt x 1027.58
+907pt>
 File: elliptic_3.png Graphic file (type png)
- <use elliptic_3.png>
-Package pdftex.def Info: elliptic_3.png used on input line 91.
+
+<use elliptic_3.png>
+Package pdftex.def Info: elliptic_3.png used on input line 134.
 (pdftex.def)             Requested size: 275.5287pt x 256.89664pt.
-
-[4] [5 <C:/Users/Orhoj/Desktop/Bachelorprojekt/elliptic_3.png>] [6]) [7]
-(C:\Users\Orhoj\Desktop\Bachelorprojekt\endomorfier_torsion.tex [8
-
-
-
-] [9]
-[10] [11] [12]) [13]
-(C:\Users\Orhoj\Desktop\Bachelorprojekt\endelige_legemer.tex [14
-
-
-
-]
-Overfull \hbox (32.575pt too wide) in paragraph at lines 60--61
-[]\OT1/cmr/m/n/10.95 Vi skal vi-se, at $\OML/cmm/m/it/10.95 [] \OT1/cmr/m/n/10
-.95 : \OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 ([][]) \OMS/cmsy/m/n/10.95 ! \OML
-/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 ([][])$ er en ho-mo-mor-fi. Lad da $(\OML/c
-mm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10
-.95 (\OML/cmm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 2$
- []
-
-[15] [16] [17] [18] [19]) [20]
-(C:\Users\Orhoj\Desktop\Bachelorprojekt\pollard.tex [21
-
-
-
-] [22] [23]) [24]
-(C:\Users\Orhoj\Desktop\Bachelorprojekt\lenstra.tex [25
-
-
-] [26] [27]) [28]
-(C:\Users\Orhoj\Desktop\Bachelorprojekt\appendiks.tex
-
-LaTeX Warning: Reference `fermats_small_theorem' on page 29 undefined on input 
-line 17.
-
-) [29
-
-
-
-] [30
-
-
-]
-\tf@toc=\write6
- (C:\Users\Orhoj\Desktop\Bachelorprojekt\main.aux
+ [5 <C:/Users/Orhoj/Desktop/Bachelorprojekt/elliptic_3.png>] [6] [7]) [8] (C:\U
+sers\Orhoj\Desktop\Bachelorprojekt\main.aux
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\gruppeloven.aux)
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\endomorfier_torsion.aux)
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\endelige_legemer.aux)
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\pollard.aux)
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\lenstra.aux)
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\appendiks.aux))
-
-LaTeX Warning: There were undefined references.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 20192 strings out of 493944
- 346801 string characters out of 3148234
- 764910 words of memory out of 3000000
- 23103 multiletter control sequences out of 15000+200000
- 15058 words of font info for 57 fonts, out of 3000000 for 9000
+ 20142 strings out of 493944
+ 345588 string characters out of 3148234
+ 763885 words of memory out of 3000000
+ 23071 multiletter control sequences out of 15000+200000
+ 11411 words of font info for 42 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 61i,15n,55p,873b,1400s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 61i,12n,55p,873b,1321s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (30 pages, 369610 bytes).
+onts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (8 pages, 250765 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
+ 87 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

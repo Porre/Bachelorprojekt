@@ -52,31 +52,74 @@ $(x_2, y_2, z_2)$ siges at være ækvivalente hvis
 og vi skriver $(x_1, y_1, z_1) \sim (x_2, y_2, z_2)$. Vi vil fremover skrive
 $(x:y:z)$ for en sådan ækvivalensklasse. I de tilfælde hvor $z \neq 0$ har vi, at
 \begin{align*}
-	(x, y, z) = (x/z, y/z, 1),
+	(x : y : z) = (x/z : y/z : 1),
 \end{align*}
-hvilket er de punkter vi kalder for de "endelige" punkter i $\mathbb{P}^2(K)$.
+hvilket er de punkter vi kalder for de endelige punkter i $\mathbb{P}^2(K)$.
 Vi er nemlig i stand til at associere et punkt fra $\mathbb{A}^2(K)$ med et sådan
-punkt. Vi har en afbildning (en inklusion for at være mere præcis) 
-$\mathbb{A}^2(K) \to \mathbb{P}^2(K)$ givet ved
+punkt. Vi har en inklusion $\mathbb{A}^2(K) \hookrightarrow \mathbb{P}^2(K)$ givet ved
 \begin{align*}
 	(x, y) \mapsto (x : y : 1).
 \end{align*}
-Dette kan vi selvfølgelig ikke gøre, når $z=0$ og vi ser det som at vi
-har $\infty$ i enten $x$- eller $y$-koordinaten. Vi kalder dermed punkterne
-$(x, y, 0)$ for punkterne i "uendelig".
+Dette kan vi selvfølgelig ikke gøre, når $z=0$ og når dette er tilfældet ser vi det som, at enten $x$ eller $y$-koordinaten er $\infty$. Vi kalder dermed punkterne
+$(x, y, 0)$ for punkterne i uendelig og punktet $\infty$ på en elliptisk kurve vil vi identificere med netop ét af disse.
+
+Et polynomium siges at være homogent af grad $n$, hvis det er summen af led på formen $ax^i y^j z^k$, hvor $a \in K$ og $i + j + k = n$. Eksempelvis er 
+\begin{align*}
+	F(x, y, z) = 5x^4 - 2x^2 yz + 7yz^3
+\end{align*}
+et homogent polynomium af grad $4$. For et homogent polynomium $F$ af grad $n$ er
+\begin{align*}
+	F(\lambda x, \lambda y, \lambda z) = \lambda^n F(x, y, z), \quad \lambda \in K.
+\end{align*}
+Vi har altså, at når $(x_1, y_1, z_1) \sim (x_2, y_2, z_2)$ er $F(x_1, y_1, z_1) = 0$ hvis og kun hvis $F(x_2, y_2, z_2) = 0$. Et nulpunkt for $F$ i $\mathbb{P}^{2}(K)$ er altså ikke afhængig af repræsentanten for en given ækvivalensklasse, hvilket betyder at nulpunkterne for $F$ er veldefineret i $\mathbb{P}^{2}(K)$.
+
+For et arbitrært polynomium $F(x, y, z)$ giver det ikke mening, at snakke om et punkt i $\mathbb{P}^2(K)$ hvor $F(x, y, z) = 0$, da det nemlig afhænger af repræsentanten $(x, y, z)$ for ækvivalensklassen. Vi har f.eks., at for
+$F(x, y, z) = 2x^2 - y - z$ at $F(1, 1, 1) = 0$, men $F(2, 2, 2) = 4$. Men da $(1 : 1 : 1) = (2 : 2 : 2)$ har vi et problem, så vi arbejder med homogene polynomier i stedet. For et polynomium $f(x, y)$ kan vi homogenisere det ved, at indsætte de korrekte potenser af $z$. F.eks. for $f(x, y) = y^2 - x^3 - Ax - B$ har vi, at $F(x, y) = y^2 z - x^3 - Axz^2 - Bz^3$. Generelt for et polynomium $f(x, y)$ har vi at, hvis
+\begin{align*}
+	f(x, y) = \sum_{i} a_i x^{p_i} y^{q_i},
+\end{align*}
+hvor $\max \{p_i + q_i \} = n$, er dets homogene form
+\begin{align*}
+	F(x, y, z) = \sum_i a_i x^{p_i} y^{q_i} z^{n-p_i - q_i}.
+\end{align*}
+Dermed har vi, at 
+\begin{align*}
+	F(x, y, z) &= z^n \sum_i a_i x^{p_i} z^{-p_i} y^{q_i} z^{-q_i} = z^n \sum_i a_i \left( \frac{x}{z} \right)^{p_i}
+	\left( \frac{y}{z} \right)^{q_i} \\  
+	&= z^n f\left( \frac{x}{z}, \frac{y}{z} \right).
+\end{align*}
+Da er det klart, at 
+\begin{align*}
+	f(x, y) = F(x, y, 1).
+\end{align*}
+Vi er nu i stand til at undersøge, hvad det vil sige for to parallelle linjer at mødes i uendelig. Lad først
+\begin{align*}
+	y = mx + b_1, \quad y = mx + b_2,
+\end{align*}
+være to linjer, som ikke er lodrette og hvor $b_1 \neq b_2$. Homogenisere vi dem, som forklaret ovenfor, får vi
+\begin{align*}
+	y = mx + b_1z, \quad y = mx + b_2 z.
+\end{align*}
+Trækker vi ligningerne fra hinanden får vi, at 
+\begin{align*}
+	0 = (b_1 - b_2)z \Rightarrow z = 0,
+\end{align*}
+hvilket så betyder, at $y = mx$. Da vi ikke kan have, at både $x, y$ og $z$ er $0$ samtidigt må vi have $x \neq 0$. Vi kan da dele med $x$ og vi får, at skæringen er
+\begin{align*}
+	(x : mx : 0) = (1 : m : 0).
+\end{align*}
+Dette er et af punkterne i uendelig fra $\mathbb{P}^2(K)$.
+På samme måde har vi hvis $x=c_1$ og $x=c_2$ er lodrette linjer, at de skærer hinanden i punktet $(0 : 1 : 0)$. Dette er også ét af de punkter, som vi identificerede som værende et punkt i uendelig i $\mathbb{P}^2(K)$.
+
 Hvis vi nu homogenisere ligningen for en elliptisk kurve $E$ med variablen $z$ får vi, at
-\begin{align}
+\begin{align*}
 \label{homogeniseret_weierstrass}
 	y^2 z = x^3 + Ax z^2 + B z^3.
-\end{align} 
-Indsætter vi $z=0$ i \eqref{homogeniseret_weierstrass} får vi, at $0 = x^3$ hvilket har en tredobbelt rod i $x=0$. Linjen i uendelig skærer altså $E$ tre gange i det samme punkt. Punktet der opfylder dette er punktet $(0 : 1 : 0)$. Vi får en ny afbildning
-\begin{align*}
-	(x, y) \mapsto (x : 1 : z),
-\end{align*}
-hvor $(0, 0) \mapsto (0 : 1 : 0)$, som er punktet vi kalder $\infty$.
-
-
-
+\end{align*} 
+For at se hvilke punkter i uendelig, som er på $E$ sætter vi $z=0$. Dette giver os, at $0 = x^3$ hvilket har en tredobbelt rod i $x=0$ og $y$ kan være et hvilket som helst tal som ikke er $0$, da vi ikke kan have $(0 : 0 : 0)$. 
+Efter en skalering med $y$ har vi $(0 : y : 0) = (0 : 1 : 0)$ så $(0 : 1 : 0)$ er det eneste punkt i uendelig på $E$. Da $(0 : 1 : 0)$ er et punkt på enhver lodret linje skærer enhver lodret linje $E$ i dette punkt i uendelig. Vi har desuden, da $(0 : 1 : 0) = (0 : -1 : 0)$, at punkterne i uendelig i toppen og bunden af $y$-aksen er de samme.
+\\[10pt]
+Vi vil dog foretrække, at arbejde med affine koordinater, hvor punktet $\infty$ behandles som et specialtilfælde.
 
 
 \section{Gruppeloven}
@@ -192,7 +235,7 @@ Det måske overraskende hovedresultatet i dette kapitel er, at denne addition re
 Punkterne på $E$, altså $E(K)$, udgør en additiv abelsk gruppe hvor $\infty$ er identiteten og additionen er som defineret i gruppeloven. 
 \end{theorem}
 \begin{proof}
-For at være en gruppe skal additionen af punkter være kommutativ, der skal eksistere en identitet, der skal eksistere en invers til hvert element og additionen af punkter skal være associativ.
+For at være en gruppe skal additionen af punkter være kommutativ, der skal eksistere en identitet, der skal eksistere en invers til hvert element og additionen af punkterne skal være associativ.
 
 Kommutativiteten kan enten ses direkte fra formlerne eller fra det faktum, at linjen igennem $P_1$ og $P_2$ er den samme som linjen igennem $P_2$ og $P_1$. At $\infty$ er identiteten følger pr. definitionen af denne. For de inverse elementer lader vi $P'$ være reflektionen af $P$, da er $P+P' = \infty$. Associativiteten kan vises direkte ud fra formlerne, men der er mange tilfælde der skal behandles, hvilket gør det besværligt. Der forefindes et bevis for dette i \cite[afsnit~2.4]{Washington}.
 \end{proof}

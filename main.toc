@@ -28,6 +28,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Lenstras elliptiske kurve algoritme}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {A}Appendiks}{29}
+\contentsline {appendix}{\chapternumberline {A}Endelige legemer}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografi}{30}
+\contentsline {appendix}{\chapternumberline {B}Talteoretiske resultater}{30}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliografi}{31}
