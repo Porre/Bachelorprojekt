@@ -1,18 +1,17 @@
 \chapter{Elliptiske kurver over endelige legemer}
 
-Vi skal i dette kapitel undersøge elliptiske kurver over endelige legemer. 
-Lad $\mathbb{F}$ være et endeligt legeme og lad $E$ være en elliptisk kurve på
-formen 
+Vi skal i dette kapitel betragte elliptiske kurver over endelige legemer. Lad $\mathbb{F}$ være et endeligt legeme og lad $E$ være en elliptisk kurve over $\mathbb{F}$. Da er gruppen $E(\mathbb{F})$ endelig, da der kun findes endeligt mange talpar $(x, y)$ sådan at $x, y \in \mathbb{F}$. Et endeligt legeme har $p^n$ elementer for et primtal $p$, hvor $n \geq 1$ (se bilag \ref{appendiks_legemer}). Derfor lader vi $\mathbb{F}_{q}$ være det endelige legeme med $q = p^n$ elementer. 
+
+Vi vil vise Hasses sætning, som giver os en vurdering på antallet af punkter i gruppen $E(\mathbb{F})$. Denne vurdering viser sig, at have en anvendelse indenfor heltalsfaktorisering, som vi ser på i kapitel 4. Vi ser også på en måde, hvorpå vi kan bestemme den eksakte orden af en gruppe $E(\mathbb{F}_{q^n})$ hvis vi blot kender ordenen af $\mathbb{F}_{q}$.
+
+
+\section{Eksempler}
+
+Lad $E$ være en elliptisk kurve på formen
 \begin{align*}
-	y^2 = x^3 + Ax + B,
+	E : y^2 = x^3 - x,
 \end{align*}
-som er defineret over $\mathbb{F}$. Da er gruppen $E(\mathbb{F})$ endelig, da 
-der kun findes endeligt mange talpar $(x, y)$ så $x, y \in \mathbb{F}$. Lad 
-$E$ være den elliptiske kurve $y^2 = x^3 - x$ over $\mathbb{F}_5$. For at bestemme
-ordenen af $E(\mathbb{F})$ laver vi en tabel over mulige værdier for $x$, $x^3 - x \modu{5}$
-og for $y$ som er kvadratrødderne af $x^3 - x$. Dette giver os samtlige punkter på kurven:
-
-
+som er defineret over $\mathbb{F}_5$. Da er gruppen $E(\mathbb{F}_5)$ endelig, som nævnt ovenfor. For at bestemme den eksakte orden af $E(\mathbb{F}_5)$ laver vi en tabel over alle mulige værdier for $x$, $x^3-x \modu{5}$ og for kvadratrødderne $y$ af $x^3 - x \modu{5}$. Dette giver os samtlige punkter på kurven:
 \begin{center}
 \begin{tabular}{c c c c }
 $x$ & $x^3 - x$ & $y$ & Punkter \\ 
@@ -25,31 +24,31 @@ $4$ & $2$ & $-$ & $-$ \\
 $\infty$ & & $\infty$ & $\infty$ \\
 \end{tabular} 
 \end{center}
+Vi kan da tælle punkterne og vi ser, at $E(\mathbb{F}_5)$ har ordenen $7$, hvilket vi skriver som 
+$\#E(\mathbb{F}_5) = 7$. Bemærk at $\sqrt{2} \notin \mathbb{Z}_5$, hvilket er hvorfor der ikke er en tilhørende værdi for $y$ til $x=4$.
 
-Bemærk, at $\sqrt{2} \notin \mathbb{Z}$ og derfor har $2$ ikke en kvadratrod i $\mathbb{F}_5$.
-Dette giver os, at $E(\mathbb{F}_5)$ har orden $7$ og vi skriver $\#E(\mathbb{F}_5)=7$. Vi skal
-i dette kapitel vise Hasses sætning, som giver en vurdering for antallet af punkter på en elliptisk
-kurve over et endeligt legeme:
-
-\begin{theorem}[Hasse]
-\label{hasse}
-Lad $E$ være en elliptisk kurve over et endeligt legeme $\mathbb{F}_q$. Da gælder der, at 
-\begin{align*}
-	|q + 1 - \#E(\mathbb{F}_q)| \leq 2 \sqrt{q}.
+Additionen af punkterne på en sådan kurve over et endeligt legeme foretages på samme måde, som i formlerne i gruppeloven, men de foretages modulo $p$. Eksempelvis hvis vi ville bestemme $(1,0) + (3,3)$ får vi, at 
+\begin{align*} 
+	m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{3 - 0}{3 - 1} = \frac{3}{2} \equiv 4 \modu{5}.
 \end{align*}
-\end{theorem}
-Vi vil i kapitel 3 se på en af anvendelserne, som disse elliptiske kurver over endelige legemer har, 
-nemlig indenfor faktorisering af heltal.
-
+Dermed har vi, at 
+\begin{align*}
+	x_3 &= m^2 - x_1 - x_2 = 4^2 - 1 - 3 = 12 \equiv 2 \modu{5}, \\
+	y_3 &= m(x_1 - x_3) - y_1 = 4(1-2)-0 = -4 \equiv 1 \modu{5}.
+\end{align*}
+Vi får altså punktet
+\begin{align*}
+	(1, 0) + (3, 3) = (2, 1),
+\end{align*}
+som netop er ét af punkterne vi har opgivet i tabellen.
 
 \section{Frobenius endomorfien}
 
-En endomorfi med en absolut kritisk rolle for teorien om elliptiske kurver over endelige legemer er Frobenius endomorfien $\phi_q$. For en elliptisk kurve $E$ over et endeligt legeme $\mathbb{F}_q$ er denne givet ved
+I det forrige kapitel så vi på endomorfier for generelle legemer. Nu vil vi se på en endomorfi som er defineret over endelige legemer, som viser sig at have en kritisk rolle i vores bevis for Hasses sætning. Denne endomorfi er Frobenius endomorfien $\phi_q$. For en elliptisk kurve $E$ over et endeligt legeme $\mathbb{F}_q$ er denne givet ved
 \begin{align}
-	\phi_q (x, y) = (x^q, y^q),
+	\phi_q (x, y) = (x^q, y^q), \quad \phi_q(\infty) = \infty.
 \end{align}
-og $\phi_q(\infty) = \infty$.
-Denne endomorfi spiller en vigtig rolle i beviset for Hasses sætning, men vi skal først vise nogle af dens egenskaber.
+Vi skal nu vise nogle af egenskaber, som denne endomorfi beisdder.
 
 \begin{lemma}
 \label{lemma_end_degree_not_sep}
@@ -142,6 +141,18 @@ i [LW]. Da følger det fra proposition \ref{deg_to_ker}, at $\#E(E_{q^n})=\deg(\
 \end{proof}
 
 \section{Hasses sætning}
+
+\begin{thm}[Hasse]
+\label{hasse}
+Lad $E$ være en elliptisk kurve over et endeligt legeme $\mathbb{F}_q$. Da gælder der, at 
+\begin{align*}
+	|q + 1 - \#E(\mathbb{F}_q)| \leq 2 \sqrt{q}.
+\end{align*}
+\end{thm}
+Vi vil i kapitel 3 se på en af anvendelserne, som disse elliptiske kurver over endelige legemer har, 
+nemlig indenfor faktorisering af heltal.
+
+
 Med de foregående resultater er vi nu næsten klar til at vise Hasses sætning (sætning \ref{hasse}). Lad i det følgende afsnit
 \begin{align}
 	\label{hasse_as}

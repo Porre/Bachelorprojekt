@@ -12,7 +12,8 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{amsthm}
+% \usepackage{amsthm}
+\usepackage[amsmath,thmmarks]{ntheorem}
 
 % Image stuff
 \usepackage{graphicx}
@@ -28,15 +29,48 @@
 % Filen med vores referencer
 \addbibresource{referencer.bib}
 
-
 % Styling for sætninger osv., er valgt efter normal anbefaling
-\theoremstyle{plain}
+
+% Farvede bokse rundt om sætninger, som pr. daleif's bog.
+\usepackage[ntheorem]{mdframed}
+\usepackage{ntheorem,xcolor}
+\definecolor{shadecolor}{gray}{0.9}
+\definecolor{rulecolor}{gray}{0.4}
+\mdfdefinestyle{thm}{ % saving some space
+skipabove=1em plus 0.4em minus 0.6em,
+skipbelow=0.5em plus 0.4em minus 0.2em,
+leftmargin=-7pt, rightmargin=-7pt, innerleftmargin=6pt,
+innerrightmargin=6pt, innertopmargin=3pt, innerbottommargin=3pt,
+linewidth=1pt, linecolor=rulecolor, backgroundcolor=shadecolor,
+splittopskip=1.2em minus 0.2em,
+splitbottomskip=0.5em plus 0.2em minus 0.1em,
+}
+\newmdtheoremenv[style=thm]{thm}{Sætning}
+\theoremstyle{nonumberplain}
+\newmdtheoremenv[style=thm,backgroundcolor=white]{thmstar}{Sætning}
+
+\newmdtheoremenv[style=thm]{lemma}{Lemma}
+\newmdtheoremenv[style=thm,backgroundcolor=white]{thmstar}{Sætning}
+
+% ntheorem kræver at vi laver et environment til beviser:
+\theoremstyle{nonumberplain}
+\theoremheaderfont{%
+\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremsymbol{\ensuremath{\square}}
+\theoremseparator{.}
+\newtheorem{proof}{Bevis}
+
+
+
+
+% \theoremstyle{plain}
 \newtheorem{theorem}{Sætning}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{corollary}{Korollar}
 
-\theoremstyle{definition}
+% \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 \newtheorem{remark}{Bemærkning}
 \newtheorem{example}{Eksempel}
@@ -51,6 +85,7 @@
 
 % TikZ bruges til tegninger
 \usepackage{tikz}
+
 
 % -- START PÅ MAKROER -- 
 % Angiver punktet i uendelighed
@@ -72,7 +107,7 @@
 % -- SLUT PÅ MAKROER --
 
 % Bruges kun under skrivningen af projektet
-\includeonly{gruppeloven}
+\includeonly{endelige_legemer, appendiks}
 
 \begin{document}
 %\tableofcontents
