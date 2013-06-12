@@ -2,7 +2,7 @@
 
 Vi skal i dette kapitel betragte elliptiske kurver over endelige legemer. Lad $\mathbb{F}$ være et endeligt legeme og lad $E$ være en elliptisk kurve over $\mathbb{F}$. Da er gruppen $E(\mathbb{F})$ endelig, da der kun findes endeligt mange talpar $(x, y)$ sådan at $x, y \in \mathbb{F}$. Et endeligt legeme har $p^n$ elementer for et primtal $p$, hvor $n \geq 1$ (se bilag \ref{appendiks_legemer}). Derfor lader vi $\mathbb{F}_{q}$ være det endelige legeme med $q = p^n$ elementer. 
 
-Vi vil vise Hasses sætning, som giver os en vurdering på antallet af punkter i gruppen $E(\mathbb{F})$. Denne vurdering viser sig, at have en anvendelse indenfor heltalsfaktorisering, som vi ser på i kapitel 4. Vi ser også på en måde, hvorpå vi kan bestemme den eksakte orden af en gruppe $E(\mathbb{F}_{q^n})$ hvis vi blot kender ordenen af $\mathbb{F}_{q}$.
+Vi vil vise Hasses sætning, som giver os en vurdering på antallet af punkter i gruppen $E(\mathbb{F})$. Denne vurdering viser sig, at have en anvendelse indenfor heltalsfaktorisering, som vi ser på i kapitel 4. Vi ser også på en måde, hvorpå vi kan bestemme den eksakte orden af en gruppe $E(\mathbb{F}_{q^n})$ hvis vi blot kender ordenen af $E(\mathbb{F}_{q})$.
 
 
 \section{Eksempler}
@@ -218,8 +218,8 @@ hvilket viser Hasses sætning.
 \section{Torsionspunkter}
 Det viser sig, at proposition \ref{prop_imp} også har andre interessante konsekvenser, som vi vil se på her. 
 
-Ordenen af et element $P$ fra en gruppe over en elliptisk kurve er det mindste heltal $n$ sådan at 
-$nP = P + P + \ldots P = \infty$. Hvis der ikke findes et sådan $n$ siges ordenen af $P$ at være uendelig. Torsionspunkterne er netop de punkter, som har endelig orden. For en elliptisk kurve $E$ og et legeme $K$ definerer vi
+Ordenen af et element $P$ fra en gruppe over en elliptisk kurve er det mindste positive heltal $k$ sådan at 
+$kP = P + P + \ldots P = \infty$. Hvis der ikke findes et sådan $k$ siges ordenen af $P$ at være uendelig. Torsionspunkterne er netop de punkter, som har endelig orden. For en elliptisk kurve $E$ og et legeme $K$ definerer vi
 \begin{align*}
 	E[n] = \{ P \in E(\clk) \mid nP= \infty \}.
 \end{align*}
@@ -238,7 +238,7 @@ Hvis karakteristikken for $K$ er $p > 0$ og $p \mid n$, lader vi $n=p^r n'$ såd
 \end{align*}
 \end{thm}
 \begin{proof}
-Et bevis for denne sætning kan findes i \cite[s.~79]{Washington}, da dette resultat går udover denne opgaves omfang.
+Et bevis for denne sætning kan findes i \cite[s.~79]{Washington}.
 \end{proof}
 En konsekvens af sætning \ref{torsion_theorem} er, at vi snakke om en basis for $E[n]$, da vi nu ved hvordan den ser ud.
 
@@ -314,7 +314,7 @@ er opfyldt. Da har vi også, at (ved at lægge $0$ til)
 \begin{align*}
 	(a - a_1) \phi_q = (\phi_{q}^{2} - a_1 \phi_q + q) - (\phi_{q}^{2} - a\phi_q + q) = 0
 \end{align*}
-Da $\phi_q : E(\clfq) \to E(\clfq)$ er surjektiv 
+Da $\phi_q : E(\clfq) \to E(\clfq)$ er surjektiv betyder det, at $(a - a_1)$ annihilerer $E(\clfq)$ (dvs. for hvert element $x \in E(\clfq)$ er $(a-a_1)x = 0$). Specielt har vi, at $(a - a_1)$ annihilerer $E[m]$ for hvert $m \geq 1$. Men da der er punkter i $E[m]$ med orden $m$ når $\gcd(m, q) =1$ har vi, at $a - a_1 \equiv 0 \modu{m}$ for sådan et $m$. Dermed er $a - a_ 1 = 0$ og vi har vist, at $a$ er entydig.
 \end{proof}
 
 Endeligt vil vi vise en sætning, som gør det muligt at bestemme ordenen af en gruppe af punkter for en elliptisk kurve. Hvis vi kender ordenen af $E(\mathbb{F}_q)$ for et lille endeligt legeme gør følgende sætning det muligt, at bestemme ordenen af $E(\mathbb{F}_{q^n})$.
@@ -327,7 +327,6 @@ Lad $\#E(\mathbb{F}_q) = q + 1 - a$. Skriv $X^2 - aX + q= (X-\alpha)(X-\beta)$. 
 \end{align*}
 for alle $n \geq 1$.
 \end{thm}
-
 Vi har brug for, at $\alpha^n + \beta^n$ er et heltal, hvilket følgende lemma giver os:
 
 \begin{lemma}
@@ -348,12 +347,12 @@ da $\alpha$ er en rod i $X^2 - aX + q$. Altså har vi, at $\alpha^{n+1}=a \alpha
 Dermed er $s_n$ et heltal for alle $n \geq 0$.
 \end{proof}
 
-\begin{proof}[Bevis for sætning \ref{count}]
-Lad nu 
+\begin{proofof}[Bevis for sætning \ref{count}.]
+Lad først
 \begin{align*}
 	f(X) = (X^n - \alpha^n)(X^n - \beta^n) = X^{2n} - (\alpha^n + \beta^n)X^n + q^n.
 \end{align*}
-Da deler $X^2 - aX + q = (X- \alpha)(X-\beta)$ polynomiet $f(X)$. Kvotienten er et polynomium $Q(X)$ med heltallige koefficienter, da $X^2 - aX + q$ er monisk og $f(X)$ har heltallige koefficienter (se appendiks). Derfor er
+Da deler $X^2 - aX + q = (X- \alpha)(X-\beta)$ polynomiet $f(X)$. Kvotienten er et polynomium $Q(X)$ med heltallige koefficienter, da $X^2 - aX + q$ er monisk og $f(X)$ har heltallige koefficienter (se sætning \ref{monic} i appendikset). Derfor er
 \begin{align}
 	\label{alpha_beta}
 	f(\phi_q) = (\phi_{q}^{n})^2 - (\alpha^n + \beta^n) \phi_{q}^{n} + q^n
@@ -364,7 +363,7 @@ som endomorfier for $E$ pr. sætning \ref{trace_theorem}. Idet vi husker, at $\p
 	\alpha^n + \beta^n = q^n + 1 - \#E(\mathbb{F}_{q^n}),
 \end{align*}
 hvilket netop var hvad  vi ønskede at vise.
-\end{proof}
+\end{proofof}
 
 \begin{example}
 Eksempel på 4.12 i aktion.

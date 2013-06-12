@@ -46,7 +46,9 @@
 }
 \newmdtheoremenv[style=thm]{thm}{Sætning}
 \newmdtheoremenv[style=thm]{lemma}{Lemma}
+\newmdtheoremenv[style=thm]{definition}{Definition}
 \newmdtheoremenv[style=thm]{proposition}{Proposition}
+\newmdtheoremenv[style=thm]{algorithm}{Algoritme}
 \theoremstyle{nonumberplain}
 \newmdtheoremenv[style=thm,backgroundcolor=white]{thmstar}{Sætning}
 
@@ -54,6 +56,10 @@
 \theoremstyle{nonumberplain}
 \theorembodyfont{\normalfont}
 \newtheorem{remark}{Bemærkning}
+
+% Example environment
+\theoremstyle{plain}
+\newtheorem{example}{Eksempel}
 
 % Proof environment
 \theoremstyle{nonumberplain}
@@ -84,10 +90,10 @@
 \newtheorem{corollary}{Korollar}
 
 %\theoremstyle{definition}
-\newtheorem{definition}{Definition}
+% \newtheorem{definition}{Definition}
 
-\newtheorem{example}{Eksempel}
-\newtheorem{algorithm}{Algoritme}
+
+
 
 % section som chapterstyle er mindre voldsomt til et "lille" projekt
 % \chapterstyle{section}
@@ -120,15 +126,15 @@
 % -- SLUT PÅ MAKROER --
 
 % Bruges kun under skrivningen af projektet
-\includeonly{endelige_legemer, appendiks}
+% \includeonly{endomorfier_torsion}
 
 \begin{document}
-%\tableofcontents
+\tableofcontents
 \include{gruppeloven}
 \include{endomorfier_torsion}
 \include{endelige_legemer}
 \include{pollard}
 \include{lenstra}
 \include{appendiks}
-%\printbibliography
+\printbibliography
 \end{document}

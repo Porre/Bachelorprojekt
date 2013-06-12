@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.6.4)  12 JUN 2013 18:21
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.6.4)  12 JUN 2013 22:08
 entering extended mode
 **main.tex
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\main.tex
@@ -1279,36 +1279,36 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 \c@currlemmactr=\count361
 \c@endlemmactr=\count362
 \c@lemma=\count363
-\c@currpropositionctr=\count364
-\c@endpropositionctr=\count365
-\c@proposition=\count366
-\c@currthmstarctr=\count367
-\c@endthmstarctr=\count368
-\c@thmstar=\count369
-\c@currremarkctr=\count370
-\c@endremarkctr=\count371
-\c@remark=\count372
-\c@currproofctr=\count373
-\c@endproofctr=\count374
-\c@proof=\count375
-\c@currproofofctr=\count376
-\c@endproofofctr=\count377
-\c@proofof=\count378
-\c@currtheoremctr=\count379
-\c@endtheoremctr=\count380
-\c@theorem=\count381
-\c@currcorollaryctr=\count382
-\c@endcorollaryctr=\count383
-\c@corollary=\count384
-\c@currdefinitionctr=\count385
-\c@enddefinitionctr=\count386
-\c@definition=\count387
-\c@currexamplectr=\count388
-\c@endexamplectr=\count389
-\c@example=\count390
-\c@curralgorithmctr=\count391
-\c@endalgorithmctr=\count392
-\c@algorithm=\count393
+\c@currdefinitionctr=\count364
+\c@enddefinitionctr=\count365
+\c@definition=\count366
+\c@currpropositionctr=\count367
+\c@endpropositionctr=\count368
+\c@proposition=\count369
+\c@curralgorithmctr=\count370
+\c@endalgorithmctr=\count371
+\c@algorithm=\count372
+\c@currthmstarctr=\count373
+\c@endthmstarctr=\count374
+\c@thmstar=\count375
+\c@currremarkctr=\count376
+\c@endremarkctr=\count377
+\c@remark=\count378
+\c@currexamplectr=\count379
+\c@endexamplectr=\count380
+\c@example=\count381
+\c@currproofctr=\count382
+\c@endproofctr=\count383
+\c@proof=\count384
+\c@currproofofctr=\count385
+\c@endproofofctr=\count386
+\c@proofof=\count387
+\c@currtheoremctr=\count388
+\c@endtheoremctr=\count389
+\c@theorem=\count390
+\c@currcorollaryctr=\count391
+\c@endcorollaryctr=\count392
+\c@corollary=\count393
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\frontendlayer\tikz.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.sty"
@@ -1574,18 +1574,18 @@ Package csquotes Info: Redefining alias 'default' -> 'danish'.
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\pollard.aux)
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\lenstra.aux)
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\appendiks.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
 
 (C:\Users\Orhoj\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1607,46 +1607,94 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (C:\Users\Orhoj\Desktop\Bachelorprojekt\main.bbl)
-Package biblatex Info: Reference section=0 on input line 125.
-Package biblatex Info: Reference segment=0 on input line 125.
+Package biblatex Info: Reference section=0 on input line 131.
+Package biblatex Info: Reference segment=0 on input line 131.
 \AtBeginShipoutBox=\box61
 
 ABD: EveryShipout initializing macros
-(C:\Users\Orhoj\Desktop\Bachelorprojekt\endelige_legemer.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+(C:\Users\Orhoj\Desktop\Bachelorprojekt\main.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 3.
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [15
+)) [1
+
+{C:/Users/Orhoj/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(C:\Users\Orhoj\Desktop\Bachelorprojekt\gruppeloven.tex
+<elliptic_1.png, id=13, 855.195pt x 666.99188pt>
+File: elliptic_1.png Graphic file (type png)
+ <use elliptic_1.png>
+Package pdftex.def Info: elliptic_1.png used on input line 24.
+(pdftex.def)             Requested size: 171.03596pt x 133.39601pt.
+
+<elliptic_2.png, id=14, 855.195pt x 666.99188pt>
+File: elliptic_2.png Graphic file (type png)
+ <use elliptic_2.png>
+Package pdftex.def Info: elliptic_2.png used on input line 25.
+(pdftex.def)             Requested size: 171.03596pt x 133.39601pt.
+ [2
+
+
+]
+[3 <C:/Users/Orhoj/Desktop/Bachelorprojekt/elliptic_1.png> <C:/Users/Orhoj/Desk
+top/Bachelorprojekt/elliptic_2.png>] [4] [5]
+<elliptic_3.png, id=35, 1102.1175pt x 1027.58907pt>
+File: elliptic_3.png Graphic file (type png)
+ <use elliptic_3.png>
+Package pdftex.def Info: elliptic_3.png used on input line 134.
+(pdftex.def)             Requested size: 275.5287pt x 256.89664pt.
+
+[6 <C:/Users/Orhoj/Desktop/Bachelorprojekt/elliptic_3.png>] [7]
+Package mdframed Info: Not enough space on this page on input line 236.
+ [8]
+Package mdframed Info: Not enough space on this page on input line 236.
+) [9]
+(C:\Users\Orhoj\Desktop\Bachelorprojekt\endomorfier_torsion.tex [10
 
 
 
+] [11]
+[12] [13] [14]) [15]
+(C:\Users\Orhoj\Desktop\Bachelorprojekt\endelige_legemer.tex [16
 
 
-{C:/Users/Orhoj/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [16] [17] [
-18] [19]
+
+] [17] [18]
+[19] [20]
 Overfull \hbox (4.72997pt too wide) in paragraph at lines 256--258
 \OT1/cmr/m/n/10.95 Med dis-se de-tal-jer pa plads er vi i stand til at vi-se f
 lgende st-ning:                         [] 
  []
 
 Package mdframed Info: Not enough space on this page on input line 274.
-[20]
+[21]
 Package mdframed Info: Not enough space on this page on input line 274.
- [21] [22]) [23] (C:\Users\Orhoj\Desktop\Bachelorprojekt\appendiks.tex
-[31
+ [22] [23]) [24] (C:\Users\Orhoj\Desktop\Bachelorprojekt\pollard.tex
+[25
 
 
 
+] [26] [27]) [28] (C:\Users\Orhoj\Desktop\Bachelorprojekt\lenstra.tex
+[29
 
 
-] [32]) [33]
+] [30] [31]) [32] (C:\Users\Orhoj\Desktop\Bachelorprojekt\appendiks.tex
+[33
+
+
+
+] [34]) [35]
 \tf@thm=\write6
+ [36
+
+
+]
+\tf@toc=\write7
  (C:\Users\Orhoj\Desktop\Bachelorprojekt\main.aux
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\gruppeloven.aux)
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\endomorfier_torsion.aux)
@@ -1657,30 +1705,35 @@ Package mdframed Info: Not enough space on this page on input line 274.
 Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 26702 strings out of 493944
- 470757 string characters out of 3148234
- 890137 words of memory out of 3000000
- 29526 multiletter control sequences out of 15000+200000
- 12112 words of font info for 44 fonts, out of 3000000 for 9000
+ 26906 strings out of 493944
+ 473923 string characters out of 3148234
+ 890602 words of memory out of 3000000
+ 29704 multiletter control sequences out of 15000+200000
+ 17520 words of font info for 65 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 61i,13n,55p,873b,1372s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (12 pages, 209589 bytes).
+ 61i,15n,55p,873b,1416s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+ib10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
+i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b>
+Output written on main.pdf (36 pages, 425642 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
+ 203 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

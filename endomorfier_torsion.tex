@@ -1,11 +1,7 @@
-\chapter{Endomorfier og torsionpunkter}
+\chapter{Endomorfier}
+Vi vil i dette kapitel etablere nogle vigtige resultater vedrørende endomorfier på elliptiske kurver, som viser sig nødvendige i beviset for Hasses sætning.
 
-Ordenen af et element $P$ fra en gruppe over en elliptisk kurve er det mindste heltal $n$ sådan at 
-$nP = P + P + \ldots P = \infty$. Hvis der ikke findes et sådan $n$ siges ordenen af $P$ at være uendelig. Torsionspunkterne er netop de punkter, som har endelig orden og de viser sig at have relevans for elliptiske kurver over endelig legemer, som vi vil undersøge i kapitel 3.
-
-Vi vil først etablere nogle vigtige resultater vedrørende endomorfier på elliptiske kurver, som viser sig nødvendige i beviset for Hasses sætning.
-
-\section{Endomorfier}
+\section{Endomorfier på elliptiske kurver}
 Lad $K$ være et legeme og $\clk$ dens tilhørende algebraiske aflukning. I det følgende vil vi med en elliptisk kurve $E$ mene en kurve på formen $y^2 = x^3 + Ax + B$. 
 Vi begynder da med følgende definition:
 
@@ -38,14 +34,14 @@ Da både $R_1$ og $R_2$ er rationale funktioner er $\alpha$ en endomorfi for $E$
 
 Vi ønsker nu, at finde en standard repræsentation for de rationale funktioner, som en endomorfi er givet ved. Følgende sætning gør dette muligt for os:
 
-\begin{theorem}
+\begin{thm}
 \label{end_rep_theorem}
 Lad $E$ være en elliptisk kurve over et legeme $K$. En endomorfi $\alpha$ kan da skrives som
 \begin{align*}
 	\alpha(x, y) = (r_1(x), r_2(x)y) = \left( \frac{p(x)}{q(x)}, \frac{s(x)}{t(x)}y \right),
 \end{align*}
 hvor $p, q$ henholdsvis $s, t$ ikke har nogen fælles faktor.
-\end{theorem}
+\end{thm}
 \begin{proof}
 For et punkt $(x, y) \in E(\clk)$ gælder der, at $y^2 = x^3 + Ax + B$ så vi har også, at 
 \begin{align*}

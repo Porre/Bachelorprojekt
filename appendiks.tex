@@ -14,6 +14,23 @@ Da hvert $\alpha_i \in K$ har vi altså $p$ forskellige valg for hver af $\alpha
 Vi benytter notationen $\mathbb{F}_q = \mathbb{F}_{p^n}$ for det endelige legeme med $q=p^n$ elementer. Bemærk, at $\mathbb{Z}/p^n \mathbb{Z}$ ikke er et legeme for $n \geq 2$, da $p$ ikke har nogen multiplikativ invers.
 
 \section{Andre resultater}
+
+\begin{thm}
+\label{monic}
+Lad $K$ være et legeme. Hvis $f, g \in K[X]$, da findes der polynomier $q, r \in K[X]$ sådan at $\deg r < \deg g$ og
+\begin{align*}
+	f = qg + r.
+\end{align*}
+Hvis $f, g \in \mathbb{Z}[X]$ og $g$ er monisk, da findes der $q, r \in \mathbb{Z}$ sådan at $\deg r < \deg g$ og
+\begin{align*}
+	f = qg + r.
+\end{align*}
+\end{thm}
+\begin{proof}
+Det følger af divisionsalgoritmen for polynomier. Hvis $f$ har det ledende term $ax^n$ og $g$ har det ledende term $bx^m$ hvor $n \geq m$, da har $f - \frac{a}{b} x^{n-m}$ grad mindre end $f$. Vi kan dermed blive ved med at trække multipla af $g$ fra $f$ indtil resultatet har grad mindre end $\deg g$.
+
+Hvis $g$ er monisk er $b=1$ so hver gang trækker vi et polynomium med heltalskoefficienter fra så både kvotienten $q$ og resten $r$ vil dermed have heltalskoefficienter.
+\end{proof}
 \label{appendiks_andre}
 Følgende propositon benyttes i Hasses sætning: 
 \begin{proposition}

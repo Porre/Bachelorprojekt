@@ -6,30 +6,36 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Elliptiske kurver}{2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Elliptiske kurver}{2}
+\contentsline {section}{\numberline {1.1}En type af algebraiske kurver}{2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Det projektive plan}{3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Gruppeloven}{4}
+\contentsline {section}{\numberline {1.3}Gruppeloven}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {2}Endomorfier og torsionpunkter}{8}
+\contentsline {chapter}{\chapternumberline {2}Endomorfier}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Endomorfier}{8}
+\contentsline {section}{\numberline {2.1}Endomorfier p\IeC {\r a} elliptiske kurver}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}Elliptiske kurver over endelige legemer}{14}
+\contentsline {chapter}{\chapternumberline {3}Elliptiske kurver over endelige legemer}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Frobenius endomorfien}{15}
+\contentsline {section}{\numberline {3.1}Eksempler}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Hasses s\IeC {\ae }tning}{17}
+\contentsline {section}{\numberline {3.2}Frobenius endomorfien}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Faktoriseringsalgoritmer}{21}
+\contentsline {section}{\numberline {3.3}Hasses s\IeC {\ae }tning}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Pollards $p-1$ algoritme}{22}
+\contentsline {section}{\numberline {3.4}Torsionspunkter}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Lenstras elliptiske kurve algoritme}{25}
+\contentsline {chapter}{\chapternumberline {4}Faktoriseringsalgoritmer}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {A}Endelige legemer}{29}
+\contentsline {section}{\numberline {4.1}Pollards $p-1$ algoritme}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {B}Talteoretiske resultater}{30}
+\contentsline {section}{\numberline {4.2}Lenstras elliptiske kurve algoritme}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografi}{31}
+\contentsline {appendix}{\chapternumberline {A}Udeladte resultater}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1}Legemer}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}Andre resultater}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliografi}{36}
