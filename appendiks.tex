@@ -1,5 +1,9 @@
 \appendix
-\chapter{Legemer}
+
+\chapter{Udeladte resultater}
+Her samler vi nogle af de (hovedsagligt) mindre resultater, som benyttes igennem kapitlerne. De præsenteres her kort og henvises til de steder de anvendes i hovedopgaven.
+
+\section{Legemer}
 \label{appendiks_legemer}
 Lad $p$ være et primtal. Heltallene modulo $p$ giver os et legeme $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$ der indeholder $p$ elementer. Antallet af elementer i ethvert endeligt legeme er på formen $p^n$. For at se dette lader vi $K$ være et endeligt legeme. Dets karakteristik må være $p$ for et eller andet primtal, da et legeme med karakteristik $0$ er uendeligt. Derfor må $K$ være endeligt frembragt som et vektorrum over $\mathbb{Z}/p\mathbb{Z}$. Så lad $x_1, \ldots, x_n$ være en basis for $K$. Elementerne i $K$ kan da skrives entydigt som
 \begin{align*}
@@ -9,10 +13,45 @@ Da hvert $\alpha_i \in K$ har vi altså $p$ forskellige valg for hver af $\alpha
 
 Vi benytter notationen $\mathbb{F}_q = \mathbb{F}_{p^n}$ for det endelige legeme med $q=p^n$ elementer. Bemærk, at $\mathbb{Z}/p^n \mathbb{Z}$ ikke er et legeme for $n \geq 2$, da $p$ ikke har nogen multiplikativ invers.
 
+\section{Andre resultater}
+\label{appendiks_andre}
+Følgende propositon benyttes i Hasses sætning: 
+\begin{proposition}
+\label{appendiks_dense}
+Mængden 
+\begin{align*}
+	\left\{ \frac{r}{s} \mid \gcd(s, q) = 1 \right\} \subseteq \mathbb{Q}
+\end{align*}
+er tæt i $\mathbb{R}$ og 
+\begin{align*}
+	qx^2 - ax +1 \geq 0
+\end{align*}
+for alle $x \in \mathbb{R}$.
+\end{proposition}
+\begin{proof}
+En delmængde $X \subseteq \mathbb{R}$ siges at være tæt, hvis der for alle heltal $a \in \mathbb{R}$ findes et interval med centrum i $a$, som også indeholder punkter fra $X$. 
 
+Lad $X$ være mængden i propositionen og lad $s$ være en potens af $2$ eller $3$. Ét af de to må nødvendigvis være primisk med $q$, da $q$ er en potens af ét enkelt primtal $p$. Vi ser, at rationalerne på formen $r/2^n$ er tæt i $\mathbb{R}$ på følgende måde. Lad $a < b \in \mathbb{R}$. Der findes da $n \in \mathbb{N}$ sådan, at 
+\begin{align*}
+	0 < \frac{1}{n} < b - a \Rightarrow 0 < \frac{1}{2^n} < \frac{1}{n} < b - a.
+\end{align*}
+Vi har altså at $1 < 2^n \cdot b - 2^n \cdot a$. Når afstanden mellem $2^n \cdot b$ og $2^n \cdot a$ er større end $1$ findes der $r \in \mathbb{Z}$ så $2^n \cdot a < r < 2^n \cdot b \Rightarrow a < \frac{r}{2^n} < b$ 
+($2^n \neq 0$). Så $r/2^n$ er tæt i $\mathbb{R}$. Det samme kan gøres for $r/3^n$.
 
-\chapter{Talteoretiske resultater}
-Her samler vi nogle af de (hovedsagligt) mindre resultater, som benyttes igennem kapitlerne. De præsenteres her kort og henvises til  i opgaven, når de er blevet anvendt.
+Vi har da, at $X$ indeholder en delmængde som er tæt i $\mathbb{R}$, hvilket giver os at $X$ selv er tæt i $\mathbb{R}$.
+
+En konsekvens af tætheden af $X$ er, at vi kan konkludere at $qx^2 - ax +1 \geq 0$ for alle 
+$x \in \mathbb{R}$. Antag for modstrid, at der findes $r \in \mathbb{R}$ sådan at $ar^2 -ar + 1 < 0$. Vi ser på en følge af intervaller omkring $r$:
+\begin{align*}
+	(r - \varepsilon, r + \varepsilon), \quad \text{hvor} \ \varepsilon = \frac{1}{n}, \quad n = 1, 2, \ldots
+\end{align*}
+I hvert af disse intervaller findes $x_n \in X$, hvor $X$ er som i proposition \ref{appendiks_dense}, da vi netop har vist at $X$ er en tæt mængde i $\mathbb{R}$. Vi får en følge $x_1, x_2, \ldots$ af tal som nærmer sig $r$. For et stort nok $i$ har vi, at $qx_{i}^{2} -ax_i + 1$ er arbitrært tæt på $qr^2 - ar + 1$. Men da $x_i \in X$ må den første af disse to være $\geq 0$ mens den anden er $< 0$. Dette er en modstrid og vi har, at 
+\begin{align*}
+	qx^2 - ax +1 \geq 0,
+\end{align*}
+for alle $x \in \mathbb{R}$.
+\end{proof}
+
 
 \begin{proposition}
 \label{inverse_exists_not}

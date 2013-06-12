@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.6.4)  12 JUN 2013 00:36
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.6.4)  12 JUN 2013 18:21
 entering extended mode
 **main.tex
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\main.tex
@@ -1276,36 +1276,39 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 \c@currthmctr=\count358
 \c@endthmctr=\count359
 \c@thm=\count360
-\c@currthmstarctr=\count361
-\c@endthmstarctr=\count362
-\c@thmstar=\count363
-\c@currproofctr=\count364
-\c@endproofctr=\count365
-\c@proof=\count366
-\c@currtheoremctr=\count367
-\c@endtheoremctr=\count368
-\c@theorem=\count369
-\c@currpropositionctr=\count370
-\c@endpropositionctr=\count371
-\c@proposition=\count372
-\c@currlemmactr=\count373
-\c@endlemmactr=\count374
-\c@lemma=\count375
-\c@currcorollaryctr=\count376
-\c@endcorollaryctr=\count377
-\c@corollary=\count378
-\c@currdefinitionctr=\count379
-\c@enddefinitionctr=\count380
-\c@definition=\count381
-\c@currremarkctr=\count382
-\c@endremarkctr=\count383
-\c@remark=\count384
-\c@currexamplectr=\count385
-\c@endexamplectr=\count386
-\c@example=\count387
-\c@curralgorithmctr=\count388
-\c@endalgorithmctr=\count389
-\c@algorithm=\count390
+\c@currlemmactr=\count361
+\c@endlemmactr=\count362
+\c@lemma=\count363
+\c@currpropositionctr=\count364
+\c@endpropositionctr=\count365
+\c@proposition=\count366
+\c@currthmstarctr=\count367
+\c@endthmstarctr=\count368
+\c@thmstar=\count369
+\c@currremarkctr=\count370
+\c@endremarkctr=\count371
+\c@remark=\count372
+\c@currproofctr=\count373
+\c@endproofctr=\count374
+\c@proof=\count375
+\c@currproofofctr=\count376
+\c@endproofofctr=\count377
+\c@proofof=\count378
+\c@currtheoremctr=\count379
+\c@endtheoremctr=\count380
+\c@theorem=\count381
+\c@currcorollaryctr=\count382
+\c@endcorollaryctr=\count383
+\c@corollary=\count384
+\c@currdefinitionctr=\count385
+\c@enddefinitionctr=\count386
+\c@definition=\count387
+\c@currexamplectr=\count388
+\c@endexamplectr=\count389
+\c@example=\count390
+\c@curralgorithmctr=\count391
+\c@endalgorithmctr=\count392
+\c@algorithm=\count393
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\frontendlayer\tikz.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.sty"
@@ -1348,10 +1351,10 @@ Normal \dimen register pool exhausted, switching to extended pool.
 \pgf@yc=\dimen262
 \w@pgf@writea=\write5
 \r@pgf@reada=\read3
-\c@pgf@counta=\count391
-\c@pgf@countb=\count392
-\c@pgf@countc=\count393
-\c@pgf@countd=\count394
+\c@pgf@counta=\count394
+\c@pgf@countb=\count395
+\c@pgf@countc=\count396
+\c@pgf@countd=\count397
  ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgf.cfg"
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
@@ -1367,8 +1370,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.t
 ex"
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count395
-\pgfsyssoftpath@bigbuffer@items=\count396
+\pgfsyssoftpath@smallbuffer@items=\count398
+\pgfsyssoftpath@bigbuffer@items=\count399
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.code.t
 ex"
@@ -1380,7 +1383,7 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathutil.code.tex")
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathparser.code.tex"
 \pgfmath@dimen=\dimen263
-\pgfmath@count=\count397
+\pgfmath@count=\count400
 \pgfmath@box=\box52
 \pgfmath@toks=\toks53
 \pgfmath@stack@operand=\toks54
@@ -1402,7 +1405,7 @@ tex")
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.misc.code.t
 ex"))) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfloat.code.tex
 "
-\c@pgfmathroundto@lastzeros=\count398
+\c@pgfmathroundto@lastzeros=\count401
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
 "
@@ -1440,7 +1443,7 @@ File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box53
 \pgf@hbox=\box54
 \pgf@layerbox@main=\box55
-\pgf@picture@serial@count=\count399
+\pgf@picture@serial@count=\count402
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoregraphicstate.co
 de.tex"
@@ -1472,7 +1475,7 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
 \pgf@max=\dimen286
-\pgf@sys@shading@range@num=\count400
+\pgf@sys@shading@range@num=\count403
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreimage.code.te
 x"
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
@@ -1525,7 +1528,7 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplothandlers.
 code.tex"
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count401
+\pgf@plot@mark@count=\count404
 \pgfplotmarksize=\dimen291
 )
 \tikz@lastx=\dimen292
@@ -1536,18 +1539,18 @@ File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \tikzsiblingdistance=\dimen297
 \tikz@figbox=\box58
 \tikz@tempbox=\box59
-\tikztreelevel=\count402
-\tikznumberofchildren=\count403
-\tikznumberofcurrentchild=\count404
-\tikz@fig@count=\count405
+\tikztreelevel=\count405
+\tikznumberofchildren=\count406
+\tikznumberofcurrentchild=\count407
+\tikz@fig@count=\count408
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmodulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count406
-\pgfmatrixcurrentcolumn=\count407
-\pgf@matrix@numberofcolumns=\count408
+\pgfmatrixcurrentrow=\count409
+\pgfmatrixcurrentcolumn=\count410
+\pgf@matrix@numberofcolumns=\count411
 )
-\tikz@expandcount=\count409
+\tikz@expandcount=\count412
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
 librarytopaths.code.tex"
@@ -1571,31 +1574,31 @@ Package csquotes Info: Redefining alias 'default' -> 'danish'.
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\pollard.aux)
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\lenstra.aux)
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\appendiks.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
 
 (C:\Users\Orhoj\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count410
+\scratchcounter=\count413
 \scratchdimen=\dimen298
 \scratchbox=\box60
-\nofMPsegments=\count411
-\nofMParguments=\count412
+\nofMPsegments=\count414
+\nofMParguments=\count415
 \everyMPshowfont=\toks58
-\MPscratchCnt=\count413
+\MPscratchCnt=\count416
 \MPscratchDim=\dimen299
-\MPnumerator=\count414
-\makeMPintoPDFobject=\count415
+\MPnumerator=\count417
+\makeMPintoPDFobject=\count418
 \everyMPtoPDFconversion=\toks59
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -1604,8 +1607,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (C:\Users\Orhoj\Desktop\Bachelorprojekt\main.bbl)
-Package biblatex Info: Reference section=0 on input line 109.
-Package biblatex Info: Reference segment=0 on input line 109.
+Package biblatex Info: Reference section=0 on input line 125.
+Package biblatex Info: Reference segment=0 on input line 125.
 \AtBeginShipoutBox=\box61
 
 ABD: EveryShipout initializing macros
@@ -1619,34 +1622,32 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [13
+) [15
 
 
 
 
 
-{C:/Users/Orhoj/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (36.93828pt too wide) in paragraph at lines 59--60
-[]\OT1/cmr/m/n/10.95 Vi skal vi-se, at $\OML/cmm/m/it/10.95 [] \OT1/cmr/m/n/10
-.95 : \OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 ([][]) \OMS/cmsy/m/n/10.95 ! \OML
-/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 ([][])$ er en ho-mo-mor-fi. Lad da $(\OML/c
-mm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10
-.95 (\OML/cmm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 2$
+{C:/Users/Orhoj/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [16] [17] [
+18] [19]
+Overfull \hbox (4.72997pt too wide) in paragraph at lines 256--258
+\OT1/cmr/m/n/10.95 Med dis-se de-tal-jer pa plads er vi i stand til at vi-se f
+lgende st-ning:                         [] 
  []
 
-[14] [15] [16] [17] [18] [19]) [20]
-(C:\Users\Orhoj\Desktop\Bachelorprojekt\appendiks.tex [28
+Package mdframed Info: Not enough space on this page on input line 274.
+[20]
+Package mdframed Info: Not enough space on this page on input line 274.
+ [21] [22]) [23] (C:\Users\Orhoj\Desktop\Bachelorprojekt\appendiks.tex
+[31
 
 
 
 
 
-]) [29
-
-]
+] [32]) [33]
 \tf@thm=\write6
-
-(C:\Users\Orhoj\Desktop\Bachelorprojekt\main.aux
+ (C:\Users\Orhoj\Desktop\Bachelorprojekt\main.aux
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\gruppeloven.aux)
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\endomorfier_torsion.aux)
 (C:\Users\Orhoj\Desktop\Bachelorprojekt\endelige_legemer.aux)
@@ -1656,13 +1657,13 @@ mm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10
 Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 26530 strings out of 493944
- 467891 string characters out of 3148234
- 886787 words of memory out of 3000000
- 29356 multiletter control sequences out of 15000+200000
- 11411 words of font info for 42 fonts, out of 3000000 for 9000
+ 26702 strings out of 493944
+ 470757 string characters out of 3148234
+ 890137 words of memory out of 3000000
+ 29526 multiletter control sequences out of 15000+200000
+ 12112 words of font info for 44 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 61i,13n,55p,873b,1374s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 61i,13n,55p,873b,1372s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
@@ -1672,13 +1673,14 @@ onts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (10 pages, 188959 bytes).
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (12 pages, 209589 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
+ 104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -7,42 +7,80 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Bevis}{1}{}}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{2}{}}{14}
+\contentsline {definition}{{Definition}{3}{}}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Bevis}{2}{}}{14}
+\contentsline {example}{{Eksempel}{1}{}}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{3}{}}{15}
+\contentsline {theorem}{{Sætning}{2}{}}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Bevis}{3}{}}{16}
+\contentsline {proof}{{Bevis}{2}{}}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{2}{}}{16}
+\contentsline {lemma}{{Lemma}{1}{}}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Bevis}{4}{}}{16}
+\contentsline {proof}{{Bevis}{3}{}}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {thm}{{Sætning}{1}{Hasse}}{16}
+\contentsline {definition}{{Definition}{4}{}}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{4}{}}{17}
+\contentsline {proposition}{{Proposition}{1}{}}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Bevis}{5}{}}{17}
+\contentsline {proof}{{Bevis}{4}{}}{13}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Bevis}{6}{Bevis for Hasses sætning}}{17}
+\contentsline {lemma}{{Lemma}{2}{}}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Sætning}{3}{}}{17}
+\contentsline {proof}{{Bevis}{5}{}}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Bevis}{7}{Bevis for sætning \ref {trace_theorem}}}{18}
+\contentsline {remark}{{Bemærkning}{1}{}}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Sætning}{4}{}}{19}
+\contentsline {lemma}{{Lemma}{3}{}}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {lemma}{{Lemma}{5}{}}{19}
+\contentsline {proof}{{Bevis}{6}{}}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{2}{}}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Bevis}{7}{}}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {thm}{{Sætning}{1}{Hasse}}{19}
+\defcounter {refsection}{0}\relax 
+\contentsline {lemma}{{Lemma}{4}{}}{19}
 \defcounter {refsection}{0}\relax 
 \contentsline {proof}{{Bevis}{8}{}}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Bevis}{9}{Bevis for sætning \ref {count}}}{19}
+\contentsline {proofof}{{}{1}{Bevis for Hasses sætning.}}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Eksempel}{2}{}}{20}
+\contentsline {thm}{{Sætning}{2}{}}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {proposition}{{Proposition}{3}{}}{29}
+\contentsline {proof}{{Bevis}{9}{}}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Bevis}{10}{}}{29}
+\contentsline {thm}{{Sætning}{3}{}}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Bevis}{11}{Bevis for Fermats lille sætning}}{29}
+\contentsline {proof}{{Bevis}{10}{}}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {thm}{{Sætning}{4}{}}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {lemma}{{Lemma}{5}{}}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Bevis}{11}{}}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Bevis}{12}{Bevis for sætning \ref {count}}}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {example}{{Eksempel}{2}{}}{23}
+\defcounter {refsection}{0}\relax 
+\contentsline {theorem}{{Sætning}{5}{Aritmetikkens fundamentalsætning}}{23}
+\defcounter {refsection}{0}\relax 
+\contentsline {algorithm}{{Algoritme}{1}{Pollards $p-1$ algoritme}}{24}
+\defcounter {refsection}{0}\relax 
+\contentsline {example}{{Eksempel}{3}{}}{25}
+\defcounter {refsection}{0}\relax 
+\contentsline {algorithm}{{Algoritme}{2}{Lenstras algoritme}}{28}
+\defcounter {refsection}{0}\relax 
+\contentsline {example}{{Eksempel}{4}{}}{29}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{3}{}}{31}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Bevis}{13}{}}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {proposition}{{Proposition}{4}{}}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Bevis}{14}{}}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {proof}{{Bevis}{15}{Bevis for Fermats lille sætning}}{33}

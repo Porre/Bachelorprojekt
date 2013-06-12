@@ -29,30 +29,33 @@
 % Filen med vores referencer
 \addbibresource{referencer.bib}
 
-% Styling for sætninger osv., er valgt efter normal anbefaling
-
 % Farvede bokse rundt om sætninger, som pr. daleif's bog.
 \usepackage[ntheorem]{mdframed}
 \usepackage{ntheorem,xcolor}
 \definecolor{shadecolor}{gray}{0.9}
 \definecolor{rulecolor}{gray}{0.4}
+
 \mdfdefinestyle{thm}{ % saving some space
-skipabove=1em plus 0.4em minus 0.6em,
-skipbelow=0.5em plus 0.4em minus 0.2em,
-leftmargin=-7pt, rightmargin=-7pt, innerleftmargin=6pt,
-innerrightmargin=6pt, innertopmargin=3pt, innerbottommargin=3pt,
-linewidth=1pt, linecolor=rulecolor, backgroundcolor=shadecolor,
-splittopskip=1.2em minus 0.2em,
-splitbottomskip=0.5em plus 0.2em minus 0.1em,
+	skipabove=1em plus 0.4em minus 0.6em,
+	skipbelow=0.5em plus 0.4em minus 0.2em,
+	leftmargin=-7pt, rightmargin=-7pt, innerleftmargin=6pt,
+	innerrightmargin=6pt, innertopmargin=3pt, innerbottommargin=3pt,
+	linewidth=1pt, linecolor=rulecolor, backgroundcolor=shadecolor,
+	splittopskip=1.2em minus 0.2em,
+	splitbottomskip=0.5em plus 0.2em minus 0.1em,
 }
 \newmdtheoremenv[style=thm]{thm}{Sætning}
+\newmdtheoremenv[style=thm]{lemma}{Lemma}
+\newmdtheoremenv[style=thm]{proposition}{Proposition}
 \theoremstyle{nonumberplain}
 \newmdtheoremenv[style=thm,backgroundcolor=white]{thmstar}{Sætning}
 
-\newmdtheoremenv[style=thm]{lemma}{Lemma}
-\newmdtheoremenv[style=thm,backgroundcolor=white]{thmstar}{Sætning}
+% Remark environment
+\theoremstyle{nonumberplain}
+\theorembodyfont{\normalfont}
+\newtheorem{remark}{Bemærkning}
 
-% ntheorem kræver at vi laver et environment til beviser:
+% Proof environment
 \theoremstyle{nonumberplain}
 \theoremheaderfont{%
 \normalfont\bfseries}
@@ -61,18 +64,28 @@ splitbottomskip=0.5em plus 0.2em minus 0.1em,
 \theoremseparator{.}
 \newtheorem{proof}{Bevis}
 
+% Proof of (some theorem) environment
+\usepackage[thmmarks]{ntheorem}
+\theoremstyle{empty}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremsymbol{\ensuremath{\square}}
+\theoremseparator{.}
+\newtheorem{proofof}{}
 
 
 
-% \theoremstyle{plain}
+
+
+\theoremstyle{plain}
 \newtheorem{theorem}{Sætning}
-\newtheorem{proposition}{Proposition}
-\newtheorem{lemma}{Lemma}
+% \newtheorem{proposition}{Proposition}
+% \newtheorem{lemma}{Lemma}
 \newtheorem{corollary}{Korollar}
 
-% \theoremstyle{definition}
+%\theoremstyle{definition}
 \newtheorem{definition}{Definition}
-\newtheorem{remark}{Bemærkning}
+
 \newtheorem{example}{Eksempel}
 \newtheorem{algorithm}{Algoritme}
 
