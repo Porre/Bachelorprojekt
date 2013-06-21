@@ -19,18 +19,18 @@
 
 \refsection{0}
   \sortlist{entry}{nty}
-    \entry{Hansen}{book}{}
+    \entry{Deuring}{article}{}
       \name{labelname}{1}{}{%
-        {{hash=fc80ef1c58e7c2f0c430e2feb16ee85d}{Hansen}{H\bibinitperiod}{Johan\bibnamedelima P.}{J\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
+        {{hash=aa50055e49ff9bee931b7f158a619b93}{Deuring}{D\bibinitperiod}{Max}{M\bibinitperiod}{}{}{}{}}%
       }
       \name{author}{1}{}{%
-        {{hash=fc80ef1c58e7c2f0c430e2feb16ee85d}{Hansen}{H\bibinitperiod}{Johan\bibnamedelima P.}{J\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
+        {{hash=aa50055e49ff9bee931b7f158a619b93}{Deuring}{D\bibinitperiod}{Max}{M\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{fc80ef1c58e7c2f0c430e2feb16ee85d}
-      \strng{fullhash}{fc80ef1c58e7c2f0c430e2feb16ee85d}
-      \field{sortinit}{H}
-      \field{labeltitle}{Algebra og talteori}
-      \field{title}{Algebra og talteori}
+      \strng{namehash}{aa50055e49ff9bee931b7f158a619b93}
+      \strng{fullhash}{aa50055e49ff9bee931b7f158a619b93}
+      \field{sortinit}{D}
+      \field{labeltitle}{German stuff}
+      \field{title}{German stuff}
     \endentry
     \entry{Lenstra}{article}{}
       \name{labelname}{1}{}{%
@@ -50,25 +50,6 @@
       \field{volume}{126}
       \field{year}{1987}
       \field{pages}{649\bibrangedash 673}
-    \endentry
-    \entry{Pollard}{article}{}
-      \name{labelname}{1}{}{%
-        {{hash=99ef10a5b1dbf89a964eeae6ad270879}{Pollard}{P\bibinitperiod}{J.\bibnamedelimi M.}{J\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-      }
-      \name{author}{1}{}{%
-        {{hash=99ef10a5b1dbf89a964eeae6ad270879}{Pollard}{P\bibinitperiod}{J.\bibnamedelimi M.}{J\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{99ef10a5b1dbf89a964eeae6ad270879}
-      \strng{fullhash}{99ef10a5b1dbf89a964eeae6ad270879}
-      \field{sortinit}{P}
-      \field{labeltitle}{Theorems on factorization and primality testing}
-      \field{issue}{03}
-      \field{journaltitle}{Mathematical Proceedings of the Cambridge Philosophical Society}
-      \field{month}{10}
-      \field{title}{Theorems on factorization and primality testing}
-      \field{volume}{76}
-      \field{year}{1974}
-      \field{pages}{521\bibrangedash 528}
     \endentry
     \entry{Silverman}{book}{}
       \name{labelname}{1}{}{%

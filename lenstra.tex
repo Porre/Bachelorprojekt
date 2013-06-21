@@ -1,23 +1,33 @@
 \section{Lenstras elliptiske kurve algoritme}
-
 I \cite{Lenstra}
-Lenstra præsenterede H. W. Lenstra en algoritme til faktorisering af heltal, som anvender elliptiske kurver. Vi skal arbejde med elliptiske kurver over $\mathbb{Z}/n \mathbb{Z}$, hvor $n$ er et sammensat tal. Dette er dog ikke et legeme og derfor er $E(\mathbb{Z}/n\mathbb{Z})$ ikke en gruppe, da additionen ikke er defineret for alle punkter.
+Lenstra præsenterede H. W. Lenstra en algoritme til faktorisering af heltal, som anvender elliptiske kurver. Vi skal benytte koncepterne vi udviklede til gruppeloven, men vi skal anvende dem på $E(\mathbb{Z}_n)$, hvor $n$ er et sammensat tal. Når $n$ er et sammensat tal er $\mathbb{Z}_n$ ikke er legeme og derfor er $E(\mathbb{Z}_n)$ heller ikke en gruppe. Derfor vælger vi at definere elliptiske pseudokurver for at kunne give mening til dette:
 
-Lad $n$ være et sammensat tal. Vi har, at inverserne til $x_1 - x_2$ og $y_1$ (se gruppeloven) kun findes modulo $n$, hvis (se bevis i appendiks)
+\begin{definition}
+Lad $A, B \in \mathbb{Z}_n$, hvor $\gcd(n, 6) = 1$. En elliptisk pseudokurve er da mængden
+\begin{align*}
+	E(\mathbb{Z}_n) = \{ \infty \} \cup \{ (x, y) \in \mathbb{Z}_n \times \mathbb{Z}_n \mid y^2 =x^3 + Ax +B \},
+\end{align*}
+hvor $\gcd(4A^3 + 27B^2, n) = 1$.
+\end{definition}
+Med denne definition følger det, at en elliptisk kurve specielt er en elliptisk pseudokurve, da hvis $p$ er et primtal er $\mathbb{Z}_p = \mathbb{F}_p$ som er et endeligt legeme. Vi foretager addition af punkter på en elliptisk pseudokurve på samme måde, som for elliptiske kurver. På grund af denne definition vil vi for to punkter $P$ og $Q$ på en elliptisk pseudokurve kunne komme ud for at $P+Q$ ikke vil være defineret. Et tilfælde hvor $P+Q$ ikke er defineret vil blive fanget i udregningen af hældningen $m$ i definition \ref{gruppeloven:definitionen}, da $\mathbb{Z}_n$ ikke er et legeme når $n$ er et sammensat, så det der går galt er at $x_2 - x_1$ eller $y_1$ ikke har en invers i $\mathbb{Z}_n$. At en addition kan "gå galt" er motivationen for at kalde disse kurver for pseudokurver.
+
+Vi ser nu på, hvordan vi kan finde en faktor, når additionen af to punkter ikke er defineret. Algoritmen vi her præsenterer er inspireret af algoritmerne i \cite{Silverman} og \cite{Washington}. Lad $n$ være et sammensat tal. Vi husker fra gruppeloven, at vi ved additionen af to punkter skal bruge værdien af inverserne til $x_2 - x_1$ og $y_1$ alt efter, hvilket tilfælde vi er i. Disse inverser eksisterer kun modulo $n$, hvis (se bevis i appendiks)
 \begin{align*}
 	\gcd(x_1 - x_2, n) = 1 \quad \text{og} \quad \gcd(y_1, n) = 1.
 \end{align*}
-Men hvis vi er i stand til at finde punkter $P=(x_1, y_1)$ og $Q=(x_2, y_2)$ sådan, at summen $P+Q$ ikke er defineret, da er $\gcd(x, n) > 1$ hvor $x=x_1-x_2$ eller $x=y_1$ og dermed har vi muligvis fundet en ikke-triviel faktor i $n$. Vores behandling af algoritmen her er inspireret af \cite{Silverman} og \cite{Washington}.
-
-Vælg først tilfældige heltal $x, y, A \in [1, n]$ og lad da $B=y^{2} - x^{3} - Ax \modu{n}$. Vi har da den elliptiske kurve (pseudo-kurve, da $n$ er et sammensat tal)
+Men hvis vi er i stand til at finde punkter $P=(x_1, y_1)$ og $Q=(x_2, y_2)$ sådan, at summen $P+Q$ ikke er defineret, da er $\gcd(x, n) > 1$ hvor $x=x_1-x_2$ eller $x=y_1$ og dermed har vi muligvis fundet en ikke-triviel faktor i $n$. Vi kan da se på, hvordan vi kan udnytte dette faktum til at lave en algoritme, som giver os en faktor i $n$. Vælg først tilfældige heltal $x, y, A$ mellem $1$ og $n$, og sæt $B = y^2 - x^3 - Ax \modu{n}$. Vi har da en elliptisk kurve (egentlig ikke en elliptisk kurve, da $n$ er et sammensat tal, men vi lader som om)
 \begin{align*}
 	E : y^2 = x^3 + Ax + B,
-\end{align*} 
-hvorpå vi har punktet $P=(x, y)$. Vi tjekker da, at $d= \gcd(4A^3 + 27B^2, n) = 1$. Hvis dette ikke er tilfældet og $1 < d < n$ har vi fundet en faktor i $n$. Hvis $d = n$ vælger vi et nyt $A$. For et heltal $K$ lader vi $k=\lcm[1, 2, \ldots, K]$ og vi forsøger da, at udregene 
+\end{align*}
+hvor vi ved at punktet $P=(x, y)$ er placeret. Vi tjekker da, at
+\begin{align*}
+	d= \gcd(4A^3 + 27B^2, n) = 1.
+\end{align*}
+Hvis det ikke er tilfældet og $1 < d < n$ har vi fundet en faktor i $n$. Hvis $d = n$ vælger vi et nyt $A$. For et heltal $K$ lader vi $k=\lcm[1, 2, \ldots, K]$ og vi forsøger da, at bestemme
 \begin{align*}
 	kP = \underbrace{P + P + \ldots + P}_{k \ \text{led}}.
 \end{align*}
-Det er ineffektivt at udregne $P+P + \ldots + P$ så vi gør ligesom i Pollards $p-1$ algoritme og skriver $k$ som den binære udvidelse
+Det er ikke praktisk at udregne $P+P+ \ldots + P$ så vi gør ligesom i Pollards $p-1$ algoritme og skriver $k$ som den binære udvidelse
 \begin{align*}
 	k = k_0 + k_1 \cdot 2 + k_2 \cdot 2^2 + k_ 3 \cdot 2^3 + \ldots + k_r \cdot 2^r,
 \end{align*}
@@ -29,18 +39,27 @@ hvor alle $k_i$ er $0$ eller $1$. Vi kan da udregne
 	&\vdots \\
 	P_r &= 2 P_{r-1} = 2^r P.
 \end{align*}
-Da kan vi bestemme $kP= (\text{summen af $P_i$'erne hvor $k_i = 1$})$. I hver udregning regner vi modulo $n$, da tallene ellers bliver alt for store og umulige at arbejde med. Vi håber på, at der i løbet af de udregninger er en addition, som ikke kan lade sig gøre og at dette giver os vores faktor. Vi opsummerer diskussionen i algoritmen nedenfor:
+Da kan vi bestemme $kP= (\text{summen af $P_i$'erne hvor $k_i = 1$})$. I hver udregning regner vi modulo $n$, da tallene ellers bliver alt for store og meget langsommelige at arbejde med. Vi håber på, at der i løbet af de udregninger er en addition, som ikke kan lade sig gøre og at dette giver os vores faktor. 
+
+
+Med algoritmen på plads kan vi nu se på et eksempler:
+
+
+
+
+Vi opsummerer diskussionen i algoritmen nedenfor:
 
 \begin{algorithm}[Lenstras algoritme]
-Lad $n \geq 2$ være et sammensat tal, som vi ønsker at finde en faktor for.
+Lad $n \geq 2$ være et sammensat tal.
 \begin{enumerate}
-	\item Vælg $x, y, A \in [1, n]$. Lad da $B = y^2 - x^3 - Ax \modu{n}$ for da har vi den elliptiske kurve
+	\item Vælg heltal $x, y$ og $A$ mellem $1$ og $n$. Lad da $B = y^2 - x^3 - Ax \modu{n}$, så vi har den 	 
+	elliptiske kurve
 	\begin{align*}
 		E : y^2 = x^3 + Ax + B, 
 	\end{align*}
-	hvorpå punktet $P=(x, y)$ er placeret.
-	\item Tjek at $D = \gcd(4A^3 + 27B^2, n) = 1$. Hvis $D=n$ går vi tilbage
-	til (1) og vælger et nyt $b$. Hvis $1 < D < n$ har vi fundet en faktor af $n$ og vi er færdige.
+	hvor punktet $P=(x, y)$ er placeret.
+	\item Tjek at $d = \gcd(4A^3 + 27B^2, n) = 1$. Hvis $d=n$ går vi tilbage
+	til (1) og vælger et nyt $B$. Hvis $1 < d < n$ har vi fundet en faktor af $n$ og vi er færdige.
 	\item Vælg et positivt heltal $k$ som et produkt af mange små primtal, lad eksempelvis
 	\begin{align*}
 		k = \lcm[1, 2, 3, ..., K],
@@ -50,24 +69,17 @@ Lad $n \geq 2$ være et sammensat tal, som vi ønsker at finde en faktor for.
 	vælger en ny kurve, eller går til (3) og vælger et større $k$.
 \end{enumerate}
 \end{algorithm}
-\noindent For at se hvorfor der er en god chance for, at vi støder på et valg af $x, y, A$ sådan, at additionsloven bryder sammen lader vi $p$ være en primfaktor i $n$. Beregningerne i diskussion af algoritmen blev alle lavet modulo $n$, men så gælder de også modulo $p$. Til den elliptiske kurve $E$ har vi den abelske gruppe $E(\mathbb{F}_p)$ og pr. sætning \ref{hasse} ved vi, at
+For at se hvorfor der er en god chance for, at vi støder på et valg af $x, y, A$ sådan at vi finder en faktor, lader vi $p$ være en primfaktor i $n$. Til den elliptiske kurve $E$ har vi den abelske gruppe $E(\mathbb{F}_p)$ og pr. sætning \ref{hasse} ved vi, at
 \begin{align*}
 	p + 1 - 2 \sqrt{p} < \#E(\mathbb{F}_p) < p + 1 + 2 \sqrt{p}.
 \end{align*} 
-En sætning af Deuring [DEURING] giver os endda, at for hvert heltal i intervallet findes $A, B \in \mathbb{F}_p$ sådan at $4A^3 + 27B^2 \neq 0$ og sådan at $E$ har denne orden. Lad igen $k = \lcm[1, 2, \ldots, K]$ og antag, at $m \mid k$ for $m \in (p+1-2\sqrt{p}, p + 1 + 2 \sqrt{p})$. Vi vil da vælge $A, x$ og $y$ indtil vi støder på en kurve $E$ så $\#E(\mathbb{F}_p) = m$. Pr. Deurings sætning er der en positiv sandsynlighed for, at vi finder en kurve sådan at dette er tilfældet. Pr. Waterhouse og andre er der specielt god chance hvis $p - \sqrt{p} < m < p + \sqrt{p}$. Vi kan her bemærke, at i Pollards $p-1$ algoritme var det nødvendigt, at $m \mid k$, men der kunne vi kun vælge $m$ sådan at 
-$m = p-1$.
+En sætning af Deuring \cite{Deuring} siger, at for ethvert heltal $m \in (p+1-2\sqrt{p}, p+1+2\sqrt{p})$ findes der talpar $(A, B)$ i mængden
+\begin{align*}
+	\{ (A, B) \mid A, B \in \mathbb{F}_p, 4A^3 +27B^2 \neq 0 \},
+\end{align*}
+sådan at $\#E(\mathbb{F}_p) = m$. For hvert tal i intervallet findes der altså en elliptisk kurve, som har denne orden. Der er altså en positiv sandsynlighed for, at vi kan finde sådan en kurve.
 
-Antag da, at $\#E(\mathbb{F}_p) \mid k$ og at vi var i stand til at udregne $kP$, samt at $kP \neq \mathcal{O}$ på $E(\mathbb{Z}/n\mathbb{Z})$. Lad $P+Q = kP$ være den sidste addition, hvor $P=(x_1, y_1)$ og $Q=(x_2, y_2)$ begge er forskellige fra $\mathcal{O}$. Da er $P+Q=kP=\mathcal{O}$ på $E(\mathbb{F}_p)$ og vi har, at
-\begin{align*}
-	x_1 \equiv x_2 \modu{p}, \quad y_1 \equiv -y_2 \modu{p},
-\end{align*}
-hvilket videre giver os, at 
-\begin{align*}
-	p \mid \gcd(x_1 - x_2, n), \quad p \mid \gcd(y_1 + y_2, n).
-\end{align*}
-Men så er $P+Q$ ikke defineret på $E(\mathbb{Z}/n \mathbb{Z})$, men dette er i modstrid med vores antagelse. Vi har altså enten, at $kP = \mathcal{O}$ på $E(\mathbb{Z}/n\mathbb{Z})$ eller at vi i forsøget på at udregne $kP$ i $E(\mathbb{Z}/n\mathbb{Z})$ vil støde på to punkter, hvis sum ikke er defineret, hvilket med lidt held så resulterer i en ikke-triviel faktor i $n$.
-\\[10pt]
-Med algoritmen på plads kan vi nu se på et eksempler:
+Lenstras sandsynlighedsteoretiske overvejelser.
 
 \begin{example}
 Lad nu 

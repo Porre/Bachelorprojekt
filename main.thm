@@ -1,11 +1,11 @@
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{1}{}}{2}
+\contentsline {definition}{{Definition}{1}{}}{1}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{{Definition}{2}{Gruppeloven}}{8}
+\contentsline {definition}{{Definition}{2}{Gruppeloven}}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {thm}{{Sætning}{1}{}}{9}
+\contentsline {thm}{{Sætning}{1}{}}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {proof}{{Bevis}{1}{}}{9}
+\contentsline {proof}{{Bevis}{1}{}}{8}
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{{Definition}{3}{}}{10}
 \defcounter {refsection}{0}\relax 
@@ -65,15 +65,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {example}{{Eksempel}{2}{}}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {theorem}{{Sætning}{1}{Aritmetikkens fundamentalsætning}}{25}
+\contentsline {thm}{{Sætning}{7}{Aritmetikkens fundamentalsætning}}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {algorithm}{{Algoritme}{1}{Pollards $p-1$ algoritme}}{26}
+\contentsline {definition}{{Definition}{5}{}}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Eksempel}{3}{}}{27}
+\contentsline {example}{{Eksempel}{3}{}}{26}
+\defcounter {refsection}{0}\relax 
+\contentsline {algorithm}{{Algoritme}{1}{Pollards $p-1$ algoritme}}{27}
+\defcounter {refsection}{0}\relax 
+\contentsline {example}{{Eksempel}{4}{}}{27}
+\defcounter {refsection}{0}\relax 
+\contentsline {remark}{{Bemærkning}{2}{}}{28}
+\defcounter {refsection}{0}\relax 
+\contentsline {definition}{{Definition}{6}{}}{29}
 \defcounter {refsection}{0}\relax 
 \contentsline {algorithm}{{Algoritme}{2}{Lenstras algoritme}}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{{Eksempel}{4}{}}{31}
+\contentsline {example}{{Eksempel}{5}{}}{31}
 \defcounter {refsection}{0}\relax 
 \contentsline {thm}{{Sætning}{7}{}}{33}
 \defcounter {refsection}{0}\relax 

@@ -3,13 +3,13 @@
 
 I dette kapitel ønsker vi at se på faktoriseringsalgoritmer. Det viser sig nemlig, at en af de anvendelser som elliptiske kurver besidder, er indenfor faktoriseringen af heltal. Faktoriseringsproblemet, altså hvordan man bestemmer en faktor for et tal $n$ er yderst relevant, da alle heltal kan faktoriseres:
 
-\begin{theorem}[Aritmetikkens fundamentalsætning]
+\begin{thm}[Aritmetikkens fundamentalsætning]
 Et heltal $n > 1$ kan faktoriseres entydigt som et produkt af primtal, så hvis
 \begin{align*}
 	p_1 \cdot p_2 \cdot \ldots \cdot p_k = q_1 \cdot q_2 \cdot \ldots \cdot q_,
 \end{align*}
 hvor $p_i$ og $q_j$ er primtal for $1 \leq i \leq k$ og $1 \leq j \leq l$ er $k = l$ og $p_i = q_i$ for alle $i=1, 2, \ldots, k$ (efter eventuelle ombytninger). Desuden er faktorerne $p_{1}^{n_1}, p_{2}^{n_2}, \ldots, p_{k}^{n_k}$ entydigt bestemte.
-\end{theorem}
+\end{thm}
 
 For et bevis af sætningen se f.eks. \cite{Hansen}. Det vigtige at bemærke er, at beviset ikke er konstruktivt og dermed ikke giver os en måde, hvorpå vi kan finde disse faktorer. Men hvordan kan vi så finde disse faktorer, som vi nu ved findes? Hvis vi har et sammensat tal $n$, som vi ønsker at faktorisere kunne vi angribe problemet med en naiv tilgang. Vi antager for nemhedens skyld at $n = pq$, hvilket gør det klart at $\min \{p, q \} \leq \sqrt{n}$. Vi kan altså finde en faktor ved at undersøge om først $2 \mid n$, dernæst om $3 \mid n$ osv. indtil at vi finder en faktor, hvilket vil ske senest når vi når til $\sqrt{n}$. Denne løsning er fin for tilstrækkeligt små tal, men det bliver hurtigt uoverkommeligt for store tal (eksempler på hvor lang tid det tager?). 
 
@@ -17,46 +17,49 @@ Sikkerheden i moderne kryptosystemer hviler på det faktum, at det tager lang ti
 $x \equiv 0 \modu{p}$ for en eller anden primfaktor $p$ i $n$. Da har vi nemlig, at $\gcd(x, n)$ er en ikke-triviel divisor i $n$.
 
 \section{Pollards $p-1$ algoritme}
+Da Lenstras algoritme er stærkt inspireret af Pollards $p-1$ algoritme og til dels kan ses som værende en analog til denne, vælger vi at behandle den først. Pollards $p-1$ algoritme blev først præsenteret i \cite{Pollard} i 1970'erne af J. M. Pollard. Algoritmen er en måde hvorpå vi kan finde primfaktorer $p$ for et heltal $n$ når $p-1$ kun har \textit{små} primfaktorer. Vi formaliserer begrebet \textit{små} primfaktorer med følgende definition:
 
-Da Lenstras algoritme er stærkt inspireret af Pollards $p-1$ algoritme og devlist kan ses som værende en analog til denne, vælger vi at behandle den først. Pollards $p-1$ algoritme blev først præsenteret i \cite{Pollard} i 1970'erne af J. M. Pollard. Algoritmen er en måde hvorpå vi kan finde primfaktorer $p$ for et heltal $n$ når $p-1$ kun har \textit{små} primfaktorer. 
-\\[10pt]
-Vi ser nu på, hvordan Pollards $p-1$ algoritme prøver at finde en faktor. Lad $n$ være et sammensat tal og lad $p$ være en primfaktor i $n$. For $a \in \mathbb{Z}$ sådan at $\gcd(a, n)=1$ har vi fra Fermats lille sætning, at 
+\begin{definition}
+Lad $n$ være et positivt heltal med primtalsfaktorisering \\ $n=\prod p_{i}^{e_i}$, da siges $n$ at være $B$-glat hvis $p_{i}^{e_i} \leq B$ for alle $i$.
+\end{definition}
+Vi skal se, at Pollards $p-1$ algoritme giver os en faktor netop, når tallet vi ønsker at faktorisere har en primtalsfaktor $p$ sådan at $p-1$ er $B$-glat.
+\begin{example}
+$30 = 2 \cdot 3 \cdot 5$ så $30$ er $5$-glat, $6$-glat osv.	Men $50 = 2 \cdot 5^2$ er ikke $5$-glat, den er derimod $25$-glat, $26$-glat osv.
+\end{example}
+Vi ser nu på, hvordan Pollards $p-1$ algoritme prøver at finde en faktor. Lad $n$ være et sammensat tal og lad $p$ være en primfaktor i $n$. For $a \in \mathbb{Z}$ valgt sådan at $\gcd(a, n)=1$, har vi fra Fermats lille sætning (se appendiks), at 
 \begin{align*}
 	a^{p-1} \equiv 1 \modu{p}.
 \end{align*}
-Antag nu, at $p-1 \mid \lcm[1, 2, \ldots, K] = k$ for et alle andet $K \in \mathbb{Z}^+$, hvor $\lcm$ er mindste fælles multiplum. Da har vi, at
+Lad nu $k= \lcm[1, 2, \ldots, K]$ for et $K \in \mathbb{Z}^{+}$, hvor $\lcm$ angiver det mindste fælles multiplum. Antag at $p-1 \mid k$, da har vi videre, at
 \begin{align*}
 	a^{k} = a^{m(p-1)} = (a^{p-1})^m \equiv 1 \modu{p}.
 \end{align*}
-Lader vi $x = a^{k} - 1$ har vi nu, at $p \mid d = \gcd(x, n)$. Hvis nu $x \not \equiv 0 \modu{n}$ er $d$ en ikke-triviel divisor i $n$. Bemærk, at vi i de udregninger ikke har haft brug for at kende $p$. I praksis vil vi dog udregne $\gcd(x \modu{n}, n)$ da vi ellers kan risikere at $x$ bliver meget stort og besværligt at regne med, men det ændrer ikke på resultatet. Med den nu fundne faktor har vi en faktorisering $n=d \cdot \frac{n}{d}$ og vi kan gentage processen på disse to faktorer, hvis de ikke allerede er primtal. 
+Lader vi $x = a^{k} - 1$ har vi nu, at $p \mid d = \gcd(x, n)$. Hvis nu $x \not \equiv 0 \modu{n}$ er $d$ en ikke-triviel divisor i $n$. Bemærk, at vi i de udregninger ikke har haft brug for at kende $p$. Vi vil i grunden beregne $\gcd(x \modu{n}, n)$ da $x$ kan blive et meget stort tal, men dette ændrer ikke på resultatet. Med den nu fundne faktor har vi en faktorisering $n=d \cdot \frac{n}{d}$ og vi kan gentage processen på disse to faktorer, hvis de ikke allerede er primtal. 
 
 Det hele hviler altså på, at $n$ skal have en primfaktor $p$ sådan, at 
 \begin{align*}
-	p-1 \mid \lcm[1, 2, \ldots, K].
+	p-1 \mid \lcm[1, 2, \ldots, K],
 \end{align*} 
-Dette vil der være stor sandsynlighed for, hvis $p-1$ har mange små primfaktorer. Vi er da klar til, at præsentere algoritmen, som er inspireret af gennemgangen af algoritmen i \cite{Silverman}:
-
+hvilket er tilfældet når $n$ har en primtalsfaktor $p$ sådan, at $p-1$ er $K$-glat. Det er altså nødvendigt, at $p-1$ har mange små primfaktorer hvis algoritmen skal have en chance. Vi kan da opskrive algoritmen (inspireret af gennemgangen i \cite{Silverman}):
 \begin{algorithm}[Pollards $p-1$ algoritme]
-Lad $n \geq 2$ være et sammensat tal, som er tallet vi ønsker at 
-finde en faktor for.
+Lad $n \geq 2$ være et sammensat tal.
 \begin{enumerate}
 	\item Vælg $k \in \mathbb{Z}^+$ sådan, at $k$ er et produkt
 	af mange små primtal opløftet i små potenser. Eksempelvis kan $k$ vælges til at være
 	\begin{align*}
 		k = \lcm [1, 2, \ldots, K],
 	\end{align*}
-	for et $K \in \mathbb{Z}^+$ og hvor $\lcm$ er det mindste fælles multiplum.
+	for et $K \in \mathbb{Z}^+$, hvor $\lcm$ er det mindste fælles multiplum.
 	\item Vælg et heltal $a$ sådan, at $1 < a <n$.
 	\item Udregn $\gcd(a, n)$. Hvis $\gcd(a, n) > 1$ har vi fundet en
 	ikke-triviel faktor for $n$ og vi er færdige. Ellers fortsæt til næste
 	trin.
-	\item Udregn $D = \gcd(a^k - 1 \modu{n}, n)$. Hvis $1 < D < n$ er $D$ en ikke-triviel
-	faktor for $n$ og vi er færdige. Hvis $D = 1$ gå da tilbage til trin 1
-	og vælg et større $k$. Hvis $D = n$ gå da til trin 2 og vælg et nyt $a$. 
+	\item Udregn $d = \gcd(a^k - 1 \modu{n}, n)$. Hvis $1 < d < n$ er $d$ en ikke-triviel
+	faktor for $n$ og vi er færdige. Hvis $d = 1$ gå da tilbage til trin 1
+	og vælg et større $k$. Hvis $d = n$ gå da til trin 2 og vælg et nyt $a$. 
 \end{enumerate}
 \end{algorithm}
-
-Denne version af algoritmen vil på et tidspunkt stoppe, da vi på et tidspunkt vil have at $K=\frac{1}{2}(p-1)$ i trin 1 for et eller andet $p \mid n$, hvilket betyder at $p-1 \mid k$. Hvis der ikke bliver fundet en faktor før dette sker er algoritmen dog yderst ineffektiv og man vil i praksis kun teste til en fastsat grænse for $K$.
+Algoritmen vil på et tidspunkt stoppe, da vi før eller siden vil ende i tilfældet, hvor $K=\frac{1}{2}(p-1)$ i trin 1 for et eller andet $p \mid n$, hvilket betyder at $p-1 \mid k$. Hvis der ikke bliver fundet en faktor før dette sker er algoritmen dog yderst ineffektiv og man vil i praksis kun teste til en fastsat grænse for $K$.
 
 Følgende er et eksempel på anvendelsen af Pollards algoritme,
 hvor det går godt, altså hvor $p-1$ har små primfaktorer:
@@ -69,7 +72,7 @@ Vi vil forsøge at faktorisere
 Vi ser at $2^{n-1} = 2^{30042490} \equiv 25171326 \ (\textrm{mod}\ 30042491)$,
 så $N$ er ikke et primtal. Vi vælger som beskrevet i algoritmen
 \begin{align*}
-	a = 2 \quad \text{og} \quad k = \mathrm{LCM}[1,2, \ldots, 7] = 420.
+	a = 2 \quad \text{og} \quad k = \lcm[1,2, \ldots, 7] = 420.
 \end{align*}
 Da $420 = 2^2 + 2^5 + 2^7 + 2^8$ skal vi udregne $2^{2^i}$ for 
 $0 \leq i \leq 8$. Dette resulterer i følgende tabel:
@@ -99,7 +102,7 @@ Ved anvendelse af den euklidiske algoritme finder vi dernæst, at
 Her fejler testen altså og vi er nået frem til, at $n$ ikke har nogle 
 primtalsfaktorer $p$ sådan, at $p-1$ deler $420$. Algoritmen foreskriver da, at vi skal vælge et nyt $k$. Vi lader
 \begin{align*}
-	k = \mathrm{LCM}[1,2, \ldots, 11] = 27720.
+	k = \lcm[1,2, \ldots, 11] = 27720.
 \end{align*}
 Da $27720 = 2^{14} + 2^{13} + 2^{11} + 2^{10} + 2^{6} + 2^3$ skal vi udvide tabellen til at indeholde værdierne for $2^{2^i}$ for $0 \leq i \leq 14$:
 
@@ -128,5 +131,11 @@ hvilket betyder at vi har fundet en ikke-triviel faktor for $n$. Mere præcist h
 	30042491 = 3251 \cdot 9241.
 \end{align*}
 Det tjekkes at $3251$ og $9241$ rent faktisk er primtal og vi har fundet den fulde faktorisering.
-
 \end{example}
+\begin{remark}
+Vi fandt en faktor netop når $K=11$ fordi, at 
+\begin{align*}
+	9241 - 1 = 9240 = 2^3 \cdot 3 \cdot 5 \cdot 7 \cdot 11,
+\end{align*}
+hvilket betyder at $9240$ er $11$-glat.
+\end{remark}
