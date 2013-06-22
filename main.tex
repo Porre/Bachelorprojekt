@@ -12,8 +12,8 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-% \usepackage{amsthm}
 \usepackage[amsmath,thmmarks]{ntheorem}
+% \usepackage{amsthm}
 
 % Image stuff
 \usepackage{graphicx}
@@ -22,6 +22,9 @@
 \usepackage[danish]{babel}
 \usepackage[utf8]{inputenc}
 
+% Kald appendiks for Appendiks og ikke Bilag
+\addto{\captionsdanish}{\renewcommand*{\appendixname}{Appendiks}}
+
 % Til referencer, Biber giver os UTF-8 understøttelse
 \usepackage[backend=biber]{biblatex}
 \usepackage{csquotes} 
@@ -29,28 +32,9 @@
 % Filen med vores referencer
 \addbibresource{referencer.bib}
 
-% Farvede bokse rundt om sætninger, som pr. daleif's bog.
-\usepackage[ntheorem]{mdframed}
-\usepackage{ntheorem,xcolor}
-\definecolor{shadecolor}{gray}{0.9}
-\definecolor{rulecolor}{gray}{0.4}
-
-\mdfdefinestyle{thm}{ % saving some space
-	skipabove=1em plus 0.4em minus 0.6em,
-	skipbelow=0.5em plus 0.4em minus 0.2em,
-	leftmargin=-7pt, rightmargin=-7pt, innerleftmargin=6pt,
-	innerrightmargin=6pt, innertopmargin=3pt, innerbottommargin=3pt,
-	linewidth=1pt, linecolor=rulecolor, backgroundcolor=shadecolor,
-	splittopskip=1.2em minus 0.2em,
-	splitbottomskip=0.5em plus 0.2em minus 0.1em,
-}
-\newmdtheoremenv[style=thm]{thm}{Sætning}
-\newmdtheoremenv[style=thm]{lemma}{Lemma}
-\newmdtheoremenv[style=thm]{definition}{Definition}
-\newmdtheoremenv[style=thm]{proposition}{Proposition}
-\newmdtheoremenv[style=thm]{algorithm}{Algoritme}
-\theoremstyle{nonumberplain}
-\newmdtheoremenv[style=thm,backgroundcolor=white]{thmstar}{Sætning}
+% Nedded for counters or something like that.
+\newtheorem{theorem}{Sætning}
+\newtheorem{corollary}{Korollar}
 
 % Remark environment
 \theoremstyle{nonumberplain}
@@ -60,6 +44,10 @@
 % Example environment
 \theoremstyle{plain}
 \newtheorem{example}{Eksempel}
+
+% Farvede bokse rundt om sætninger, som pr. daleif's bog.
+\usepackage[ntheorem]{mdframed}
+\usepackage{ntheorem,xcolor}
 
 % Proof environment
 \theoremstyle{nonumberplain}
@@ -79,24 +67,30 @@
 \theoremseparator{.}
 \newtheorem{proofof}{}
 
+\definecolor{shadecolor}{gray}{0.9}
+\definecolor{rulecolor}{gray}{0.4}
+\mdfdefinestyle{thm}{ % saving some space
+	skipabove=0.8em,
+	skipbelow=0.8em,
+	leftmargin=-7pt, rightmargin=-7pt, innerleftmargin=6pt,
+	innerrightmargin=6pt, innertopmargin=3pt, innerbottommargin=3pt,
+	linewidth=1pt, linecolor=rulecolor, backgroundcolor=shadecolor,
+	splittopskip=1.2em minus 0.2em,
+	splitbottomskip=0.5em plus 0.2em minus 0.1em,
+}
 
-
-
+\mdfdefinestyle{test} {
+	skipbelow=2em,
+}
 
 \theoremstyle{plain}
-\newtheorem{theorem}{Sætning}
-% \newtheorem{proposition}{Proposition}
-% \newtheorem{lemma}{Lemma}
-\newtheorem{corollary}{Korollar}
-
-%\theoremstyle{definition}
-% \newtheorem{definition}{Definition}
-
-
-
-
-% section som chapterstyle er mindre voldsomt til et "lille" projekt
-% \chapterstyle{section}
+\newmdtheoremenv[style=thm]{thm}{Sætning}
+\newmdtheoremenv[style=thm]{lemma}{Lemma}
+\newmdtheoremenv[style=thm]{definition}{Definition}
+\newmdtheoremenv[style=thm]{proposition}{Proposition}
+\newmdtheoremenv[style=thm]{algorithm}{Algoritme}
+\theoremstyle{nonumberplain}
+\newmdtheoremenv[style=thm,backgroundcolor=white]{thmstar}{Sætning}
 
 % Sørg for at niveauet til og med subsection nummereres
 \setcounter{secnumdepth}{2}
@@ -104,7 +98,6 @@
 
 % TikZ bruges til tegninger
 \usepackage{tikz}
-
 
 % -- START PÅ MAKROER -- 
 % Angiver punktet i uendelighed
@@ -122,19 +115,18 @@
 
 % Karakteristik
 \newcommand{\cha}{\text{char}}
-
 % -- SLUT PÅ MAKROER --
 
 % Bruges kun under skrivningen af projektet
-\includeonly{lenstra}
+\includeonly{gruppeloven}
 
 \begin{document}
 %\tableofcontents
 \include{gruppeloven}
-\include{endomorfier_torsion}
-\include{endelige_legemer}
-\include{pollard}
-\include{lenstra}
-\include{appendiks}
+% \include{endomorfier_torsion}
+% \include{endelige_legemer}
+% \include{pollard}
+% \include{lenstra}
+% \include{appendiks}
 %\printbibliography
 \end{document}

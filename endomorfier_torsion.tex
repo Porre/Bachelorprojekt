@@ -236,11 +236,36 @@ $p-aq$ netop $\deg \alpha$ forskellige rødder. Da der er præcist $\deg \alpha$
 punkter $(x_1, y_1)$ så $\alpha(x_1, y_1) = (a, b)$ har kernen for $\alpha$ netop
 $\deg \alpha$ elementer.
 \end{proof}
+\begin{thm}
+\label{endomorfier:surjektiv}
+Lad $E$ være en elliptisk kurve over et legeme $K$. Lad $\alpha \neq 0$ være en endomorfi for $E$. Da er $\alpha : E(\clk) \to E(\clk)$ surjektiv.
+\end{thm}
+\begin{proof}
+Lad $(a, b) \in E(\clk)$. Vi vil vise, at der findes et punkt $(x, y) \in E(\clk)$ sådan, at $\alpha(x, y) = (a, b)$. Da $\alpha(\infty) = \infty$ kan vi antage, at $(a,b) \neq \infty$. Lad $r_1(x) = p(x)/q(x)$. Vi skal betragte to tilfælde:
 
-Dette bevis konkluderer undersøgelse af endomorfier på generelle legemer $K$. I kapitel 4
-vil vi fortsat behandle endomorfier, men der vil det være for endelige legemer.
-
-
+Hvis $p(x) - aq(x)$ ikke er et konstant polynomium har det en rod $x_0$. Hvis $q(x_0)=0$ må $p(x_0) = 0$ hvilket er i modstrid med, at $p$ og $q$ ikke har nogen fælles rødder. Derfor har vi, at $q(x_0) \neq 0$ og det følger, at 
+\begin{align*}
+	p(x_0) - aq(x_0) = 0 \Rightarrow a = \frac{p(x_0)}{q(x_0)}.
+\end{align*}
+Vælg nu $y_0 \in E(\clk)$ som en af kvadratrødderne af $x_{0}^{3} + Ax_0 + B$. Da er $\alpha(x_0, y_0)$ defineret og $\alpha(x_0, y_0) = (a, b')$ for et $b'$. Da 
+\begin{align*}
+	(b')^2 = a^3 + Aa + B = b^2,
+\end{align*}
+er $b=\pm b'$. Hvis $b'=b$ er vi færdige. Hvis $b'=-b$ har vi, at 
+\begin{align*}
+	\alpha(x_0, -y_0) = (a, -b') = (a, b).
+\end{align*}
+Vi mangler nu, at betragte tilfældet hvor $p(x)-aq(x)$ er konstant. Da $E(\clk)$ er uendelig og $\ker \alpha$ er endelig afbilledes kun endeligt mange punkter fra $E(\clk)$ til en given $x$-koordinat. Derfor må enten $p(x)$ eller $q(x)$ være ikke-konstant, da hvis de begge var konstante ville der være uendeligt mange punter fra $E(\clk)$ der afbilledes til en $x$-koordinat. Hvis $p$ og $q$ er to ikke-konstante polynomier, da er der højest én konstant $a$ sådan at $p-aq$ er konstant, da vi ellers har for en anden sådan konstant $a'$, at 
+\begin{align*}
+	(a' - a)q = (p - aq) - (p - a'q), \quad (a'-a)p=a'(p-aq)-a(p-a'q),
+\end{align*}
+hvor begge er konstante, hvilket medfører at $p$ og $q$ er konstante. Så der er højest to punkter $(a,b)$ og $(a,-b)$ som ikke er i billedet af $\alpha$. Lad $(a_1, b_1)$ være et andet punkt end disse. Da er $\alpha(P_1)=(a_1, b_1)$ for et punkt $P_1$. Vi kan vælge $(a_1, b_1)$ sådan, at $(a_1, b_1) + (a, b) \neq (a, \pm b)$, så der findes et punkt $P_2$ sådan, at $\alpha(P_2)=(a_1, b_1) + (a,b)$. Dermed har vi, at 
+\begin{align*}
+	\alpha(P_2 - P_1) = (a, b) \quad \text{og} \quad \alpha(P_1 - P_2) = (a, -b).
+\end{align*}
+Vi har da ramt alle punkter, så $\alpha$ er surjektiv.
+\end{proof}
+Dette bevis konkluderer vores undersøgelse af endomorfier på generelle legemer $K$. Vi vil i kapitel 4 fortsat behandle endomorfier, men der vil det være for endelige legemer.
 
 
 

@@ -13,8 +13,98 @@ Da hvert $\alpha_i \in K$ har vi altså $p$ forskellige valg for hver af $\alpha
 
 Vi benytter notationen $\mathbb{F}_q = \mathbb{F}_{p^n}$ for det endelige legeme med $q=p^n$ elementer. Bemærk, at $\mathbb{Z}/p^n \mathbb{Z}$ ikke er et legeme for $n \geq 2$, da $p$ ikke har nogen multiplikativ invers.
 
-\section{Andre resultater}
+\begin{thm}
+\label{appendiks:f_qtheorem}
+Lad $\overline{\mathbb{F}}_p$ være den algebraiske aflukning af $\mathbb{F}_p$ og lad $q = p^n$, da er
+\begin{align}
+	\label{appendiks:f_q}
+	\mathbb{F}_q = \{ \alpha \in \overline{\mathbb{F}}_p \mid \alpha^q = \alpha 
+	\}.
+\end{align}
+\end{thm}
+\begin{proof}
+Vi vil først vise, at $\mathbb{F}_q \subseteq \{ \alpha \in \overline{\mathbb{F}}_p \mid \alpha^q = \alpha \}$. Ikke-nul elementerne fra $\mathbb{F}_q$ danner en gruppe af orden $q-1$ så $\alpha^{q-1} = 1$ når 
+$0 \neq \alpha \in \mathbb{F}_q$. Da $0^q = 0$ har vi, at $\alpha^q = \alpha$ for alle $\alpha \in \mathbb{F}_q$ og vi har den ønskede inklusion.
 
+Idet vi husker, at et polynomium $g(X)$ kun har multiple rødder, hvis den har en fælles rod med dens afledede $g'(X)$ ser vi, at 
+\begin{align*}
+	\frac{d}{dX} (X^q - X) = qX^{q-1} - 1 = -1,
+\end{align*}
+da $q = p^n = 0$ i $\mathbb{F}_p$. Dermed har $g(X)$ altså ikke nogen multipel rod, så der findes $q$ forskellige elementer $\alpha \in \overline{\mathbb{F}}_p$ sådan at $\alpha^q = \alpha$.
+
+Da begge mængder i \eqref{appendiks:f_q} har samme antal elementer og den ene er indeholdt i den anden, må de nødvendigvis være ens.
+\end{proof}
+Lad $\phi_q(x) = x^q$ for alle $x \in \overline{\mathbb{F}}_q$. Vi kalder da $\phi_q$ for Frobenius automorfien (analogt til Frobenius endomorfien). Følgende proposition fastsætter nogle af dens egenskaber:
+
+\begin{proposition}
+Lad $q=p^n$ hvor $p$ er et primtal.
+\begin{enumerate}
+	\item Lad $\alpha \in \overline{\mathbb{F}}_q$. Da er $\alpha \in \mathbb{F}_{q^n}$ 
+	hvis og kun hvis $\phi_{q}^{n}(\alpha) = \alpha$.
+	\item $\phi_q$ er en automorfi for $\overline{\mathbb{F}}_q$. Specielt gælder der,
+	at 
+	\begin{align*}
+		\phi_q (x+y) = \phi_q(x) + \phi_q(y) \quad \text{og} \quad \phi_q(xy) =
+		 \phi_q(x)\phi_q(y).
+	\end{align*}
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(1) følger fra sætning \ref{appendiks:f_qtheorem} med $q^n$ i stedet for $q$. Vi kan derfor fokusere på (2). Lad $1 \leq j \leq p-1$, da vi vil binomial koefficienten 
+$\binom{p}{j}$ have en faktor $p$ i dens tæller som ikke går ud med nævneren. Derfor har vi, at 
+\begin{align*}
+	\binom{p}{j} \equiv 0 \modu{p}.
+\end{align*}
+Det følger heraf, at 
+\begin{align*}
+	(x + y)^p = x^p + \binom{p}{1}x^{p-1}y + \binom{p}{2}x^{p-2}y^2 + 
+	\ldots + y^p = x^p + y^p,
+\end{align*}
+da vi er i karakteristik $p$. Vi vil lave et induktionsbevis og dette viser basistilfældet. Antag nu, at der gælder at $(x+y)^{p^n} = x^{p^n} + y^{p^n}$. Da har vi, at
+\begin{align*}
+	(x+y)^{p^{n+1}} &= (x+y)^{p^n p} = ((x+y)^{p^n})^p
+	= (x^{p^n} + y^{p^n})^p \\
+	&= x^{p^{n+1}} + y^{p^{n+1}}.
+\end{align*}
+Dette giver os, at $\phi_q(x+y) = \phi_q(x) + \phi_q(y)$. Det er klart, at 
+$\phi_q(xy)=\phi_q(x) \phi_q(y)$, da $(xy)^q = x^q y^q$. Vi har da, at $\phi_q$ er en homomorfi for legemer.
+\end{proof}
+
+
+
+\section{Hasses sætning}
+Følgende propositon benyttes i Hasses sætning: 
+\begin{proposition}
+\label{appendiks_dense}
+Mængden 
+\begin{align*}
+	\left\{ \frac{r}{s} \mid \gcd(s, q) = 1 \right\} \subseteq \mathbb{Q}
+\end{align*}
+er tæt i $\mathbb{R}$ og $qx^2 - ax + 1 \geq 0$ for alle $x \in \mathbb{R}$.
+\end{proposition}
+\begin{proof}
+En delmængde $X \subseteq \mathbb{R}$ siges at være tæt, hvis der for alle heltal $a \in \mathbb{R}$ findes et interval med centrum i $a$, som også indeholder punkter fra $X$. 
+
+Lad $X$ være mængden i propositionen og lad $s$ være en potens af $2$ eller $3$. Ét af de to må nødvendigvis være primisk med $q$, da $q$ er en potens af ét enkelt primtal $p$. Vi ser, at rationalerne på formen $r/2^n$ er tæt i $\mathbb{R}$ på følgende måde. Lad $a, b \in \mathbb{R}$ være sådan at $a < b$. Der findes da $n \in \mathbb{N}$ sådan, at 
+\begin{align*}
+	0 < \frac{1}{n} < b - a \Rightarrow 0 < \frac{1}{2^n} < \frac{1}{n} < b - a.
+\end{align*}
+Vi har altså at $1 < 2^n b - 2^n a$. Når afstanden mellem $2^n b$ og $2^n a$ er større end $1$ findes der $r \in \mathbb{Z}$ sådan, at
+\begin{align*}
+	2^n a < r < 2^n b \Rightarrow a < \frac{r}{2^n} < b.
+\end{align*}
+Dette viser netop, at $r/2^n$ er tæt i $\mathbb{R}$. Det samme kan gøres for $r/3^n$. Vi har da, at $X$ indeholder en delmængde som er tæt i $\mathbb{R}$, hvilket giver os at $X$ selv er tæt i $\mathbb{R}$.
+
+Vi vi vil nu vise, at $qx^2 - ax + 1 \geq 0$ for alle $x \in \mathbb{R}$.
+Antag for modstrid, at der findes $r \in \mathbb{R}$ sådan at $ar^2 -ar + 1 < 0$. Vi ser på en følge af intervaller omkring $r$:
+\begin{align*}
+	(r - \varepsilon, r + \varepsilon), \quad \text{hvor} \ \varepsilon = \frac{1}{n}, \quad n = 1, 2, \ldots
+\end{align*}
+I hvert af disse intervaller findes $x_n \in X$, da vi netop har vist at $X$ er en tæt mængde i $\mathbb{R}$. Vi får en følge $x_1, x_2, \ldots$ af tal som nærmer sig $r$. For et stort nok $i$ har vi, at $qx_{i}^{2} -ax_i + 1$ er arbitrært tæt på $qr^2 - ar + 1$. Men da $x_i \in X$ må den første af disse to være $\geq 0$ mens den anden er $< 0$. Dette er en modstrid og vi har, at 
+$qx^2 - ax + 1 \geq 0$ for alle $x \in \mathbb{R}$.
+\end{proof}
+
+\section{Andre resultater}
 \begin{thm}
 \label{monic}
 Lad $K$ være et legeme. Hvis $f, g \in K[X]$, da findes der polynomier $q, r \in K[X]$ sådan at $\deg r < \deg g$ og
@@ -32,43 +122,6 @@ Det følger af divisionsalgoritmen for polynomier. Hvis $f$ har det ledende term
 Hvis $g$ er monisk er $b=1$ so hver gang trækker vi et polynomium med heltalskoefficienter fra så både kvotienten $q$ og resten $r$ vil dermed have heltalskoefficienter.
 \end{proof}
 \label{appendiks_andre}
-Følgende propositon benyttes i Hasses sætning: 
-\begin{proposition}
-\label{appendiks_dense}
-Mængden 
-\begin{align*}
-	\left\{ \frac{r}{s} \mid \gcd(s, q) = 1 \right\} \subseteq \mathbb{Q}
-\end{align*}
-er tæt i $\mathbb{R}$ og 
-\begin{align*}
-	qx^2 - ax +1 \geq 0
-\end{align*}
-for alle $x \in \mathbb{R}$.
-\end{proposition}
-\begin{proof}
-En delmængde $X \subseteq \mathbb{R}$ siges at være tæt, hvis der for alle heltal $a \in \mathbb{R}$ findes et interval med centrum i $a$, som også indeholder punkter fra $X$. 
-
-Lad $X$ være mængden i propositionen og lad $s$ være en potens af $2$ eller $3$. Ét af de to må nødvendigvis være primisk med $q$, da $q$ er en potens af ét enkelt primtal $p$. Vi ser, at rationalerne på formen $r/2^n$ er tæt i $\mathbb{R}$ på følgende måde. Lad $a < b \in \mathbb{R}$. Der findes da $n \in \mathbb{N}$ sådan, at 
-\begin{align*}
-	0 < \frac{1}{n} < b - a \Rightarrow 0 < \frac{1}{2^n} < \frac{1}{n} < b - a.
-\end{align*}
-Vi har altså at $1 < 2^n \cdot b - 2^n \cdot a$. Når afstanden mellem $2^n \cdot b$ og $2^n \cdot a$ er større end $1$ findes der $r \in \mathbb{Z}$ så $2^n \cdot a < r < 2^n \cdot b \Rightarrow a < \frac{r}{2^n} < b$ 
-($2^n \neq 0$). Så $r/2^n$ er tæt i $\mathbb{R}$. Det samme kan gøres for $r/3^n$.
-
-Vi har da, at $X$ indeholder en delmængde som er tæt i $\mathbb{R}$, hvilket giver os at $X$ selv er tæt i $\mathbb{R}$.
-
-En konsekvens af tætheden af $X$ er, at vi kan konkludere at $qx^2 - ax +1 \geq 0$ for alle 
-$x \in \mathbb{R}$. Antag for modstrid, at der findes $r \in \mathbb{R}$ sådan at $ar^2 -ar + 1 < 0$. Vi ser på en følge af intervaller omkring $r$:
-\begin{align*}
-	(r - \varepsilon, r + \varepsilon), \quad \text{hvor} \ \varepsilon = \frac{1}{n}, \quad n = 1, 2, \ldots
-\end{align*}
-I hvert af disse intervaller findes $x_n \in X$, hvor $X$ er som i proposition \ref{appendiks_dense}, da vi netop har vist at $X$ er en tæt mængde i $\mathbb{R}$. Vi får en følge $x_1, x_2, \ldots$ af tal som nærmer sig $r$. For et stort nok $i$ har vi, at $qx_{i}^{2} -ax_i + 1$ er arbitrært tæt på $qr^2 - ar + 1$. Men da $x_i \in X$ må den første af disse to være $\geq 0$ mens den anden er $< 0$. Dette er en modstrid og vi har, at 
-\begin{align*}
-	qx^2 - ax +1 \geq 0,
-\end{align*}
-for alle $x \in \mathbb{R}$.
-\end{proof}
-
 
 \begin{proposition}
 \label{inverse_exists_not}
@@ -80,23 +133,4 @@ Antag for modstrid, at $d = \gcd(a, n) > 1$, men at der samtidigt eksisterer en 
 	e = e \cdot 1 = eac = 0 \cdot c = 0 \modu{n},
 \end{align*}
 hvilket er i modstrid med at $e$ ikke kunne være $0$ modulo $n$. Altså har $a$ ikke en invers når $\gcd(a, n) > 1$.
-\end{proof}
-
-Vi giver nu beviset for sætning 
-\begin{proof}[Bevis for Fermats lille sætning]
-Vi ser først på de $p-1$ positive multipla af $a$
-\begin{align}
-	\label{multiples}
-	a, 2a, \ldots, (p-1)a.
-\end{align}
-Hvis $ra = sa \modu{p}$ har vi, at $r = s \modu{p}$, så elementerne listet i \eqref{multiples} er forskellige og ikke-nul. De må altså være kongruente til $1, 2, \ldots, p-1$ men ikke nødvendigvis i den opskrevne rækkefølge. Ganger vi elementerne sammen må de to kongruenser være de samme, altså er
-\begin{align*}
-	a \cdot 2a \cdots (p-1)a = 1 \cdot 2 \cdots (p-1) \modu{p},
-\end{align*}
-hvilket giver os, at 
-\begin{align*}
-	a^{p-1} (p-1)! = (p-1)! \modu{p} \Rightarrow a^{p-1} = 1 \modu{p}.
-\end{align*}
-
-
 \end{proof}
