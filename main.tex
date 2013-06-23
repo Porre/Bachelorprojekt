@@ -1,19 +1,9 @@
-% Vi benytter os af MEMOIR (pr. daleif's anbefaling)
+% Fil oprettet: 24.01.2013
+% Fil afsluttet: pending.
+
 \documentclass[a4paper,11pt,oneside]{memoir}
 
-% Dette er hovedfilen, hvor jeg definerer min pre-amble.
-% Idéen er at sprede de enkelte kapitler ud i hvert deres
-% dokument for at gøre det hele lidt mere overskueligt.
-% Eventuelle makroer vil også fremgå heri.
-% Inden 6 måneder skulle det gerne ligne et bachelorprojekt. 
-% 24.01.2013
 
-% Matematikpakker
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage[amsmath,thmmarks]{ntheorem}
-% \usepackage{amsthm}
 
 % Image stuff
 \usepackage{graphicx}
@@ -21,9 +11,7 @@
 % Dansk babel og tillad øæå osv.
 \usepackage[danish]{babel}
 \usepackage[utf8]{inputenc}
-
-% Kald appendiks for Appendiks og ikke Bilag
-\addto{\captionsdanish}{\renewcommand*{\appendixname}{Appendiks}}
+% \usepackage[T1]{fontenc}
 
 % Til referencer, Biber giver os UTF-8 understøttelse
 \usepackage[backend=biber]{biblatex}
@@ -32,46 +20,18 @@
 % Filen med vores referencer
 \addbibresource{referencer.bib}
 
-% Nedded for counters or something like that.
-\newtheorem{theorem}{Sætning}
-\newtheorem{corollary}{Korollar}
+% Matematikpakker
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{mdframed}
 
-% Remark environment
-\theoremstyle{nonumberplain}
-\theorembodyfont{\normalfont}
-\newtheorem{remark}{Bemærkning}
-
-% Example environment
-\theoremstyle{plain}
-\newtheorem{example}{Eksempel}
-
-% Farvede bokse rundt om sætninger, som pr. daleif's bog.
-\usepackage[ntheorem]{mdframed}
-\usepackage{ntheorem,xcolor}
-
-% Proof environment
-\theoremstyle{nonumberplain}
-\theoremheaderfont{%
-\normalfont\bfseries}
-\theorembodyfont{\normalfont}
-\theoremsymbol{\ensuremath{\square}}
-\theoremseparator{.}
-\newtheorem{proof}{Bevis}
-
-% Proof of (some theorem) environment
-\usepackage[thmmarks]{ntheorem}
-\theoremstyle{empty}
-\theoremheaderfont{\normalfont\bfseries}
-\theorembodyfont{\normalfont}
-\theoremsymbol{\ensuremath{\square}}
-\theoremseparator{.}
-\newtheorem{proofof}{}
-
+% Bokse til sætninger osv. som pr. daleifs bog
+\usepackage[amsmath,thmmarks]{ntheorem}
+\usepackage{xcolor}
 \definecolor{shadecolor}{gray}{0.9}
 \definecolor{rulecolor}{gray}{0.4}
 \mdfdefinestyle{thm}{ % saving some space
-	skipabove=0.8em,
-	skipbelow=0.8em,
+	skipabove=1em plus 0.4em minus 0.6em,
+	skipbelow=0.5em plus 0.4em minus 0.2em,
 	leftmargin=-7pt, rightmargin=-7pt, innerleftmargin=6pt,
 	innerrightmargin=6pt, innertopmargin=3pt, innerbottommargin=3pt,
 	linewidth=1pt, linecolor=rulecolor, backgroundcolor=shadecolor,
@@ -79,31 +39,38 @@
 	splitbottomskip=0.5em plus 0.2em minus 0.1em,
 }
 
-\mdfdefinestyle{test} {
-	skipbelow=2em,
-}
-
-\theoremstyle{plain}
+% Environments
 \newmdtheoremenv[style=thm]{thm}{Sætning}
-\newmdtheoremenv[style=thm]{lemma}{Lemma}
+\newmdtheoremenv[style=thm]{theorem}{Sætning}
 \newmdtheoremenv[style=thm]{definition}{Definition}
+\newmdtheoremenv[style=thm]{lemma}{Lemma}
 \newmdtheoremenv[style=thm]{proposition}{Proposition}
+\newmdtheoremenv[style=thm]{corollary}{Korollar}
 \newmdtheoremenv[style=thm]{algorithm}{Algoritme}
+\newmdtheoremenv[]{remark}{Bemærkning}
+\newmdtheoremenv[]{example}{Eksempel}
 \theoremstyle{nonumberplain}
 \newmdtheoremenv[style=thm,backgroundcolor=white]{thmstar}{Sætning}
 
-% Sørg for at niveauet til og med subsection nummereres
-\setcounter{secnumdepth}{2}
-\setcounter{tocdepth}{1}
+% Proof miljø
+\theoremstyle{nonumberplain}
+\theoremheaderfont{%
+\normalfont\itshape}
+\theorembodyfont{\normalfont}
+\theoremsymbol{\ensuremath{\square}}
+\theoremseparator{.}
+\newtheorem{proof}{Bevis}
 
-% TikZ bruges til tegninger
-\usepackage{tikz}
+% Proof-of miljø
+\theoremstyle{empty}
+\theoremheaderfont{\normalfont\itshape}
+\theorembodyfont{\normalfont}
+\theoremsymbol{\ensuremath{\square}}
+\theoremseparator{.}
+\newtheorem{proofof}{}
 
 % -- START PÅ MAKROER -- 
-% Angiver punktet i uendelighed
-\newcommand{\infp}{\mathcal{O}}
-
-% Skriver LCM med tekst
+% Skriver lcm med tekst i mathmode
 \newcommand{\lcm}{\mathrm{lcm}}
 
 % Hurtig måde at lave modulo
@@ -115,18 +82,35 @@
 
 % Karakteristik
 \newcommand{\cha}{\text{char}}
+
 % -- SLUT PÅ MAKROER --
 
+
+% "Louise's forside" fra daleifs bog. Bemærk, at jeg bruger 
+% soulutf8 i stedet for soul, da jeg ellers ikke kan benytte "Ø" 
+% som nu engang indgår i mit navn.
+
+\setlrmarginsandblock{3.5cm}{3.5cm}{}
+\checkandfixthelayout
+% \usepackage{mathpazo}% palatino + matematik
+\usepackage{soulutf8} % lege lege
+\sodef\an{}{0.2em}{.9em plus.6em}{1em plus.1em minus.1em}
+\newcommand\stext[1]{\an{\scshape#1}}
+
 % Bruges kun under skrivningen af projektet
-\includeonly{gruppeloven}
+% \includeonly{gruppeloven}
 
 \begin{document}
-%\tableofcontents
+\include{forside}
+
+
+\tableofcontents
+
 \include{gruppeloven}
-% \include{endomorfier_torsion}
-% \include{endelige_legemer}
-% \include{pollard}
-% \include{lenstra}
-% \include{appendiks}
+\include{endomorfier_torsion}
+\include{endelige_legemer}
+\include{pollard}
+\include{lenstra}
+\include{appendiks}
 %\printbibliography
 \end{document}
