@@ -1,8 +1,8 @@
 \chapter{Elliptiske kurver over endelige legemer}
 
-Vi skal i dette kapitel betragte elliptiske kurver over endelige legemer. Lad $\mathbb{F}$ være et endeligt legeme og lad $E$ være en elliptisk kurve over $\mathbb{F}$. Da er gruppen $E(\mathbb{F})$ endelig, da der kun findes endeligt mange talpar $(x, y)$ sådan at $x, y \in \mathbb{F}$. Et endeligt legeme har $p^n$ elementer for et primtal $p$, hvor $n \geq 1$ (se bilag \ref{appendiks_legemer}). Derfor lader vi $\mathbb{F}_{q}$ være det endelige legeme med $q = p^n$ elementer. 
+Vi skal i dette kapitel betragte elliptiske kurver over endelige legemer. Lad $\mathbb{F}$ være et endeligt legeme og lad $E$ være en elliptisk kurve over $\mathbb{F}$. Da er gruppen $E(\mathbb{F})$ endelig, da der kun findes endeligt mange talpar $(x, y)$ hvor $x, y \in \mathbb{F}$. Et endeligt legeme har $p^n$ elementer for et primtal $p$, hvor $n \geq 1$ (se bilag \ref{appendiks_legemer}). Derfor lader vi $\mathbb{F}_{q}$ være det endelige legeme med $q = p^n$ elementer. 
 
-Vi vil vise Hasses sætning, som giver os en vurdering på antallet af punkter i gruppen $E(\mathbb{F})$. Denne vurdering viser sig, at have en anvendelse indenfor heltalsfaktorisering, som vi ser på i kapitel 4. Vi ser også på en måde, hvorpå vi kan bestemme den eksakte orden af en gruppe $E(\mathbb{F}_{q^n})$ hvis vi blot kender ordenen af $E(\mathbb{F}_{q})$.
+Vi vil vise Hasses sætning, som giver os en vurdering på antallet af punkter i gruppen $E(\mathbb{F}_q)$. Denne vurdering viser sig, at have en anvendelse indenfor heltalsfaktorisering, som vi ser på i kapitel 4. Vi ser også på en måde, hvorpå vi kan bestemme den eksakte orden af en gruppe $E(\mathbb{F}_{q^n})$, hvis vi kender ordenen af $E(\mathbb{F}_q)$, som er let at bestemme for legemer med få elementer.
 
 
 \section{Eksempler}
@@ -11,7 +11,7 @@ Lad $E$ være en elliptisk kurve på formen
 \begin{align*}
 	E : y^2 = x^3 - x,
 \end{align*}
-som er defineret over $\mathbb{F}_5$. Da er gruppen $E(\mathbb{F}_5)$ endelig, som nævnt ovenfor. For at bestemme den eksakte orden af $E(\mathbb{F}_5)$ laver vi en tabel over alle mulige værdier for $x$, $x^3-x \modu{5}$ og for kvadratrødderne $y$ af $x^3 - x \modu{5}$. Dette giver os samtlige punkter på kurven:
+defineret over $\mathbb{F}_5$. Da er gruppen $E(\mathbb{F}_5)$ endelig, som nævnt ovenfor. For at bestemme den eksakte orden af $E(\mathbb{F}_5)$ laver vi en tabel over alle mulige værdier for $x$, $x^3-x \modu{5}$ og for kvadratrødderne $y$ af $x^3 - x \modu{5}$. Dette giver os samtlige punkter på kurven:
 \begin{center}
 \begin{tabular}{c c c c }
 $x$ & $x^3 - x$ & $y$ & Punkter \\ 
@@ -24,7 +24,7 @@ $4$ & $2$ & $-$ & $-$ \\
 $\infty$ & & $\infty$ & $\infty$ \\
 \end{tabular} 
 \end{center}
-Vi kan da tælle punkterne og vi ser, at $E(\mathbb{F}_5)$ har ordenen $7$, hvilket vi skriver som 
+Vi kan da tælle punkterne og vi ser, at $E(\mathbb{F}_5)$ har orden $7$, hvilket vi skriver som 
 $\#E(\mathbb{F}_5) = 7$. Bemærk at $\sqrt{2} \notin \mathbb{Z}_5$, hvilket er hvorfor der ikke er en tilhørende værdi for $y$ til $x=4$.
 
 Additionen af punkterne på en sådan kurve over et endeligt legeme foretages på samme måde, som i formlerne i gruppeloven, men de foretages modulo $p$. Eksempelvis hvis vi ville bestemme $(1,0) + (3,3)$ får vi, at 
@@ -51,9 +51,9 @@ Vi skal nu vise nogle af de egenskaber, som denne endomorfi besidder:
 \begin{lemma}
 \label{lemma_end_degree_not_sep}
 Lad $E$ være en elliptisk kurve over $\mathbb{F}_q$. Da er $\phi_q$ en 
-endomorfi for $E$ af grad $q$, desuden er $\phi_q$ ikke seperabel.
+endomorfi for $E$ af grad $q$, som ikke er separabel.
 \end{lemma}
-Vi skal bruge, at $(a + b)^q = a^q + b^q$ når $q$ er en primtalspotens, altså når $q=p^n$ hvor $p$ er legemets karakteristik (se appendiks \ref{appendiks_legemer}).
+Vi skal bruge, at $(a + b)^q = a^q + b^q$ når $q=p^n$ hvor $p$ er et primtal (se appendiks \ref{appendiks_legemer}).
 \begin{proof}
 Vi vil først vise, at $\phi_q : E(\clfq) \to E(\clfq)$ er en homomorfi. Lad da $(x_1, y_1)$, $(x_2, y_2) \in E(\clfq)$ hvor $x_1 \neq x_2$. Det følger da fra gruppeloven, at summen af de to punkter $(x_3, y_3) = (x_1, y_1) + (x_2, y_2)$ er givet ved
 \begin{align*}
@@ -63,16 +63,16 @@ Vi vil først vise, at $\phi_q : E(\clfq) \to E(\clfq)$ er en homomorfi. Lad da 
 hvor $m=(y_2-y_1)/(x_2-x_1)$.
 Opløfter vi til $q$'ende potens får vi videre, at  
 \begin{align*}
-	{x_3}^q &= {m'}^2 - {x_1}^q - {x_2}^q, \\
-	{y_3}^q &= m'({x_1}^q - {x_3}^q) - {y_1}^q,
+	x_{3}^{q} &= {m'}^2 - x_{1}^{q} - x_{2}^{q}, \\
+	y_{3}^{q} &= m'(x_{1}^{q} - x_{3}^{q}) - y_{1}^{q},
 \end{align*}
-hvor $m' = (y_{2}^{q} - y_{1}^{q})/(x_{2}^{q} - x_{1}^{q})$. Sammensætter vi disse får vi nemlig, at $\phi_q(x_3, y_3) = \phi_q(x_1, y_1) + \phi_q(x_2, y_2)$, hvilket netop er hvad $\phi_q$ skal opfylde for at være en homomorfi. 
+hvor $m' = (y_{2}^{q} - y_{1}^{q})/(x_{2}^{q} - x_{1}^{q})$. Sammensætter vi de resultater har vi netop, at $\phi_q(x_3, y_3) = \phi_q(x_1, y_1) + \phi_q(x_2, y_2)$, hvilket er hvad $\phi_q$ skal opfylde for at være en homomorfi (for alle punkter). 
 
 I tilfældet hvor $x_1=x_2$ har vi fra gruppeloven, at 
 \begin{align*}
 	(x_3, y_3) =(x_1, y_1) + (x_2, y_2) = \infty.
 \end{align*}
-Men hvis $x_1 = x_2$ må ${x_1}^q = {x_2}^q$ hvilket betyder, at $\phi_q(x_1, y_1)+\phi_q(x_2, y_2) = \infty$. Så da $\infty^q = \infty$ (lægges $\infty$ sammen $q$ gange er det stadigvæk $\infty$) får vi, at 
+Men hvis $x_1 = x_2$ må $x_{1}^{q} = x_{2}^{q}$ hvilket betyder, at $\phi_q(x_1, y_1)+\phi_q(x_2, y_2) = \infty$. Så da $\infty^q = \infty$ får vi, at 
 \begin{align*}
 	\phi_q(x_3, y_3) = \phi_q(x_1, y_1) + \phi_q(x_2,  y_2).
 \end{align*}
@@ -94,9 +94,9 @@ hvor $m=(3x_{1}^{2} + A)/2y_1$. På samme måde som før opløfter vi dette til 
 	y_{3}^{q} &= m'(x_{1}^{q}- x_{3}^{q}) - y_{1}^{q},
 \end{align*}
 hvor $m' = (3^q (x_{1}^{q})^2 + A^q)/2^q y_{1}^{q}$.
-Idet, at $2, 3, A \in \mathbb{F}_q$ følger det, at $2^q = 2, 3^q = 3$ og $A^q = A$. Dette er altså netop formlen for fordoblingen af punktet $(x_{1}^{q}, y_{1}^{q})$ på den elliptiske kurve $E$. Hvis $A^q \neq A$ ville vi have været på en anden elliptisk kurve.
+Idet, at $2, 3, A \in \mathbb{F}_q$ følger det, at $2^q = 2, 3^q = 3$ og $A^q = A$. Dette er altså netop formlen for fordoblingen af punktet $(x_{1}^{q}, y_{1}^{q})$ på den elliptiske kurve $E$. Hvis $A^q \neq A$ ville vi have været på en anden elliptisk kurve. Vi har dermed vist, at $\phi_q $ er en homomorfi for $E$.
 
-Dermed har vi vist, at $\phi_q$ er en homomorfi for $E$. Da $\phi_q(x, y) = (x^q, y^q)$ er givet ved polynomier, som specielt er rationale funktioner, er $\phi_q$ en endomorfi. Den har tydeligvis grad $q$. Da $q=0$ i $\mathbb{F}_q$ er den afledte af $x^q$ lig nul, hvilket betyder at $\phi_q$ ikke er separabel.
+Da $\phi_q(x, y) = (x^q, y^q)$ er givet ved polynomier, som specielt er rationale funktioner, er $\phi_q$ en endomorfi. Den har tydeligvis grad $q$. Da $q=0$ i $\mathbb{F}_q$ er den afledte af $x^q$ lig nul, hvilket betyder at $\phi_q$ ikke er separabel.
 \end{proof}
 
 \begin{remark}
@@ -153,7 +153,7 @@ Betragter vi $(\phi_{q}^{n} - 1)$ som en endomorfi har vi, at
 \end{align*}
 Da $\phi_{q}^{n}$ er Frobenius afbildningen for $\mathbb{F}_{q^n}$ følger det at 
 \begin{align*}
-	\ker (\phi_{q}^{n} - 1) = E(\mathbb{F}_q)
+	\ker (\phi_{q}^{n} - 1) = E(\mathbb{F}_{q^n})
 \end{align*} 
 fra lemma \ref{lemma03}. At $\phi_{q}^{n} -1$ er separabel vil vi ikke vise, men et bevis kan findes
 i \cite[s.~58]{Washington}. Da $\phi_{q}^{n} - 1$ er separabel følger det fra proposition \ref{deg_to_ker}, at
@@ -172,7 +172,7 @@ Lad $E$ være en elliptisk kurve over et endeligt legeme $\mathbb{F}_q$. Da gæl
 	|q + 1 - \#E(\mathbb{F}_q)| \leq 2 \sqrt{q}.
 \end{align*}
 \end{thm}
-Vi skal i kapitel \ref{chap:kapitel_faktorisering} hvordan elliptiske kurver over endelige legemer kan benyttes til heltalsfaktorisering, hvilket bl.a. hviler på Hasses sætning.
+Vi skal i kapitel \ref{chap:kapitel_faktorisering} hvordan elliptiske kurver over endelige legemer kan benyttes til heltalsfaktorisering, hvilket bl.a. hviler på Hasses sætning. Det skal nævnes, at der også findes et elementært bevis for Hasses sætning af Manin, CITE, men vi vil benytte teorien om endomorfier til at bevise sætningen.
 Lad i det følgende 
 \begin{align}
 	\label{hasse_as}

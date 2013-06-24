@@ -45,7 +45,7 @@
 \newmdtheoremenv[style=thm]{proposition}{Proposition}
 \newmdtheoremenv[style=thm]{corollary}{Korollar}
 \newmdtheoremenv[style=thm]{algorithm}{Algoritme}
-\newmdtheoremenv[]{remark}{Bemærkning}
+% \newmdtheoremenv[]{remark}{Bemærkning}
 % \newmdtheoremenv[style=plain]{example}{Eksempel}
 \theoremstyle{nonumberplain}
 \newmdtheoremenv[style=thm,backgroundcolor=white]{thmstar}{Sætning}
@@ -71,6 +71,7 @@
 \theoremstyle{plain}
 \theoremheaderfont{\normalfont\bfseries}
 \newtheorem{example}{Eksempel}
+\newtheorem{remark}{Bemærkning}
 
 % -- START PÅ MAKROER -- 
 % Skriver lcm med tekst i mathmode
@@ -86,30 +87,26 @@
 % Karakteristik
 \newcommand{\cha}{\text{char}}
 
-% Laver en tom side
+% Laver en tom side (til efter forsiden)
 \newcommand{\blankpage}	{
 	\newpage
 	\thispagestyle{empty}
 	\mbox{}
 	\newpage
 }
-
 % -- SLUT PÅ MAKROER --
-
 
 % "Louise's forside" fra daleifs bog. Bemærk, at jeg bruger 
 % soulutf8 i stedet for soul, da jeg ellers ikke kan benytte "Ø" 
 % som nu engang indgår i mit navn.
-
 \setlrmarginsandblock{3.5cm}{3.5cm}{}
 \checkandfixthelayout
-% \usepackage{mathpazo}% palatino + matematik
 \usepackage{soulutf8} % lege lege
 \sodef\an{}{0.2em}{.9em plus.6em}{1em plus.1em minus.1em}
 \newcommand\stext[1]{\an{\scshape#1}}
 
 % Bruges kun under skrivningen af projektet
-\includeonly{endomorfier}
+\includeonly{endelige_legemer}
 
 \begin{document}
 \include{forside}
