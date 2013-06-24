@@ -3,7 +3,7 @@ I dette kapitel vil vi introducere elliptiske kurver.
 Det viser sig, at være muligt at påføre de elliptiske kurver en gruppestruktur ved en geometrisk addition af punkter fra en sådan kurve. Vi vil indføre denne additionslov og vise, at det resulterer i en abelsk gruppe. For at kunne gøre dette skal vi desuden anvende projektiv geometri, som også vil blive introduceret.
 
 \section{Definition af elliptiske kurver}
-Det er muligt at definere elliptiske kurver på flere måder. Lad $K$ være et legeme, da er følgende definition tilstrækkelig til vores formål:
+Det er muligt at definere elliptiske kurver på flere måder. For et legeme $K$ vil følgende definition være tilstrækkelig til vores formål:
 \begin{definition}
 En elliptisk kurve $E$ er grafen for en ligning
 \begin{align}
@@ -13,7 +13,7 @@ En elliptisk kurve $E$ er grafen for en ligning
 hvor $A, B \in K$ er konstanter og $4A^3 + 27B^2 \neq 0$. 
 \end{definition}
 Vi siger, at den elliptiske kurve $E$ er på Weierstrass normalform, når den kan beskrives som i \eqref{elliptic_curve}. Hvis $\cha (K) \neq 2, 3$ er det altid muligt, at omskrive en elliptisk kurve til Weierstrass normalform (se \cite[kapitel~2]{Washington}). Det kan vises, at diskriminanten for \eqref{elliptic_curve} er \begin{align*}
-	\Delta = -(4A^3 + 27B^2),
+	\Delta = -16(4A^3 + 27B^2),
 \end{align*}
 så en elliptisk kurve kan ikke have multiple rødder pr. kravet i definitionen. I figur \ref{figure_elliptic_curves} ses to eksempler på elliptiske kurver over de reelle tal.
 \begin{figure}
@@ -23,18 +23,17 @@ så en elliptisk kurve kan ikke have multiple rødder pr. kravet i definitionen.
 \includegraphics[scale=0.2]{elliptic_2}
 \caption{Eksempler på elliptiske kurver over $\mathbb{R}$. Venstre: $y^2 = x^3 - x$, Højre: $y^2 = x^3 -x + 1$}
 \end{figure}
-Definitionen siger, at $A, B$ skal tilhøre et legeme $K$. Det kunne være $\mathbb{R}, \mathbb{C}$ eller $\mathbb{Q}$. I denne opgave vil vi dog fokusere på de endelige legemer $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$ hvor $p$ er et primtal, eller de endelige legemer med $q$ elementer, $\mathbb{F}_q$ hvor $q = p^r$ for $r \geq 1$ (se appendiks \ref{appendiks_legemer}). Hvis $A, B \in K$ for en elliptisk kurve $E$ siger vi, at $E$ er givet over $K$. Vi vil fra nu af med $E$ mene en elliptisk kurve på Weierstrass normalform og med $K$ mene et legeme medmindre andet er nævnt. Punkterne på en elliptisk kurve med koordinater i et legeme $L \supseteq K$ skriver vi som $E(L)$, hvor 
+Definitionen siger, at $A$ og $B$ skal tilhøre et legeme $K$. Det kunne f.eks. være $\mathbb{R}, \mathbb{C}$ eller $\mathbb{Q}$. Vi vil dog dog fokusere på de endelige legemer $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$ hvor $p$ er et primtal, og de endelige legemer med $q$ elementer $\mathbb{F}_q$, hvor $q = p^r$ for $r \geq 1$ (se appendiks \ref{appendiks_legemer}). Hvis $A, B \in K$ for en elliptisk kurve $E$ siger vi, at $E$ er givet over $K$. Fremover menes en elliptisk kurve på Weierstrass normalform, når vi snakker om en elliptisk kurve $E$. 
+Punkterne på en elliptisk kurve med koordinater i et legeme $L \supseteq K$ skriver vi som $E(L)$, hvor 
 \begin{align}
 \label{elliptic_curve_points}
 	E(L) = \{ \infty \} \cup \{ (x, y) \in L \times L \mid y^2 = x^3 + Ax + B \}.
 \end{align}
-Punktet $\infty$ kaldes punktet i uendelig og viser sig nødvendigt for at $E(L)$ bliver en gruppe under additionen vi vi introducere i næste afsnit. Intuitivt kan vi se $\infty$ som værende punktet $(\infty, \infty)$ som er placeret i toppen af $y$-aksen. En linje siges at gå igennem $\infty$ præcist, når den er lodret. To lodrette linjer skærer derfor hinanden i $\infty$. $\infty$ kan også tænkes som værende i bunden af $y$-aksen, men så vil to lodrette linjer skære hinanden to steder, hvilket er hvorfor vi kræver at $\infty$ i toppen og i bunden er et og samme punkt.
+Punktet $\infty$ kaldes punktet i uendelig og viser sig nødvendigt for at $E(L)$ bliver en gruppe under additionen vi introducerer i næste afsnit. Intuitivt kan vi se $\infty$ som værende punktet $(\infty, \infty)$, som er placeret i toppen af $y$-aksen. En linje siges at gå igennem $\infty$ præcist når den er lodret, hvilket betyder at to lodrette linjer skærer hinanden i $\infty$. $\infty$ kan også tænkes som værende i bunden af $y$-aksen, men så vil to lodrette linjer skære hinanden to steder, hvilket er hvorfor vi kræver at punktet $\infty$ i toppen og i bunden er et og samme punkt.
 
-
-\section{Det projektive plan}
-Som tidligere nævnt vil vi etablere en gruppestruktur på de elliptiske
-kurver. For at kunne gøre dette får vi brug for det projektive plan 
-$\mathbb{P}^2$. Rent intuitivt kan man se det projektive plan, som
+\section{Den projektive plan}
+Vi vil i dette afsnit formalisere punktet $\infty$, som vi kort diskuterede ovenfor. For atk unne gøre dette får vi brug for den projektive plan 
+$\mathbb{P}^2$. Rent intuitivt kan man se den projektive plan, som
 værende den affine plan 
 \begin{align*}
 	\mathbb{A}^2(K) = \{ (x, y) \in K \times K \},
@@ -48,7 +47,11 @@ $(x_2, y_2, z_2)$ siges at være ækvivalente hvis
 	(x_1, y_1, z_1) = (\lambda x_2, \lambda y_2, \lambda z_2),
 \end{align*}
 og vi skriver $(x_1, y_1, z_1) \sim (x_2, y_2, z_2)$. Vi vil fremover skrive
-$(x:y:z)$ for en sådan ækvivalensklasse. I de tilfælde hvor $z \neq 0$ har vi, at
+$(x:y:z)$ for en sådan ækvivalensklasse. Den projektive plan er da givet ved
+\begin{align*}
+	\mathbb{P}^2(K) = \{ (x, y, z) \in K^3 \mid (x, y, z) \neq (0, 0, 0)\}/\sim.
+\end{align*}
+I de tilfælde hvor $z \neq 0$ har vi, at
 \begin{align*}
 	(x : y : z) = (x/z : y/z : 1),
 \end{align*}
@@ -72,7 +75,7 @@ et homogent polynomium af grad $4$. For et homogent polynomium $F$ af grad $n$ e
 Vi har altså, at når $(x_1, y_1, z_1) \sim (x_2, y_2, z_2)$ er $F(x_1, y_1, z_1) = 0$ hvis og kun hvis $F(x_2, y_2, z_2) = 0$. Et nulpunkt for $F$ i $\mathbb{P}^{2}(K)$ er altså ikke afhængig af repræsentanten for en given ækvivalensklasse, hvilket betyder at nulpunkterne for $F$ er veldefineret i $\mathbb{P}^{2}(K)$.
 
 For et arbitrært polynomium $F(x, y, z)$ giver det ikke mening, at snakke om et punkt i $\mathbb{P}^2(K)$ hvor $F(x, y, z) = 0$, da det nemlig afhænger af repræsentanten $(x, y, z)$ for ækvivalensklassen. Vi har f.eks., at for
-$F(x, y, z) = 2x^2 - y - z$ at $F(1, 1, 1) = 0$, men $F(2, 2, 2) = 4$. Men da $(1 : 1 : 1) = (2 : 2 : 2)$ har vi et problem, så vi arbejder med homogene polynomier i stedet. For et polynomium $f(x, y)$ kan vi homogenisere det ved, at indsætte de korrekte potenser af $z$. F.eks. for $f(x, y) = y^2 - x^3 - Ax - B$ har vi, at $F(x, y) = y^2 z - x^3 - Axz^2 - Bz^3$. Generelt for et polynomium $f(x, y)$ har vi at, hvis
+$F(x, y, z) = 2x^2 - y - z$ at $F(1, 1, 1) = 0$, men $F(2, 2, 2) = 4$. Men da $(1 : 1 : 1) = (2 : 2 : 2)$ har vi et problem, som vi undgår ved at arbejde med homogene polynomier i stedet. For et polynomium $f(x, y)$ kan vi homogenisere det ved, at indsætte de korrekte potenser af $z$. F.eks. for $f(x, y) = y^2 - x^3 - Ax - B$ har vi, at $F(x, y) = y^2 z - x^3 - Axz^2 - Bz^3$. Generelt for et polynomium $f(x, y)$ har vi at, hvis
 \begin{align*}
 	f(x, y) = \sum_{i} a_i x^{p_i} y^{q_i},
 \end{align*}
@@ -94,7 +97,7 @@ Vi er nu i stand til at undersøge, hvad det vil sige for to parallelle linjer a
 \begin{align*}
 	y = mx + b_1, \quad y = mx + b_2,
 \end{align*}
-være to linjer, som ikke er lodrette og hvor $b_1 \neq b_2$. Homogenisere vi dem, som forklaret ovenfor, får vi
+være to linjer, som ikke er lodrette og hvor $b_1 \neq b_2$. Homogeniserer vi dem, som forklaret ovenfor, får vi
 \begin{align*}
 	y = mx + b_1z, \quad y = mx + b_2 z.
 \end{align*}
@@ -107,21 +110,20 @@ hvilket så betyder, at $y = mx$. Da vi ikke kan have, at både $x, y$ og $z$ er
 	(x : mx : 0) = (1 : m : 0).
 \end{align*}
 Dette er et af punkterne i uendelig fra $\mathbb{P}^2(K)$.
-På samme måde har vi hvis $x=c_1$ og $x=c_2$ er lodrette linjer, at de skærer hinanden i punktet $(0 : 1 : 0)$. Dette er også ét af de punkter, som vi identificerede som værende et punkt i uendelig i $\mathbb{P}^2(K)$.
+På samme måde har vi, at hvis $x=c_1$ og $x=c_2$ er lodrette linjer, at de skærer hinanden i punktet $(0 : 1 : 0)$. Dette er også ét af de punkter, som vi identificerede som værende et punkt i uendelig i $\mathbb{P}^2(K)$.
 
-Hvis vi nu homogenisere ligningen for en elliptisk kurve $E$ med variablen $z$ får vi, at
+Hvis vi nu homogeniserer ligningen for en elliptisk kurve $E$ med variablen $z$ får vi, at
 \begin{align*}
 \label{homogeniseret_weierstrass}
 	y^2 z = x^3 + Ax z^2 + B z^3.
 \end{align*} 
 For at se hvilke punkter i uendelig, som er på $E$ sætter vi $z=0$. Dette giver os, at $0 = x^3$ hvilket har en tredobbelt rod i $x=0$ og $y$ kan være et hvilket som helst tal som ikke er $0$, da vi ikke kan have $(0 : 0 : 0)$. 
 Efter en skalering med $y$ har vi $(0 : y : 0) = (0 : 1 : 0)$ så $(0 : 1 : 0)$ er det eneste punkt i uendelig på $E$. Da $(0 : 1 : 0)$ er et punkt på enhver lodret linje skærer enhver lodret linje $E$ i dette punkt i uendelig. Vi har desuden, da $(0 : 1 : 0) = (0 : -1 : 0)$, at punkterne i uendelig i toppen og bunden af $y$-aksen er de samme.
-\\[10pt]
-Vi vil dog foretrække, at arbejde med affine koordinater, hvor punktet $\infty$ behandles som et specialtilfælde.
 
+Vi vil dog her foretrække, at arbejde med affine koordinater, hvor punktet $\infty$ behandles som et specialtilfælde, men vi har nu givet konkret mening til punktet $\infty$.
 
 \section{Gruppeloven}
-Lad $E$ være en elliptisk kurve over $K$. Det viser sig, at vi kan tage to punkter (eller blot ét) på $E$ og producere et tredje punkt som også er på $E$. Vi vil i dette afsnit vise, hvordan dette gøres og til slut konkludere, at defineres dette som en addition operator bliver $E(K)$ en additiv abelsk gruppe. Vælg to punkter
+Lad $E$ være en elliptisk kurve over et legeme $K$. Det viser sig, at vi kan tage to punkter (eller blot ét) på $E$ og producere et tredje punkt som også er på $E$. Vi vil i dette afsnit vise, hvordan dette gøres og til slut konkludere, at defineres dette som en additions operator bliver $E(K)$ en additiv abelsk gruppe. Vælg to punkter
 \begin{align*}
 	P_1 = (x_1, y_1) \quad \text{og} \quad P_2 = (x_2, y_2)
 \end{align*}
@@ -138,7 +140,7 @@ Vi vil nu udlede formlerne for denne addition af punkter på $E$. Antag først, 
 \begin{align*}
 	m = \frac{y_2 - y_1}{x_2 - x_1}.
 \end{align*}
-Hvis $x_1 = x_2$ er linjen lodret, hvilket er et tilfælde som vi behandler senere. Antag altså at $x_1 \neq x_2$, da har vi at
+Hvis $x_1 = x_2$ er linjen lodret, hvilket er et tilfælde som vi behandler senere. Antag altså at $x_1 \neq x_2$, vi har da
 \begin{align*}
 	y_2 = m(x_2 - x_1) + y_1.
 \end{align*}
@@ -168,7 +170,7 @@ I vores tilfælde er $a=-m^2$ så vi har, at
 \begin{align*}
 	x = m^2 - x_1 - x_2.
 \end{align*}
-Vi mangler da blot at reflektere dette punkt for at have fundet punktet 
+Vi mangler da blot at reflektere dette punkt for at have fundet 
 punktet $P_1 + P_2 = P_3 = (x, y)$. Vi reflekterer over $x$-aksen og finder, at 
 \begin{align*}
 	x = m^2 - x_1 - x_2, \quad y = m(x_1 - x) - y_1.
@@ -182,7 +184,7 @@ tæt på hinanden vil linjen igennem punkterne nærme sig tangenten til et af pu
 \begin{align*}
 	2y \frac{dy}{dx} = 3x^2 + A, \quad \text{så} \quad m = \frac{dy}{dx} = \frac{3x_{1}^{2} + A}{2y_1}.
 \end{align*}
-Hvis $y_1 = 0$ er linjen og i det tilfælde lader vi $P_1 + P_2 = \infty$. Antag altså, at $y_1 \neq 0$. Ligningen for $L$ er 
+Hvis $y_1 = 0$ er linjen lodret og i det tilfælde lader vi $P_1 + P_2 = \infty$. Antag altså, at $y_1 \neq 0$. Ligningen for $L$ er 
 \begin{align*}
 	y = m(x-x_1) + y_1,
 \end{align*}
@@ -190,7 +192,7 @@ som før. Vi får den kubiske ligning
 \begin{align*}
 	0 = x^3 - m^2 x^2 + \ldots
 \end{align*}
-Vi kender dog kun én rod denne gang $x_1$, men den er en dobbelt rod idet at $L$ er tangent til $E$ i $P_1$. Så på samme måde som før får vi, at 
+Vi kender dog kun én rod, $x_1$, men den er en dobbelt rod idet at $L$ er tangent til $E$ i $P_1$. Så på samme måde som før får vi, at 
 \begin{align*}
 	x_3 = m^2 - 2x_1, \quad y_3 = m(x_1 - x_3) - y_1.
 \end{align*}
@@ -198,15 +200,13 @@ Antag nu, at $P_2 = \infty$. Linjen som går igennem $P_1$ og $\infty$ er en lod
 \begin{align*}
 	P_1 + \infty = P_1.
 \end{align*}
-Vi udvider dette sådan, at vi også har at $\infty + \infty = \infty$. 
-\\
-Det er nu mere klart, hvorfor elliptiske kurver og denne definition for en addition passer sammen. Højresiden i en ligning på Weierstrass normalform er kubisk så en linje igennem to punkter skærer den i et tredje punkt. At venstresiden er $y^2$ sikrer os, at kurven er symmetrisk om $x$-aksen, som benyttes når vi vi reflekterer et punkt. Vi opsummerer denne diskussion og kan opstille gruppeloven:
+Denne definition udvides sådan, at $\infty + \infty = \infty$.
+
+Det er nu mere klart, hvorfor elliptiske kurver og denne definition for en addition passer sammen. Højresiden i en ligning på Weierstrass normalform er kubisk så en linje igennem to punkter skærer den i et tredje punkt. At venstresiden er $y^2$ sikrer os, at kurven er symmetrisk om $x$-aksen, som benyttes når vi reflekterer et punkt. Vi opsummerer denne diskussion og kan opstille gruppeloven:
 
 \begin{definition}[Gruppeloven]
 \label{gruppeloven:definitionen}
-Lad $E$ være en elliptisk kurve. Givet to punkter, $P_1, P_2 \in E(K)$, $P_i = (x_i, y_i)$
-Givet to punkter $P_1, P_2 \in E(K)$, $P_i = (x_i, y_i)$. Et tredje punkt
-$P_3 = P_1 + P_2 = (x_3, y_3)$ findes da som følger
+Lad $E$ være en elliptisk kurve. Givet to punkter, $P_1, P_2 \in E(K)$, $P_i = (x_i, y_i)$, findes et tredje punkt $P_3 = P_1 + P_2 = (x_3, y_3)$ da som følger
 \begin{enumerate}
 	\item Hvis $x_1 \neq x_2$ er 
 	\begin{align*}
@@ -227,14 +227,13 @@ Vi definerer desuden, at
 \end{align*}
 for alle $P \in E(K)$.
 \end{definition}
-
 Det måske overraskende hovedresultatet i dette kapitel er, at denne addition resulterer i en abelsk gruppe:
 
 \begin{thm}
 Punkterne på $E$, altså $E(K)$, udgør en additiv abelsk gruppe hvor $\infty$ er identiteten og additionen er som defineret i gruppeloven. 
 \end{thm}
 \begin{proof}
-For at være en gruppe skal additionen af punkter være kommutativ, der skal eksistere en identitet, der skal eksistere en invers til hvert element og additionen af punkterne skal være associativ.
+For at være en gruppe skal additionen af punkter være kommutativ, der skal eksistere en identitet, hvert element skal have en invers og additionen af punkter skal være associativ.
 
-Kommutativiteten kan enten ses direkte fra formlerne eller fra det faktum, at linjen igennem $P_1$ og $P_2$ er den samme som linjen igennem $P_2$ og $P_1$. At $\infty$ er identiteten følger pr. definitionen af denne. For de inverse elementer lader vi $P'$ være reflektionen af $P$, da er $P+P' = \infty$. Associativiteten kan vises direkte ud fra formlerne, men der er mange tilfælde der skal behandles, hvilket gør det besværligt. Der forefindes et bevis for dette i \cite[afsnit~2.4]{Washington}.
+Kommutativiteten kan enten ses direkte fra formlerne eller fra det faktum, at linjen igennem $P_1$ og $P_2$ er den samme som linjen igennem $P_2$ og $P_1$. At $\infty$ er identiteten følger pr. definitionen af denne. For de inverse elementer lader vi $P'$ være reflektionen af $P$, da er $P+P' = \infty$. Associativiteten kan vises direkte ud fra formlerne, men der er mange tilfælde der skal behandles, hvilket gør det besværligt. Et bevis for associativiteten kan findes i \cite[afsnit~2.4]{Washington} eller i \cite{Silverman}.
 \end{proof}

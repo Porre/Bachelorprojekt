@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.6.22)  23 JUN 2013 16:04
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.6.22)  24 JUN 2013 11:51
 entering extended mode
 **main.tex
 (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\main.tex
@@ -1310,18 +1310,18 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 \c@currremarkctr=\count380
 \c@endremarkctr=\count381
 \c@remark=\count382
-\c@currexamplectr=\count383
-\c@endexamplectr=\count384
-\c@example=\count385
-\c@currthmstarctr=\count386
-\c@endthmstarctr=\count387
-\c@thmstar=\count388
-\c@currproofctr=\count389
-\c@endproofctr=\count390
-\c@proof=\count391
-\c@currproofofctr=\count392
-\c@endproofofctr=\count393
-\c@proofof=\count394
+\c@currthmstarctr=\count383
+\c@endthmstarctr=\count384
+\c@thmstar=\count385
+\c@currproofctr=\count386
+\c@endproofctr=\count387
+\c@proof=\count388
+\c@currproofofctr=\count389
+\c@endproofofctr=\count390
+\c@proofof=\count391
+\c@currexamplectr=\count392
+\c@endexamplectr=\count393
+\c@example=\count394
 
 
 ******************************************************
@@ -1373,23 +1373,23 @@ Package csquotes Info: Redefining alias 'default' -> 'danish'.
  (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\main.aux
 (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\forside.aux)
 (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\gruppeloven.aux)
-(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\endomorfier_torsion.aux)
+(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\endomorfier.aux)
 (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\endelige_legemer.aux)
 (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\pollard.aux)
 (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\lenstra.aux)
 (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\appendiks.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
 
 (C:\Users\OrhojLaptop\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1411,15 +1411,11 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\main.bbl)
-Package biblatex Info: Reference section=0 on input line 103.
-Package biblatex Info: Reference segment=0 on input line 103.
+Package biblatex Info: Reference section=0 on input line 114.
+Package biblatex Info: Reference segment=0 on input line 114.
 \AtBeginShipoutBox=\box52
 
-(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\forside.tex [1
-
-
-{C:/Users/OrhojLaptop/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
-(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\main.toc
+(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\endomorfier.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 5.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
@@ -1429,184 +1425,55 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) [1
-
-
-]
-(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\gruppeloven.tex
-<elliptic_1.png, id=15, 855.195pt x 666.99188pt>
-File: elliptic_1.png Graphic file (type png)
- <use elliptic_1.png>
-Package pdftex.def Info: elliptic_1.png used on input line 22.
-(pdftex.def)             Requested size: 171.03596pt x 133.39601pt.
-
-<elliptic_2.png, id=16, 855.195pt x 666.99188pt>
-File: elliptic_2.png Graphic file (type png)
- <use elliptic_2.png>
-Package pdftex.def Info: elliptic_2.png used on input line 23.
-(pdftex.def)             Requested size: 171.03596pt x 133.39601pt.
- [2
-
-
-]
-[3 <C:/Users/OrhojLaptop/Documents/GitHub/Bachelorprojekt/elliptic_1.png> <C:/U
-sers/OrhojLaptop/Documents/GitHub/Bachelorprojekt/elliptic_2.png>] [4]
-<elliptic_3.png, id=34, 1102.1175pt x 1027.58907pt>
-File: elliptic_3.png Graphic file (type png)
- <use elliptic_3.png>
-Package pdftex.def Info: elliptic_3.png used on input line 132.
-(pdftex.def)             Requested size: 275.5287pt x 256.89664pt.
-
-[5] [6 <C:/Users/OrhojLaptop/Documents/GitHub/Bachelorprojekt/elliptic_3.png>]
-[7]
-Package mdframed Info: Not enough space on this page on input line 235.
- [8]
-Package mdframed Info: Not enough space on this page on input line 235.
-) [9]
-(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\endomorfier_torsion.tex
-[10
+) [10
 
 
 
-] [11] [12]
-Package mdframed Info: Not enough space on this page on input line 167.
- [13]
-Package mdframed Info: Not enough space on this page on input line 167.
+
+
+{C:/Users/OrhojLaptop/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [11] 
+[12]
+Package mdframed Info: Not enough space on this page on input line 163.
+
+[13]
+Package mdframed Info: Not enough space on this page on input line 163.
  [14] [15]) [16]
-(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\endelige_legemer.tex
-[17
-
-
-
-] [18]
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 105.
-
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 105.
-[19]
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last split box is empty
-(mdframed)                You have to change the settings on input line 105.
-
-
-Overfull \hbox (10.16078pt too wide) in paragraph at lines 167--168
-\OT1/cmr/m/n/10.95 sul-ta-ter vedrrende en-do-mor-fi-er pa el-lip-ti-ske kur-
-ver over en-de-li-ge le-ge-mer.                         [] 
- []
-
-[20] [21]
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 271.
- [22] [23] [24]) [25]
-(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\pollard.tex
-
-LaTeX Warning: Citation 'Hansen' on page 26 undefined on input line 14.
-
-
-LaTeX Warning: Citation 'Pollard' on page 26 undefined on input line 20.
-
-[26
-
-
-
-] [27]
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 134.
- [28]) [29]
-(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\lenstra.tex [30
-
-
-]
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 71.
-
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 71.
-[31]
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 135.
- [32]) [33]
-(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\appendiks.tex [34
-
-
-
-]
-Package mdframed Info: Not enough space on this page on input line 84.
-
-[35]
-Package mdframed Info: Not enough space on this page on input line 84.
- [36]) [37]
 \tf@thm=\write5
-\tf@toc=\write6
- (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\main.aux (C:\Users\Orho
-jLaptop\Documents\GitHub\Bachelorprojekt\forside.aux)
+
+(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\main.aux
+(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\forside.aux)
 (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\gruppeloven.aux)
-(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\endomorfier_torsion.aux)
+(C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\endomorfier.aux)
 (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\endelige_legemer.aux)
 (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\pollard.aux)
 (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\lenstra.aux)
 (C:\Users\OrhojLaptop\Documents\GitHub\Bachelorprojekt\appendiks.aux))
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 19399 strings out of 493921
- 321593 string characters out of 3144858
- 782556 words of memory out of 3000000
- 22379 multiletter control sequences out of 15000+200000
- 19682 words of font info for 72 fonts, out of 3000000 for 9000
+ 19051 strings out of 493921
+ 315605 string characters out of 3144858
+ 762524 words of memory out of 3000000
+ 22065 multiletter control sequences out of 15000+200000
+ 11724 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 48i,15n,35p,873b,1393s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/public/amsfonts/symbols/msam10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (38 pages, 459131 bytes).
+ 48i,12n,35p,873b,1374s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (7 pages, 167007 bytes).
 PDF statistics:
- 217 PDF objects out of 1000 (max. 8388607)
+ 78 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

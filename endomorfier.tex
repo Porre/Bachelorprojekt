@@ -1,15 +1,14 @@
 \chapter{Endomorfier}
-Vi vil i dette kapitel etablere nogle vigtige resultater vedrørende endomorfier på elliptiske kurver, som viser sig nødvendige i beviset for Hasses sætning.
+Vi vil i dette kapitel etablere nogle vigtige resultater vedrørende endomorfier på elliptiske kurver, som vi bl.a. vil benytte i beviset for Hasses sætning.
 
 \section{Endomorfier på elliptiske kurver}
-Lad $K$ være et legeme og $\clk$ dens tilhørende algebraiske aflukning. I det følgende vil vi med en elliptisk kurve $E$ mene en kurve på formen $y^2 = x^3 + Ax + B$. 
+Lad $K$ være et legeme og $\clk$ en tilhørende algebraisk aflukning. I det følgende vil vi med en elliptisk kurve $E$ mene en kurve på formen $y^2 = x^3 + Ax + B$. 
 Vi begynder da med følgende definition:
 
 \begin{definition}
 En endomorfi på $E$ er en homomorfi $\alpha : E(\clk) \to E(\clk)$ givet
 ved rationale funktioner.
 \end{definition}
-
 Med en rational funktion forstår vi en kvotient af polynomier. Det vil altså sige, at 
 en endomorfi $\alpha$ skal opfylde, at $\alpha(P_1 + P_2) = \alpha(P_1) + \alpha(P_2)$ 
 og der skal findes rationale 
@@ -17,7 +16,8 @@ funktioner $R_1(x, y)$ og $R_2(x, y)$, begge med koefficienter i $\clk$, så
 \begin{align*}
 	\alpha(x, y) = (R_1(x, y), R_2(x, y)),
 \end{align*}
-for alle $(x, y) \in E(\clk)$. da $\alpha$ er en homomorfi gælder der, at $\alpha(\infty)=\infty$. Den trivielle endomorfi angives med $0$ og er den endomorfi, som sender ethvert punkt til $\infty$. Vi vil fremover antage, at $\alpha$ ikke er den trivielle endomorfi, hvilket betyder at der findes $(x, y)$ sådan at $\alpha(x, y) \neq \infty$.
+for alle $(x, y) \in E(\clk)$. Da $\alpha$ er en homomorfi gælder der specialt at $\alpha(\infty)=\infty$. Den trivielle endomorfi angives med $0$ og er den endomorfi, som sender ethvert punkt til $\infty$. Vi vil fremover antage, at $\alpha$ ikke er den trivielle endomorfi, hvilket betyder at der findes 
+$(x, y) \in E(\clk)$ sådan at $\alpha(x, y) \neq \infty$.
 
 \begin{example}
 Lad $E$ være en elliptisk kurve og lad $\alpha$ være givet ved, at $\alpha(P)=2P$. Da er $\alpha$ en homomorfi og
@@ -30,8 +30,6 @@ $\alpha(x, y) = (R_1(x, y), R_2(x, y))$, hvor
 \end{align*}
 Da både $R_1$ og $R_2$ er rationale funktioner er $\alpha$ en endomorfi for $E$.
 \end{example}
-
-
 Vi ønsker nu, at finde en standard repræsentation for de rationale funktioner, som en endomorfi er givet ved. Følgende sætning gør dette muligt for os:
 
 \begin{thm}
@@ -43,7 +41,7 @@ Lad $E$ være en elliptisk kurve over et legeme $K$. En endomorfi $\alpha$ kan d
 hvor $p, q$ henholdsvis $s, t$ ikke har nogen fælles faktor.
 \end{thm}
 \begin{proof}
-For et punkt $(x, y) \in E(\clk)$ gælder der, at $y^2 = x^3 + Ax + B$ så vi har også, at 
+For et punkt $(x, y) \in E(\clk)$ gælder der, at $y^2 = x^3 + Ax + B$. Dette medfører, at  
 \begin{align*}
 	y^{2k} = (x^3 + Ax + B)^k \quad \text{og} \quad y^{2k+1}= y^{2k}y = (x^3 + Ax + B)^k y, \quad k \in \mathbb{N}.
 \end{align*}
@@ -52,7 +50,7 @@ Vi kan altså erstatte en lige potens af $y$ med et polynomium der kun afhænger
 	\label{rational_1}
 	R(x, y) = \frac{p_1(x) + p_2(x)y}{p_3(x)+p_4(x)y}.
 \end{align}
-Vi kan endda gøre det endnu simplere ved at gange udtrykket i \eqref{rational_1} med $p_3(x)-p_4(x)$, hvilket giver 
+Vi kan endda gøre det endnu simplere ved at gange udtrykket i \eqref{rational_1} med $p_3(x)-p_4(x)$, hvilket gør at vi i nævneren får
 \begin{align*}
 	(p_3(x) - p_4(x)y)(p_3(x)+p_4(x)y) = p_3(x)^2 - p_4(x)^2 y^2,
 \end{align*}
@@ -82,9 +80,9 @@ hvor $r_1(x)$ og $r_2(x)$ er rationale funktioner. Skriv da
 	r_1(x) = \frac{p(x)}{q(x)} \quad \text{og} \quad r_2(x)=\frac{s(x)}{t(x)}y,
 \end{align*}
 hvor $p, q$ henholdsvis $s, t$ ikke har nogen fælles faktorer. Hvis $q(x)=0$ for et punkt $(x, y)$ lader vi 
-$\alpha(x, y) = \infty$. Hvis $q(x) \neq 0$ giver (ii) i lemma \ref{rational_lemma}, at $r_2(x)$ da også vil være defineret.
+$\alpha(x, y) = \infty$. Hvis $q(x) \neq 0$ giver (ii) i lemma \ref{rational_lemma}, at $r_2(x)$ da også vil være defineret og vi har det ønskede.
 \end{proof}
-
+Vi viser da lemmaet, som blev benyttet i beviset ovenfor. Bemærk, at hvis to polynomier har en fælles rod må de nødvendigvis have en fælles faktor.
 \begin{lemma}
 \label{rational_lemma}
 Lad $\alpha$ være en endomorfi givet ved
@@ -109,9 +107,9 @@ for en elliptisk kurve $E$. Lad $p, q$ henholdsvis $s, t$ være sådan, at de ik
 \end{align*}
 hvor $u(x) = p(x)^3 + A p(x) q(x)^2 + B q(x)^3$. Antag nu, at $q(x_0)=0$. Hvis nu også $u(x_0)=0$ følger det, at
 \begin{align*}
-	u(x_0)=p(x_0)^3 + A p(x_0) q(x_0)^2 + B q(x_0)^3 = 0 &\Rightarrow p(x_0)^3 = 0 \\ &\Rightarrow p(x_0)=0,
+	u(x_0)=p(x_0)^3 + A p(x_0) q(x_0)^2 + B q(x_0)^3 = 0 &\Rightarrow p(x_0)^3 = 0,
 \end{align*}
-men $p$ og $q$ havde pr. antagelse ingen fælles rødder. Så hvis $q(x_0) = 0$ må $u(x_0) \neq 0$ og de har dermed ingen fælles rødder.
+så $p(x_0) = 0$. Men $p$ og $q$ havde pr. antagelse ingen fælles rødder. Så hvis $q(x_0) = 0$ må $u(x_0) \neq 0$ og de har dermed ingen fælles rødder.
 
 (ii) Vi ved fra (i), at 
 \begin{align}
@@ -132,7 +130,7 @@ Da $s$ og $t$ pr. antagelse ikke har nogen fælles rødder giver det yderligere,
 	({x_0}^3 + Ax_0 + B)q(x_0)^3 = 0.
 \end{align*}
 Hvis ${x_0}^3 + Ax_0 + B \neq 0$ er $q(x_0)^3 = 0$ og dermed må $q(x_0) = 0$. Hvis vi derimod har, at 
-${x_0}^3 + Ax_0 + B = 0$ er det klart, at $(x-x_0) \mid (x^3 + Ax + B)$. Med andre ord findes et polynomium $Q(x)$ sådan, at
+${x_0}^3 + Ax_0 + B = 0$ er det klart, at $(x-x_0)$ deler $(x^3 + Ax + B)$. Med andre ord findes et polynomium $Q(x)$ sådan, at
 \begin{align*}
 	(x^3 + Ax + B) = (x-x_0)Q(x),
 \end{align*}
@@ -144,7 +142,7 @@ Udtrykket fra \eqref{lemma_rational_sup} kan da skrives, som
 \begin{align*}
 	(x-x_0)Q(x)s(x)^2q(x)^3 = u(x) ((x-x_0)T(x))^2,
 \end{align*}
-hvilket med division med $(x-x_0)$ giver os, at
+hvilket efter division med $(x-x_0)$ giver os, at
 \begin{align*}
 	Q(x)s(x)^2 q(x)^3 =  u(x) (x-x_0) T(x)^2.
 \end{align*}
@@ -152,10 +150,8 @@ I tilfældet, hvor $x=x_0$ har vi så, at
 \begin{align*}
 	Q(x_0)s(x_0)^2q(x_0)^3 = 0,
 \end{align*}
-men da $Q(x_0) \neq 0$ og $s(x_0) \neq 0$ må $q(x_0)^3 = 0$ så $q(x_0)=0$.
+men da $Q(x_0) \neq 0$ og $s(x_0) \neq 0$ må $q(x_0)^3 = 0$, hvilket i sidste ende giver os, at $q(x_0)=0$.
 \end{proof}
-
-
 Med den nu etablerede standard repræsentation for endomorfier, er vi i stand til at give en definition for graden af en endomorfi:
 
 \begin{definition}
@@ -165,7 +161,6 @@ Graden af en endomorfi $\alpha$ er givet ved
 \end{align*}
 når $\alpha$ ikke er den trivielle endomorfi, altså for $\alpha \neq 0$. For $\alpha = 0$ lader vi $\deg (\alpha) = 0$.
 \end{definition}
-
 En endomorfi siges at være \textit{separabel} hvis den afledede $r_1'(x) \neq 0$.
 
 Den følgende proposition er essentiel idet, at det tilknytter graden af en endomorfi til antallet af elementer i kernen for selvsamme endomorfi. Dette faktum benyttes direkte i beviset for Hasses sætning.
@@ -177,7 +172,7 @@ endomorfi for $E$. Da er
 \begin{align*}
 	\deg \alpha = \# \ker (\alpha),
 \end{align*}
-hvor $\ker (\alpha) = $ angiver kernen for homomorfien 
+hvor $\ker (\alpha)$ angiver kernen for homomorfien 
 $\alpha : E(\clk) \to E(\clk)$. I tilfældet hvor $\alpha \neq 0$ ikke
 er separabel gælder der, at 
 \begin{align*}
@@ -191,9 +186,9 @@ sættes
 	\alpha(x, y) = (r_1(x), r_2(x) y)),
 \end{align*}
 hvor $r_1(x) = p(x)/q(x)$. Da $\alpha$ er antaget til at være separabel er 
-$r_1' \neq 0$ og dermed er $pq'-p'q$ ikke nulpolynomiet. Lad nu
+$r_1' \neq 0$ og dermed er $p'q-pq'$ (tælleren af $r_{1}'$) ikke nulpolynomiet. Lad nu
 \begin{align*}
-	S = \{ x \in \clk \mid (pq' - p'q)(x)q(x) = 0 \}.
+	S = \{ x \in \clk \mid (p'q - pq')(x)q(x) = 0 \}.
 \end{align*}
 Lad da $(a, b) \in E(\clk)$ være valgt sådan, at følgende er opfyldt
 \begin{enumerate}
@@ -202,17 +197,25 @@ Lad da $(a, b) \in E(\clk)$ være valgt sådan, at følgende er opfyldt
 	\item $a \notin r_1(S)$,
 	\item $(a, b) \in \alpha(E(\clk))$.
 \end{enumerate}
-Da $pq'-p'q$ ikke er 
+Vi skal da argumentere for, at sådan et punkt findes. Da $\clk$ er algebraisk lukket er $E(\clk)$ en uendelig mængde og vi kan derfor undgå de punkter, hvor $a=0, b=0$ eller $(a, b) = \infty$. Lad 
+\begin{align*}
+	p(x)=cx^n + (\text{led af lavere orden}), \quad 
+	q(x)=dx^m + (\text{led af lavere orden}).
+\end{align*} 
+Hvis $\deg p > \deg q$ er $n > m$ og dermed er $\deg(p-aq)=n$ som påkrævet. På samme måde gælder det hvis $\deg q > \deg p$. Hvis $n = m$ er (ii) ikke opfyldt når 
+$c-ad = 0$, men i dette tilfælde kan vi gange $a$ med et heltal større end $1$ og finde et punkt hvor (ii) er opfyldt. 
+Da $p'q-pq'$ ikke er 
 nulpolynomiet er $S$ en endelig mængde, hvilket dermed også betyder, at 
 $\alpha(S)$ er en endelig mængde. Funktionen $r_1(x)$ antager uendeligt 
-mange forskellige værdier når $x$ gennemløber $\clk$, da en algebraisk aflukning indeholder uendeligt mange elementer.
-%da en algebraisk aflukning indeholder uendeligt mange elementer.
-Da der for hvert $x$ er et punkt $(x, y) \in E(\clk)$ følger det, at 
-$\alpha(E(\clk))$ er en uendelig mængde. Det er altså muligt, at vælge et
-punkt $(a, b) \in E(\clk)$ med egenskaberne ovenfor.
+mange forskellige værdier når $x$ gennemløber $\clk$, da en algebraisk aflukning indeholder uendeligt mange elementer. Da der for hvert $x$ er et punkt $(x, y) \in E(\clk)$ følger det, at $\alpha(E(\clk))$ er en uendelig mængde. Det er altså muligt, at vælge et punkt $(a, b) \in E(\clk)$ med egenskaberne ovenfor.
 
-Vi ønsker at vise, at der netop er $\deg \alpha$ punkter $(x_1, y_1) \in E(\clk)$ sådan,
-at $\alpha(x_1, y_1) = (a, b)$. For et sådan punkt gælder der, at 
+Vi vil vise, at der findes netop $\deg \alpha$ punkter $(x_1, y_1) \in E(\clk)$ sådan at
+\begin{align*}
+	\alpha (x_1, y_1) = (a, b).
+\end{align*} 
+Det er velkendt fra gruppeteorien, at $\alpha^{-1}(\alpha(x_1, y_1)) = (x_1, y_1) 
+\ker \alpha$, så dette vil medføre at $\ker \alpha$ har $\deg \alpha$ elementer.
+For et sådan punkt gælder der, at 
 \begin{align*}
 	\frac{p(x_1)}{q(x_1)} = a, \quad r_2(x_1) y_1 = b.
 \end{align*}
@@ -223,19 +226,24 @@ $p(x) - aq(x) = 0$ har $\deg \alpha$ rødder talt med multiplicitet. Vi skal alt
 at $p-aq$ ikke har nogen multiple rødder. Antag for modstrid, at $x_0$ er en multipel
 rod. Da har vi, at
 \begin{align*}
-	p(x_0) - aq(x_0) = 0 \quad \text{og} \quad p'(x_0) - aq'(x_0) = 0.
+	p(x_0) - aq(x_0) = 0 \quad \text{og} \quad p'(x_0) - aq'(x_0) = 0,
 \end{align*}
+da hvis $x_0$ er en multipel rod er den også rod i den afledte.
 Dette kan omskrives til ligningerne $p(x_0)=aq(x_0)$ og $aq'(x_0)=p'(x_0)$, 
 som vi ganger med hinanden og får, at 
 \begin{align*}
 	a p(x_0)q'(x_0) = ap'(x_0)q(x_0).
 \end{align*} 
-Da $a \neq 0$ pr. (1) giver det os, at $x_0$ er en rod i $pq'-p'q$ så $x_0 \in S$.
+
+Da $a \neq 0$ pr. (1) giver det os, at $x_0$ er en rod i $p'q-pq'$ så $x_0 \in S$.
 Altså er $a=r_1(x_0) \in r_1(S)$, hvilket er i modstrid med (3). Dermed har 
 $p-aq$ netop $\deg \alpha$ forskellige rødder. Da der er præcist $\deg \alpha$ 
 punkter $(x_1, y_1)$ så $\alpha(x_1, y_1) = (a, b)$ har kernen for $\alpha$ netop
-$\deg \alpha$ elementer.
+$\deg \alpha$ elementer. 
+
+Hvis $\alpha$ ikke er separabel kan det samme bevis anvendes, hvor $p'-aq'$ dog altid er nulpolynomiet så $p-aq(x)=0$ har altid multiple rødder, så den har færre end $\deg \alpha$ løsninger.
 \end{proof}
+
 \begin{thm}
 \label{endomorfier:surjektiv}
 Lad $E$ være en elliptisk kurve over et legeme $K$. Lad $\alpha \neq 0$ være en endomorfi for $E$. Da er $\alpha : E(\clk) \to E(\clk)$ surjektiv.
@@ -243,7 +251,7 @@ Lad $E$ være en elliptisk kurve over et legeme $K$. Lad $\alpha \neq 0$ være e
 \begin{proof}
 Lad $(a, b) \in E(\clk)$. Vi vil vise, at der findes et punkt $(x, y) \in E(\clk)$ sådan, at $\alpha(x, y) = (a, b)$. Da $\alpha(\infty) = \infty$ kan vi antage, at $(a,b) \neq \infty$. Lad $r_1(x) = p(x)/q(x)$. Vi skal betragte to tilfælde:
 
-Hvis $p(x) - aq(x)$ ikke er et konstant polynomium har det en rod $x_0$. Hvis $q(x_0)=0$ må $p(x_0) = 0$ hvilket er i modstrid med, at $p$ og $q$ ikke har nogen fælles rødder. Derfor har vi, at $q(x_0) \neq 0$ og det følger, at 
+Hvis $p(x) - aq(x)$ ikke er et konstant polynomium har det en rod $x_0$. Hvis vi nu har, at $q(x_0)=0$ må $p(x_0) = 0$, hvilket er i modstrid med at $p$ og $q$ ikke har nogen fælles rødder. Derfor har vi $q(x_0) \neq 0$ og det følger, at 
 \begin{align*}
 	p(x_0) - aq(x_0) = 0 \Rightarrow a = \frac{p(x_0)}{q(x_0)}.
 \end{align*}
@@ -255,11 +263,11 @@ er $b=\pm b'$. Hvis $b'=b$ er vi færdige. Hvis $b'=-b$ har vi, at
 \begin{align*}
 	\alpha(x_0, -y_0) = (a, -b') = (a, b).
 \end{align*}
-Vi mangler nu, at betragte tilfældet hvor $p(x)-aq(x)$ er konstant. Da $E(\clk)$ er uendelig og $\ker \alpha$ er endelig afbilledes kun endeligt mange punkter fra $E(\clk)$ til en given $x$-koordinat. Derfor må enten $p(x)$ eller $q(x)$ være ikke-konstant, da hvis de begge var konstante ville der være uendeligt mange punter fra $E(\clk)$ der afbilledes til en $x$-koordinat. Hvis $p$ og $q$ er to ikke-konstante polynomier, da er der højest én konstant $a$ sådan at $p-aq$ er konstant, da vi ellers har for en anden sådan konstant $a'$, at 
+Vi mangler nu, at betragte tilfældet hvor $p(x)-aq(x)$ er konstant. Da $E(\clk)$ er uendelig og $\ker \alpha$ er endelig afbilledes kun endeligt mange punkter fra $E(\clk)$ til en given $x$-koordinat. Derfor må enten $p(x)$ eller $q(x)$ være ikke-konstant, da hvis de begge var konstante ville der være uendeligt mange punter fra $E(\clk)$ der afbilledes til en $x$-koordinat. Hvis $p$ og $q$ er to ikke-konstante polynomier er der højest én konstant $a$ sådan at $p-aq$ er konstant, da vi ellers for en anden sådan konstant $a'$ har, at
 \begin{align*}
 	(a' - a)q = (p - aq) - (p - a'q), \quad (a'-a)p=a'(p-aq)-a(p-a'q),
 \end{align*}
-hvor begge er konstante, hvilket medfører at $p$ og $q$ er konstante. Så der er højest to punkter $(a,b)$ og $(a,-b)$ som ikke er i billedet af $\alpha$. Lad $(a_1, b_1)$ være et andet punkt end disse. Da er $\alpha(P_1)=(a_1, b_1)$ for et punkt $P_1$. Vi kan vælge $(a_1, b_1)$ sådan, at $(a_1, b_1) + (a, b) \neq (a, \pm b)$, så der findes et punkt $P_2$ sådan, at $\alpha(P_2)=(a_1, b_1) + (a,b)$. Dermed har vi, at 
+hvor begge ligninger er konstante, som medfører at $p$ og $q$ er konstante. Så der er højest to punkter $(a,b)$ og $(a,-b)$ som ikke er i billedet af $\alpha$. Lad $(a_1, b_1)$ være et andet punkt end disse. Da er $\alpha(P_1)=(a_1, b_1)$ for et punkt $P_1$. Vi kan vælge $(a_1, b_1)$ sådan, at $(a_1, b_1) + (a, b) \neq (a, \pm b)$, så der findes et punkt $P_2$ sådan, at $\alpha(P_2)=(a_1, b_1) + (a,b)$. Dermed har vi, at 
 \begin{align*}
 	\alpha(P_2 - P_1) = (a, b) \quad \text{og} \quad \alpha(P_1 - P_2) = (a, -b).
 \end{align*}

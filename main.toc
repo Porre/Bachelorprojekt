@@ -2,7 +2,7 @@
 \defcounter {refsection}{0}\relax 
 \select@language {danish}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Indhold}{1}
+\contentsline {chapter}{Indhold}{2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Elliptiske kurver}{2}
 \defcounter {refsection}{0}\relax 
