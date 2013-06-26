@@ -1,7 +1,7 @@
 \appendix
 
 \chapter{Udeladte resultater}
-Her samler vi nogle af de (hovedsagligt) mindre resultater, som benyttes igennem kapitlerne. De præsenteres her kort og henvises til de steder de anvendes i hovedopgaven.
+Her samler vi nogle af de resterende resultater, som benyttes igennem kapitlerne. I opgaven henvises der til resultaterne her, når de anvendes i beviserne. 
 
 \section{Legemer}
 \label{appendiks_legemer}
@@ -49,6 +49,7 @@ Lad $q=p^n$ hvor $p$ er et primtal.
 	\end{align*}
 \end{enumerate}
 \end{proposition}
+En automorfi er en bijektiv homomorfi (isomorfi), som afbilleder til sig selv.
 \begin{proof}
 (1) følger fra sætning \ref{appendiks:f_qtheorem} med $q^n$ i stedet for $q$. Vi kan derfor fokusere på (2). Lad $1 \leq j \leq p-1$, da vi vil binomial koefficienten 
 $\binom{p}{j}$ have en faktor $p$ i dens tæller som ikke går ud med nævneren. Derfor har vi, at 
@@ -67,12 +68,11 @@ da vi er i karakteristik $p$. Vi vil lave et induktionsbevis og dette viser basi
 	&= x^{p^{n+1}} + y^{p^{n+1}}.
 \end{align*}
 Dette giver os, at $\phi_q(x+y) = \phi_q(x) + \phi_q(y)$. Det er klart, at 
-$\phi_q(xy)=\phi_q(x) \phi_q(y)$, da $(xy)^q = x^q y^q$. Vi har da, at $\phi_q$ er en homomorfi for legemer.
+$\phi_q(xy)=\phi_q(x) \phi_q(y)$, da $(xy)^q = x^q y^q$. Vi har da, at $\phi_q$ er en homomorfi for legemer. Vi mangler at vise, at $\phi_q$ er en bijektion. En homomorfi for legemer er injektiv (kernen af en homomorfi er et ideal, så over et legeme er kernen tom eller hele legemet). Hvis $\alpha \in \overline{\mathbb{F}}_p$ da er 
+$\alpha \in \mathbb{F}_{q^n}$ for et eller andet $n$, så $\phi_{q}^{n}(\alpha) = \alpha$. Dermed er $\alpha$ i billedet af $\phi_q$ så $\phi_q$ er surjektiv. Dermed er $\phi_q$ en automorfi.
 \end{proof}
 
-
-
-\section{Hasses sætning}
+\section{Tæthedsargumentet i Hasses sætning}
 Følgende propositon benyttes i Hasses sætning: 
 \begin{proposition}
 \label{appendiks_dense}
@@ -117,20 +117,21 @@ Hvis $f, g \in \mathbb{Z}[X]$ og $g$ er monisk, da findes der $q, r \in \mathbb{
 \end{align*}
 \end{thm}
 \begin{proof}
-Det følger af divisionsalgoritmen for polynomier. Hvis $f$ har det ledende term $ax^n$ og $g$ har det ledende term $bx^m$ hvor $n \geq m$, da har $f - \frac{a}{b} x^{n-m}$ grad mindre end $f$. Vi kan dermed blive ved med at trække multipla af $g$ fra $f$ indtil resultatet har grad mindre end $\deg g$.
-
-Hvis $g$ er monisk er $b=1$ so hver gang trækker vi et polynomium med heltalskoefficienter fra så både kvotienten $q$ og resten $r$ vil dermed have heltalskoefficienter.
+Det følger direkte af divisionsalgoritmen for polynomier. Hvis $f$ har ledende term $ax^n$ og $g$ har ledende term $bx^m$ hvor $n \geq m$, da har $f - \frac{a}{b} x^{n-m}$ grad mindre end $f$. Vi kan dermed blive ved med at trække multipla af $g$ fra $f$ indtil resultatet har grad mindre end $\deg g$.
+Hvis $g$ er monisk er $b=1$ så hver gang trækker vi et polynomium med heltalskoefficienter fra, så både kvotienten $q$ og resten $r$ vil dermed have heltalskoefficienter.
 \end{proof}
 \label{appendiks_andre}
-
 \begin{proposition}
 \label{inverse_exists_not}
-Et element $a \in \mathbb{Z}_n = \mathbb{Z}/n\mathbb{Z}$ har ikke en invers i $\mathbb{Z}_n$ hvis $\gcd(a, n) > 1$. 
+Et element $a \in \mathbb{Z}_n = \mathbb{Z}/n\mathbb{Z}$ har ikke en invers i $\mathbb{Z}_n$ hvis 
+\begin{align*}
+	\gcd(a, n) > 1.
+\end{align*}
 \end{proposition}
 \begin{proof}
-Antag for modstrid, at $d = \gcd(a, n) > 1$, men at der samtidigt eksisterer en invers $c$ til $a$ modulo $n$. Da $d = \gcd(a, n)$ findes et heltal $e$, som ikke er nul, sådan at $de = n$. Da $d >1$ har vi også, at $|e| < |n|$ så $e$ er ikke nul modulo $n$. Da $d$ deler $a$ har vi, at $n = de$ deler $ae$ så $ae = 0 \modu{n}$. Vi har altså, at
+Antag for modstrid, at $d = \gcd(a, n) > 1$, men at der samtidigt eksisterer en invers $c$ til $a$ modulo $n$. Da $d = \gcd(a, n)$ findes et heltal $e$, som ikke er nul, sådan at $de = n$. Da $d >1$ har vi også, at $|e| < |n|$ så $e$ er ikke nul modulo $n$. Da $d$ deler $a$ har vi, at $n = de$ deler $ae$ så $ae \equiv 0 \modu{n}$. Vi har altså, at
 \begin{align*}
-	e = e \cdot 1 = eac = 0 \cdot c = 0 \modu{n},
+	e = e \cdot 1 = eac \equiv 0 \cdot c = 0 \modu{n},
 \end{align*}
 hvilket er i modstrid med at $e$ ikke kunne være $0$ modulo $n$. Altså har $a$ ikke en invers når $\gcd(a, n) > 1$.
 \end{proof}

@@ -2,7 +2,7 @@
 I \cite{Lenstra} præsenterede H. W. Lenstra en algoritme til faktorisering af heltal, som anvender elliptiske kurver. Vi skal benytte koncepterne vi udviklede til gruppeloven, men vi skal anvende dem på $E(\mathbb{Z}_n)$, hvor $n$ er et sammensat tal. Når $n$ er et sammensat tal er $\mathbb{Z}_n$ ikke er legeme og derfor kan vi ikke være sikre på at $E(\mathbb{Z}_n)$ er en gruppe. Derfor er det teknisk set ikke elliptiske kurver vi arbejder med, men derimod hvad man kunne kalde for elliptiske pseudokurver. Der vil altså være tidspunkter, hvor en addition fra gruppeloven ikke vil give mening, men det er netop det der kan give os en faktor.
 
 Antag, at $n$ er et sammensat tal og $\gcd(6, n) = 1$ (det udelukker faktorer af $2$ og $3$) og lad $p$ være en primfaktor i $n$. 
-Vi ser nu på, hvordan vi kan finde en faktor, når additionen af to punkter ikke er defineret. Vi husker fra gruppeloven, at vi ved additionen af to punkter $P=(x_1, y_1)$ og $P=(x_2, y_2)$ (forskellige fra $\infty$) skal bruge værdien af inverserne til $x_2 - x_1$ og $y_1$ alt efter, hvilket tilfælde vi er i. Disse inverser eksisterer kun modulo $n$, hvis (se bevis i appendiks)
+Vi ser nu på, hvordan vi kan finde en faktor, når additionen af to punkter ikke er defineret. Vi husker fra gruppeloven, at vi ved additionen af to punkter $P=(x_1, y_1)$ og $P=(x_2, y_2)$ (forskellige fra $\infty$) skal bruge værdien af inverserne til $x_2 - x_1$ og $y_1$ alt efter, hvilket tilfælde vi er i. Disse inverser eksisterer kun modulo $n$, hvis (se proposition \ref{inverse_exists_not} i appendikset)
 \begin{align*}
 	\gcd(x_1 - x_2, n) = 1 \quad \text{og} \quad \gcd(y_1, n) = 1.
 \end{align*}
@@ -126,7 +126,7 @@ For at denne addition skal kunne lade sig gøre, skal differensen af deres $x$-k
 \end{align*}
 så der findes altså ikke en invers, men vi har i stedet fundet en faktor i $n$. Dermed har vi faktoriseringen
 \begin{align*}
-%	753161713 = 19259 \cdot 39107.
+	753161713 = 19259 \cdot 39107.
 \end{align*}
 Det kan umiddelbart se ud til, at det var spild da vi lavede hele tabellen, men i beregningerne af $2^i P \modu{753161713}$ ville vi også kunne have stødt på et element, som ikke havde en invers og som dermed kunne give os en faktor.
 \end{example}

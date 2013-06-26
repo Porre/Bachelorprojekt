@@ -2,7 +2,7 @@
 \defcounter {refsection}{0}\relax 
 \select@language {danish}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Indhold}{2}
+\contentsline {chapter}{Indholdsfortegnelse}{2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Elliptiske kurver}{3}
 \defcounter {refsection}{0}\relax 
@@ -34,7 +34,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A.1}Legemer}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Hasses s\IeC {\ae }tning}{36}
+\contentsline {section}{\numberline {A.2}T\IeC {\ae }thedsargumentet i Hasses s\IeC {\ae }tning}{36}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A.3}Andre resultater}{37}
 \defcounter {refsection}{0}\relax 

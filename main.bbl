@@ -21,13 +21,13 @@
   \sortlist{entry}{nty}
     \entry{Manin_proof}{article}{}
       \name{labelname}{1}{}{%
-        {{hash=ce3ec9591582521340c9d4b34e5dbc3c}{Chahal}{C\bibinitperiod}{Jasbir\bibnamedelima S.}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=79e0ea511f8e0d4d9f86b89b4e7cd8f4}{Chahal}{C\bibinitperiod}{J.\bibnamedelimi S.}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
       }
       \name{author}{1}{}{%
-        {{hash=ce3ec9591582521340c9d4b34e5dbc3c}{Chahal}{C\bibinitperiod}{Jasbir\bibnamedelima S.}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=79e0ea511f8e0d4d9f86b89b4e7cd8f4}{Chahal}{C\bibinitperiod}{J.\bibnamedelimi S.}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{ce3ec9591582521340c9d4b34e5dbc3c}
-      \strng{fullhash}{ce3ec9591582521340c9d4b34e5dbc3c}
+      \strng{namehash}{79e0ea511f8e0d4d9f86b89b4e7cd8f4}
+      \strng{fullhash}{79e0ea511f8e0d4d9f86b89b4e7cd8f4}
       \field{sortinit}{C}
       \field{labeltitle}{Manin's Proof of the Hasse Inequality Revisited}
       \field{issue}{2}
@@ -58,13 +58,13 @@
     \endentry
     \entry{Deuring}{article}{}
       \name{labelname}{1}{}{%
-        {{hash=aa50055e49ff9bee931b7f158a619b93}{Deuring}{D\bibinitperiod}{Max}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=75defb8f7e8436d9aaac1430a4f03736}{Deuring}{D\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
       }
       \name{author}{1}{}{%
-        {{hash=aa50055e49ff9bee931b7f158a619b93}{Deuring}{D\bibinitperiod}{Max}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=75defb8f7e8436d9aaac1430a4f03736}{Deuring}{D\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{aa50055e49ff9bee931b7f158a619b93}
-      \strng{fullhash}{aa50055e49ff9bee931b7f158a619b93}
+      \strng{namehash}{75defb8f7e8436d9aaac1430a4f03736}
+      \strng{fullhash}{75defb8f7e8436d9aaac1430a4f03736}
       \field{sortinit}{D}
       \field{labeltitle}{Die Typen der Multiplikatorenringe elliptischer Funktionenkörper}
       \field{issue}{1}

@@ -10,6 +10,12 @@
 \usepackage[danish]{babel}
 \usepackage[utf8]{inputenc}
 
+% Appendiks skal hedde Appendiks, ikke bilag!
+\addto\captionsdanish{
+	\renewcommand\appendixname{Appendiks}
+	\renewcommand\contentsname{Indholdsfortegnelse}
+}
+
 % Til referencer, Biber giver os UTF-8 understøttelse
 \usepackage[backend=biber]{biblatex}
 \usepackage{csquotes} 
