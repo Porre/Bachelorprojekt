@@ -19,6 +19,43 @@
 
 \refsection{0}
   \sortlist{entry}{nty}
+    \entry{Manin_proof}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=ce3ec9591582521340c9d4b34e5dbc3c}{Chahal}{C\bibinitperiod}{Jasbir\bibnamedelima S.}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=ce3ec9591582521340c9d4b34e5dbc3c}{Chahal}{C\bibinitperiod}{Jasbir\bibnamedelima S.}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{ce3ec9591582521340c9d4b34e5dbc3c}
+      \strng{fullhash}{ce3ec9591582521340c9d4b34e5dbc3c}
+      \field{sortinit}{C}
+      \field{labeltitle}{Manin's Proof of the Hasse Inequality Revisited}
+      \field{issue}{2}
+      \field{journaltitle}{Nieuw Arch. Wiskd., IV.}
+      \field{series}{13}
+      \field{title}{Manin's Proof of the Hasse Inequality Revisited}
+      \field{year}{1995}
+      \field{pages}{219\bibrangedash 232}
+    \endentry
+    \entry{Primes}{book}{}
+      \name{labelname}{2}{}{%
+        {{hash=553784a541d920746acf88ce14f3a79d}{Crandall}{C\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=d38787efab6700217808585188fcaa44}{Pomerance}{P\bibinitperiod}{C.\bibnamedelimi B.}{C\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=553784a541d920746acf88ce14f3a79d}{Crandall}{C\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=d38787efab6700217808585188fcaa44}{Pomerance}{P\bibinitperiod}{C.\bibnamedelimi B.}{C\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{5325baac50ac091faa82ec4d40b29e8a}
+      \strng{fullhash}{5325baac50ac091faa82ec4d40b29e8a}
+      \field{sortinit}{C}
+      \field{labeltitle}{Prime Numbers: A Computational Perspective}
+      \field{title}{Prime Numbers: A Computational Perspective}
+      \field{year}{2005}
+    \endentry
     \entry{Deuring}{article}{}
       \name{labelname}{1}{}{%
         {{hash=aa50055e49ff9bee931b7f158a619b93}{Deuring}{D\bibinitperiod}{Max}{M\bibinitperiod}{}{}{}{}}%
@@ -29,8 +66,31 @@
       \strng{namehash}{aa50055e49ff9bee931b7f158a619b93}
       \strng{fullhash}{aa50055e49ff9bee931b7f158a619b93}
       \field{sortinit}{D}
-      \field{labeltitle}{German stuff}
-      \field{title}{German stuff}
+      \field{labeltitle}{Die Typen der Multiplikatorenringe elliptischer Funktionenkörper}
+      \field{issue}{1}
+      \field{journaltitle}{Abhandlungen Aus Dem Mathematischen Seminar Der Universitat Hamburg}
+      \field{title}{Die Typen der Multiplikatorenringe elliptischer Funktionenkörper}
+      \field{volume}{14}
+      \field{year}{1941}
+      \field{pages}{197\bibrangedash 272}
+    \endentry
+    \entry{Hansen}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=830707e04006fa7fe7b0f20386f2946b}{Hansen}{H\bibinitperiod}{J.\bibnamedelimi P.}{J\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=830707e04006fa7fe7b0f20386f2946b}{Hansen}{H\bibinitperiod}{J.\bibnamedelimi P.}{J\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Gyldendal Uddannelse}%
+      }
+      \strng{namehash}{830707e04006fa7fe7b0f20386f2946b}
+      \strng{fullhash}{830707e04006fa7fe7b0f20386f2946b}
+      \field{sortinit}{H}
+      \field{labeltitle}{Algebra Og Talteori}
+      \field{series}{Aspekt serien}
+      \field{title}{Algebra Og Talteori}
+      \field{year}{2002}
     \endentry
     \entry{Lenstra}{article}{}
       \name{labelname}{1}{}{%
@@ -51,31 +111,62 @@
       \field{year}{1987}
       \field{pages}{649\bibrangedash 673}
     \endentry
-    \entry{Silverman}{book}{}
+    \entry{Pollard}{article}{}
       \name{labelname}{1}{}{%
-        {{hash=3664152377f03b41cc73f9421d227145}{Silverman}{S\bibinitperiod}{Joseph\bibnamedelima H.}{J\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+        {{hash=99ef10a5b1dbf89a964eeae6ad270879}{Pollard}{P\bibinitperiod}{J.\bibnamedelimi M.}{J\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
       }
       \name{author}{1}{}{%
-        {{hash=3664152377f03b41cc73f9421d227145}{Silverman}{S\bibinitperiod}{Joseph\bibnamedelima H.}{J\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+        {{hash=99ef10a5b1dbf89a964eeae6ad270879}{Pollard}{P\bibinitperiod}{J.\bibnamedelimi M.}{J\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{3664152377f03b41cc73f9421d227145}
-      \strng{fullhash}{3664152377f03b41cc73f9421d227145}
+      \strng{namehash}{99ef10a5b1dbf89a964eeae6ad270879}
+      \strng{fullhash}{99ef10a5b1dbf89a964eeae6ad270879}
+      \field{sortinit}{P}
+      \field{labeltitle}{Theorems on factorization and primality testing}
+      \field{issue}{03}
+      \field{journaltitle}{Mathematical Proceedings of the Cambridge Philosophical Society}
+      \field{month}{10}
+      \field{title}{Theorems on factorization and primality testing}
+      \field{volume}{76}
+      \field{year}{1974}
+      \field{pages}{521\bibrangedash 528}
+    \endentry
+    \entry{Silverman}{book}{}
+      \name{labelname}{2}{}{%
+        {{hash=7c020058253846509fd2693dcf5e9731}{Silverman}{S\bibinitperiod}{J.\bibnamedelimi H.}{J\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+        {{hash=96151e920b6cef4879c15a2e6281f221}{Tate}{T\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=7c020058253846509fd2693dcf5e9731}{Silverman}{S\bibinitperiod}{J.\bibnamedelimi H.}{J\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+        {{hash=96151e920b6cef4879c15a2e6281f221}{Tate}{T\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{76740e3cf03b6cd919aa4cbd2ab891e0}
+      \strng{fullhash}{76740e3cf03b6cd919aa4cbd2ab891e0}
       \field{sortinit}{S}
       \field{labeltitle}{Rational Points on Elliptic Curves}
+      \field{series}{Springer Undergraduate Texts in Mathematics and Technology}
       \field{title}{Rational Points on Elliptic Curves}
+      \field{year}{1992}
     \endentry
     \entry{Washington}{book}{}
       \name{labelname}{1}{}{%
-        {{hash=b2b8c6073d8ef8a3f9022d359d51de81}{Washington}{W\bibinitperiod}{Lawrence\bibnamedelima C.}{L\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+        {{hash=f9c376fe13a467dc98c4a0cdea91a631}{Washington}{W\bibinitperiod}{L.\bibnamedelimi C.}{L\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
       }
       \name{author}{1}{}{%
-        {{hash=b2b8c6073d8ef8a3f9022d359d51de81}{Washington}{W\bibinitperiod}{Lawrence\bibnamedelima C.}{L\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+        {{hash=f9c376fe13a467dc98c4a0cdea91a631}{Washington}{W\bibinitperiod}{L.\bibnamedelimi C.}{L\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
       }
-      \strng{namehash}{b2b8c6073d8ef8a3f9022d359d51de81}
-      \strng{fullhash}{b2b8c6073d8ef8a3f9022d359d51de81}
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{f9c376fe13a467dc98c4a0cdea91a631}
+      \strng{fullhash}{f9c376fe13a467dc98c4a0cdea91a631}
       \field{sortinit}{W}
-      \field{labeltitle}{Elliptic Curves: Number Theory and Cryptography}
-      \field{title}{Elliptic Curves: Number Theory and Cryptography}
+      \field{labeltitle}{Elliptic Curves: Number Theory and Cryptography, Second Edition}
+      \field{series}{Discrete Mathematics and Its Applications}
+      \field{title}{Elliptic Curves: Number Theory and Cryptography, Second Edition}
+      \field{year}{2008}
     \endentry
   \endsortlist
 \endrefsection

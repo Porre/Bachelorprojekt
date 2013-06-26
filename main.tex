@@ -9,7 +9,6 @@
 % Dansk babel og tillad øæå osv.
 \usepackage[danish]{babel}
 \usepackage[utf8]{inputenc}
-% \usepackage[T1]{fontenc}
 
 % Til referencer, Biber giver os UTF-8 understøttelse
 \usepackage[backend=biber]{biblatex}
@@ -69,6 +68,7 @@
 
 % Environments uden bokse
 \theoremstyle{plain}
+\theoremsymbol{\empty}
 \theoremheaderfont{\normalfont\bfseries}
 \newtheorem{example}{Eksempel}
 \newtheorem{remark}{Bemærkning}
@@ -106,16 +106,16 @@
 \newcommand\stext[1]{\an{\scshape#1}}
 
 % Bruges kun under skrivningen af projektet
-\includeonly{endelige_legemer}
+% \includeonly{forside}
 
 \begin{document}
 \include{forside}
-%\tableofcontents
+\tableofcontents
 \include{gruppeloven}
 \include{endomorfier}
 \include{endelige_legemer}
 \include{pollard}
 \include{lenstra}
 \include{appendiks}
-%\printbibliography
+\printbibliography[title=Litteratur]
 \end{document}

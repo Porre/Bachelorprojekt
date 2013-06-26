@@ -1,7 +1,7 @@
 \chapter{Faktoriseringsalgoritmer}
 \label{chap:kapitel_faktorisering}
 
-I dette kapitel ønsker vi at se på faktoriseringsalgoritmer. Det viser sig nemlig, at en af de anvendelser som elliptiske kurver besidder, er indenfor faktoriseringen af heltal. Faktoriseringsproblemet, altså hvordan man bestemmer en faktor for et tal $n$ er yderst relevant, da alle heltal kan faktoriseres:
+I dette kapitel ønsker vi at se på faktoriseringsalgoritmer. Det viser sig nemlig, at en af de anvendelser som elliptiske kurver besidder, er indenfor faktoriseringen af heltal. Faktoriseringsproblemet, hvordan man bestemmer en faktor for et tal $n$, er et interssant problem, da alle heltal kan faktoriseres:
 
 \begin{thm}[Aritmetikkens fundamentalsætning]
 Et heltal $n > 1$ kan faktoriseres entydigt som et produkt af primtal, så hvis
@@ -10,10 +10,11 @@ Et heltal $n > 1$ kan faktoriseres entydigt som et produkt af primtal, så hvis
 \end{align*}
 hvor $p_i$ og $q_j$ er primtal for $1 \leq i \leq k$ og $1 \leq j \leq l$ er $k = l$ og $p_i = q_i$ for alle $i=1, 2, \ldots, k$ (efter eventuelle ombytninger). Desuden er faktorerne $p_{1}^{n_1}, p_{2}^{n_2}, \ldots, p_{k}^{n_k}$ entydigt bestemte.
 \end{thm}
+For et bevis af sætningen se f.eks. \cite{Hansen}. Det vigtige at bemærke er, at beviset ikke er konstruktivt og dermed ikke giver os en måde, hvorpå vi kan finde disse faktorer. 
 
-For et bevis af sætningen se f.eks. \cite{Hansen}. Det vigtige at bemærke er, at beviset ikke er konstruktivt og dermed ikke giver os en måde, hvorpå vi kan finde disse faktorer. Men hvordan kan vi så finde disse faktorer, som vi nu ved findes? Hvis vi har et sammensat tal $n$, som vi ønsker at faktorisere kunne vi angribe problemet med en naiv tilgang. Vi antager for nemhedens skyld at $n = pq$, hvilket gør det klart at $\min \{p, q \} \leq \sqrt{n}$. Vi kan altså finde en faktor ved at undersøge om først $2 \mid n$, dernæst om $3 \mid n$ osv. indtil at vi finder en faktor, hvilket vil ske senest når vi når til $\sqrt{n}$. Denne løsning er fin for tilstrækkeligt små tal, men det bliver hurtigt uoverkommeligt for store tal (eksempler på hvor lang tid det tager?). 
+Men hvordan kan vi så finde disse faktorer, som vi nu ved findes? Hvis vi har et sammensat tal $n$, som vi ønsker at faktorisere kunne vi angribe problemet med en naiv tilgang. Vi antager for nemhedens skyld at $n = pq$, hvilket gør det klart at $\min \{p, q \} \leq \sqrt{n}$. Vi kan altså finde en faktor ved at undersøge om først $2 \mid n$, dernæst om $3 \mid n$ osv. indtil at vi finder en faktor, hvilket vil ske senest når vi når til $\sqrt{n}$. Denne løsning er fin for tilstrækkeligt små tal, men det bliver hurtigt uoverkommeligt for store tal. Vi vil dog ikke berøre kørselstiderne direkte.
 
-Sikkerheden i moderne kryptosystemer hviler på det faktum, at det tager lang tid at faktorisere et heltal. Derfor er det interessant at undersøge om man gøre det hurtigere end den med den naive tilgang. Vi skal se på to af sådanne algoritmer, nemlig Pollards $p-1$ algoritme og Lenstras algoritme, som benytter elliptiske kurver til at finde en faktor. Idéen med begge algoritmer er at finde et $x \in \mathbb{Z}$ sådan, at $x \not \equiv 0 \modu{n}$ og 
+Sikkerheden i moderne kryptosystemer hviler på det faktum, at det tager lang tid at faktorisere et heltal. Derfor er det interessant at undersøge om man gøre det hurtigere end med den naive tilgang. Vi skal se på to af sådanne algoritmer, nemlig Pollards $p-1$ algoritme og Lenstras algoritme, som benytter elliptiske kurver til at finde en faktor. Idéen med begge algoritmer er at finde et $x \in \mathbb{Z}$ sådan, at $x \not \equiv 0 \modu{n}$ og 
 $x \equiv 0 \modu{p}$ for en eller anden primfaktor $p$ i $n$. Da har vi nemlig, at $\gcd(x, n)$ er en ikke-triviel divisor i $n$.
 
 \section{Pollards $p-1$ algoritme}
@@ -26,7 +27,7 @@ Vi skal se, at Pollards $p-1$ algoritme giver os en faktor netop, når tallet vi
 \begin{example}
 $30 = 2 \cdot 3 \cdot 5$ så $30$ er $5$-glat, $6$-glat osv.	Men $50 = 2 \cdot 5^2$ er ikke $5$-glat, den er derimod $25$-glat, $26$-glat osv.
 \end{example}
-Vi ser nu på, hvordan Pollards $p-1$ algoritme prøver at finde en faktor. Lad $n$ være et sammensat tal og lad $p$ være en primfaktor i $n$. For $a \in \mathbb{Z}$ valgt sådan at $\gcd(a, n)=1$, har vi fra Fermats lille sætning (se appendiks), at 
+Vi ser nu på, hvordan Pollards $p-1$ algoritme prøver at finde en faktor. Lad $n$ være et sammensat tal og lad $p$ være en primfaktor i $n$. For $a \in \mathbb{Z}$ valgt sådan at $\gcd(a, n)=1$, har vi fra Fermats lille sætning, at 
 \begin{align*}
 	a^{p-1} \equiv 1 \modu{p}.
 \end{align*}
@@ -34,7 +35,7 @@ Lad nu $k= \lcm[1, 2, \ldots, K]$ for et $K \in \mathbb{Z}^{+}$, hvor $\lcm$ ang
 \begin{align*}
 	a^{k} = a^{m(p-1)} = (a^{p-1})^m \equiv 1 \modu{p}.
 \end{align*}
-Lader vi $x = a^{k} - 1$ har vi nu, at $p \mid d = \gcd(x, n)$. Hvis nu $x \not \equiv 0 \modu{n}$ er $d$ en ikke-triviel divisor i $n$. Bemærk, at vi i de udregninger ikke har haft brug for at kende $p$. Vi vil i grunden beregne $\gcd(x \modu{n}, n)$ da $x$ kan blive et meget stort tal, men dette ændrer ikke på resultatet. Med den nu fundne faktor har vi en faktorisering $n=d \cdot \frac{n}{d}$ og vi kan gentage processen på disse to faktorer, hvis de ikke allerede er primtal. 
+Lader vi $x = a^{k} - 1$ har vi nu, at $p \mid d = \gcd(x, n)$. Hvis nu $x \not \equiv 0 \modu{n}$ er $d$ en ikke-triviel divisor i $n$. Bemærk, at vi i udregningerne ovenfor ikke gar haft brug for at kende $p$. Vi vil i grunden beregne $\gcd(x \modu{n}, n)$ da $x$ kan blive et meget stort tal, men dette ændrer ikke på resultatet. Med den nu fundne faktor har vi en faktorisering $n=d \cdot \frac{n}{d}$ og vi kan gentage processen på disse to faktorer, hvis de ikke allerede er primtal. 
 
 Det hele hviler altså på, at $n$ skal have en primfaktor $p$ sådan, at 
 \begin{align*}
@@ -119,8 +120,8 @@ $i$ & $2^{2^i} \modu{n}$ & $i$ & $2^{2^i} \modu{n}$ \\
 Vi fortsætter på samme måde, som vi gjorde før og bestemmer
 \begin{align*}
 	2^{27720} &= 2^{2^3 + 2^{2^6} + 2^{2^{10}} + 2^{2^{11}} + 2^{2^{13}} + 2^{2^{14}}} \\
-	&= 256 \cdot 27713768 \cdot 3779241 \cdot 11677316 \cdot 8658967 \cdot 3783587 \\
-	&= 16458222 \modu{30042491}.
+	&\equiv 256 \cdot 27713768 \cdot 3779241 \cdot 11677316 \cdot 8658967 \cdot 3783587 \modu {30042491} \\
+	&\equiv 16458222 \modu{30042491}.
 \end{align*}
 Vi finder dernæst, at
 \begin{align*}

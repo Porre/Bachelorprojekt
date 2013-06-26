@@ -6,7 +6,7 @@ Vi vil vise Hasses sætning, som giver os en vurdering på antallet af punkter i
 
 
 \section{Eksempler}
-
+\label{endelige_legemer:eksempler}
 Lad $E$ være en elliptisk kurve på formen
 \begin{align*}
 	E : y^2 = x^3 - x,
@@ -172,7 +172,7 @@ Lad $E$ være en elliptisk kurve over et endeligt legeme $\mathbb{F}_q$. Da gæl
 	|q + 1 - \#E(\mathbb{F}_q)| \leq 2 \sqrt{q}.
 \end{align*}
 \end{thm}
-Vi skal i kapitel \ref{chap:kapitel_faktorisering} hvordan elliptiske kurver over endelige legemer kan benyttes til heltalsfaktorisering, hvilket bl.a. hviler på Hasses sætning. Det skal nævnes, at der også findes et elementært bevis for Hasses sætning af Manin, CITE, men vi vil benytte teorien om endomorfier til at bevise sætningen.
+Vi skal i kapitel \ref{chap:kapitel_faktorisering} hvordan elliptiske kurver over endelige legemer kan benyttes til heltalsfaktorisering, hvilket bl.a. hviler på Hasses sætning. Det skal nævnes, at der også findes et elementært bevis for Hasses sætning af Manin (se \cite{Manin_proof}) men vi vil benytte teorien om endomorfier til at bevise sætningen.
 Lad i det følgende 
 \begin{align}
 	\label{hasse_as}
@@ -190,8 +190,7 @@ Lad $r, s \in \mathbb{Z}$ så $\gcd(s, q) = 1$. Da er
 \begin{proof}
 Vi vil ikke give beviset her, da det bygger på en række af tekniske resultater. For et bevis se \cite[s.~100]{Washington}.
 \end{proof}
-
-Nu er vi da i stand til, at gives beviset for Hasses sætning:
+Nu er vi da i stand til, at give beviset for Hasses sætning:
 
 \begin{proofof}[Bevis for Hasses sætning.]
 Da graden af en endomorfi altid er $\geq 0$ følger det fra lemma \ref{degree_lemma}, at 
@@ -211,20 +210,21 @@ Altså har vi, at
 \end{align*}
 hvilket viser Hasses sætning.
 \end{proofof}
-
-\section{Torsionspunkter}
 Det viser sig, at proposition \ref{prop_imp} også har andre interessante konsekvenser, som vi vil se på her. 
 
 Ordenen af et element $P$ fra en gruppe over en elliptisk kurve er det mindste positive heltal $k$ sådan at 
-$kP = P + P + \ldots P = \infty$. Hvis der ikke findes et sådan $k$ siges ordenen af $P$ at være uendelig. Torsionspunkterne er netop de punkter, som har endelig orden. For en elliptisk kurve $E$ og et legeme $K$ definerer vi
+\begin{align*}
+	kP = \underbrace{P + P + \ldots + P}_{k \ \text{led}} = \infty.
+\end{align*}
+Hvis der ikke findes et sådan $k$ siges ordenen af $P$ at være uendelig. Torsionspunkterne er netop de punkter, som har endelig orden. For en elliptisk kurve $E$ og et legeme $K$ definerer vi $n$-torsionspunkterne til at være
 \begin{align*}
 	E[n] = \{ P \in E(\clk) \mid nP= \infty \}.
 \end{align*}
-Vi bemærker at alle punkter over et endeligt legeme er et torsionspunkt. Følgende sætning karakteriserer disse grupper af torsionspunkter:
+Vi bemærker at alle punkter fra en elliptisk kurve over et endeligt legeme er et torsionspunkt. Følgende sætning karakteriserer disse torsionspunkter:
 
 \begin{thm}
 \label{torsion_theorem}
-Lad $E$ være en elliptisk kurve over et legeme $K$ og lad $n$ være et positivt heltal. Hvis karakteristikken for $K$ ikke deler $n$, eller ikke er $0$, da er
+Lad $E$ være en elliptisk kurve over et legeme $K$ og lad $n$ være et positivt heltal. Hvis karakteristikken for $K$ ikke deler $n$, eller er $0$, da er
 \begin{align*}
 	E[n] \simeq \mathbb{Z}_n \oplus \mathbb{Z}_n.
 \end{align*}
@@ -237,9 +237,7 @@ Hvis karakteristikken for $K$ er $p > 0$ og $p \mid n$, lader vi $n=p^r n'$ såd
 \begin{proof}
 Et bevis for denne sætning kan findes i \cite[s.~79]{Washington}.
 \end{proof}
-En konsekvens af sætning \ref{torsion_theorem} er, at vi snakke om en basis for $E[n]$, da vi nu ved hvordan den ser ud.
-
-Lad da $\{\beta_1, \beta_2\}$ være en basis for $E[n] \simeq \mathbb{Z}_n \oplus \mathbb{Z}_n$. Ethvert element fra $E[n]$ kan altså skrives som $\beta_1 m_1 + \beta_2 m_2$, hvor $m_1, m_2 \in \mathbb{Z}$ er entydige mod $n$. For en homomorfi $\alpha : E(\clk) \to E(\clk)$ afbilleder $\alpha$ torsionspunkterne $E[n]$ til $E[n]$, derfor findes $a, b, c, d \in \mathbb{Z}$ sådan, at 
+En konsekvens af sætning \ref{torsion_theorem} er, at vi snakke om en basis for $E[n]$, da vi nu ved hvordan den ser ud. Lad da $\{\beta_1, \beta_2\}$ være en basis for $E[n] \simeq \mathbb{Z}_n \oplus \mathbb{Z}_n$. Ethvert element fra $E[n]$ kan altså skrives som $\beta_1 m_1 + \beta_2 m_2$, hvor $m_1, m_2 \in \mathbb{Z}$ er entydige mod $n$. For en homomorfi $\alpha : E(\clk) \to E(\clk)$ afbilleder $\alpha$ torsionspunkterne $E[n]$ til $E[n]$, derfor findes $a, b, c, d \in \mathbb{Z}_n$ sådan, at 
 \begin{align*}
 	\alpha(\beta_1) = a \beta_1 + b \beta_2, \quad \alpha(\beta_2) = c\beta_1 + d \beta_2.
 \end{align*}
@@ -271,9 +269,9 @@ for alle $m$, hvor $\gcd(m, q)=1$.
 \end{thm}
 
 \begin{proof}
-Det følger direkte fra lemma \ref{deg_to_ker} at hvis $\phi_{q}^{2} -a \phi_q + q \neq 0$ (hvis den ikke er nul-endomorfier) er dens kerne endelig. Så hvis vi kan vise, at kernen er uendelig, da må endomorfien være lig $0$.
+Det følger direkte fra lemma \ref{deg_to_ker} at hvis $\phi_{q}^{2} -a \phi_q + q \neq 0$ (hvis den ikke er nul-endomorfien) er dens kerne endelig. Så hvis vi kan vise, at kernen er uendelig, da må endomorfien være lig $0$.
 
-Lad nu $m \geq 1$ være valgt sådan, at $\gcd(m, q) = 1$. Lad da $(\phi_q)_m$ være den matricen, som beskriver virkningen af $\phi_q$ på $E[m]$, som vi beskrev ovenfor. Lad da
+Lad nu $m \geq 1$ være valgt sådan, at $\gcd(m, q) = 1$. Lad da $(\phi_q)_m$ være matricen, som beskriver virkningen af $\phi_q$ på $E[m]$, som vi beskrev ovenfor. Lad da
 \begin{align*}
 	(\phi_q)_m = \left( 
 	\begin{matrix}
@@ -291,7 +289,7 @@ Da $\phi_q - 1$ er separabel (se proposition \ref{prop_imp}) følger det fra pro
 	\end{matrix} \right| \\
 	&= sv - tu - (s + v) + 1 \modu{m}.
 \end{align*}
-Videre har vi, at $sv-tu = \det((\phi_q)_m) \equiv q \modu{m}$. Fra \eqref{hasse_as} har vi, at 
+Videre har vi, at $sv-tu = \det((\phi_q)_m) \equiv q \modu{m}$. Da vi fra \eqref{hasse_as} har, at 
 $\# \ker(\phi_q - 1) = q + 1 - a$, så
 \begin{align*}
 	\text{Trace}((\phi_q)_m) = s + v \equiv a \modu{m}.
@@ -311,7 +309,7 @@ er opfyldt. Da har vi også, at (ved at lægge $0$ til)
 \begin{align*}
 	(a - a_1) \phi_q = (\phi_{q}^{2} - a_1 \phi_q + q) - (\phi_{q}^{2} - a\phi_q + q) = 0
 \end{align*}
-Da $\phi_q : E(\clfq) \to E(\clfq)$ er surjektiv betyder det, at $(a - a_1)$ annihilerer $E(\clfq)$ (dvs. for hvert element $x \in E(\clfq)$ er $(a-a_1)x = 0$). Specielt har vi, at $(a - a_1)$ annihilerer $E[m]$ for hvert $m \geq 1$. Men da der er punkter i $E[m]$ med orden $m$ når $\gcd(m, q) =1$ har vi, at $a - a_1 \equiv 0 \modu{m}$ for sådan et $m$. Dermed er $a - a_ 1 = 0$ og vi har vist, at $a$ er entydig.
+Vi har fra sætning \ref{endomorfier:surjektiv}, at $\phi_q : E(\clfq) \to E(\clfq)$ er surjektiv så $(a - a_1)$ annihilerer $E(\clfq)$ (dvs. for hvert element $x \in E(\clfq)$ er $(a-a_1)x = 0$). Specielt har vi, at $(a - a_1)$ annihilerer $E[m]$ for hvert $m \geq 1$. Men da der er punkter i $E[m]$ med orden $m$ når $\gcd(m, q) =1$ har vi, at $a - a_1 \equiv 0 \modu{m}$ for sådan et $m$. Dermed er $a - a_ 1 = 0$ og vi har vist, at $a$ er entydig.
 \end{proof}
 
 Endeligt vil vi vise en sætning, som gør det muligt at bestemme ordenen af en gruppe af punkter for en elliptisk kurve. Hvis vi kender ordenen af $E(\mathbb{F}_q)$ for et lille endeligt legeme gør følgende sætning det muligt, at bestemme ordenen af $E(\mathbb{F}_{q^n})$.
@@ -327,6 +325,7 @@ for alle $n \geq 1$.
 Vi har brug for, at $\alpha^n + \beta^n$ er et heltal, hvilket følgende lemma giver os:
 
 \begin{lemma}
+\label{endelige_legemer:recurrence}
 Lad $s_n = \alpha^n + \beta^n$. Da er $s_0=2$, $s_1=a$ og $s_{n+1}=as_n - qs_{n-1}$ for alle $n \geq 1$.
 \end{lemma}
 \begin{proof}
@@ -363,7 +362,26 @@ hvilket netop var hvad  vi ønskede at vise.
 \end{proofof}
 
 \begin{example}
-Eksempel på 4.12 i aktion.
+Vi vender tilbage til eksemplet vi så på i afsnit \ref{endelige_legemer:eksempler}, hvor $E$ er givet ved $y^2 = x^3 - x$. Vi har da, at 
+\begin{align*}
+	\#E(\mathbb{F}_5) = q + 1 - a = 5 + 1 - a = 7 \Rightarrow a = -1.
+\end{align*}
+Vi får dermed polynomiet
+\begin{align*}
+	X^2 + X + 5 = \left( X + \frac{1 - i \sqrt{19}}{2} \right) \left( X + \frac{1 + i \sqrt{19}}{2} \right).
+\end{align*}
+Sætning \ref{count} siger da, at
+\begin{align}
+\label{endelige_legemer:example_order}
+	\#E(\mathbb{F}_{25}) = 25 + 1 - \left( \frac{1 - i \sqrt{19}}{2} \right)^2 - 
+	\left(\frac{1 + i \sqrt{19}}{2} \right)^2.
+\end{align}
+Den sidste del af udtrykket i \eqref{endelige_legemer:example_order} kan udregnes direkte, men vi kan også bruge rekurrensen fra \ref{endelige_legemer:recurrence}:
+\begin{align*}
+	s_2 = as_1 - qs_0 = -(-1) - 5 \cdot 2 = 1 - 10 = -9.
+\end{align*}
+Vi har da, at $\#E(\mathbb{F}_{25}) = 25 + 1 - (-9) = 35$.
+
 \end{example}
 
 
