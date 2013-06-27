@@ -2,7 +2,7 @@
 
 Vi skal i dette kapitel betragte elliptiske kurver over endelige legemer. Lad $\mathbb{F}$ være et endeligt legeme og lad $E$ være en elliptisk kurve over $\mathbb{F}$. Da er gruppen $E(\mathbb{F})$ endelig, da der kun findes endeligt mange talpar $(x, y)$ hvor $x, y \in \mathbb{F}$. Et endeligt legeme har $p^n$ elementer for et primtal $p$, hvor $n \geq 1$ (se bilag \ref{appendiks_legemer}). Derfor lader vi $\mathbb{F}_{q}$ være det endelige legeme med $q = p^n$ elementer. 
 
-Vi vil vise Hasses sætning, som giver os en vurdering på antallet af punkter i gruppen $E(\mathbb{F}_q)$. Denne vurdering viser sig, at have en anvendelse indenfor heltalsfaktorisering, som vi ser på i kapitel 4. Vi ser også på en måde, hvorpå vi kan bestemme den eksakte orden af en gruppe $E(\mathbb{F}_{q^n})$, hvis vi kender ordenen af $E(\mathbb{F}_q)$, som er let at bestemme for legemer med få elementer.
+Vi vil vise Hasses sætning, som giver os en vurdering på antallet af punkter i gruppen $E(\mathbb{F}_q)$. Denne vurdering viser sig, at have en anvendelse indenfor heltalsfaktorisering, som vi ser på i kapitel \ref{chap:kapitel_faktorisering}. Vi ser også på en måde, hvorpå vi kan bestemme den eksakte orden af en gruppe $E(\mathbb{F}_{q^n})$, hvis vi kender ordenen af $E(\mathbb{F}_q)$, som er let at bestemme for legemer med få elementer.
 
 
 \section{Eksempler}
@@ -121,7 +121,7 @@ denne ligning til den $q$'ende potens og får, at
 	&= (x^q)^3 + A (x^q) + B.
 \end{align*}
 hvor vi har brugt, at $(a+b)^q = a^q + b^q$ når $q$ er en potens af legemets karakteristik 
-og at $a^q = a$ for alle $a \in \mathbb{F}_q$ (se appendiks \ref{appendiks_legemer}).
+og at $a^q = a$ for alle $a \in \mathbb{F}_q$ (se proposition \ref{appendiks:support_prop} i \ref{appendiks_legemer}).
 Men dette betyder netop, at 
 $(x^q, y^q) \in E(\overline{\mathbb{F}}_q)$, hvilket viser (1).
 For at vise (2) husker vi, at $\phi_q(x) = x \Leftrightarrow x \in \mathbb{F}_q$.

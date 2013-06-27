@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 
 % Dansk babel og tillad øæå osv.
-\usepackage[danish]{babel}
+\usepackage[danish, english]{babel}
 \usepackage[utf8]{inputenc}
 
 % Appendiks skal hedde Appendiks, ikke bilag!
@@ -22,6 +22,9 @@
 
 % Filen med vores referencer
 \addbibresource{referencer.bib}
+
+% Knap så voldsomme chapters
+\chapterstyle{section}		
 
 % Matematikpakker
 \usepackage{amsmath, amsfonts, amssymb}
@@ -111,12 +114,18 @@
 \sodef\an{}{0.2em}{.9em plus.6em}{1em plus.1em minus.1em}
 \newcommand\stext[1]{\an{\scshape#1}}
 
+% Kald indholdsfortegnelsen for "Indhold"
+\renewcommand{\contentsname}{Indhold}
+
 % Bruges kun under skrivningen af projektet
 % \includeonly{forside}
 
 \begin{document}
+\selectlanguage{danish}
 \include{forside}
+\include{abstract}
 \tableofcontents
+\include{indledning}
 \include{gruppeloven}
 \include{endomorfier}
 \include{endelige_legemer}
