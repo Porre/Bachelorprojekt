@@ -30,7 +30,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Frobenius endomorfien}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Hasses s\IeC {\ae }tning}{23}
+\contentsline {section}{\numberline {4.3}Hasses s\IeC {\ae }tning}{24}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Faktoriseringsalgoritmer}{29}
 \defcounter {refsection}{0}\relax 
